@@ -7,11 +7,6 @@ body {
     color: #424242;
 }
 
-@media (min-width: 768px) {
-  .container {
-    max-width: 730px;
-  }
-}
 /**
  * //////////////////////////
  * Font and link declarations
@@ -51,16 +46,6 @@ a, a:link, a:active {
 a:hover {
     color: #B3B3B3;
     text-decoration: underline;
-}
-
-/**
- * /////////////////
- * Container element
- * /////////////////
- */
-div#container {
-    width: 700px;
-    margin: auto;
 }
 
 /**
