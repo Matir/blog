@@ -1,0 +1,39 @@
+---
+layout: post
+title: "Coming Drupal Trends"
+date: 2011-10-05 23:01:59 +0000
+permalink: /blog/coming-drupal-trends/
+category: Drupal
+tags: drupal,trends,drush,predictions
+---
+<p>
+	Based on Drupalcon last March and Drupalcamp Atlanta this weekend, I've seen some growing trends in Drupal.  While some of them might "already be here" I don't think everyone's doing them yet.  Some of them apply to web development in general, while others are more specific to Drupal.</p>
+<p>
+	<strong>Adaptive Web Design</strong></p>
+<p>
+	We all know mobile is here and is going to stay.  However, the days of 23-30 inch monitors aren't over.  Making something that is highly usable on both ends requires adapting to the user's platform (hence adaptive design).  Themes like Omega, AdaptiveTheme, and their derivities are probably going to replace base themes like Zen in order to make things more "adaptive."  It's worth noting that Zen can be adaptive with media queries, but it's not designed for it from the ground up.</p>
+<p>
+	<strong>HTML5</strong></p>
+<p>
+	I'm sure this will come as a great surprise.  HTML5 is here to stay.  Which, if we're at all lucky, means that Flash will be reserved for those rare cases that need more than HTML5 has.  (Which is not much.)  Maybe we can at least not have whole sites done in Flash.  The downside of this is likely to look something like the days of &lt;blink&gt; and &lt;marquee&gt;.  People (most of whom are management, not designers or developers) will be asking for the "whizzbang" of HTML5.  Please, resist the urge to implement things "because you can."</p>
+<p>
+	<strong>Opcode Caches</strong></p>
+<p>
+	Let's be honest: Drupal 7 is not lightweight.  I've just developed a site for a client that is hosted on Dreamhost, and we're running into memory troubles.  (In particular, the new UI for Tokens is a killer.)  While opcode caches like APC and XCache don't fix that, they do eliminate or reduce the need to parse and compile the source for every php file on your site, be it Drupal core or contrib.  (Note that eval'ed code cannot be cached.)</p>
+<p>
+	<strong>Horizontal Scaling</strong></p>
+<p>
+	More and more, Drupal is being used for high-traffic websites.  While Boost, APC, and core caching help a lot, if your site has a lot of logged-in traffic, they can only do so much.  You can scale vertically, but there's a limit to how big a server you can buy, and vertical scaling doesn't give you any redundancy.  While horizontally scaling your web servers is (comparatively) easy -- buy a few web servers and point a load balancer at them -- the database servers are harder to scale.  Drupal 7 has added some ability to have master/slave servers to distribute read load, but I hope we'll see more work towards support for full clusters of DB servers where you can even distribute the writes.</p>
+<p>
+	<strong>More Distributions</strong></p>
+<p>
+	Just like Linux, Drupal comes in distributions.  There's the core Drupal distribution, but there's also OpenPublish, OpenPublic, COD (Conference-Organizing Distribution), and OpenScholar, among others.  Check them all out at <a href="http://drupaldistrowatch.com/" rel="nofollow">Drupal Distro Watch</a>.</p>
+<p>
+	<strong>Drush</strong></p>
+<p>
+	If you're not already using Drush, you're doing it wrong.  Drush makes things like enabling/disabling modules, updating modules, executing cron, getting to a SQL shell, etc. so much easier than going through the web interface.  Plus drush itself is scriptable and extensible.  Oh, and you can do aliases for whole groups of sites (awesome for security patches).</p>
+<p>
+	 </p>
+<hr /><p>
+	What are your predictions for the up and coming Drupal (and web development) trends?</p>
+

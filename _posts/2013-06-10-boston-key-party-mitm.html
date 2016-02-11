@@ -1,0 +1,64 @@
+---
+layout: post
+title: "Boston Key Party -- MITM"
+date: 2013-06-10 00:54:54 +0000
+permalink: /blog/boston-key-party-mitm/
+category: Security
+tags: CTF,Boston Key Party
+---
+<p>Boston Key Party is the latest CTF I've played in (this time playing with some local friends as part of our team 'Shadow Cats'). The first challenge we cleared (actually, first blood in the CTF) was MITM.</p>
+<p>Now, you might think a challenge named "MITM" was some sort of Man-In-The-Middle exercise, but it's actually crypto! We're given five base-64 encoded messages: two plaintext/ciphertext pairs, and a ciphertext (which we're presumably supposed to decrypt).</p>
+<pre>message 1:  QUVTLTI1NiBFQ0IgbW9kZSB0d2ljZSwgdHdvIGtleXM=
+encrypted:  THbpB4bE82Rq35khemTQ10ntxZ8sf7s2WK8ErwcdDEc=
+message 2:  RWFjaCBrZXkgemVybyB1bnRpbCBsYXN0IDI0IGJpdHM=
+encrypted:  01YZbSrta2N+1pOeQppmPETzoT/Yqb816yGlyceuEOE=
+ciphertext: s5hd0ThTkv1U44r9aRyUhaX5qJe561MZ16071nlvM9U=
+</pre>
+<p>Decoding the two plaintexts gives us:</p>
+<pre>AES-256 ECB mode twice, two keys
+Each key zero until last 24 bits
+</pre>
+<p>Some useful hints. So our construction is <b>C = E<sub>K2</sub>(E<sub>K1</sub>(P))</b> where K1 and K2 are both 256-bit keys with the first 29 bytes being all nulls. This means the remaining keyspace for each key is 2<sup>24</sup>, or 2<sup>24</sup> * 2<sup>24</sup> = 2<sup>48</sup> for both keys combined. Brute forcing 2<sup>48</sup>combinations seems... unlikely during a CTF.</p>
+<p>The good news is, we only actually have to try ~2<sup>25</sup> possible keys, which is quite doable even on my laptop. (Actually completes in a matter of minutes.) The trick is a <a href="https://en.wikipedia.org/wiki/Meet-in-the-middle_attack"> Meet in the Middle</a> (MITM again!) attack. Because we have a plaintext/ciphertext pair, we can <b>encrypt</b> the plaintext with all possible keys, store those encryptions, then <b>decrypt</b> the ciphertext with all possible keys and check those keys against the encryptions. They will match when you have found your two keys, which can then be used to decrypt the unknown ciphertext.</p>
+<div class="geshifilter">
+<div class="python geshifilter-python" style="">
+<pre style=""><span style="">from</span> Crypto.<span style="">Cipher</span> <span style="">import</span> AES
+plain <span style="">=</span> <span style="">'QUVTLTI1NiBFQ0IgbW9kZSB0d2ljZSwgdHdvIGtleXM='</span>.<span style="">decode</span><span style="">(</span><span style="">'base64'</span><span style="">)</span>
+cipher <span style="">=</span> <span style="">'THbpB4bE82Rq35khemTQ10ntxZ8sf7s2WK8ErwcdDEc='</span>.<span style="">decode</span><span style="">(</span><span style="">'base64'</span><span style="">)</span>
+unknown <span style="">=</span> <span style="">'s5hd0ThTkv1U44r9aRyUhaX5qJe561MZ16071nlvM9U='</span>.<span style="">decode</span><span style="">(</span><span style="">'base64'</span><span style="">)</span>
+ 
+KEY_PADDING <span style="">=</span> <span style="">chr</span><span style="">(</span><span style="">0</span><span style="">)</span>*<span style="">29</span>
+ 
+<span style="">def</span> NewAES<span style="">(</span>key<span style="">)</span>:
+  <span style="">return</span> AES.<span style="">new</span><span style="">(</span>key<span style="">,</span> mode<span style="">=</span>AES.<span style="">MODE_ECB</span><span style="">)</span>
+ 
+<span style="">def</span> Encrypt<span style="">(</span>short_key<span style="">,</span> text<span style="">=</span>plain<span style="">)</span>:
+  <span style="">return</span> NewAES<span style="">(</span>KEY_PADDING+short_key<span style="">)</span>.<span style="">encrypt</span><span style="">(</span>text<span style="">)</span>
+ 
+<span style="">def</span> Decrypt<span style="">(</span>short_key<span style="">,</span> text<span style="">=</span>cipher<span style="">)</span>:
+  <span style="">return</span> NewAES<span style="">(</span>KEY_PADDING+short_key<span style="">)</span>.<span style="">decrypt</span><span style="">(</span>text<span style="">)</span>
+ 
+<span style="">def</span> KeyGen<span style="">(</span><span style="">)</span>:
+  <span style="">"""Generator for all possible 24 bit keys."""</span>
+  <span style="">for</span> a <span style="">in</span> <span style="">xrange</span><span style="">(</span><span style="">0</span><span style="">,</span> <span style="">256</span><span style="">)</span>:
+    <span style="">for</span> b <span style="">in</span> <span style="">xrange</span><span style="">(</span><span style="">0</span><span style="">,</span> <span style="">256</span><span style="">)</span>:
+      <span style="">for</span> c <span style="">in</span> <span style="">xrange</span><span style="">(</span><span style="">0</span><span style="">,</span> <span style="">256</span><span style="">)</span>:
+        <span style="">yield</span> <span style="">chr</span><span style="">(</span>a<span style="">)</span>+<span style="">chr</span><span style="">(</span>b<span style="">)</span>+<span style="">chr</span><span style="">(</span>c<span style="">)</span>
+ 
+<span style="">def</span> EncryptTable<span style="">(</span><span style="">)</span>:
+  <span style="">"""Map of encryptions to keys."""</span>
+  table <span style="">=</span> <span style="">{</span><span style="">}</span>
+  <span style="">for</span> short_key <span style="">in</span> KeyGen<span style="">(</span><span style="">)</span>:
+    table<span style="">[</span>Encrypt<span style="">(</span>short_key<span style="">)</span><span style="">]</span> <span style="">=</span> short_key
+  <span style="">return</span> table
+ 
+table <span style="">=</span> EncryptTable<span style="">(</span><span style="">)</span>
+<span style="">for</span> short_key <span style="">in</span> KeyGen<span style="">(</span><span style="">)</span>:
+  decrypted <span style="">=</span> Decrypt<span style="">(</span>short_key<span style="">)</span>
+  <span style="">if</span> decrypted <span style="">in</span> table:
+    <span style=""># Have a match, now decrypt the unknown</span>
+    <span style="">print</span> Decrypt<span style="">(</span>short_key<span style="">,</span> Decrypt<span style="">(</span>table<span style="">[</span>decrypted<span style="">]</span><span style="">,</span> unknown<span style="">)</span><span style="">)</span>
+    <span style="">break</span></pre>
+</div>
+</div>
+<p>The downside to this technique is that it has 2<sup>24</sup> memory complexity, as you store an entire hash table of encryption-&gt;key pairs for the inner encryption. However, even with the overhead in python, 2<sup>24</sup> memory seems to amount to ~2.5GB, so a small tradeoff here.</p>

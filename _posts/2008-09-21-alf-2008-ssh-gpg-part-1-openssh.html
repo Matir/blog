@@ -1,0 +1,44 @@
+---
+layout: post
+title: "ALF 2008: SSH & GPG (Part 1: OpenSSH)"
+date: 2008-09-21 23:30:27 +0000
+permalink: /blog/alf-2008-ssh-gpg-part-1-openssh/
+categories: Linux,Security
+---
+<p>Yesterday I gave a talk at Atlanta Linux Fest 2008 on SSH and GPG.  I quickly received requests to post notes from my talk, so I'm going to try to write it up here.  If I miss anything, I'll try to keep it updated.</p>
+<p>Slides are available here: <a href="http://matir.files.wordpress.com/2008/09/ssh_gpg.pdf">SSH &amp; GPG.</a> They don't show everything, as a lot of it was Demo and Q&amp;A, documented below.</p>
+<p>This is Part 1 of a two part series.  I got far more questions about the OpenSSH content, so I'll be focusing on that here.  I'll add GnuPG content shortly, time permitting.</p>
+<!--break--><p>
+<strong>SSH Basics</strong></p>
+<p>Connect to a remote server via ssh:</p>
+<pre>ssh USERNAME@HOSTNAME [Optional command to execute]</pre><p>To generate a SSH keypair and transfer it to remote server for authentication:</p>
+<pre>ssh-keygen -t rsa &amp;&amp; ssh-copy-id HOSTNAME</pre><p>You can then send it to more HOSTNAMEs just be repeating the ssh-copy-id HOSTNAME step.</p>
+<p><strong>Setting up a Config File</strong></p>
+<p>By creating a file .ssh/config, you can permanently set certain options.  Each server is represented by a Host stanza, and the value of this is how you refer to the server.  For example:</p>
+<pre>Host router1
+    HostName router1.example.com
+    Port 2222
+    Username admin</pre><p>Performing "ssh router1" with this config file is equivalent to "ssh <a href="mailto:admin@router1.example.com">admin@router1.example.com</a> -p2222", saving a lot of typing for those servers you connect to all the time!  In the advanced section below, I'll demonstrate both the command-line option and the config file option.</p>
+<p><strong>Advanced SSH Features</strong></p>
+<p>The following sections demonstrate some of the more advanced ways SSH can help secure your communications and save you time.</p>
+<p><strong>TCP Connection Tunneling</strong></p>
+<p>If you want to create an encrypted tunnel out of your current network for a service, you can use the -L SSH option.  It takes -L localport:remotehost:remoteport.  You then connect your application to localhost:localport, and it acts like you're connecting from your SSH server!  Great for getting around/behind firewalls.</p>
+<pre>ssh -L 25:mailserver:25 user@host
+ssh -L 1080:socksserver:1080 user@host</pre><p>In .ssh/config:</p>
+<pre>LocalForward localport remotehost:remoteport</pre><p>If you want, you can also have SSH act like a SOCKS server, and all communications between your client and this virtual socks server will be encrypted!  Set up your client application to connect to a SOCKS 4/5 proxy on localhost, port 8080, and then connect to an SSH server via:</p>
+<pre>ssh -D 8080 user@host</pre><p>In .ssh/config:</p>
+<pre>DynamicForward 8080</pre><p><strong>Multiple SSH sessions in one connection</strong></p>
+<p>You can use a single TCP connection for multiple SSH sessions to the same server.  This reduces latency in starting the 2nd and further connections, and does not require additional authentications.  This is very useful when doing frequent operations over SSH.  This is only really useful when specified in the .ssh/config file as this:</p>
+<pre>ControlMaster auto
+ControlPath ~/.ssh/master-%r@%h:%p</pre><p><strong>Using ssh in a pipe.</strong></p>
+<p>It can be useful to send data from one side to another via an ssh connection.  Perhaps there is some filter only installed on the remote system, or you wish to copy over a large directory structure but <a href="http://manpages.ubuntu.com/manpages/hardy/man1/rsync.html">rsync</a> is absent on the remote system.</p>
+<pre># copy dir1 to dir2 on target without rsync, as one command:
+tar cz dir1 | ssh target tar xz -C dir2
+# use hexdump on the remote system
+cat somefile | ssh target hexdump</pre><p><strong>Store your SSH key in memory for your session.</strong></p>
+<p>You can store the SSH key in memory, already decrypted, to avoid having to put in your passphrase repeatedly.  This allows it to stay encrypted on disk and protect your key from tampering.</p>
+<pre>eval `ssh-agent`
+ssh-add</pre><p>You can also use Keychain from the Gentoo project (though now available in most distributions) to maintain a per-reboot ssh-agent session.  This is very useful on desktops as it is available to all terminals and applications rather than a single shell session.  Full documentation for keychain is available at: <a href="http://www.gentoo.org/proj/en/keychain/">http://www.gentoo.org/proj/en/keychain/</a></p>
+<p><strong>Conclusion</strong></p>
+<p>If you have any questions or feel anything needs a clarification, leave a comment and I'll be happy to update with more content!</p>
+

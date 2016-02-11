@@ -1,0 +1,143 @@
+---
+layout: post
+title: "PlaidCTF Compression"
+date: 2013-04-30 05:26:20 +0000
+permalink: /blog/plaidctf-compression/
+category: Security
+tags: CTF,PlaidCTF,Cryptography
+---
+<p>PlaidCTF 2013 had a level called "Compression".  Here's the provided code for
+this level:</p>
+<div class="geshifilter"><div class="python geshifilter-python" style="font-family:monospace;"><pre style="font-family: monospace; font-weight: normal; font-style: normal"><span style="color: #808080; font-style: italic;">#!/usr/bin/python</span>
+<span style="color: #ff7700;font-weight:bold;">import</span> <span style="color: #dc143c;">os</span>
+<span style="color: #ff7700;font-weight:bold;">import</span> <span style="color: #dc143c;">struct</span>
+<span style="color: #ff7700;font-weight:bold;">import</span> <span style="color: #dc143c;">SocketServer</span>
+<span style="color: #ff7700;font-weight:bold;">import</span> <span style="color: #dc143c;">zlib</span>
+<span style="color: #ff7700;font-weight:bold;">from</span> Crypto.<span style="color: black;">Cipher</span> <span style="color: #ff7700;font-weight:bold;">import</span> AES
+<span style="color: #ff7700;font-weight:bold;">from</span> Crypto.<span style="color: black;">Util</span> <span style="color: #ff7700;font-weight:bold;">import</span> Counter
+ 
+<span style="color: #808080; font-style: italic;"># Not the real keys!</span>
+ENCRYPT_KEY <span style="color: #66cc66;">=</span> <span style="color: #483d8b;">'0000000000000000000000000000000000000000000000000000000000000000'</span>.<span style="color: black;">decode</span><span style="color: black;">(</span><span style="color: #483d8b;">'hex'</span><span style="color: black;">)</span>
+<span style="color: #808080; font-style: italic;"># Determine this key.</span>
+<span style="color: #808080; font-style: italic;"># Character set: lowercase letters and underscore</span>
+PROBLEM_KEY <span style="color: #66cc66;">=</span> <span style="color: #483d8b;">'XXXXXXXXXXXXXXXXXXXX'</span>
+ 
+<span style="color: #ff7700;font-weight:bold;">def</span> encrypt<span style="color: black;">(</span>data<span style="color: #66cc66;">,</span> ctr<span style="color: black;">)</span>:
+    aes <span style="color: #66cc66;">=</span> AES.<span style="color: #dc143c;">new</span><span style="color: black;">(</span>ENCRYPT_KEY<span style="color: #66cc66;">,</span> AES.<span style="color: black;">MODE_CTR</span><span style="color: #66cc66;">,</span> counter<span style="color: #66cc66;">=</span>ctr<span style="color: black;">)</span>
+    <span style="color: #ff7700;font-weight:bold;">return</span> aes.<span style="color: black;">encrypt</span><span style="color: black;">(</span><span style="color: #dc143c;">zlib</span>.<span style="color: black;">compress</span><span style="color: black;">(</span>data<span style="color: black;">)</span><span style="color: black;">)</span>
+ 
+<span style="color: #ff7700;font-weight:bold;">class</span> ProblemHandler<span style="color: black;">(</span><span style="color: #dc143c;">SocketServer</span>.<span style="color: black;">StreamRequestHandler</span><span style="color: black;">)</span>:
+    <span style="color: #ff7700;font-weight:bold;">def</span> handle<span style="color: black;">(</span><span style="color: #008000;">self</span><span style="color: black;">)</span>:
+        nonce <span style="color: #66cc66;">=</span> <span style="color: #dc143c;">os</span>.<span style="color: black;">urandom</span><span style="color: black;">(</span><span style="color: #ff4500;">8</span><span style="color: black;">)</span>
+        <span style="color: #008000;">self</span>.<span style="color: black;">wfile</span>.<span style="color: black;">write</span><span style="color: black;">(</span>nonce<span style="color: black;">)</span>
+        ctr <span style="color: #66cc66;">=</span> Counter.<span style="color: #dc143c;">new</span><span style="color: black;">(</span><span style="color: #ff4500;">64</span><span style="color: #66cc66;">,</span> prefix<span style="color: #66cc66;">=</span>nonce<span style="color: black;">)</span>
+        <span style="color: #ff7700;font-weight:bold;">while</span> <span style="color: #008000;">True</span>:
+            data <span style="color: #66cc66;">=</span> <span style="color: #008000;">self</span>.<span style="color: black;">rfile</span>.<span style="color: black;">read</span><span style="color: black;">(</span><span style="color: #ff4500;">4</span><span style="color: black;">)</span>
+            <span style="color: #ff7700;font-weight:bold;">if</span> <span style="color: #ff7700;font-weight:bold;">not</span> data:
+                <span style="color: #ff7700;font-weight:bold;">break</span>
+ 
+            <span style="color: #ff7700;font-weight:bold;">try</span>:
+                length <span style="color: #66cc66;">=</span> <span style="color: #dc143c;">struct</span>.<span style="color: black;">unpack</span><span style="color: black;">(</span><span style="color: #483d8b;">'I'</span><span style="color: #66cc66;">,</span> data<span style="color: black;">)</span><span style="color: black;">[</span><span style="color: #ff4500;">0</span><span style="color: black;">]</span>
+                <span style="color: #ff7700;font-weight:bold;">if</span> length <span style="color: #66cc66;">&gt;</span> <span style="color: black;">(</span><span style="color: #ff4500;">1</span><span style="color: #66cc66;">&lt;&lt;</span><span style="color: #ff4500;">20</span><span style="color: black;">)</span>:
+                    <span style="color: #ff7700;font-weight:bold;">break</span>
+                data <span style="color: #66cc66;">=</span> <span style="color: #008000;">self</span>.<span style="color: black;">rfile</span>.<span style="color: black;">read</span><span style="color: black;">(</span>length<span style="color: black;">)</span>
+                data +<span style="color: #66cc66;">=</span> PROBLEM_KEY
+                ciphertext <span style="color: #66cc66;">=</span> encrypt<span style="color: black;">(</span>data<span style="color: #66cc66;">,</span> ctr<span style="color: black;">)</span>
+                <span style="color: #008000;">self</span>.<span style="color: black;">wfile</span>.<span style="color: black;">write</span><span style="color: black;">(</span><span style="color: #dc143c;">struct</span>.<span style="color: black;">pack</span><span style="color: black;">(</span><span style="color: #483d8b;">'I'</span><span style="color: #66cc66;">,</span> <span style="color: #008000;">len</span><span style="color: black;">(</span>ciphertext<span style="color: black;">)</span><span style="color: black;">)</span><span style="color: black;">)</span>
+                <span style="color: #008000;">self</span>.<span style="color: black;">wfile</span>.<span style="color: black;">write</span><span style="color: black;">(</span>ciphertext<span style="color: black;">)</span>
+            <span style="color: #ff7700;font-weight:bold;">except</span>:
+                <span style="color: #ff7700;font-weight:bold;">break</span>
+ 
+<span style="color: #ff7700;font-weight:bold;">class</span> ReusableTCPServer<span style="color: black;">(</span><span style="color: #dc143c;">SocketServer</span>.<span style="color: black;">ForkingMixIn</span><span style="color: #66cc66;">,</span> <span style="color: #dc143c;">SocketServer</span>.<span style="color: black;">TCPServer</span><span style="color: black;">)</span>:
+    allow_reuse_address <span style="color: #66cc66;">=</span> <span style="color: #008000;">True</span>
+ 
+<span style="color: #ff7700;font-weight:bold;">if</span> __name__ <span style="color: #66cc66;">==</span> <span style="color: #483d8b;">'__main__'</span>:
+    HOST <span style="color: #66cc66;">=</span> <span style="color: #483d8b;">'0.0.0.0'</span>
+    PORT <span style="color: #66cc66;">=</span> <span style="color: #ff4500;">4433</span>
+    <span style="color: #dc143c;">SocketServer</span>.<span style="color: black;">TCPServer</span>.<span style="color: black;">allow_reuse_address</span> <span style="color: #66cc66;">=</span> <span style="color: #008000;">True</span>
+    server <span style="color: #66cc66;">=</span> ReusableTCPServer<span style="color: black;">(</span><span style="color: black;">(</span>HOST<span style="color: #66cc66;">,</span> PORT<span style="color: black;">)</span><span style="color: #66cc66;">,</span> ProblemHandler<span style="color: black;">)</span>
+    server.<span style="color: black;">serve_forever</span><span style="color: black;">(</span><span style="color: black;">)</span></pre></div></div>
+<p> So there's a few interesting things of note here:
+</p><ul><li>They take user-supplied input, concatenate the flag, and then encrypt
+and return the value.</li>
+<li>Input is limited to 1MB (1
+</li><li>We're compressing with gzip and then encrypting with AES in CTR mode.</li>
+<li>It's a 128 bit nonce: 8 bytes of urandom, followed by a 64-bit
+counter.</li></ul>
+My first thoughts were to attack CTR mode: reuse of the IV in a CTR mode cipher
+is quite fatal.  But given that the nonce is of reasonably high entropy (64-bit)
+and our input length limit prevents wrapping the counter (if we could even send
+that much data, which we can't) it becomes quite obvious we won't be getting a
+reused IV anytime soon.<p>So I start thinking about the fact that AES (or
+any block cipher) in CTR mode is really a stream cipher -- they encrypt the
+counter with the key, to produce a keystream, then XOR with the plaintext to get
+the ciphertext.  In particular, pycrypto guarantees that len(input) ==
+len(output).  Given the name of the level (Compression) I start thinking about
+approaches to get information out of the ciphertext length.</p><p>At this point,
+it's worth revisiting the design of the DEFLATE algorithm (used by the
+zlib.compress call in the compression.py program).  DEFLATE uses a combination
+of Huffman coding and LZ77/LZ78-style duplicate string elimination.  In this
+context, I believe the duplicate string elimination plays the bigger role --
+this part takes repeated sections of the input and, for the 2nd and later
+instance, includes a pointer back to first instance that is shorter than the
+original string.  For our purposes, that means if we provide input that contains
+substrings of the unknown key, we will get a shorter response than if our string
+is completely different than the flag.  To test my theory, I fired off 27 tries
+to the server, each containing one of the valid ([a-z_]) characters repeated 3
+times: all responses, save one, were the same length (30 bytes).  Only the
+repeated 'c' string came back at 29 bytes.  This led me to believe that 'c'
+probably started the flag.  (If it only needed to be <b>in</b> the flag, more
+than one character would likely have returned a different length.)</p><p>I put
+together a script to go through character by character and look for lengths that
+were shorter from the rest.  During my first couple of runs, it would frequently
+get stuck until I hit upon the idea of putting the test string multiple times,
+increasing the likelihood that duplicate string elimination would use the entire
+thing.  Eventually, I had a few candidate flags, but from glancing at them, it
+was clear what the answer was...</p><div class="geshifilter"><div class="python geshifilter-python" style="font-family:monospace;"><pre style="font-family: monospace; font-weight: normal; font-style: normal"><span style="color: #ff7700;font-weight:bold;">import</span> <span style="color: #dc143c;">struct</span>
+<span style="color: #ff7700;font-weight:bold;">import</span> <span style="color: #dc143c;">socket</span>
+<span style="color: #ff7700;font-weight:bold;">import</span> <span style="color: #dc143c;">sys</span>
+<span style="color: #ff7700;font-weight:bold;">import</span> <span style="color: #dc143c;">collections</span>
+ 
+HOST <span style="color: #66cc66;">=</span> <span style="color: #483d8b;">'ip.add.res.s'</span>
+PORT <span style="color: #66cc66;">=</span> <span style="color: #ff4500;">4433</span>
+ 
+<span style="color: #ff7700;font-weight:bold;">def</span> try_val<span style="color: black;">(</span>val<span style="color: black;">)</span>:
+  sock <span style="color: #66cc66;">=</span> <span style="color: #dc143c;">socket</span>.<span style="color: #dc143c;">socket</span><span style="color: black;">(</span><span style="color: #dc143c;">socket</span>.<span style="color: black;">AF_INET</span><span style="color: #66cc66;">,</span> <span style="color: #dc143c;">socket</span>.<span style="color: black;">SOCK_STREAM</span><span style="color: black;">)</span>
+  sock.<span style="color: black;">connect</span><span style="color: black;">(</span><span style="color: black;">(</span>HOST<span style="color: #66cc66;">,</span> PORT<span style="color: black;">)</span><span style="color: black;">)</span>
+  nonce <span style="color: #66cc66;">=</span> sock.<span style="color: black;">recv</span><span style="color: black;">(</span><span style="color: #ff4500;">8</span><span style="color: black;">)</span>
+  sock.<span style="color: black;">send</span><span style="color: black;">(</span><span style="color: #dc143c;">struct</span>.<span style="color: black;">pack</span><span style="color: black;">(</span><span style="color: #483d8b;">'I'</span><span style="color: #66cc66;">,</span> <span style="color: #008000;">len</span><span style="color: black;">(</span>val<span style="color: black;">)</span><span style="color: black;">)</span><span style="color: black;">)</span>
+  sock.<span style="color: black;">send</span><span style="color: black;">(</span>val<span style="color: black;">)</span>
+  data <span style="color: #66cc66;">=</span> sock.<span style="color: black;">recv</span><span style="color: black;">(</span><span style="color: #ff4500;">4</span><span style="color: black;">)</span>
+  recv_len <span style="color: #66cc66;">=</span> <span style="color: #dc143c;">struct</span>.<span style="color: black;">unpack</span><span style="color: black;">(</span><span style="color: #483d8b;">'I'</span><span style="color: #66cc66;">,</span> data<span style="color: black;">)</span><span style="color: black;">[</span><span style="color: #ff4500;">0</span><span style="color: black;">]</span>
+  data <span style="color: #66cc66;">=</span> sock.<span style="color: black;">recv</span><span style="color: black;">(</span>recv_len<span style="color: black;">)</span>
+  <span style="color: #ff7700;font-weight:bold;">return</span> <span style="color: black;">(</span>nonce<span style="color: #66cc66;">,</span> data<span style="color: black;">)</span>
+ 
+ 
+<span style="color: #ff7700;font-weight:bold;">def</span> get_candidate_len<span style="color: black;">(</span>can<span style="color: black;">)</span>:
+  nonce<span style="color: #66cc66;">,</span> data <span style="color: #66cc66;">=</span> try_val<span style="color: black;">(</span>can<span style="color: black;">)</span>
+  <span style="color: #ff7700;font-weight:bold;">return</span> <span style="color: #008000;">len</span><span style="color: black;">(</span>data<span style="color: black;">)</span>
+ 
+<span style="color: #ff7700;font-weight:bold;">def</span> try_layer<span style="color: black;">(</span>prefix<span style="color: black;">)</span>:
+  <span style="color: #ff7700;font-weight:bold;">if</span> <span style="color: #008000;">len</span><span style="color: black;">(</span>prefix<span style="color: black;">)</span> <span style="color: #66cc66;">==</span> <span style="color: #ff4500;">20</span>:
+    <span style="color: #ff7700;font-weight:bold;">print</span> <span style="color: #483d8b;">"Found candidate %s!"</span> % prefix
+    <span style="color: #ff7700;font-weight:bold;">return</span>
+ 
+  candidates <span style="color: #66cc66;">=</span> <span style="color: #483d8b;">'abcdefghijklmnopqrstuvwxyz_'</span>
+  <span style="color: #ff7700;font-weight:bold;">print</span> <span style="color: #483d8b;">"Trying %s"</span> % prefix
+  <span style="color: #dc143c;">sys</span>.<span style="color: black;">stdout</span>.<span style="color: black;">flush</span><span style="color: black;">(</span><span style="color: black;">)</span>
+  samples <span style="color: #66cc66;">=</span> <span style="color: black;">{</span><span style="color: black;">}</span>
+  <span style="color: #ff7700;font-weight:bold;">for</span> c <span style="color: #ff7700;font-weight:bold;">in</span> candidates:
+    val <span style="color: #66cc66;">=</span> prefix + c
+    samples<span style="color: black;">[</span>val<span style="color: black;">]</span> <span style="color: #66cc66;">=</span> get_candidate_len<span style="color: black;">(</span>val*<span style="color: #ff4500;">2</span> <span style="color: #ff7700;font-weight:bold;">if</span> <span style="color: #008000;">len</span><span style="color: black;">(</span>val<span style="color: black;">)</span><span style="color: #66cc66;">&gt;</span><span style="color: #ff4500;">9</span> <span style="color: #ff7700;font-weight:bold;">else</span> val*<span style="color: #ff4500;">5</span><span style="color: black;">)</span>
+  m <span style="color: #66cc66;">=</span> mode<span style="color: black;">(</span>samples.<span style="color: black;">values</span><span style="color: black;">(</span><span style="color: black;">)</span><span style="color: black;">)</span>
+  <span style="color: #ff7700;font-weight:bold;">for</span> k <span style="color: #ff7700;font-weight:bold;">in</span> samples:
+    <span style="color: #ff7700;font-weight:bold;">if</span> samples<span style="color: black;">[</span>k<span style="color: black;">]</span> <span style="color: #66cc66;">==</span> m:
+      <span style="color: #ff7700;font-weight:bold;">continue</span>
+    try_layer<span style="color: black;">(</span>k<span style="color: black;">)</span>
+ 
+<span style="color: #ff7700;font-weight:bold;">def</span> mode<span style="color: black;">(</span>l<span style="color: black;">)</span>:
+  c <span style="color: #66cc66;">=</span> <span style="color: #dc143c;">collections</span>.<span style="color: black;">Counter</span><span style="color: black;">(</span>l<span style="color: black;">)</span>
+  <span style="color: #ff7700;font-weight:bold;">return</span> c.<span style="color: black;">most_common</span><span style="color: black;">(</span><span style="color: #ff4500;">1</span><span style="color: black;">)</span><span style="color: black;">[</span><span style="color: #ff4500;">0</span><span style="color: black;">]</span><span style="color: black;">[</span><span style="color: #ff4500;">0</span><span style="color: black;">]</span>
+ 
+try_layer<span style="color: black;">(</span><span style="color: #483d8b;">''</span><span style="color: black;">)</span></pre></div></div>
+

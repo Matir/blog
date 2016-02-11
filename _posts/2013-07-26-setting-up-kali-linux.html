@@ -1,0 +1,47 @@
+---
+layout: post
+title: "Setting Up Kali Linux"
+date: 2013-07-26 03:55:12 +0000
+permalink: /blog/setting-up-kali-linux/
+categories: Linux,Security
+tags: kali linux
+---
+<p>I've been meaning to write this up for a while, and it's as much a reminder to me as it's meant to be useful to anyone else, but with DEFCON around the corner, I'm reformatting my laptop for the trip, so now's the best time.  I'm sure everyone has their own "routine" when setting up a new system.  This is my checklist for Kali Linux, which I use for security cons &amp; ctfs, and is separate from my everyday OS installs.</p>
+<p><strong>Install with full-disk encryption<br></strong>Never know when my laptop might go missing.  Even though I try not to have any personal information on it for cons, I figure it's better safe than sorry.   (For example, I typically have a VPN setup, I'd rather those keys not be copied.)</p>
+<p><strong>Install updates and missing packages<br></strong>I enable 32-bit libs (dpkg --add-architecture i386) and make sure I have the latest packages (apt-get update &amp;&amp; apt-get dist-upgrade).  Then I install a few packages I feel are "missing" (i.e., I always want):</p>
+<ul>
+<li>strace</li>
+<li>ltrace</li>
+<li>cryptsetup</li>
+<li>lvm2</li>
+<li>network-manager-openvpn-gnome</li>
+<li>byobu</li>
+<li>cinnamon</li>
+<li>ia32-libs</li>
+<li>virtualbox</li>
+<li>virtualbox-guest-additions-iso</li>
+<li>gnupg2</li>
+<li>opensc</li>
+<li>scdaemon</li>
+<li>ufw</li>
+<li>alsa</li>
+<li>gcc-multilib</li>
+<li>volatility</li>
+<li>kpartx</li>
+<li>yara-python</li>
+<li>gimp</li>
+<li>wine-bin:i386</li>
+<li>ldap-utils</li>
+<li>ecryptfs-utils</li>
+<li>python-hachoir-urwid</li>
+</ul>
+<p>I also, of course, install Chrome and a few chrome extensions.</p>
+<p><strong>Dotfiles<br></strong>I also install a bunch of dotfiles I keep in a git repository:</p>
+<ul>
+<li>.gnupg/gpg.conf</li>
+<li>.bashrc</li>
+<li>.gdbinit</li>
+<li>.vimrc</li>
+<li>.gitconfig</li>
+<li>.ssh/config</li>
+</ul>

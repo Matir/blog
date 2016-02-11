@@ -1,0 +1,12 @@
+name: System Overlord
+description: SystemOverlord.com blog -- security, CTFs, and hacking.
+url: https://systemoverlord.com/
+copy_name: David Tomaschik
+markdown: kramdown
+highlighter: rouge
+github: https://www.github.com/matir
+about: Security Engineer.  CTF Player.  Hacker.
+urls:
+    - text: github
+      url: https://github.com/matir
+logo: /img/logo.png

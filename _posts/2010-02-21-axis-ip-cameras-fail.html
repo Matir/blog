@@ -1,0 +1,36 @@
+---
+layout: post
+title: "AXIS IP Cameras = Fail"
+date: 2010-02-21 04:42:40 +0000
+permalink: /blog/axis-ip-cameras-fail/
+category: Work
+tags: Work,Linux,Cameras
+---
+<p>At work, we've been developing a custom camera recording solution for the past 4 months.  Essentially, it's a system to provide a web-based interface to record a number of IP cameras, transcode the videos, and output the videos to a variety of the web applications we use (Moodle, Drupal, etc.)  The cameras in question are Axis Q1755 cameras, which are really intended for use as HD security cameras and not in the studio-type environment we have here.  (Neither I nor my department was involved in camera selection, and those who were have serious second thoughts.)  In any case, these cameras are a continuous source of frustration for us.</p>
+<p><span style="text-decoration: underline;"><strong>H.264 Support</strong></span></p>
+<p>The h.264/RTP support in these camera doesn't seem to fit to any real standard.  Multiple clients have complained about the malformed h.264 stream coming from these cameras.  (The I-frame numbering seems inconsistent, among other things.)</p>
+<p><span style="text-decoration: underline;"><strong>Hardware Capabilities</strong></span></p>
+<p>The manual claims the camera supports a maximum of 10 clients.  In our testing on a GigE network, video quality began to degrade at 3 Unicast clients (720p capture mode, h.264 streaming, GOV length of 32).  Looking at the CPU load on the cameras, load averages exceeded 5.0 with 3 clients.  This is completely unacceptable for our needs.  So we thought we would turn to multicasting.  We even called networking, confirmed that the network was setup for multicasting, and got a multicast IP allocation.  Seems that would fix things up, right?</p>
+<p><span style="text-decoration: underline;"><strong>Multicasting</strong></span></p>
+<p>Multicast support is an adventure.  Several readings of the manual found the only documented multicast capability was on Windows with IE and an Axis ActiveX control called Axis Media Control (AMC).  AMC, of course, requires administrator privileges to install.  Even that would leave Linux, Mac, and Firefox users in the cold.  I figured we were just missing something and we should contact AXIS Support.  Big mistake.  Big waste of time.  The response to the initial inquiry was, essentially, a nice RTFM:</p>
+<blockquote><p>Thank you for contacting Axis Communications. My name is &lt;cut&gt; and I will be happy to assist you today. The Axis Q1755 has multicast enabled by default, where as some of our older units required you to enable multicasting.</p>
+<p>The manual is a good place to start<br /><a href="http://www.axis.com/files/manuals/um_q1755_35572_0905.pdf" target="_blank">http://www.axis.com/files/manuals/um_q1755_35572_0905.pdf</a></p>
+<p>On page 11 and 12 explains ways to pull the multicast stream from the camera.</p>
+<p>Best regards,<br />
+Axis Customer Services</p></blockquote>
+<p>Ok, I figured that maybe they get a lot of people who haven't read the manual.  Or maybe I missed something.  I reread the relevant section of the manual, but found nothing regarding standard RTP/multicasting support.  I typed up a longer description of the steps we had taken and asked about the location of a multicast-ready SDP file from the camera.  Their response, in its entirety, reads:</p>
+<blockquote><p>The Axis Q1755 has a configuration page for Multicasting.<br /><a href="http:///" target="_blank">http://</a>&lt;IP&gt;/admin/config.shtml?group=Network<br />
+Under the section Network RTP R0:</p>
+<p>Best regards,<br />
+Axis Customer Services</p></blockquote>
+<p>Clearly, this was what I asked, since I had included the current value of our multicast settings in a previous message.  Once more, I attempt to elicit useful information from Axis support.  Imagine my surprise when I received an informative, if disappointing response:</p>
+<blockquote><p>
+I have found another case which has this to say about multicasting.</p>
+<p>Unfortunately RTP multicast using VLC doesn't work on the new generation of products running firmware version 5.xx (like the Axis Q1755). Although multicast is only supported using AMC and Windows Media Player.<br />
+AMC is only available with Internet Explorer.</p>
+<p>Best regards,<br />
+Axis Customer Services</p></blockquote>
+<p>In other words: we took out an industry standard and substituted our own homebrew multicast "solution" that only works with IE.  Thanks, Axis.  Removing functionality is always a market winner.</p>
+<p>Conclusion: Don't use Axis products unless you're happy doing things the "Axis way."  Forget industry standards.  With a little luck, this will be the last time I work on a project involving Axis cameras.  Fortunately, I think those who are making the buying decisions have seen the problems and will start looking at alternative suppliers.</p>
+<p>Axis, and others: vendor lock-in = bad.  You might think it helps.  Think again.</p>
+

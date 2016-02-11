@@ -1,0 +1,57 @@
+---
+layout: post
+title: "Using an SSH Connection to Provide Remote Support (Part I)"
+date: 2011-09-20 15:37:46 +0000
+permalink: /blog/using-an-ssh-connection-to-provide-remote-support-part-i/
+category: Linux
+tags: Linux,SSH,support,tunnel
+---
+<p>
+	Last week, at the ALE meeting, a question came up about using SSH to provide remote support for someone who is not especially Linux-literate.  I suggested using an SSH reverse tunnel so the end-user wouldn't need to worry about firewalls, NAT, etc.</p>
+<p>
+	Thinking about the problem, I realize that it's a little more complicated than that.  So in part 1, I'm going to discuss the general solution and the approach to the problem.  In Part II, I'll present a more comprehensive solution that will (I think) scale better.</p>
+<p>
+	Let's first talk about reverse SSH tunnels.  These tunnels allow a data stream to be carried across the SSH connection in reverse -- that is, from the server to the client.  This is useful for getting back in past a firewall/NAT router/etc. without needing to make configuration changes.</p>
+<p>
+	<strong>The Basic Premise</strong></p>
+<p>
+	First off, let's be clear on the terminology we'll be using.  The "client machine" is the machine being used by the person receiving support.  The "server" is a machine under the control of the person providing the support.</p>
+<p>
+	<strong>Server Setup</strong></p>
+<ul><li>
+		Install OpenSSH Client &amp; Server</li>
+<li>
+		Provide inbound access to SSH (port 22 or alternate port) (this may require firewall changes, router configuration, etc.)</li>
+<li>
+		Generate a keypair (we'll call this 'reverse.key') to be used to connect back to the client.</li>
+<li>
+		Create a 'support' account for inbound connections.</li>
+<li>
+		Set up a DNS entry (dynamic DNS is fine) for the server. We'll call it supporthost.example.com.</li>
+</ul><p>
+	<strong>Client Setup</strong></p>
+<ul><li>
+		Install OpenSSH Client &amp; Server</li>
+<li>
+		Add 'reverse.key.pub' from above to an account 'support' that has sudo access (you'll probably need sudo to provide support.)</li>
+<li>
+		Generate a private key (we'll call this key 'support.key') and copy off the public portion.  This should be added to the server's 'support' account.</li>
+</ul><p>
+	<strong>The Script</strong></p>
+<p>
+	Place this script, marked executable, on the user's desktop. Double clicking it will allow a support connection in.<br /></p><div class="geshifilter">
+<div class="text geshifilter-text" style="font-family:monospace;">
+<pre style="font-family: monospace; font-weight: normal; font-style: normal"> #!/bin/bash
+ 
+ssh -N -R 2222:localhost:22 -i .ssh/support.key support@supporthost.example.com &amp;
+ 
+        echo "Support connection ready!"</pre></div>
+</div>
+
+<p>
+	<strong>Finally</strong></p>
+<p>
+	After the script is run, you can ssh -p 2222 <a href="mailto:support@localhost">support@localhost</a> to connect to their machine via the reverse SSH tunnel.</p>
+<p>
+	In the next part, we'll talk about a script to generate most of this for us and make it much easier to set up.</p>
+

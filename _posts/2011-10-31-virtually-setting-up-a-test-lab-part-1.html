@@ -1,0 +1,21 @@
+---
+layout: post
+title: "(Virtually) Setting Up A Test Lab (Part 1)"
+date: 2011-10-31 04:43:30 +0000
+permalink: /blog/virtually-setting-up-a-test-lab-part-1/
+category: Linux
+tags: lab,network,kvm,Debian
+---
+<p>
+	I've spent a little bit of time today doing something that was long overdue.  I've transitioned most of my day-to-day data to my laptop, so I decided it was time to put my desktop to use as a "virtual lab."</p>
+<p>
+	I've set up KVM on my desktop with two virtual machines (so far) in it.  The first one I call "LabManager" -- it's effectively a head node from the "Lab" network out to the real world.</p>
+<p>
+	Currently, LabManager has two interfaces -- one of them is bridged to eth0 on the desktop, and the other is only bridged to other VMs.  The other VMs have no direct connectivity.  At this time, LabManager is not forwarding packets, bridging, or routing.  It is running dnsmasq for DNS &amp; DHCP and apt-cacher-ng to allow systems behind it to download packages.  Additionally, LabManager is running a tftp server to perform PXE boot installs.  These installs use a preseed file so the only manual entry is a hostname.  Everything else is automatically setup.</p>
+<p>
+	It's my hope that keeping the networks segregated will let me play around with "dangerous" things without posing any risk to my real home network (or the internet).  The use of RFC 1918 IPs and restrictive firewalls should help with this.  I've got the preseed installing puppet, but I haven't set up the puppetmaster yet.  That'll be the 2nd phase, which I'll hopefully get around to by next weekend.</p>
+<p>
+	Phase 3 will be providing distributions other than Debian stable via PXE boot.  I'd like to provide both some bleeding-edge work and some older software for pentesting practice.</p>
+<p>
+	Suggestions for improvement are welcome!</p>
+

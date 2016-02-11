@@ -1,0 +1,16 @@
+---
+layout: post
+title: "apc.stat=0 and Updating Software"
+date: 2011-02-08 04:36:41 +0000
+permalink: /blog/apcstat0-and-updating-software/
+category: Linux
+tags: Linux,Administration,PHP,APC
+---
+<p>When you're running APC on PHP and you have apc.stat=0, it's sometimes easy to forget that when you update software (WordPress) the <strong>code running on your server remains unchanged until you flush the APC cache.</strong> So, when you go to update WordPress to 3.0.5, you should flush your APC cache after running the update.  If you don't, you'll be very confused when WordPress repeatedly tells you to upgrade to the version you just installed!</p>
+<p>This is mostly a note to myself, but I hope it helps others as well.  And if you're wondering what apc.stat does, read on!</p>
+<p>apc.stat determines if APC should perform a stat() call on the file to see if it has changed since it was cached.  From the <a href="http://www.php.net/manual/en/apc.configuration.php#ini.apc.stat">PHP documentation</a>:</p>
+<blockquote><dl><dd>Be careful changing this setting.  This defaults to on, forcing APC to       stat (check) the script on each request to determine if it has been modified.       If it has been modified it will recompile and cache the new version.         If this setting is off, APC will not check, which usually means that to        force APC to recheck files, the web server will have to be restarted or the        cache will have to be manually cleared.  Note that FastCGI web server configurations       may not clear the cache on restart.  On a production server where the        script files rarely change, a significant performance boost can be        achieved by disabled stats.
+<p>For included/required files this option applies as well, but note that       for relative path includes (any path that doesn't start       with / on Unix) APC has to check in order to uniquely identify the file.       If you use absolute path includes APC can skip the stat and use that       absolute path as the unique identifier for the file.</p>
+</dd>
+</dl></blockquote>
+

@@ -1,0 +1,28 @@
+---
+layout: post
+title: "Migrating an Access Database to MySQL"
+date: 2011-09-21 22:32:00 +0000
+permalink: /blog/migrating-an-access-database-to-mysql/
+category: Linux
+tags: MySQL,Access,Database
+---
+<p>I'm currently taking a Database class as part of my requirements for my M.S. in Computer Science.  Several of our assignments are based on a database provided to us as a Microsoft Access Database.  While I have a Windows 7 Virtual Machine, and could install Office in it, I prefer to use free software whenever possible, so I looked for a way to use this database with free software.</p>
+<p>Fortunately, the database is in the earlier .mdb format, and not the newer .accdb format.  I first found a glimmer of hope in an <a href="http://nialldonegan.me/2007/03/10/converting-microsoft-access-mdb-into-csv-or-mysql-in-linux/">article</a> by Niall Donegan describing the use of the <a href="http://mdbtools.sourceforge.net/">MDB Tools</a> package.</p>
+<p>While the steps posted by Niall worked, and worked well, there are a couple of quirks in MDB Tools that took some working around.  Additionally, the steps are kind of repetitive.  So I decided to write a small wrapper script for mdb-tools to export the data as a MySQL script.  The script takes one argument (the name of the mdb file you're working with) and outputs the SQL script on standard output.  So, for example, you might use it as: <span class="geshifilter"><code class="text geshifilter-text">mdb2mysql students.mdb|mysql students</code></span>.  Here's the script (I call it mdb2mysql) itself:</p>
+<div class="geshifilter"><div class="bash geshifilter-bash" style="font-family:monospace;"><pre style="font-family: monospace; font-weight: normal; font-style: normal"><span style="color: #666666; font-style: italic;">#!/bin/bash</span>
+ 
+<span style="color: #000000; font-weight: bold;">if</span> <span style="color: #7a0874; font-weight: bold;">[</span> <span style="color: #007800;">$#</span> <span style="color: #660033;">-lt</span> <span style="color: #000000;">1</span> <span style="color: #7a0874; font-weight: bold;">]</span> ; <span style="color: #000000; font-weight: bold;">then</span>
+        <span style="color: #7a0874; font-weight: bold;">echo</span> <span style="color: #ff0000;">"Usage: $0 [mdbfile]"</span> <span style="color: #000000; font-weight: bold;">&gt;</span> <span style="color: #000000; font-weight: bold;">/</span>dev<span style="color: #000000; font-weight: bold;">/</span>stderr
+        <span style="color: #7a0874; font-weight: bold;">exit</span> <span style="color: #000000;">1</span>
+<span style="color: #000000; font-weight: bold;">fi</span>
+ 
+<span style="color: #007800;">MDB</span>=<span style="color: #ff0000;">"$1"</span>
+ 
+<span style="color: #666666; font-style: italic;"># Extract the schema/DDL</span>
+mdb-schema <span style="color: #007800;">$MDB</span> mysql <span style="color: #000000; font-weight: bold;">|</span> <span style="color: #c20cb9; font-weight: bold;">sed</span> <span style="color: #ff0000;">'s/DROP TABLE/DROP TABLE IF EXISTS/'</span>
+ 
+<span style="color: #666666; font-style: italic;"># Extract table data</span>
+mdb-tables <span style="color: #660033;">-1</span> <span style="color: #007800;">$MDB</span> <span style="color: #000000; font-weight: bold;">|</span> <span style="color: #000000; font-weight: bold;">while</span> <span style="color: #c20cb9; font-weight: bold;">read</span> TABLE ; <span style="color: #000000; font-weight: bold;">do</span>
+        mdb-export <span style="color: #660033;">-I</span> <span style="color: #007800;">$MDB</span> <span style="color: #007800;">$TABLE</span> <span style="color: #000000; font-weight: bold;">|</span> <span style="color: #c20cb9; font-weight: bold;">sed</span> <span style="color: #ff0000;">'s/$/;/'</span>
+<span style="color: #000000; font-weight: bold;">done</span></pre></div></div>
+<p>Hopefully this helps others who just need to extract their data from an Access Database.  It should be noted that this only gets the schema and data, and does not include foreign keys, views, etc.</p>

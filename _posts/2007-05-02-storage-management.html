@@ -1,0 +1,19 @@
+---
+layout: post
+title: "Storage Management"
+date: 2007-05-02 00:23:10 +0000
+permalink: /blog/storage-management/
+category: Computer
+---
+<p>My desktop has a fair amount of storage (~700GB) and a lot of that is in use with multimedia and the like.  For example, many of my favorite IPTV shows (<a href="http://hak5.org">Hak.5</a>, <a href="http://dl.tv">DL.TV</a>, etc.) find their home on my desktop computer.</p>
+<p>In order to manage this flood of multimedia, I have a jfs filesystem mounted as /multimedia.  Today I wanted to import about 10GB of music that "escaped" iTunes on my windows laptop.  In doing so, I completely filled my existing /multimedia partition.  Ordinarily, that would be a problem, wouldn't it?  Not with LVM :)</p>
+<p>LVM, or Logical Volume Management, divides hard drive space up into a number of chunks (extents) that can be allocated (on-demand) to given virtual partition.  The only downside is that the filesystem on the partition must support resizing.  Most filesystems (well, most Linux filesystems) take to resizing larger very well.  Some do not shrink as well.</p>
+<p>So, to give myself another 20G of multimedia was a simple:</p>
+<div class="geshifilter">
+<div class="text geshifilter-text" style="font-family:monospace;">
+<pre style="font-family: monospace; font-weight: normal; font-style: normal">umount /multimedia
+lvextend -L220G /dev/MainVG/VideoLV
+mount -o resize /multimedia</pre></div>
+</div>
+<p>Imagine trying to expand space on a 200G partition without LVM.  I think most people would have just symlinked in more data, or split the data onto two partitions.</p>
+

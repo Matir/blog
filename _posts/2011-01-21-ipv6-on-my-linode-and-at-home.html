@@ -1,0 +1,62 @@
+---
+layout: post
+title: "IPv6: On my Linode, and at Home"
+date: 2011-01-21 02:07:32 +0000
+permalink: /blog/ipv6-on-my-linode-and-at-home/
+category: Linux
+tags: Linux,Administration,IPv6
+---
+<p>Hurricane Electric, ARIN, and others, <a href="http://ipv6.he.net/statistics/">report</a> that we may be as close as 12 days to exhaustion of the main IPv4 pool.  Accordingly, I decided it was time to get both my VPS and my home network IPv6-ready.  It wasn't as painful as I feared, though doing it in DD-WRT is a bigger pain than it should be.  If I had an OpenWRT router, it looks like it would be easier.</p>
+<!--break--><p>
+As many people know, my blog is hosted by the good folks at <a href="http://www.linode.com/?r=680a893e24df3597d32f58cd41930e969027dc06">Linode</a>.  I've used about 5 VPS providers and they're by far the best. (Though not the cheapest, but it's worth it.)  As of yesterday, I activated IPv6 on my Linode using the <a href="https://secure.wikimedia.org/wikipedia/en/wiki/6to4">6to4 IPv6-in-IPv4 encapsulation technology</a>.  This takes the 32 bits of your IPv4 address, converts it to hex, and appends that to 2002 as the network portion of your IP address.  (It actually also adds another 16 bits, all 0, to get to a /64).  Accordingly, 74.207.225.127 becomes the 2002:4acf:e17f::/64 network, with my server's IP at 2002:4acf:e17f::1.  (You can also see this using dig, nslookup, or your other favorite DNS tool.)  The configuration for this is pretty simple actually.  You just need the 'ipv6' and 'sit' modules installed (or built into your kernel) and a configuration like this in your /etc/network/interfaces:</p>
+<pre>auto tun6to4
+iface tun6to4 inet6 v4tunnel
+   address YOUR_IPV6_ADDRESS
+   netmask 16
+   gateway ::192.88.99.1
+   endpoint any
+   local YOUR_IPV4_ADDRESS</pre><p>There are a number of calculators online to help you translate your IPv4 address into your 6to4 IPv6 address (<a href="http://waldner.netsons.org/f6-6to4.php">this one seems to work well</a>).</p>
+<p>At home, I implemented IPv6 by having my router connect to IPv6 via Comcast's 6rd service.  I then use radvd to broadcast an IPv6 router advertisement to my workstations.  I took great care to filter my connections fairly carefully, as there is no more NAT in IPv6, so you cannot depend on that to protect devices behind a router -- you need to do real firewalling (not that hard for a bunch of clients on your LAN).</p>
+<p>On dd-wrt, the hardest part is getting the right kernel modules.  You need to manually download and unpack several ipkgs.  I used the module directions from <a href="http://blog.dest-unreach.be/2010/12/05/adding-ipv6-support-to-dd-wrt">here</a>, but I wrote my own script to bring up the 6rd tunnel, load firewall rules, and otherwise get things "just right".  Here's that script, in case anyone finds it useful:</p>
+<pre>#!/bin/sh
+insmod /lib/modules/`uname -r`/kernel/net/ipv6/sit.ko
+sleep 5
+HOST6RD=$(nslookup 6rd.comcast.net |grep "Address"|awk '{ print $3 }'|grep -v 192.168.1.1 -m1)
+WANIP=$(ip -4 addr show dev vlan2 | grep 'inet ' | awk '{print $2}' | cut -d/ -f1)
+if [ -n "$WANIP" ]
+then
+V6PREFIX=$(printf ' 2001:55c:%02x%02x:%02x%02x' $(echo $WANIP | tr . ' '))
+ip tunnel add tun6rd mode sit ttl 255 remote any local $WANIP
+ip link set tun6rd mtu 1280
+ip link set tun6rd up
+ip addr add $V6PREFIX:0::1/32 dev tun6rd
+ip addr add $V6PREFIX:1::1/64 dev br0
+ip -6 route add 2000::/3 via ::$HOST6RD dev tun6rd
+kill -HUP $(cat /var/run/radvd.pid)
+fi
+echo "interface br0 { \
+MinRtrAdvInterval 3; MaxRtrAdvInterval 10; AdvLinkMTU 1280; AdvSendAdvert on; \
+prefix $V6PREFIX::/64 { AdvOnLink on; AdvAutonomous on; AdvValidLifetime 86400; \
+AdvPreferredLifetime 86400; }; };" \
+&gt; /tmp/radvd.conf
+echo 1 &gt; /proc/sys/net/ipv6/conf/all/forwarding
+radvd -C /tmp/radvd.conf start
+# FW
+insmod /jffs/lib/modules/2.6.24.111/ip6_tables.ko
+insmod /jffs/lib/modules/2.6.24.111/ip6table_filter.ko
+insmod /jffs/lib/modules/2.6.24.111/nf_conntrack_ipv6.ko
+export IP6TABLES_LIB_DIR=/jffs/usr/lib/iptables
+PATH="$PATH:/jffs/usr/sbin"
+ip6tables -F
+ip6tables -P INPUT DROP
+ip6tables -P FORWARD DROP
+ip6tables -A INPUT -m state --state ESTABLISHED,RELATED -j ACCEPT
+ip6tables -A INPUT -p icmpv6 --icmpv6-type echo-request -j ACCEPT
+ip6tables -A INPUT -i br0 -p icmpv6 --icmpv6-type neighbor-solicitation -j ACCEPT
+ip6tables -A INPUT -i br0 -p icmpv6 --icmpv6-type neighbor-advertisement -j ACCEPT
+ip6tables -A INPUT -i br0 -p icmpv6 --icmpv6-type router-solicitation -j ACCEPT
+ip6tables -A INPUT -i br0 -m tcp -p tcp --dport 2222 -j ACCEPT
+ip6tables -A INPUT -i br0 -m tcp -p tcp --dport 443 -j ACCEPT
+ip6tables -A FORWARD -m state --state ESTABLISHED,RELATED -j ACCEPT
+ip6tables -A FORWARD -i br0 -j ACCEPT
+</pre>

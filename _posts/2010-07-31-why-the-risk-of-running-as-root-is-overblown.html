@@ -1,0 +1,17 @@
+---
+layout: post
+title: "Why the risk of running as root is overblown"
+date: 2010-07-31 01:37:46 +0000
+permalink: /blog/why-the-risk-of-running-as-root-is-overblown/
+category: Linux
+tags: Linux,Security,Root
+---
+<p><strong>Please Note: This is only relevant to single-user desktop installations of Linux.  The issues I will discuss here don't apply to servers.  In fact, the exact opposite applies there.</strong></p>
+<p>"Don't run as root" is an oft-repeated mantra of *nix security.  While I agree <strong>100%</strong>, it's not as big on the desktop as some would think.  I'd like to point out why here.  I still believe you shouldn't login as root, but I also believe that it's up to each user to make their own decision.</p>
+<p>Think about the data on your computer.  What matters to you?  E-Mail?  Documents?  Images?  Most of us have things like family photos, financial records, personal communications, saved passwords, or other sensitive or irreplaceable data.  This is what we want to protect.  When I backup my desktop, I backup my home directory.  I don't backup my OS install, software, or anything else that is not private or difficult to replace.  Think of this as the "<strong>important stuff</strong>."</p>
+<p>So, let's talk about the <strong>important stuff</strong>.  What users have access to YOUR important stuff?  Most likely, your own user, and the root user.  So, great, not running as root eliminates one of the possible users that can access your file.  So what user do you run as?  Your own user.  So it's pretty obvious that not running as root doesn't restrict access to the important stuff.</p>
+<blockquote><p>Need proof that your data is no safer under your own user?  <em>Think</em> about running "rm -rf /" as root or as your own user.  What happens to your data either way?  It's gone.  Don't run this, just think about it.</p></blockquote>
+<p>So what do you gain by not running as root?  Well, your system is a lot less likely to be the victim of an ongoing compromise.  As root, an attacker can modify your operating system to their liking.  Think that's not much?  Guess what: your ssh client now sends the username, host, and password for any system you connect to to a server in China.  Or maybe new files you create are uploaded to an anonymous file-sharing site on the internet.  Perhaps every key you touch is recorded to grab usernames, passwords, credit card numbers, and your most personal conversations.  Or maybe an attacker uses your computer as a middle man for downloading child pornography.  That will be fun to explain to the FBI.</p>
+<p>So, obviously some things need to run as root: system configuration tools, for example.  However, running these using sudo limits your exposure to just these utilities, rather than the thousands (millions?) of lines of code in a full desktop environment.</p>
+<p>In short, if you want to run as root on your desktop, go for it.  But know the risks, and know the consequences.  On the other hand, don't chant "don't login as root" as if it's a magic bullet for security.</p>
+

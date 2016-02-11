@@ -1,0 +1,13 @@
+---
+layout: post
+title: "3 Things in Linux you should NOT Install"
+date: 2007-05-21 17:43:25 +0000
+permalink: /blog/3-things-in-linux-you-should-not-install/
+category: Misc
+---
+<p>While I'm all for promoting the use of Linux and software on Linux, unless you absolutely know what you're doing, there are certain things you should not install.  Entirely too often, I see people on <a href="http://linuxquestions.org">LinuxQuestions.org</a> asking how to configure one of these or why they will not work.  So, in no particular order, 3 Things you should NOT Install:</p>
+<!--break--><ol><li> <strong>RedHat 9.</strong>  For that matter, you should not install any of the "classic" RedHats.  They're old and outdated.  If you want commercially supported, look at RHEL.  For free RedHat-like distributions, look at CentOS (Server) and Fedora Core (Workstation).  If you run a RedHat 9 server that faces the internet, there is a good chance you will get rooted.  It is NOT supported for security or otherwise.</li>
+<li><strong>Telnetd.</strong> [<strong>Edit:</strong> several people have pointed out that I did not make it clear if I meant the server or the client.  The telnet client is quite useful, it is the server that introduces many security concerns.] Telnet is unencrypted and unsecure.  Would you send your credit card number over an unencrypted link?  Then why send your passwords?  SSH can do everything Telnet can, and more.  SSH can do file transfers, encrypt other connections, compress your data stream, and allow you to connect without typing a password.  Oh, and there are SSH clients for just about every system on earth, so no worries about incompatibilities.</li>
+<li><strong>rsh, rlogin, etc.</strong> The authentication mechanisms in rsh and rlogin can easily be defeated.  Oh, and they use plaintext too, so everything that applies to Telnet applies here as well.</li>
+</ol><p>I can think of several more items, but these are the biggest for security.  And while you're configuring the SSH server, don't forget to turn root logins off with "PermitRootLogin no".</p>
+

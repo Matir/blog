@@ -1,0 +1,61 @@
+---
+layout: post
+title: "Automatically Creating Archives from Git Tags"
+date: 2011-07-16 13:33:05 +0000
+permalink: /blog/automatically-creating-archives-from-git-tags/
+category: Linux
+tags: git,gitolite,scripts
+---
+<p>At work, we've been moving all of our development processes to git.  As part of that, I've encouraged that alphas, betas, and releases be tagged in git -- it's important to know which versions are in use where.  Additionally, my director wanted archives (zips/tars) of each of these versions to make it easier to install the releases, particularly for the members of our department who are not git-friendly.  I realized that with git hooks and our use of gitolite, we could produce automated archives when tags with the words alpha/beta/release are pushed to the gitolite server.  The script below is placed in the $GL_PACKAGE_HOOKS/common directory.  It uses the name of the repository to decide if it should be archived (matches $ALLOW_ARCHIVE) and where the archive should be put (within $ARCHIVE_DIR).
+</p>
+<div class="geshifilter">
+<div class="bash geshifilter-bash" style="font-family:monospace;">
+<pre style="font-family: monospace; font-weight: normal; font-style: normal"><span style="color: #666666; font-style: italic;">#!/bin/bash</span>
+<span style="color: #666666; font-style: italic;"># post-receive gitolite hook to produce archives</span>
+ 
+<span style="color: #666666; font-style: italic;"># Debug mode</span>
+<span style="color: #007800;">DEBUG</span>=<span style="color: #000000;">1</span>
+ 
+<span style="color: #666666; font-style: italic;"># Where to put archives</span>
+<span style="color: #007800;">ARCHIVE_DIR</span>=<span style="color: #000000; font-weight: bold;">/</span>srv<span style="color: #000000; font-weight: bold;">/</span>archives<span style="color: #000000; font-weight: bold;">/</span>
+ 
+<span style="color: #666666; font-style: italic;"># When to allow archiving (regex)</span>
+<span style="color: #007800;">ALLOW_ARCHIVE</span>=<span style="color: #ff0000;">"^(drupal|moodle)"</span>
+ 
+<span style="color: #666666; font-style: italic;">#### NO CONFIG BELOW ####</span>
+<span style="color: #666666; font-style: italic;"># Check if this repo can be archived</span>
+<span style="color: #000000; font-weight: bold;">if</span> <span style="color: #7a0874; font-weight: bold;">[</span><span style="color: #7a0874; font-weight: bold;">[</span> <span style="color: #000000; font-weight: bold;">!</span> <span style="color: #ff0000;">"<span style="color: #007800;">$GL_REPO</span>"</span> =~ <span style="color: #007800;">$ALLOW_ARCHIVE</span> <span style="color: #7a0874; font-weight: bold;">]</span><span style="color: #7a0874; font-weight: bold;">]</span> ; <span style="color: #000000; font-weight: bold;">then</span>
+    <span style="color: #7a0874; font-weight: bold;">[</span><span style="color: #7a0874; font-weight: bold;">[</span> <span style="color: #007800;">$DEBUG</span> <span style="color: #7a0874; font-weight: bold;">]</span><span style="color: #7a0874; font-weight: bold;">]</span> <span style="color: #000000; font-weight: bold;">&amp;&amp;</span> <span style="color: #7a0874; font-weight: bold;">echo</span> <span style="color: #ff0000;">"Archiving for this repository is disabled."</span> 
+    <span style="color: #7a0874; font-weight: bold;">exit</span> <span style="color: #000000;">0</span>
+<span style="color: #000000; font-weight: bold;">fi</span>
+ 
+<span style="color: #666666; font-style: italic;"># Get repo name</span>
+<span style="color: #007800;">ARCHIVE_DIR</span>=<span style="color: #ff0000;">"<span style="color: #007800;">${ARCHIVE_DIR}</span>/<span style="color: #007800;">${GL_REPO}</span>"</span>
+ 
+<span style="color: #000000; font-weight: bold;">while</span> <span style="color: #c20cb9; font-weight: bold;">read</span> rev1 rev2 ref ; <span style="color: #000000; font-weight: bold;">do</span>
+    <span style="color: #000000; font-weight: bold;">if</span> <span style="color: #7a0874; font-weight: bold;">[</span><span style="color: #7a0874; font-weight: bold;">[</span> <span style="color: #000000; font-weight: bold;">!</span> <span style="color: #ff0000;">"<span style="color: #007800;">$ref</span>"</span> =~ ^refs<span style="color: #000000; font-weight: bold;">/</span>tags <span style="color: #7a0874; font-weight: bold;">]</span><span style="color: #7a0874; font-weight: bold;">]</span> ; <span style="color: #000000; font-weight: bold;">then</span>
+        <span style="color: #7a0874; font-weight: bold;">[</span><span style="color: #7a0874; font-weight: bold;">[</span> <span style="color: #007800;">$DEBUG</span> <span style="color: #7a0874; font-weight: bold;">]</span><span style="color: #7a0874; font-weight: bold;">]</span> <span style="color: #000000; font-weight: bold;">&amp;&amp;</span> <span style="color: #7a0874; font-weight: bold;">echo</span> <span style="color: #ff0000;">"Not a tag reference..."</span>
+        <span style="color: #7a0874; font-weight: bold;">continue</span>
+    <span style="color: #000000; font-weight: bold;">fi</span>
+ 
+    <span style="color: #666666; font-style: italic;"># Get tag name</span>
+    <span style="color: #007800;">tag</span>=<span style="color: #800000;">${ref##*/}</span>
+ 
+    <span style="color: #666666; font-style: italic;"># Check if tag contains alpha, beta, or release:</span>
+    <span style="color: #000000; font-weight: bold;">if</span> <span style="color: #7a0874; font-weight: bold;">[</span><span style="color: #7a0874; font-weight: bold;">[</span> <span style="color: #000000; font-weight: bold;">!</span> <span style="color: #007800;">$tag</span> =~ <span style="color: #7a0874; font-weight: bold;">(</span>alpha<span style="color: #000000; font-weight: bold;">|</span>beta<span style="color: #000000; font-weight: bold;">|</span>release<span style="color: #7a0874; font-weight: bold;">)</span> <span style="color: #7a0874; font-weight: bold;">]</span><span style="color: #7a0874; font-weight: bold;">]</span> ; <span style="color: #000000; font-weight: bold;">then</span>
+        <span style="color: #7a0874; font-weight: bold;">[</span><span style="color: #7a0874; font-weight: bold;">[</span> <span style="color: #007800;">$DEBUG</span> <span style="color: #7a0874; font-weight: bold;">]</span><span style="color: #7a0874; font-weight: bold;">]</span> <span style="color: #000000; font-weight: bold;">&amp;&amp;</span> <span style="color: #7a0874; font-weight: bold;">echo</span> <span style="color: #ff0000;">"Not alpha/beta/release"</span>
+        <span style="color: #7a0874; font-weight: bold;">continue</span>
+    <span style="color: #000000; font-weight: bold;">fi</span>
+ 
+    <span style="color: #666666; font-style: italic;"># Ensure directory exists</span>
+    <span style="color: #c20cb9; font-weight: bold;">mkdir</span> <span style="color: #660033;">-p</span> <span style="color: #800000;">${ARCHIVE_DIR}</span>
+ 
+    <span style="color: #666666; font-style: italic;"># Repo base name</span>
+    <span style="color: #007800;">REPO_BASE</span>=<span style="color: #800000;">${GL_REPO##*/}</span>
+ 
+    <span style="color: #666666; font-style: italic;"># Make archive</span>
+    <span style="color: #7a0874; font-weight: bold;">[</span><span style="color: #7a0874; font-weight: bold;">[</span> <span style="color: #007800;">$DEBUG</span> <span style="color: #7a0874; font-weight: bold;">]</span><span style="color: #7a0874; font-weight: bold;">]</span> <span style="color: #000000; font-weight: bold;">&amp;&amp;</span> <span style="color: #7a0874; font-weight: bold;">echo</span> <span style="color: #c20cb9; font-weight: bold;">git archive</span> <span style="color: #660033;">--format</span>=<span style="color: #c20cb9; font-weight: bold;">zip</span> <span style="color: #660033;">--prefix</span>=<span style="color: #800000;">${REPO_BASE}</span><span style="color: #000000; font-weight: bold;">/</span> <span style="color: #660033;">-o</span> <span style="color: #ff0000;">"<span style="color: #007800;">${ARCHIVE_DIR}</span>/<span style="color: #007800;">$tag</span>.zip"</span> <span style="color: #007800;">$ref</span>
+    <span style="color: #c20cb9; font-weight: bold;">git archive</span> <span style="color: #660033;">--format</span>=<span style="color: #c20cb9; font-weight: bold;">zip</span> <span style="color: #660033;">--prefix</span>=<span style="color: #800000;">${REPO_BASE}</span><span style="color: #000000; font-weight: bold;">/</span> <span style="color: #660033;">-o</span> <span style="color: #ff0000;">"<span style="color: #007800;">${ARCHIVE_DIR}</span>/<span style="color: #007800;">$tag</span>.zip"</span> <span style="color: #007800;">$ref</span>
+<span style="color: #000000; font-weight: bold;">done</span></pre></div>
+</div>
+

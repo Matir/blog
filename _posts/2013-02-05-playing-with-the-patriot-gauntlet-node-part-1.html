@@ -1,0 +1,27 @@
+---
+layout: post
+title: "Playing with the Patriot Gauntlet Node (Part 1)"
+date: 2013-02-05 07:54:05 +0000
+permalink: /blog/playing-with-the-patriot-gauntlet-node-part-1/
+category: Computer
+tags: Embedded Systems,Hardware,Patriot Gauntlet Node
+---
+<p>I recently picked up a <a href="http://www.amazon.com/gp/product/B008KW61XK/ref=as_li_ss_tl?ie=UTF8&amp;camp=1789&amp;creative=390957&amp;creativeASIN=B008KW61XK&amp;linkCode=as2&amp;tag=systemovecom-20">Patriot Gauntlet Node</a> just to take a look at it.  Playing with the device, it seemed to be a pretty straightforward wireless SoC with a hard drive interface.  Many, if not most, of these embedded SoCs use Linux as their operating system, so I decided to go a bit further and see what was going on.</p>
+<p>I headed over to the Patriot website and downloaded the firmware for the Gauntlet Node, unzipped the file, and ran <a href="https://code.google.com/p/binwalk/">binwalk</a> against it.  (Binwalk is an awesome tool that essentially runs 'file' with a special magic file against every possible byte offset to find the parts of a firmware image.)</p>
+<pre>
+DECIMAL   	HEX       	DESCRIPTION
+-------------------------------------------------------------------------------------------------------
+0         	0x0       	uImage header, header size: 64 bytes, header CRC: 0xE7CCD2D7, created: Mon Nov 19 21:53:24 2012, image size: 5646212 bytes, Data Address: 0x80000000, Entry Point: 0x803DC000, data CRC: 0xCC23D5F0, OS: Linux, CPU: MIPS, image type: OS Kernel Image, compression type: lzma, image name: Linux Kernel Image
+64        	0x40      	LZMA compressed data, properties: 0x5D, dictionary size: 65536 bytes, uncompressed size: 8244219 bytes
+138771    	0x21E13   	JFFS2 filesystem (old) data big endian, JFFS node length: 411382
+1909438   	0x1D22BE  	Broadcom header, number of sections: 25170859,
+5051328   	0x4D13C0  	JFFS2 filesystem (old) data big endian, JFFS node length: 391617
+</pre><p>
+This confirmed my suspicions -- a Linux OS resides on the device.  (And no, before you look, there's no GPL sources to be found on the Patriot site...)  So, let's see what's inside.  Since the uImage header identified the compression as lzma, and the section at 0x40 is LZMA compressed (and first), it seems likely to be a kernel image.  A quick <tt>dd if=PA21_1.2.4.5.bin of=kernel.lzma bs=64 skip=1;lzma -d kernel.lzma</tt> left me with a kernel image, confirmed by running strings on the file.  The kernel by itself isn't very interesting -- userspace can tell us a lot more about how the device works.  Let's look for a filesystem -- binwalk has identified two JFFS2 (common on embedded devices) filesystems.  Unfortunately, it turns out that neither of those is actually a JFFS2 filesystem (binwalk does get the occasional false positive).  So let's look at the kernel some more, maybe we can find some clues.  Let's look for the kernel command line:</p>
+<pre>$ strings img.1.2.4.5 | grep 'root='
+Please append a correct "root=" boot option
+console=ttyS1,57600n8 root=/dev/ram0
+console=ttyS1,57600n8 root=/dev/ram0</pre><p>
+/dev/ram0 suggests we're booting from an initrd of some sort, maybe in the same lzma image?  Let's try binwalk on the kernel image itself... That nets us a lot of noise, dozens of lzma and JFFS2 signatures, mostly obvious false positives (massive dictionary sizes, uncompressed sizes, etc.).  But the very last image found, an lzma image, has a dictionary size of exactly 1048576 (1MB), so seems like a likely candidate.  Another dd and lzma later, and I've got a file that 'file' identifies as a cpio archive (standard for an initrd).  <tt>cpio -idv --no-absolute-filenames</tt> gets me a nice directory structure of a linux root filesystem.  Finally something to work with!</p>
+<p>I poked around the filesystem a little, and I'll have more on that later, but the most interesting thing I've found so far is a file named killprocess.cgi in /etc_ro/web/cgi-bin.  It turns out that given the right argument, this triggers a busybox telnetd.  That's right, it just takes a web request to get telnet!  <a href="http://10.10.10.254/cgi-bin/killprocess.cgi?service">http://10.10.10.254/cgi-bin/killprocess.cgi?service</a> (using the default IP) starts telnetd right up.  admin/admin logs you right in.</p>
+

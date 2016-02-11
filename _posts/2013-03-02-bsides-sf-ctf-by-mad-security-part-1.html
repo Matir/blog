@@ -1,0 +1,37 @@
+---
+layout: post
+title: "BSides SF CTF by MAD Security, Part 1"
+date: 2013-03-02 07:47:38 +0000
+permalink: /blog/bsides-sf-ctf-by-mad-security-part-1/
+category: Security
+tags: BSides,CTF
+---
+<p>Last weekend I was at BSides SF and had the opportunity to participate in the Capture the Flag competition run by MAD Security/The Hacker Academy. I was able to clear 6 of the levels, and thought I'd write them up here to share my experience. Most of this is from my memory, so there might be a few inaccuracies, but the intent is to share the general concepts, not the specifics.</p>
+<p><b>Backstory</b><br />
+	Nick, a vocal opponent of the Absurdistani government, has disappeared, and you need to find out what happened to him.</p>
+<p><b>Level 1: Information Gathering</b><br />
+	Level one was basically just information gathering -- obtain Nick's personal email address and the password for his "myface.com" account. The first part was incredibly straightforward: go to myface.com and find the directory of members. Click on Nick's name and there's his email address. Obtaining his password is only another step away -- let's pretend we've forgotten our password, and get some password reset questions. Hrrm, what might the name of his dog be? I'm sure he guards that infor... oh, wait, what's the caption on the picture of a dog? And for bonus points, it turns out that myface.com stores passwords in plaintext, so they can just spit his out to us!</p>
+<p><b>Level 2: Private Files</b><br />
+	This one had a bit of a curve ball to it: Nick, an early adopter of Cloudbox, might have some private files stored there. (Find his private file and provide the md5sum of the file as well as part of the contents.) Let's go check out the site. We'll start with the obvious and try to login with Nick's username and password from myface.com (who doesn't love some password reuse?) -- but no such luck. Well, we can try creating an account and poking about a bit. We see that our account is at <a href="http://cloudbox.com/account/292">http://cloudbox.com/account/292</a>. What happens if we change around the number at the end? Oh, look -- it's other people's accounts! Ok, so we can enumerate accounts, and find an account number "2" that has a video in it. Well, they did say he was an early adopter, so we download the file, md5sum, and... wrong answer! Crap, it's not that easy. With a little perseverance, you can discover a couple of other accounts with files -- might as well grab them all and give them a try. OK, one of the files appears to be gibberish, so it's probably encrypted, so let's try that as the secret file -- and the md5sum checks out.</p>
+<p>Now how do we recover the secrets within?  Running "file" on the encrypted file just tells us that it's "data", which is not surprising for an encrypted file.  Maybe a hexdump of the file will give us a clue:</p>
+<pre>
+00000000  53 61 6c 74 65 64 5f 5f  88 36 d2 d4 a2 9f c8 58  |Salted__.6.....X|
+00000010  9d 18 b9 4d d4 bc ef 20  38 a3 da 8a 4b 72 0c 1f  |...M... 8...Kr..|
+00000020  e9 51 7e 95 c8 d0 f3 7e  9d dc 76 9e a1 b7 d0 67  |.Q~....~..v....g|
+00000030  cd 84 ab 70 3b 43 34 24  70 d9 7c 9e d9 80 b0 13  |...p;C4$p.|.....|
+00000040  46 f7 00 74 d0 ca 54 4c  27 a1 2c 24 e0 f8 a3 26  |F..t..TL'.,$...&amp;|
+00000050  77 03                                             |w.|
+</pre><p>Salted__ looks meaningful... I seem to recall that using OpenSSL enc produces that at the beginning of the file, but I'm not sure.  How can we confirm that?  Let's run a small test and find out.</p>
+<pre>$ echo "foo" | openssl enc -des3 | hexdump -C
+enter des-ede3-cbc encryption password:
+Verifying - enter des-ede3-cbc encryption password:
+00000000  53 61 6c 74 65 64 5f 5f  65 33 31 b2 5c 41 6f ca  |Salted__e31.\Ao.|
+00000010  9d 82 62 15 eb 9c 6c bc                           |..b...l.|
+</pre><p>Looks like roughly the same thing, so we're probably on the right track, but we don't have a key.  The level mentions that Nick's roots are from a web image hosting service, so maybe there's something interesting with that.  I'd grabbed the images from Nick's myface page, so I figured I'd see if there was anything to those.  "strings" is a handy utility for these sorts of things, and I quickly discovered the same thing in the EXIF portion of each of the images: <tt>Encryption Key: e82e1beefdaad9c</tt>.  Could it really be that easy?</p>
+<p>There's one more piece of information we need: what algorithm did Nick use for his encryption?  I don't see anything pointing me in the right direction, but there's a handful of commonly used algorithms, so I just tried those: des3, aes-128-cbc, aes-256-cbc, aes-192-cbc and each time, I got "bad decrypt" until I tried rc4, where there was success!  I found a text file containing what appeared to be 3 passwords (actual passwords munged):</p>
+<pre>
+aol: M0nk3yIsl@nd
+tc: Fr0bb3rW!nn3r
+wells fargo: Gord0nFr33m4n
+</pre><p>I dropped the password into the scoring system, and I moved on to level 3... in the next post.</p>
+

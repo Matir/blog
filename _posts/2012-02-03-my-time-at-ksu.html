@@ -1,0 +1,41 @@
+---
+layout: post
+title: "My Time at KSU"
+date: 2012-02-03 04:24:58 +0000
+permalink: /blog/my-time-at-ksu/
+category: Work
+tags: Work,KSU,lessons learned
+---
+<p>
+	As you might have seen, I'm leaving my position at Kennesaw State University to take a position as a Site Reliability Engineer at Google.  This is something I'm very excited about, but I thought I'd take a look back at my time at KSU as I approach the end.  It's worth mentioning that I'm not leaving KSU because of KSU, but because this is an opportunity I just could not turn down.  For the most part, I like my position at KSU, and I really like most of the people that I work with.  There's a particular group that's become three of my closest friends and one treasured acquaintance.</p>
+<p>
+	As much for my own memories as for the readers of this blog, I'm going to take a look back at some of the projects I've enjoyed most over the three years I've been at KSU.  I've been fortunate enough to have taken on many of these projects of my own accord, and they've become successful and play varying roles in our department's operations.  I'm also fortunate that, though I may have spent (many) more than 40 hours a week working on some of these, I like what I do enough that I can't find the line where work ends and personal time begins.</p>
+<p>
+	So here's the look back at my time in Advanced Computing Services (formerly Online Development Group, formerly Online Learning Services).</p>
+<p>
+	<strong>Centralized Authentication for Departmental Resources</strong></p>
+<p>
+	When I first started at KSU, every server run by the department used local users for logins, and different applications had local login systems.  Now, all shell accounts go back to an LDAP server, home directories are mounted via NFS, and many web-based applications point to the same LDAP directory.  This has reduced the number of passwords to remember and simplified system administration. </p>
+<p>
+	<strong>High Availability for Production Webservices</strong></p>
+<p>
+	Using Linux-HA, MySQL replication, and shared storage, our production Drupal web environment has high availability built in to reduce the risk of downtime.  Since implementation, we've achieved greater than 99.9% uptime, even through power generator replacements, network upgrades, and even the occasional configuration glitch.  (And yeah, that last one was me.)  Of course, I'm sure I've jinxed myself now, but it's been a good run of uptime.</p>
+<p>
+	<strong>KSU Video</strong></p>
+<p>
+	In about December 2009, we were approached with something a little bit outside our normal comfort zone: develop a system to record IP-based cameras used for mock sales competitions in our College of Business.  The system needed to be web-based, precisely time recordings, make the finished recordings available on a website, control recording lights in the practice area, and also live-stream the footage to rooms full of judges.  Oh, and its inaugural run would be a competition with dozens of schools from several countries the following March.  Despite numerous mis-estimations and "surprises" along the way, we met the deadline and the competition was a success.  We're in the process of upgrading the system to be flexible for other uses on campus, including situations like nursing clinical training and professional speaking.</p>
+<p>
+	<strong>VMWare Implementation</strong></p>
+<p>
+	I had the pleasure of deploying a VMWare cluster that now hosts a few dozen virtual machines, allowing us to quickly spin up new development environments to test applications and provide redundancy for low-utilization services.</p>
+<p>
+	<strong>Puppet</strong></p>
+<p>
+	This is the one that got away -- I was working on deploying Puppet for configuration management on all of our servers.  Unfortunately, this may or may not ever get deployed, but I do believe that configuration management is key to any significant production environment.</p>
+<p>
+	<strong>Most Importantly</strong></p>
+<p>
+	My biggest accomplishments have been the friends I've made and the things I've learned.  Short of Alzheimer's or a traumatic brain injury, I will never forget many of my days -- even if there are a few I wish I could forget. </p>
+<p>
+	 </p>
+

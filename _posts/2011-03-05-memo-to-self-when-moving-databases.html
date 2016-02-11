@@ -1,0 +1,15 @@
+---
+layout: post
+title: "Memo to Self when Moving Databases"
+date: 2011-03-05 23:50:32 +0000
+permalink: /blog/memo-to-self-when-moving-databases/
+category: Linux
+tags: Linux,Administration,MySQL
+---
+<p>As a memo to myself, and in case others aren't aware of this:</p>
+<p>If you move the entirety of a mysql server (e.g., all databases, especially the "mysql" database) to a new Debian-based (Debian, Ubuntu, etc.) server, you need to make sure the debian-sys-maint user is created or updated.</p>
+<p>If moving from a non-Debian-ish environment, try: </p>
+<pre>GRANT ALL PRIVILEGES ON *.* TO 'debian-sys-maint'@'localhost' IDENTIFIED BY '--password--' WITH GRANT OPTION;</pre><p> where "--password--" comes from /etc/mysql/debian.cnf.</p>
+<p>If moving from another Debian-ish environment, copy the password from /etc/mysql/debian.cnf on the old server to the same file on the new server.</p>
+<p>HTH.</p>
+

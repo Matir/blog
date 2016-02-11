@@ -1,0 +1,31 @@
+---
+layout: post
+title: "Boost, RSS Feeds, and Google Reader"
+date: 2011-09-19 22:30:27 +0000
+permalink: /blog/boost-rss-feeds-and-google-reader/
+category: Drupal
+tags: drupal,RSS,Boost
+---
+<p>
+	For a while now, I've struggled with an issue on this site.  Google Reader would sometimes show items that had already been displayed in the reader.  They would be shown as new unread items, regardless of whether the "original" copy of that item had been read.  I'm sure this irritated many readers, and I tried several times to fix the issue.</p>
+<ul><li>
+		The feed was successfully validated by the <a href="http://validator.w3.org/feed/">W3C Validator</a>.  Multiple times.</li>
+<li>
+		Adding the feed freshly worked fine.</li>
+<li>
+		Adding the feed to other RSS readers showed only 1 per item.</li>
+</ul><p>
+	I set up a cron job to pull a copy of my RSS feed regularly and save copies.  I figured I could see if anything changed between versions.  At first, the differing versions showed no significant changes.  (Other than new posts where expected.)</p>
+<p>
+	At one point, I got a clue from a fellow ALE-NW organizer that the feed was showing duplicate items.  Looking at the view that generated the feed, I realized each tag was causing a duplicate entry.  I deleted the offending relationship, and the number of entries got better.  I figured I had the Google Reader issue fixed.</p>
+<p>
+	This weekend, it sprung its head again -- duplicate entries!  I looked back at my cron-based RSS archive and discovered that there were differences in some of the files!  As I looked at the differences, I felt like an idiot.</p>
+<p>
+	The first file contained: <span class="geshifilter"><code class="text geshifilter-text">&lt;guid ispermalink="false"&gt;149 at https://systemoverlord.com&lt;/guid&gt;</code></span>.</p>
+<p>
+	Another file contained: <span class="geshifilter"><code class="text geshifilter-text">&lt;guid ispermalink="false"&gt;149 at http://tuxteam.com&lt;/guid&gt;</code></span>.</p>
+<p>
+	I realized, as I read the differences, that Drupal bases its "base URL" on the URL that is used to access the site. (I used to use tuxteam.com.) This isn't normally a problem, because the RSS reader would be accessing it via the same domain every time, but once you're running Boost, you can get different domains from the cached copies of the files! So, if the cached RSS feed expires and Boost builds a new one on an access from tuxteam.com, the subsequent systemoverlord.com access by Google Reader returns a feed with tuxteam.com-based URLs. These guids are different, and so Google Reader believes they're different articles!</p>
+<p>
+	I've now set <span class="geshifilter"><code class="php geshifilter-php"><span style="color: #000088;">$base_url</span> <span style="color: #339933;">=</span> <span style="color: #0000ff;">'http://systemoverlord.com'</span><span style="color: #339933;">;</span></code></span> in my settings.php. I believe this should <em>finally, permanently</em>, put the duplicate item bug to rest.</p>
+

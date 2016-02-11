@@ -1,0 +1,13 @@
+---
+layout: post
+title: "Ubuntu Gutsy Gibbon Tribe 4"
+date: 2007-08-15 16:04:55 +0000
+permalink: /blog/ubuntu-gutsy-gibbon-tribe-4/
+category: Linux
+---
+<p><strong>Ubuntu 7.10/Gutsy Gibbon is still Alpha Software.</strong>  That being said, I've been running it on my laptop and run into a few snags.</p>
+<p>The first, and most annoying (partly because it's by design) is the removal of the orinoco_cs driver from the kernel package.  Apparently they thought everyone would move to hostap.  Apparently they didn't do their homework: Lucent Technologies Orinoco cards are NOT supported by ANY driver other than orinoco_cs.  That means my wireless card is effectively useless under the 2.6.22-ubuntu kernel series.</p>
+<p>Why am I using a PCMCIA wireless card?  Well, I'd bet it has something to do with the bcm43xx driver continuing not to work properly.  No surprise there, however... the hardware is broadcom, so what can anyone do but hang their head in shame?</p>
+<p>Yesterday I was updating Gutsy and a new ATI driver came down for xorg... so imagine my surprise when, today, I boot my system and get a full black screen.  Ooops, looks like the new ati driver is broken.  I'm about to go file a bug report on that.  Running on the so-slow vesa driver right now, but at least I could get back in.</p>
+<p>At this point, I'm back to using a generic video driver and the Feisty Fawn kernel... hopefully there will be some pending updates to repair things.</p>
+

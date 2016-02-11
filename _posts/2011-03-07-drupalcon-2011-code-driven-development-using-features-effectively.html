@@ -1,0 +1,105 @@
+---
+layout: post
+title: "Drupalcon 2011: Code-Driven Development: Using Features Effectively"
+date: 2011-03-07 23:44:47 +0000
+permalink: /blog/drupalcon-2011-code-driven-development-using-features-effectively/
+category: Drupal
+---
+<div><strong>Summary</strong></div>
+<div>One of the biggest barriers to using Drupal effectively is managing the Dev-&gt;Test-&gt;Production-&gt;Update lifecycle.  Most problematic is making structural changes to a site already in production.  You don't want to break/modify production while live, you don't want to blow away data by copying data from Dev to Prod, and you don't want to try to make the changes in two places.  Based on my readings, I had decided that Features would play a major role in solving this problem.  The training class presented by <a title="Nuvole" href="http://nuvole.org" target="_blank">Nuvole</a> today showed that Features can make life-cycle management much, much, easier.  In fact, as best as I can tell, code-driven development is <strong>the</strong> way to produce, manage, and deploy enterprise-quality sites.</div>
+<div>Nuvole has <a href="http://www.slideshare.net/nuvoleweb/code-driven-development-using-features-effectively-in-drupal-6-and-7">posted slides on SlideShare</a>.  (These may not be the exact slides used at Drupalcon, as they seem to be a few weeks old, but look very similar to what I'm seeing on the screen.)</div>
+<div>Thanks to Antonio and Andrea for a great presentation -- it was really content-rich, and they managed to work through the technical glitches of student laptops quite smoothly.</div>
+<div>
+<!--break--></div>
+<div>These are general notes from the presentation:</div>
+<div><strong>Introduction &amp; Motivations:</strong></div>
+<ul><li>Fast Delivery -- Multiple Developers</li>
+<li>Safe Updates for Configuration</li>
+<li>Change Management</li>
+<li>Pushing Upgrades to Production SItes</li>
+<li>Code Driven Development
+<ul><li>Database for Content Only</li>
+<li>All Configuration in PHP</li>
+</ul></li>
+<li>DB Dump from Production to Development, NEVER the other way</li>
+</ul><p><strong>Interesting Nuvole Practices</strong></p>
+<ul><li>Nuvole bases most themes on Tao from Development Seed</li>
+<li>Nuvole uses OpenID, and even uses it for uid 1.</li>
+<li>Nuvole SEEMS to develop locally (per-developer), then stage/test on a dev server, then push to production.  (Never explicitly stated.)</li>
+<li>Nuvole does not yet use a features server.</li>
+<li>Nuvole wraps contrib modules in features (so they can be auto-installed, updated, etc.)</li>
+<li>Page editing with Markdown syntax</li>
+<li>Nuvole has a feature (feature_site) that they use on most sites to set up some defaults for their workflow.</li>
+<li>Mostly customizing OpenAtrium</li>
+<li>Use typically 4-5 features on top of OpenAtrium</li>
+<li>More custom sites use 10-12 features typically</li>
+</ul><p><strong>Technical (Features &amp; Code-Driven Development)</strong></p>
+<ul><li>Package Functionality in a Logical Way</li>
+<li>Be Modular -- break things up cleanly</li>
+<li>A single item should be included in only 1 Feature
+<ul><li>Reusing components (e.g., imagecache presets) across features may result in undesired changes to feature B when updating feature A</li>
+<li>UI will not present items already included in other features (e.g., UI only presents items only in DB)</li>
+</ul></li>
+<li>Open Atrium is completely based on Features</li>
+<li>"Drush is faster, of course." -- Favorite Quote of the Day</li>
+<li>Features may depend on other features or on modules</li>
+<li>Managing features with drush is faster than GUI.</li>
+<li>Out of the box component support:
+<ul><li>Content</li>
+<li>Views</li>
+<li>Permissions</li>
+<li>ImageCache presets</li>
+<li>Contexts</li>
+<li>Feeds Importers</li>
+<li>Flags</li>
+<li>Rules</li>
+</ul></li>
+<li>Variables exported via Strongarm, but need to figure out name of variable (drush saves the day again)</li>
+<li>CTools used to produce many exportable features. (No need to reinvent the wheel.)</li>
+<li>Exporting components that are not natively exportable is non-trivial
+<ul><li>No known way to export taxonomy TERMs safely.  (Generate in code?)</li>
+<li>Some things export with numeric ID, which is dangerous (blow away others with same ID)</li>
+<li>String ID is better, or UUID</li>
+</ul></li>
+<li>Most exportables have some form of hook_alter that allows them to be modified by other features.
+<ul><li>CTools provides many hook_COMPONENT_alter().</li>
+</ul></li>
+<li>Ideally (not required) prefix component names with the name of the feature.  e.g., for a blog feature, view could be blog_view, content type could be blog_entry, etc.  (Names can be duplicated, so just blog would be ok for these, but more complex features may use &gt;1 content type or view)</li>
+<li>3 states for Features
+<ul><li>Default = no DB entry or DB matches code</li>
+<li>Overriden = code is unchanged, DB is used to override code (NOTE: could be updated code from previous Default state)</li>
+<li>Needs review = code has changed AND DB has changed (like SCM conflict, requires manual fix)</li>
+</ul></li>
+<li>Features does not touch .module</li>
+<li>"UI is messy to update features" -- use drush to update; only use UI to build new features initially</li>
+<li>Sites using "advanced" features will require PHP knowledge</li>
+<li>Drupal "makefiles" download needed modules for you, can apply local patches, patches from drupal.org (bootstrapping)</li>
+<li>Collaborative development cycle (many dev installations of same site)
+<ul><li>Use hook_update_N() to perform updates in collaborative development cycle</li>
+<li>Each developer needs to run svn update &amp;&amp; drush updatedb &amp;&amp; drush cc</li>
+<li>Poses problems when pulling new copy (svn co)</li>
+<li>Structural updates in both hook_update_N() and hook_install()</li>
+</ul></li>
+<li>features_install_modules is superior to drupal_install_modules</li>
+<li>Version control conflicts detect use of same update code, allowing developer to resolve conflict.</li>
+<li>Use "controller" feature to manage dependencies, updates
+<ul><li>One controller feature per site</li>
+<li>Default feature as well (e.g., Nuvole, KSU; entity-oriented)</li>
+</ul></li>
+<li>In Drupal 7, Installation Profiles are more like modules
+<ul><li>Replaces controller feature (can run updates in installation profile)</li>
+<li>Can be used as more of "site profile"</li>
+<li>Still use controller feature if working off another Installation Profile</li>
+</ul></li><li>Makefile useful to remind developers where things come from, so useful even if you're not using drush make.</li>
+<ul><li>Hacked! module only looks at drupal.org, does not consider makefile.</li>
+</ul><li>Only use Installation Profile for Distributions, others build in sites/all.</li>
+<ul></ul></ul><p><strong>Other Cool Things</strong></p>
+<ul><li>Drupal Bash Aliases: <a href="https://github.com/nuvoleweb/drush_alias">https://github.com/nuvoleweb/drush_alias</a></li>
+<li>Hacked! Module (<a href="http://drupal.org/project/hacked">http://drupal.org/project/hacked</a>)</li>
+<li>Views Bulk Operations (<a href="http://drupal.org/project/views_bulk_operations">http://drupal.org/project/views_bulk_operations</a>)</li>
+<li>Modules (and hence features) can contain template files (including tpl.phps)</li>
+</ul><p><strong>Misc</strong></p>
+<ul><li>Update module is very slow -- turn off in production</li>
+<li>Unsure of performance comparison between in-database and features, but no significant difference from empirical/qualitative standpoint</li>
+<li>Do not write modules that use numeric IDs if they should be exportable</li>
+</ul>

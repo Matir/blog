@@ -1,0 +1,12 @@
+---
+layout: post
+title: "Learn Regular Expressions.  Seriously."
+date: 2011-01-15 21:30:23 +0000
+permalink: /blog/learn-regular-expressions-seriously/
+category: Misc
+---
+<p>I can't tell you the number of IT Professionals (whether developers, sys admins, etc.) who have told me that it's not worth their time to learn regular expressions.  I thought that way at one point, but now I'm astounded at that thought.  Regular Expressions are one of the most powerful tools available for working with data.</p>
+<p>I'm currently working on a tool that reads /proc/net/tcp.  Trying to parse that without regular expressions would be dozens of lines of code.  With regular expressions (in Python) I have a one-liner to parse each line of the file.  And that's for a file that's intended to be machine-readable.  (Though, admittedly, /proc/net/tcp is a lot less machine-readable than, say, /etc/passwd.)</p>
+<p>The authors of the RE engines have done the hard work and figured out how to optimize the parsing of the lines and matching the RE.  For stupidly simple cases, an RE may be slower, but once you get to complex parsing, it's much easier.</p>
+<p>The only thing I haven't figured out is how to parse values that don't conform to a particular order (ala GNU getopts).</p>
+

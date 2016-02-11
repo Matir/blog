@@ -1,0 +1,29 @@
+---
+layout: post
+title: "Customizing Built-in Strings in Drupal"
+date: 2011-09-29 04:15:00 +0000
+permalink: /blog/customizing-built-in-strings-in-drupal/
+category: Drupal
+tags: drupal,locale
+---
+<p>
+	At work, we had a situation where one of the strings built in to the Drupal User Interface made things somewhat confusing.  By default, 'Enter your <strong>sitename</strong> username.' is displayed beneath the username box on the login form.  However, we use a centralized authentication system called 'NetID', so this prompt was confusing to some users.</p>
+<p>
+	One of my coworkers had received the request from the user to change this text to "Please enter your KSU NetID."  His first thought was to create a subtheme of our base theme and modify a .tpl.php.  (It turns out this isn't even directly possible, you have to register a special .tpl.php handler first.)  My first thought was hook_form_alter, but after a moment, I realized that was overkill for the task of changing a single string.  I recalled that before we had used locale settings to modify strings being output, so I wondered if we couldn't do that here as well.  The first step was to find the raw string, before any processing.</p>
+<p>
+	I grepped through user.module for "Enter your" and found that the string was 'Enter your @s username.'  I then opened settings.php and went to the bottom, where there was an array that looked something like this:</p>
+<div class="geshifilter"><div class="drupal6 geshifilter-drupal6" style="font-family:monospace;"><pre style="font-family: monospace; font-weight: normal; font-style: normal"><span style="color: #808080; font-style: italic;"># $conf['locale_custom_strings_en'] = array(</span>
+<span style="color: #808080; font-style: italic;">#   'forum'      =&gt; 'Discussion board',</span>
+<span style="color: #808080; font-style: italic;">#   '@count min' =&gt; '@count minutes',</span>
+<span style="color: #808080; font-style: italic;"># );</span></pre></div></div>
+<p>To make the change we needed, I set it up as:</p>
+<div class="geshifilter"><div class="drupal6 geshifilter-drupal6" style="font-family:monospace;"><pre style="font-family: monospace; font-weight: normal; font-style: normal"><span style="color: #0000ff;">$conf</span><span style="color: #66cc66;">[</span><span style="color: #ff0000;">'locale_custom_strings_en'</span><span style="color: #66cc66;">]</span> = <a href="http://www.php.net/array"><span style="color: #000066;">array</span></a><span style="color: #66cc66;">(</span>
+  <span style="color: #ff0000;">'Enter your @s username.'</span> =<span style="color: #66cc66;">&gt;</span> <span style="color: #ff0000;">'Please enter your KSU NetID.'</span>,
+<span style="color: #66cc66;">)</span>;</pre></div></div>
+<p><b>Drupal 7</b></p>
+<p>The same thing can be achieved on Drupal 7 in settings.php, but the format of the array has changed slightly:</p>
+<div class="geshifilter"><div class="drupal6 geshifilter-drupal6" style="font-family:monospace;"><pre style="font-family: monospace; font-weight: normal; font-style: normal"><span style="color: #808080; font-style: italic;"># $conf['locale_custom_strings_en'][''] = array(</span>
+<span style="color: #808080; font-style: italic;">#   'forum'      =&gt; 'Discussion board',</span>
+<span style="color: #808080; font-style: italic;">#   '@count min' =&gt; '@count minutes',</span>
+<span style="color: #808080; font-style: italic;"># );</span></pre></div></div>
+

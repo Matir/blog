@@ -1,0 +1,37 @@
+---
+layout: post
+title: "Martian Packet Messages"
+date: 2011-11-06 02:36:13 +0000
+permalink: /blog/martian-packet-messages/
+category: Linux
+tags: Linux,Security,martian packets,networking
+---
+<p>
+	Occasionally, you might see messages like the following in your Linux kernel messages:</p>
+<blockquote><div class="geshifilter">
+<div class="text geshifilter-text" style="font-family:monospace;">
+<pre style="font-family: monospace; font-weight: normal; font-style: normal">martian source 192.168.1.1 from 127.0.0.1, on dev eth1&lt;br /&gt;
+        ll header: 52:54:00:98:99:d0:52:54:00:de:d8:10:08:00 </pre></div>
+</div>
+</blockquote>
+<p>
+	There's a lot of discussion out there about what this means, but not a lot about how to trace down the source.  Hopefully this will provide some insight into what the messages actually mean, and how to understand them.</p>
+<p>
+	<strong>What are martian packets?</strong></p>
+<p>
+	A martian packet is one that comes from an "impossible source".  For example, this might be from an RFC 1918 reserved netblock routed across the internet, or any packet with a "localnet" (127.0.0.1, etc.) IP on an interface other than the loopback interface.  In other words, martian packets mean either something is misconfigured, or someone is trying to do something very sneaky.  <a href="http://tools.ietf.org/html/rfc1812">RFC 1812</a> provides more detail about what is and is not a valid routable IPv4 address.</p>
+<p>
+	<strong>So what do those messages mean?</strong></p>
+<p>
+	Let's start with the first message: it contains the destination and source IP addresses, as set in the IPv4 packet, and the network interface on which the packet arrived.  Despite how it reads, the first address is NOT the source address in the packet -- it is, in fact, the destination address!  The 2nd IP is the IP that was contained in the IPv4 packet, but this isn't of very much help in finding the sending host -- remember, the whole point of this message is an indication that the source of the packet is "suspect."</p>
+<p>
+	Fortunately, the 2nd line contains a lot of information for us, but it's printed in a format that's very hard to read.  This is the link-layer header of the packet that contained the erroneous source address.  Almost all machines these days use physical connectivity that looks like ethernet, and the log entry above is based on an <a href="https://secure.wikimedia.org/wikipedia/en/wiki/Ethernet_frame">Ethernet Frame</a>.  (PPP connections will probably look different, but I've never seen this message on anything but ethernet.)  The ethernet header is at least 14 bytes long, and most of us will only see 14 byte headers.  The longer headers are used with 802.1q VLANs, but most people will never see those, so we're going to discuss only the 14 byte headers.</p>
+<p>
+	The 14 bytes above, printed in colon-separated hex, contain the destination MAC address, the source MAC address, and either the length or the ethertype code.  The MAC addresses are in standard notation, and the first 6 octets are the destination, with octets 7-12 representing the source.  These will help you track down where the packet came from (though it might be your upstream router, in which case you'll need to do more investigative work).</p>
+<p>
+	The last 2 bytes take more explaining.  If the value is less than 0x0600, then it represents the length of the data field for 802.3 compliant ethernet frames.  Greater values, as seen above, are actually <a href="https://secure.wikimedia.org/wikipedia/en/wiki/EtherType">EtherType</a> codes.  This will mostly be 0x0800, which means an IPv4 packet is contained in the data segment.  (After all, this error does come from an IPv4 issue.)  Other values might be 0x8100 (802.1q VLAN-tagged packet) or 0x0806 (ARP packet).  There are many more, but you're unlikely to see them in this context.</p>
+<p>
+	<strong>Long Story Short</strong></p>
+<p>
+	Look at bytes 7-12 of the link-layer header.  That's the MAC of the last machine to touch the packet.  Look there for the cause (if it's a router, look upstream from there, and then figure out why you're not filtering the martian packets on your router).  Yes, the source MAC could be spoofed, but then someone's playing games on your local network segment.  (Which probably means they have physical access, or you have a terribly designed network.  Remember, physical access=pwned.)</p>
+

@@ -1,0 +1,16 @@
+---
+layout: post
+title: "MITM on KVM Guests"
+date: 2012-11-11 02:47:43 +0000
+permalink: /blog/mitm-on-kvm-guests/
+category: Security
+tags: mitm,sslsniff
+---
+<p>I run a KVM virtualization system as part of my test lab.  I often want to redirect traffic to an intermediate application (such as sslsniff) on the host.  Supposing I have a guest on interface vnet7, bridged to br10, with the host running on 192.168.1.10 the following ebtables &amp; iptables magic gets the job done:</p>
+<div class="geshifilter">
+<div class="text geshifilter-text" style="font-family:monospace;">
+<pre style="font-family: monospace; font-weight: normal; font-style: normal">ebtables -t broute -A BROUTING -p IPv4 -i vnet7 --ip-proto tcp --ip-dport 443 -j redirect --redirect-target DROP
+iptables -t nat -A PREROUTING -i vnet7 -p tcp --dport 443 -j DNAT --to-destination 192.168.1.10:9999</pre></div>
+</div>
+<p>Note that you can't use -j REDIRECT, as that's (roughly) equivalent to DNAT to the IP of the incoming interface, but bridged virtual network interfaces (vnet7) have no IP address.</p>
+

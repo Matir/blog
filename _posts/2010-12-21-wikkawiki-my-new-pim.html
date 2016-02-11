@@ -1,0 +1,14 @@
+---
+layout: post
+title: "WikkaWiki: My new PIM"
+date: 2010-12-21 09:00:24 +0000
+permalink: /blog/wikkawiki-my-new-pim/
+category: Linux
+tags: Linux,Open Source
+---
+<p>For a while now, I've found myself finding tidbits of information that I think would be useful again in the future, or more commonly, having to look up things where I know I've looked it up before.  In both cases, I keep thinking that I need somewhere to document this.  For a short while, I just threw this information into a file called "TIPS" that I edited with vim.  Sounds great, except I use a lot of computers, and keeping it on a flash drive meant pulling out the flash drive a lot.  Not only was that slightly inconvenient, but even worse, the file was becoming unwieldy, and there was no good way to link to web-based resources for finding more information.</p>
+<p>Enter <a href="http://wikkawiki.org/HomePage">WikkaWiki</a>.  At work, we run MediaWiki, but I decided to look for something more lightweight and just a little bit of a change.  Basic requirements: lightweight, PHP-based (say what you want about PHP as a programming language, but I already have it for WordPress), and using either filesystem or MySQL backgrounds (see comments about PHP).  WikkaWiki fit the bill, and it has native support for mind maps, which I thought might be useful at some point.</p>
+<p>I've created a dozen pages or so, and I thought I'd write up a few thoughts on WikkaWiki.  <span style="text-decoration: line-through;">First off, the default ACLs don't seem to work properly.  I've set default ACLs in the config file, but am still getting the "default defaults" on new pages.  Maybe I'm missing something.</span> <em>[Edit: Turns out, I forgot I had set apc.stat=0, which requires that the APC cache be manually flushed to see changes to PHP files, such as wikka.config.php.]</em> Secondly, I wish categories worked a little more like MediaWiki: having the categories listed together in a box at the bottom is convenient and easily distinguishable.  Finally, I'm very hopeful that Table of Contents will be implemented at some point.  I've seen some proposals out there, and I do like the auto-ToC in MediaWiki.</p>
+<p>We'll see how I do keeping up with putting this information into my personal wiki.  Hopefully it will do well for all the information I need to keep handy.</p>
+<p>(As a side note, this blog, my wiki, and many of my other web-based services are all hosted on a <a href="http://linode.com">Linode</a> VPS running <a href="http://ubuntu.com">Ubuntu Server</a> 10.04 LTS with <a href="http://apache.org">Apache</a>, <a href="http://php.net">PHP</a>, and <a href="http://mysql.com">MySQL</a>.)</p>
+

@@ -1,0 +1,19 @@
+---
+layout: post
+title: "Wordpress and APC 3.1.3p1"
+date: 2011-01-14 02:53:14 +0000
+permalink: /blog/wordpress-and-apc-313p1/
+category: Computer
+---
+<p>In order to improve performance on my blog (it is on a light-weight Linode after all), I use APC as both an opcode cache and an object cache.  On Ubuntu Server 10.04, you get APC 3.1.3p1 if you install the php-apc package.  Unfortunately, this version of APC has an <a href="http://pecl.php.net/bugs/bug.php?id=16814">issue</a> with the same script execution inserting 2 values for the same key, which is apparently something several of Wordpress's configuration pages does.  If you run into this issue, you'll see lots of messages like:</p>
+<blockquote><p>[Thu Jan 13 18:25:26 2011] [apc-warning] Potential cache slam averted for key 'wp:abcc00cacabcc9adefb123ffde234abc:1:options:alloptions' in /srv/wordpress/wp-content/object-cache.php on line 235.</p></blockquote>
+<p>You may also notice that changes to configuration options don't seem to get saved, despite Wordpress saying they're saved.  (I didn't check if the database was correctly updated, but I suspect it was, and only the data currently being used from the cache is incorrect.)</p>
+<p>Some people will tell you to use apc.slam_defense=0; or apc.slam_defense=Off;, but it turns out that APC 3.1.3p1 is lacking that option.  In later versions of APC, they have modified the code to cleanly handle the same key being inserted more than once within the execution of a single script.  So, perhaps the solution can be found in a newer version of APC.</p>
+<p>PECL has APC 3.1.6, so let's try installing that:</p>
+<pre lang="bash" xml:lang="bash">
+sudo apt-get remove php-apc
+sudo apt-get install php5-dev php-pear libpcre3-dev
+sudo pecl install apc
+</pre><p>
+Make sure you still have your /etc/php5/conf.d/apc.ini set up properly (it should still be), and you should be good to go after a quick <tt>sudo service apache2 restart</tt>.  You should now not see the "cache slam" messages appearing in your Apache error logs.</p>
+

@@ -1,0 +1,58 @@
+---
+layout: post
+title: "The segmentation fault occurred where?!?"
+date: 2012-11-19 01:36:17 +0000
+permalink: /blog/the-segmentation-fault-occurred-where/
+category: Computer
+---
+<p>I recently ran into a C++ problem where a segfault was occurring in code in a stable library that hadn't been changed in a while. For a while, I couldn't figure out what would have broken in that library, and the call site looked perfectly fine. Before I give away the answer, let's take a quick quiz. What does the following code output? (And yes, this is somewhat compiler dependent, so let's pretend we're talking about how g++ works.)</p>
+<p>
+</p><div class="geshifilter">
+<div class="cpp geshifilter-cpp" style="font-family:monospace;">
+<pre style="font-family: monospace; font-weight: normal; font-style: normal"><span style="color: #339900;">#include &lt;cstdio&gt;</span>
+ 
+<span style="color: #0000ff;">class</span> Foo <span style="color: #008000;">{</span>
+  <span style="color: #0000ff;">private</span><span style="color: #008080;">:</span>
+    <span style="color: #0000ff;">char</span> <span style="color: #000040;">*</span>name<span style="color: #008080;">;</span>
+  <span style="color: #0000ff;">public</span><span style="color: #008080;">:</span>
+    <span style="color: #0000ff;">void</span> whatami<span style="color: #008000;">(</span><span style="color: #008000;">)</span> <span style="color: #008000;">{</span>
+      <span style="color: #0000dd;">printf</span><span style="color: #008000;">(</span><span style="color: #FF0000;">"I am a Foo.<span style="color: #000099; font-weight: bold;">\n</span>"</span><span style="color: #008000;">)</span><span style="color: #008080;">;</span>
+    <span style="color: #008000;">}</span>
+    <span style="color: #0000ff;">void</span> whoami<span style="color: #008000;">(</span><span style="color: #008000;">)</span> <span style="color: #008000;">{</span>
+      <span style="color: #0000dd;">printf</span><span style="color: #008000;">(</span><span style="color: #FF0000;">"I am %s.<span style="color: #000099; font-weight: bold;">\n</span>"</span>, name<span style="color: #008000;">)</span><span style="color: #008080;">;</span>
+    <span style="color: #008000;">}</span>
+<span style="color: #008000;">}</span><span style="color: #008080;">;</span>
+ 
+<span style="color: #0000ff;">int</span> main<span style="color: #008000;">(</span><span style="color: #0000ff;">int</span> argc, <span style="color: #0000ff;">char</span> <span style="color: #000040;">**</span>argv<span style="color: #008000;">)</span><span style="color: #008000;">{</span>
+  Foo <span style="color: #000040;">*</span>f <span style="color: #000080;">=</span> <span style="color: #0000ff;">NULL</span><span style="color: #008080;">;</span>
+  f<span style="color: #000040;">-</span><span style="color: #000080;">&gt;</span>whatami<span style="color: #008000;">(</span><span style="color: #008000;">)</span><span style="color: #008080;">;</span>
+  f<span style="color: #000040;">-</span><span style="color: #000080;">&gt;</span>whoami<span style="color: #008000;">(</span><span style="color: #008000;">)</span><span style="color: #008080;">;</span>
+<span style="color: #008000;">}</span></pre></div>
+</div>
+
+<p>My first instinct was to say "Segmentation Fault" and nothing else, because line 17 is going to dereference a NULL pointer.  It turns out, of course, it's not that simple -- it'll actually print the "I am a Foo" before segfaulting.  Clearly, then, the segfault must be on line 18, right?  Wrong.  Line 11 is where we give up, as f is not dereferenced until then.  To see why this is, let's think about the equivalent C code:</p>
+<div class="geshifilter">
+<div class="c geshifilter-c" style="font-family:monospace;">
+<pre style="font-family: monospace; font-weight: normal; font-style: normal"><span style="color: #339933;">#include &lt;stdio.h&gt;</span>
+ 
+<span style="color: #993333;">typedef</span> <span style="color: #993333;">struct</span> <span style="color: #009900;">{</span>
+  <span style="color: #993333;">char</span> <span style="color: #339933;">*</span>name<span style="color: #339933;">;</span>
+<span style="color: #009900;">}</span> Foo<span style="color: #339933;">;</span>
+ 
+<span style="color: #993333;">void</span> Foo_whatami<span style="color: #009900;">(</span>Foo <span style="color: #339933;">*</span>self<span style="color: #009900;">)</span> <span style="color: #009900;">{</span>
+  <a href="http://www.opengroup.org/onlinepubs/009695399/functions/printf.html"><span style="color: #000066;">printf</span></a><span style="color: #009900;">(</span><span style="color: #ff0000;">"I am a Foo.<span style="color: #000099; font-weight: bold;">\n</span>"</span><span style="color: #009900;">)</span><span style="color: #339933;">;</span>
+<span style="color: #009900;">}</span>
+ 
+<span style="color: #993333;">void</span> Foo_whoami<span style="color: #009900;">(</span>Foo <span style="color: #339933;">*</span>self<span style="color: #009900;">)</span> <span style="color: #009900;">{</span>
+  <a href="http://www.opengroup.org/onlinepubs/009695399/functions/printf.html"><span style="color: #000066;">printf</span></a><span style="color: #009900;">(</span><span style="color: #ff0000;">"I am %s.<span style="color: #000099; font-weight: bold;">\n</span>"</span><span style="color: #339933;">,</span> self<span style="color: #339933;">-&gt;</span>name<span style="color: #009900;">)</span><span style="color: #339933;">;</span>
+<span style="color: #009900;">}</span>
+ 
+<span style="color: #993333;">int</span> main<span style="color: #009900;">(</span><span style="color: #993333;">int</span> argc<span style="color: #339933;">,</span> <span style="color: #993333;">char</span> <span style="color: #339933;">**</span>argv<span style="color: #009900;">)</span> <span style="color: #009900;">{</span>
+  Foo <span style="color: #339933;">*</span>f <span style="color: #339933;">=</span> NULL<span style="color: #339933;">;</span>
+  Foo_whatami<span style="color: #009900;">(</span>f<span style="color: #009900;">)</span><span style="color: #339933;">;</span>
+  Foo_whoami<span style="color: #009900;">(</span>f<span style="color: #009900;">)</span><span style="color: #339933;">;</span>
+<span style="color: #009900;">}</span></pre></div>
+</div>
+<p>As we can see here, the pointer is actually unused by the method "Foo_whatami".  But wait, you say, don't we need the address of Foo to resolve the location of the method?  No, as whatami and whoami are not virtual methods!  Their addresses can be determined by the compiler at compile time.  Virtual methods, on the other hand, need a pointer from within the data area of the object to the vtable to resolve addresses.  Change whatami to a virtual method, and you'll crash much more efficiently.</p>
+<p>So remember, even if the code looks like you're dereferencing the pointer, it may well not be dereferenced until much later!</p>
+

@@ -1,0 +1,14 @@
+---
+layout: post
+title: "Working 21 Hours... I Love This!"
+date: 2010-12-19 18:29:05 +0000
+permalink: /blog/working-21-hours-i-love-this/
+category: Work
+---
+<p>On Friday (and Saturday morning) I had the opportunity to spend 21 hours at work.  If this were a regular occurrence, it would probably be a nuisance, but doing this every once in a while has a certain excitement to it.  Working late at night is a unique opportunity to Get Things Done.  When it happens, it usually means we're putting some project that's been planned for months into production, and that's just an amazing feeling, if things go well.</p>
+<p>Our goals were three-fold: we were migrating our production Drupal environment from the older server it was previously on to a pair of new servers using <a href="http://www.linux-ha.org/">Heartbeat</a> and <a href="http://www.clusterlabs.org/">Pacemaker</a> for High Availability, upgrading production sites from a variety of editor configurations (TinyMCE Module, FCKEditor Module, Wysiwyg Module with FCKEditor) to <a href="http://ckeditor.com/">CKEditor</a> on the Wysiwyg Module, and renewing our SSL certificates which were due to expire on the 31st.</p>
+<p>Naturally, things don't ever go according to plan.  As we began our upgrade, we discovered that Entrust, our SSL provider, was having issues with their CA control panel.  While we could (and had) revoke our old certificates, we could not issue new ones.  This could be a big problem as it would impact both the old and new environments.  A call to Entrust support revealed that they were aware of the issue, but had no ETA on the resolution.  45 minutes later, we were finally able to get back on track and issue the certificates.</p>
+<p>Next, we attempted to bring up our high-availability environment.  And yet, no matter how much we tried, the grouping would not come up.  Finding a configuration to colocate 9 resources, start IPs before Apache, and manage them based on pingd is more difficult than the docs would make it seem.  Or maybe I just missed something in the documentation.  We're still having some trouble with out STONITH processes.</p>
+<p>Finally, we had to go through our 64 production Drupal sites to update them all to use CKEditor, a custom set of CKEditor buttons, and a module for retaining login logs (outside the standard Drupal logging that keeps a limited number of entries).  The CKEditor button configuration is provided by a module written in-house, so we can adjust it (and keep it consistent across all sites) with ease.  Unfortunately, we were also testing modules under PHP 5.3, so  we discovered a number of small issues.</p>
+<p>Ultimately, the 5 hour plan ended up taking 10 hours, but it will buy us many times more that in the long run in terms of support costs.  It will hopefully be a nice clean platform for our two new employees starting as soon as the University opens from winter break.</p>
+

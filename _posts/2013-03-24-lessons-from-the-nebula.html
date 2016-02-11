@@ -1,0 +1,111 @@
+---
+layout: post
+title: "Lessons From the Nebula"
+date: 2013-03-24 00:46:59 +0000
+permalink: /blog/lessons-from-the-nebula/
+category: Security
+tags: gdb,CTF,reverse engineering
+---
+<p><a href="http://exploit-exercises.com/nebula">Exploit-Exercises.com's Nebula</a>, that is.  I just spent a good 8 hours or so working through the levels there, and I'm pretty sure I took much longer than I should have.  In any case, there were a couple of things I was disappointed by: running "getflag" to get a flag (or otherwise being delivered a token) didn't provide you with anything to really validate what you were doing.  You can actually jump directly to any level (which is good when you reset your VM) but not so interesting for "progression" or the sense of accomplishment -- at least for me.</p>
+<p>I did, however, learn 3 completely new things from this set of challenges.</p>
+<p><strong>1. You can change register values within gdb.</strong><br />
+Let's say you have a binary built from the following code:</p>
+<div class="geshifilter">
+<div class="text geshifilter-text" style="font-family:monospace;">
+<pre style="font-family: monospace; font-weight: normal; font-style: normal">int main(int argc,char **argv) {
+    if(getuid() == 0) {
+        printf("Yes, you have root.");
+    } else {
+        printf("Nope, no root.");
+    }
+}</pre></div>
+</div>
+<p>Other than getting root, can you get it to print "Yes, you have root?"  Let's assume you can't edit or rebuild the binary, only execute it.</p>
+<p>GDB to the rescue!  Let's see what the code looks like in gdb:</p>
+<pre>
+$ gdb -q ./g
+Reading symbols from /home/david/tmp/getuid/g...(no debugging symbols found)...done.
+(gdb) break main
+Breakpoint 1 at 0x400550
+(gdb) run
+Starting program: /home/david/tmp/getuid/g 
+
+Breakpoint 1, 0x0000000000400550 in main ()
+(gdb) disass
+Dump of assembler code for function main:
+   0x000000000040054c :	push   %rbp
+   0x000000000040054d :	mov    %rsp,%rbp
+=&gt; 0x0000000000400550 :	sub    $0x10,%rsp
+   0x0000000000400554 :	mov    %edi,-0x4(%rbp)
+   0x0000000000400557 :	mov    %rsi,-0x10(%rbp)
+   0x000000000040055b :	callq  0x400420 <getuid>
+   0x0000000000400560 :	test   %eax,%eax
+   0x0000000000400562 :	jne    0x400570 <main>
+   0x0000000000400564 :	mov    $0x40063c,%edi
+   0x0000000000400569 :	callq  0x400410 <puts>
+   0x000000000040056e :	jmp    0x40057a <main>
+   0x0000000000400570 :	mov    $0x400650,%edi
+   0x0000000000400575 :	callq  0x400410 <puts>
+   0x000000000040057a :	mov    $0x0,%eax
+   0x000000000040057f :	leaveq 
+   0x0000000000400580 :	retq   
+End of assembler dump.
+</puts></main></puts></main></getuid></pre><p>We can see the call to getuid @0x40055b, so we know the comparison we're interested in is right after that.  test, not to be confused with cmp, does a logical and on the arguments (which, when they are the same, returns the value itself) and then compares to 0.  So we want that test to see it as 0.  Let's set a breakpoint there and see what eax gives us.</p>
+<pre>
+(gdb) break *0x400560
+Breakpoint 2 at 0x400560
+(gdb) c
+Continuing.
+
+Breakpoint 2, 0x0000000000400560 in main ()
+(gdb) disass
+...
+=&gt; 0x0000000000400560 :	test   %eax,%eax
+...
+</pre><p>At this point, there are two approaches we can take.  We can either change the value of %eax to be 0 (so 0 &amp; 0 == 0) or we can alter %rip (on 64-bit, use %eip on 32-bit) to main+24 which will get us inside the code that would've been skipped by the branch.  Personally, I think changing eax is the more obvious, so let's do that and continue execution:</p>
+<pre>
+(gdb) set $eax=0
+(gdb) c
+Continuing.
+Yes, you have root.
+[Inferior 1 (process 6242) exited normally]
+</pre><p>And we're done!  Changing rip would work similarly as we can see here:</p>
+<pre>
+(gdb) set $rip=0x400564
+(gdb) c
+Continuing.
+Yes, you have root.
+[Inferior 1 (process 6961) exited normally]
+</pre>
+<p><b>2. Bash Case Modification</b><br />
+Did you know that <a href="http://wiki.bash-hackers.org/syntax/pe#case_modification">bash can modify case</a> when evaluating a variable?  Neither did I, until today...</p>
+<div class="geshifilter">
+<div class="text geshifilter-text" style="font-family:monospace;">
+<pre style="font-family: monospace; font-weight: normal; font-style: normal">$ FOO='foo Bar Baz'
+$ echo ${FOO^^}
+FOO BAR BAZ
+$ echo ${FOO^}
+Foo Bar Baz
+$ echo ${FOO,,}
+foo bar baz
+$ echo ${FOO~~}
+FOO bAR bAZ</pre></div>
+</div>
+<p>WTF?  I guess bash is trying to displace tr and sed.  (Don't forget about <tt>${VAR/.ext/}</tt> and similar constructs.)</p>
+<p><b>3. Arbitrary Python Code Executed when de-pickling</b></p>
+<div class="geshifilter">
+<div class="python geshifilter-python" style="font-family:monospace;">
+<pre style="font-family: monospace; font-weight: normal; font-style: normal"><span style="color: #ff7700;font-weight:bold;">import</span> <span style="color: #dc143c;">pickle</span>
+<span style="color: #ff7700;font-weight:bold;">import</span> <span style="color: #dc143c;">subprocess</span>
+ 
+<span style="color: #ff7700;font-weight:bold;">class</span> PickleLS<span style="color: black;">(</span><span style="color: #008000;">object</span><span style="color: black;">)</span>:
+  <span style="color: #ff7700;font-weight:bold;">def</span> __reduce__<span style="color: black;">(</span><span style="color: #008000;">self</span><span style="color: black;">)</span>:
+    args <span style="color: #66cc66;">=</span> <span style="color: black;">(</span><span style="color: black;">(</span><span style="color: #483d8b;">'/bin/ls'</span><span style="color: #66cc66;">,</span><span style="color: black;">)</span><span style="color: #66cc66;">,</span><span style="color: black;">)</span>
+    <span style="color: #ff7700;font-weight:bold;">return</span> <span style="color: black;">(</span><span style="color: #dc143c;">subprocess</span>.<span style="color: black;">Popen</span><span style="color: #66cc66;">,</span> args<span style="color: black;">)</span>
+ 
+ 
+<span style="color: #dc143c;">pickle</span>.<span style="color: black;">loads</span><span style="color: black;">(</span><span style="color: #dc143c;">pickle</span>.<span style="color: black;">dumps</span><span style="color: black;">(</span>PickleLS<span style="color: black;">(</span><span style="color: black;">)</span><span style="color: black;">)</span><span style="color: black;">)</span></pre></div>
+</div>
+<p>This is a strong reminder to <b>never unpickle untrusted data.</b>  Please, go use JSON, YAML, or (if you want to be "enterprisey") use XML.  Pickle is not a data interchange format!</p>
+<p>So, I'm on to protostar to see what more tricks the guys at Exploit-Exercises have up their sleeves.</p>
+

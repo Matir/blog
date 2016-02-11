@@ -1,0 +1,37 @@
+---
+layout: post
+title: "SSH across a Layer 7 Filter"
+date: 2011-02-19 03:14:50 +0000
+permalink: /blog/ssh-across-a-layer-7-filter/
+category: Security
+tags: Security,Linux,SSH
+---
+<p>Every once in a while, I find myself in a situation behind some sort of device that filters a lot of traffic.  Most often, it's on my laptop at some facility (e.g., coffee shop) that only allows HTTP/HTTPS out.  For a while, I just listened for SSH traffic on port 443 (HTTPS) to connect through port-based firewalls.  However, a few times now I've seen a connection reset immediately after the SSH handshake started (during the protocol&amp;cipher negotation).  Looking at them through WireShark made it obvious it wasn't a server or client problem, but some intermediate device sending a RST.</p>
+<p>At first, I just throught I would use <a href="http://dag.wieers.com/howto/ssh-http-tunneling/">Dag Wieers's method</a> for tunneling SSH over HTTPS with Apache/mod_proxy.  Unfortunately, <a href="https://issues.apache.org/bugzilla/show_bug.cgi?id=29744">Apache bug 29744</a> causes CONNECT over HTTPS to fail.  I also didn't really want to add another application to my system just to do that via proxytunnel.</p>
+<p>My method, I will note, does NOT allow you to run both an HTTPS server and allow these connections on the same port.  What it does do is prevent passive sniffers (including Layer 7 devices) from seeing the SSH session initialization.  It still uses SSH for authentication, and I don't believe it poses any special security risks.  You'll need a dedicated IP/port combination to run this on, and port 443 will have the easiest time getting out of the networks discussed at the beginning.</p>
+<p>Yes, the double-encryption is unnecessary overhead, but it gives you the power of SSH while making the network see nothing more than a simple SSL connection.</p>
+<p>So, let's get it done! First off, install stunnel4 on your server.  My configuration looks something like this:</p>
+<pre>
+cert = /etc/ssl/somecert.pem
+sslVersion = SSLv3
+chroot = /var/lib/stunnel4/
+setuid = stunnel4
+setgid = stunnel4
+pid = /stunnel4.pid
+socket = l:TCP_NODELAY=1
+socket = r:TCP_NODELAY=1
+
+[ssh]
+# This address and port cannot be used for anything except this connection
+accept = 203.0.113.2:443
+connect = 127.0.0.1:22
+</pre><p>On your client, you'll just need the standard openssl application.  OpenSSL is installed on (nearly ?) every Linux distribution by default, so no extra client application needed here.  You'll find it easiest to set up a ~/.ssh/config file.  In my config, I have a stanza like:</p>
+<pre>
+Host server.https
+	Hostname 203.0.113.2
+	Port 443
+	ProxyCommand openssl s_client -connect %h:%p -quiet 2&gt;/dev/null
+	User username
+</pre><p>
+Doing an "ssh server.https" should connect to the server via the SSL tunnel.</p>
+
