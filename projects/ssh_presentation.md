@@ -19,4 +19,4 @@ Original Version
 
 This is a short introduction to the power of SSH.  Presented at the inaugural meeting of the ALE-NW group at Southern Polytechnic State University (SPSU).
 
-* [Slides](/projects/attachments/keys_to_ssh.pdf)
+* [Slides](/static/attachments/keys_to_ssh.pdf)

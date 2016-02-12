@@ -14,4 +14,4 @@ access to a user's accounts will be through service weaknesses, predictable pass
 the ever-popular $5 wrench. It's highly unlikely that KeePassX will be the source of a compromise without
 malware on the user's workstation, and with continued development, that risk will be mitigated even further.
 
-* [Code Audit: KeePassX](/public/attachments/keepassx.pdf)
+* [Code Audit: KeePassX](/static/attachments/keepassx.pdf)
