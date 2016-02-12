@@ -1,0 +1,18 @@
+#!/bin/bash
+
+# Exit on any error
+set -e 
+
+SRV_DIR=/srv/blog
+
+TMP_REPO=`mktemp -d`
+git clone ${GIT_DIR} ${TMP_REPO}
+GIT_REV=$(cd ${TMP_REPO};git rev-parse --short --verify HEAD)
+jekyll build -s ${TMP_REPO} -d ${SRV_DIR}/${GIT_REV}
+ln -sf ${SRV_DIR}/${GIT_REV} ${SRV_DIR}/current
+
+# Cleanup
+rm -rf ${TMP_REPO}
+for i in $(ls ${SRV_DIR} | grep -v current | grep -v ${GIT_REV}) ; do
+  rm -rf ${SRV_DIR}/${i}
+done
