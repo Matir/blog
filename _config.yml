@@ -6,7 +6,7 @@ kramdown:
   hard_wrap:      false
 
 # Permalinks
-permalink:        pretty
+permalink:        ":year/:month/:day/:title.html"
 
 # Setup
 title:            'System Overlord'
