@@ -1,0 +1,20 @@
+---
+layout: page
+title: Projects
+---
+
+This is a collection of my various projects, including security research, open
+source projects, etc.
+
+<ul>
+{% assign pages = site.pages | sort:"date" %}
+{% for node in pages reversed %}
+  {% if node.layout == "project" %}
+  <li class='project'><a href="{{ node.url }}">{{ node.title }}</a>
+    {% if node.date %}
+    <span class='date'>[{{ node.date | date:"%Y-%m-%d" }}]</span>
+    {% endif %}
+  </li>
+  {% endif %}
+{% endfor %}
+</ul>

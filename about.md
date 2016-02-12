@@ -1,6 +1,7 @@
 ---
 layout: page
 title: About David
+weight: 100
 ---
 David is a security engineer at Google, working on information
 security assessments.  He holds an [OSCP](https://www.offensive-security.com/information-security-certifications/oscp-offensive-security-certified-professional/)

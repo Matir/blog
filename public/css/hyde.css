@@ -385,3 +385,9 @@ a.sidebar-nav-item:focus {
 .sidebar-nav-item a {
   padding-left: 5px;
 }
+
+/** Project pages */
+.project .date {
+  font-size: 80%;
+  color: #777;
+}
