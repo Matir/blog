@@ -250,6 +250,15 @@ a.sidebar-nav-item:focus {
   color: #8f5536;
 }
 
+/* Custom theme */
+.theme-navy .sidebar {
+  background-color: #013246;
+}
+.theme-navy .content a,
+.theme-navy .related-posts li a:hover {
+  color: #013246;
+}
+
 
 /* 
  * Social Icon Font
