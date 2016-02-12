@@ -1,0 +1,74 @@
+==================================================================
+https://keybase.io/matir
+--------------------------------------------------------------------
+
+I hereby claim:
+
+  * I am an admin of https://systemoverlord.com
+  * I am matir (https://keybase.io/matir) on keybase.
+  * I have a public key with fingerprint 7FD5 8D9A 196D CEEE AD67  1F94 F4D7 A791 5DEA 789B
+
+To do so, I am signing this object:
+
+{
+    "body": {
+        "key": {
+            "eldest_kid": "0101a034a3396210b050832c080414dcbb0f045147abe675fcc6c844d3e4edf23e830a",
+            "fingerprint": "7fd58d9a196dceeead671f94f4d7a7915dea789b",
+            "host": "keybase.io",
+            "key_id": "f4d7a7915dea789b",
+            "kid": "0101a034a3396210b050832c080414dcbb0f045147abe675fcc6c844d3e4edf23e830a",
+            "uid": "f7f150e3e2d1c4c9545e4d56267af400",
+            "username": "matir"
+        },
+        "revoke": {
+            "sig_ids": [
+                "78afe1084d88426244cf24e044892894a43b56fda78241a15d399671335f77150f"
+            ]
+        },
+        "service": {
+            "hostname": "systemoverlord.com",
+            "protocol": "https:"
+        },
+        "type": "web_service_binding",
+        "version": 1
+    },
+    "ctime": 1446250983,
+    "expire_in": 157680000,
+    "prev": "77adf0b6f2027f81c13d9291c1f76e1ce603e3e60124c7430ab60dc27b97e52b",
+    "seqno": 8,
+    "tag": "signature"
+}
+
+which yields the signature:
+
+-----BEGIN PGP MESSAGE-----
+Version: GnuPG v1
+
+owGtUm9sFEUUvxO9QvEExCgqWp0EAnqWmdnZnd2rFz4Yi0itYgpGCTlmZ95cN727
+PXaXkwarMQ0hDaQ2qBAhaqyNraRBiB+gGI2fTIQoisZExJgAiYVESUiMJv6psxW/
++dH58jIzv/d7v/d7byQ/JzM3u8+fWHwJzV+ePXXJz2xkrXN2ID9U/ai4A/XBbICq
+gjgp9wUKFREmmAhsMWFZnkMJ9rGNXYtK7GJGmJK+jzVmNmFc+OBwW0vpSJcxZQED
+pakFroUFKiAd1CsQNaKgnhharpXtKk8Qz1ESAIRyONEe00xxwT1iKxDc9XyT2BvG
+aYYR54sY2oPQvJlLeVbef+D/Z93b/qnDNbExWEAVkUx6NrOBKduhDheaYZwCY4jq
+ogYGXRNJEKGBAoqgGfZBamocVIziGBU3Ie4KDQS7TLkuow5lTGrKADPmetT1mGCW
+bztamYYoI8L0ZnmesceybM25kaHRZsNtyjUDOUueWnStdNwfJ1ALmxBVw0i1y7Bm
+pDWiMAllWDX/vUnSiIuptqT/WCPNeBb88jWush/UlZmTSTEEcRDWUZEYqEyClJww
+5lAbe65VQLC9EURQDlKEzR0Xm5MWgmY6XS6Uxr6jKaZcu0QSS3nUM1FzB4gEB1vG
+SwcTyiRnxmjfwUpS7nscbJpOMYat9RAVXaNTVNK+gkpdJNsiQAOtQ9ml12eyczO5
+G65LFzjTOm/hv1tdHmyZ6X+h71xvx/Tgzm8GH3k6PFEbKUwdfPz2y4s/Kq47Nbz3
+6r7D86uXP910c+7Onfvbft7yzMfNC+Ny/LvSc0927ZkZe3jJW1NbVyzo+f2+8q7u
+tW2vL1pwaOOiC9WBjm//GC11Dq3vGL54y4MbSurN6cb3G1bORJO7Hzj56ERLdvWh
+ie7dXzJ5et6vZ9q25CavXL037+fzn02uGn7vg57ia6ePlp76enD0/ZVLzvSoLz7P
+jQbhXVPdb/9ytquUG3/pq80jbS++u+ri2LrV95/c/uerr9y29J7juvevysvtXXc/
+UXjj3E9n8527RlsKh2+NPjk/9s4dP5zPL7txzcDYh8/vOUL2PnRl/2PTQwdv+vFA
+dc1vnX8D
+=Xh5l
+-----END PGP MESSAGE-----
+
+And finally, I am proving ownership of this host by posting or
+appending to this document.
+
+View my publicly-auditable identity here: https://keybase.io/matir
+
+==================================================================
