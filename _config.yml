@@ -21,6 +21,10 @@ author:
 
 paginate:         5
 
+exclude:
+  - README.md
+  - LICENSE.md
+
 # Custom vars
 github:
   repo:           https://github.com/Matir/blog
