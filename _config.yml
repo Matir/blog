@@ -18,6 +18,7 @@ baseurl:          /
 author:
   name:           'David Tomaschik'
   url:            https://systemoverlord.com
+  email:          david@systemoverlord.com
 
 paginate:         5
 
