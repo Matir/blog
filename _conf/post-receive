@@ -9,7 +9,8 @@ TMP_REPO=`mktemp -d`
 git clone ${GIT_DIR} ${TMP_REPO}
 GIT_REV=$(git -C ${TMP_REPO} --git-dir .git rev-parse --short --verify HEAD)
 jekyll build -s ${TMP_REPO} -d ${SRV_DIR}/${GIT_REV}
-ln -sf ${SRV_DIR}/${GIT_REV} ${SRV_DIR}/current
+echo "Linking ${SRV_DIR}/current to ${SRV_DIR}/${GIT_REV}"
+ln -snf ${SRV_DIR}/${GIT_REV} ${SRV_DIR}/current
 
 # Cleanup
 rm -rf ${TMP_REPO}
