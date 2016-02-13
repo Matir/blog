@@ -259,6 +259,14 @@ a.sidebar-nav-item:focus {
   color: #013246;
 }
 
+.theme-charcoal .sidebar {
+  background-color: #36454f;
+}
+.theme-charcoal .content a,
+.theme-charcoal .related-posts li a:hover {
+  color: #36454f;
+}
+
 
 /* 
  * Social Icon Font
