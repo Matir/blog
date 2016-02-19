@@ -68,6 +68,57 @@ started until the afternoon (and even then, the villages have not historically
 been open), and things start to wind down a little bit Sunday afternoon, so
 Friday and Saturday are the "core" for DEF CON.
 
+### 1 Conference, 2 Conferences, 3 Conferences? ###
+
+So which conferences do you want to go to?  Well, that really depends on what
+you're looking for.  I strongly suggest not trying to do all 3: you'll end up
+just half-doing all 3.  (This is borne out by personal experience.)  Here's what
+I see as the tradeoffs:
+
+##### Common Elements #####
+
+All 3 conferences have excellent technical content, and many of the
+presentations will be at more than one conference.  Many of the attendees will
+be at more than one as well, so you'll be running in to the same people
+throughout the week.
+
+##### DEF CON #####
+
+DEF CON is, by far, the biggest of the 3 conferences -- reportedly somewhere
+around 14,000 attendees.  It has the most hands-on activities with the villages,
+and most of the parties (oh wait, what happens in Vegas stays in Vegas...).  DEF
+CON is somewhere between casual and chaotic, and is, of course, the conference
+that started the whole week of Hacker Summer Camp 24 years ago.  For me, DEF CON
+is the "can't miss" part of the week, as it has the most learning opportunities,
+most social networking opportunities, and most of the people I look to catch up
+with will be at DEF CON.  The Vendor area at DEF CON is not a trade show -- it's
+suppliers who will sell you tools, books, parts, lockpicks, t-shirts, and other
+things for the individual to use, rather than a "turnkey enterprise solution."
+
+##### Black Hat #####
+
+Black Hat is the business side of the week.  If you're most comfortable in a
+shirt and khakis, then this might be the conference for you.  If you need a
+large trade show-esque vendor area, they have it.  The talks remain
+high-quality, but it's definitely got the feeling of corporate-run,
+enterprise-focused, and very little "community."  It's also worth noting that
+Black Hat is an order of magnitude more expensive than DEF CON, so that may
+influence your choices.
+
+##### BSides Las Vegas #####
+
+BSides LV started as the "B-Side" to Black Hat: an opportunity for smaller
+presenters, attendees without the budget for Black Hat, and more.  It's grown
+into a network of regional conferences, and has expanded to a number of tracks
+of talks in Las Vegas.  Most interestingly, they have a track dedicated to first
+time speakers, so you can get to meet some up and coming presenters and support
+those new to the scene.  BSides is the most calm and laid-back of the 3
+conferences, and a very casual environment.  BSides is also the cheapest ($25
+last year, if I recall correctly) and held at a hotel with dirt-cheap room rates
+($49/night or so), so is clearly a way for a hacker on a budget to enjoy hacker
+summer camp.  (They also offer a shuttle between the BSides hotel and DEF CON,
+so you can enjoy their low room rate all week!)
+
 ### Travel ###
 
 I'm told driving to DEF CON can be a great deal of fun when done with the right
