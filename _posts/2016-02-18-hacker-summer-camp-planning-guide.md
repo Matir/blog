@@ -99,6 +99,11 @@ CON 24), but I'll review the pros/cons of each so you can make up your own mind:
   everything around.  (This can be somewhat mitigated if you have a friend
   staying there.)
 - **(Pro)** It's fun to meet random people from the con around the hotel.
+- **(Pro)** Usually, DEF CON sets up "DEF CON TV" to the rooms in the DEF CON
+  hotels, which will live stream the talks, so if there's one you really want to
+  see but the room is slammed, you can watch it from your room.  (Or you can
+  hang out with some new friends, drink a couple of beers, and watch talks from
+  your room.)
 - **(Con)** Everywhere at the hotel will be busy.  Everywhere.  Every bar,
   restaurant, and shop, will be slammed at all hours.  Seriously.
 
@@ -108,7 +113,8 @@ CON 24), but I'll review the pros/cons of each so you can make up your own mind:
   good option for introverts.  (Though I personally find going to my room enough
   for that -- I usually need to do so about once per day to mentally recharge.)
 - **(Pro)** You can often find much better deals off site, especially if you
-  start looking early.
+  start looking early.  DEF CON even has room block that is close by, but not
+  Paris/Bally's, and is generally cheaper than those hotels.
 - **(Pro)** Food options will be much less busy than at the conference hotel.
 - **(Con)** You'll need to get back and forth to the conference, which may
   negate some of the potential savings.  (You may think you can walk, but
@@ -117,8 +123,14 @@ CON 24), but I'll review the pros/cons of each so you can make up your own mind:
 ### Other Things to Be Aware Of ###
 
 - As of DEF CON 24, registration is $240, cash only at the door.  Since DEF CON
-  20, pricing has fairly consistently been $year * $10.  Registration got much
-  better with DEF CON 23.
+  20, pricing has fairly consistently been ($year * $10) -- so $200 at DC 20,
+  $220 at DC 22, $230 at DC 23, and this year will be $240 for DC 24.
+  While historically, there have been crazy waits for badges,
+  registration got much better with DEF CON 23.
+- Currently, even numbered years get electronic badges, and odd numbered years
+  get non-electronic badges.  The electronic badges tend to run out, so you may
+  want to make sure you get a badge on Thursday (they're usually good through
+  Thursday) if that's important to you.
 - International travelers: Las Vegas basically runs on tips.  Nearly everyone
   expects to be tipped.
 - Be an active participant.  I've personally spent too much time not
@@ -141,3 +153,6 @@ I hope this proves helpful to those new to DEF CON.  Get out there, meet people,
 and have fun.  If you're a seasoned veteran and see some suggestions I've
 missed, please email me or find me on twitter:
 [@matir](https://twitter.com/matir) with your suggestion and I'll add it.
+
+Thanks to the [@dc404](https://twitter.com/dc404) group for some of the
+additions and suggestions!
