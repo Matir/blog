@@ -7,7 +7,8 @@ tags: BSides Seattle, BSides, Security
 ---
 
 These are just (essentially) my raw notes dumped from the talks I attended at
-BSides Seattle (2015-ish).
+BSides Seattle (2015-ish).  Unfortunate I developed a migraine so I only caught
+the morning talks.
 
 ### Active Directory ###
 
