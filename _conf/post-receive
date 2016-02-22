@@ -9,6 +9,10 @@ TMP_REPO=`mktemp -d`
 git clone ${GIT_DIR} ${TMP_REPO}
 GIT_REV=$(git -C ${TMP_REPO} --git-dir .git rev-parse --short --verify HEAD)
 jekyll build -s ${TMP_REPO} -d ${SRV_DIR}/${GIT_REV}
+echo "Compressing html/css/js files."
+find ${SRV_DIR}/${GIT_REV} -type f -name '*.html' -o -name '*.js' -o -name '*.css' | while read file ; do
+  gzip < ${file} > ${file}.gz
+done
 echo "Linking ${SRV_DIR}/current to ${SRV_DIR}/${GIT_REV}"
 ln -snf ${SRV_DIR}/${GIT_REV} ${SRV_DIR}/current
 
