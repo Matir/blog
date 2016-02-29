@@ -110,6 +110,42 @@ but to my mind, the most interesting part of his keynote was the Q&A.
 
 ### IoT on Easy Mode (Reversing Embedded Devices) ###
 
-  *[Elvis Collado]()*
+  *[Elvis Collado](http://b1ack0wl.com/)*
 
-* 
+30 minute speed talk on reverse engineering & exploiting vulnerabilities in
+embedded devices.
+
+* Useful things:
+  * Binwalk
+  * IDA
+  * Radare2
+* Use Qemu, build basic source in C, disassemble to understand assembly of
+  architecture
+  * Use breakpoints to understand what particular instructions do (break,
+    before/after comparison)
+* GPL to see plain source
+* Beginning kit
+  * FT232H adapter
+  * Multimeter
+  * Soldering Iron
+    * Solder
+    * Wick
+    * Desoldering pump
+  * Header pins
+  * wire
+* Intermediate kit
+  * (Beginning +)
+  * Shikra
+  * JTAGulator
+  * Logic Analyzer
+  * USB Microscope
+* Find UART
+  * Use FCC ID to find high-res photos to find pinouts, etc.
+  * *Find Ground First*
+    * Multimeter with sounds help
+  * TX/RX swapped
+* DVRF (Damn Vulnerable Router Firmware) project
+  * Inspired by DVL, DVWA
+  * MIPS 32 LE
+  * E1550 router based
+  * https://github.com/praetorian-inc/DVRF
