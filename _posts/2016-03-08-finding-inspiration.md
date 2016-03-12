@@ -22,3 +22,5 @@ that it will help me find my mojo and enthusiasm for what I do again.
 * [RPISEC Malware Analysis](https://github.com/RPISEC/Malware)
 * [Planning Effective Red Team Exercises](https://www.youtube.com/watch?v=E-rKsiXl3To)
 * [Tales of a Bug Bounty Hunter](https://www.arneswinnen.net/2016/02/the-tales-of-a-bug-bounty-hunter-10-interesting-vulnerabilities-in-instagram/)
+* [IOActive Labs Research: Got 15 minutes to kill? Why not root your Christmas gift?](http://blog.ioactive.com/2016/03/got-15-minutes-to-kill-why-not-root.html)
+* [CVE-2016-1562: Unauthenticated “filter” parameter leads to customer information leak in the DTE Energy Insight app – jeffq, published](http://jeffq.com/blog/dteenergy-insight/)
