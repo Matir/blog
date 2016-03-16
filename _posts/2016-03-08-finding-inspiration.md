@@ -24,3 +24,5 @@ that it will help me find my mojo and enthusiasm for what I do again.
 * [Tales of a Bug Bounty Hunter](https://www.arneswinnen.net/2016/02/the-tales-of-a-bug-bounty-hunter-10-interesting-vulnerabilities-in-instagram/)
 * [IOActive Labs Research: Got 15 minutes to kill? Why not root your Christmas gift?](http://blog.ioactive.com/2016/03/got-15-minutes-to-kill-why-not-root.html)
 * [CVE-2016-1562: Unauthenticated “filter” parameter leads to customer information leak in the DTE Energy Insight app – jeffq, published](http://jeffq.com/blog/dteenergy-insight/)
+* [jhaddix/tbhm: The Bug Hunters Methodology](https://github.com/jhaddix/tbhm)
+* [An Introduction to radare2 – sushant94](http://sushant94.me/2015/05/31/Introduction_to_radare2/)
