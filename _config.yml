@@ -25,6 +25,7 @@ paginate:         5
 exclude:
   - README.md
   - LICENSE.md
+  - _conf
 
 # Custom vars
 github:
