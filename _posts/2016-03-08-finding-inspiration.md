@@ -26,3 +26,5 @@ that it will help me find my mojo and enthusiasm for what I do again.
 * [CVE-2016-1562: Unauthenticated “filter” parameter leads to customer information leak in the DTE Energy Insight app – jeffq, published](http://jeffq.com/blog/dteenergy-insight/)
 * [jhaddix/tbhm: The Bug Hunters Methodology](https://github.com/jhaddix/tbhm)
 * [An Introduction to radare2 – sushant94](http://sushant94.me/2015/05/31/Introduction_to_radare2/)
+* [XSS via PNG Content Types](https://fin1te.net/articles/xss-on-facebook-via-png-content-types/)
+* [Encoding Web Shells in PNG IDAT chunks](https://www.idontplaydarts.com/2012/06/encoding-web-shells-in-png-idat-chunks/)
