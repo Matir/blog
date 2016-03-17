@@ -22,3 +22,5 @@ that it will help me find my mojo and enthusiasm for what I do again.
 * [RPISEC Malware Analysis](https://github.com/RPISEC/Malware)
 * [Planning Effective Red Team Exercises](https://www.youtube.com/watch?v=E-rKsiXl3To)
 * [Tales of a Bug Bounty Hunter](https://www.arneswinnen.net/2016/02/the-tales-of-a-bug-bounty-hunter-10-interesting-vulnerabilities-in-instagram/)
+* [XSS via PNG Content Types](https://fin1te.net/articles/xss-on-facebook-via-png-content-types/)
+* [Encoding Web Shells in PNG IDAT chunks](https://www.idontplaydarts.com/2012/06/encoding-web-shells-in-png-idat-chunks/)
