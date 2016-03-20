@@ -3,7 +3,7 @@
 {% else %}
   {% assign tags = page.tags %}
 {% endif %}
-{% if tags %}
+{% if tags.size > 0 %}
 <div class="post-tags">
   Tags: 
   {% for tag in tags %}

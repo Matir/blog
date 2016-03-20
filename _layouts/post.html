@@ -6,7 +6,7 @@ layout: default
   <h1 class="post-title">{{ page.title }}</h1>
   <span class="post-date">{{ page.date | date_to_string }}
     {% if page.category %}in <a
-      href="/category/{{ page.category | slugize }}"
+      href="/category/{{ page.category | slugify }}"
       >{{ page.category }}</a>{% endif %}
   </span>
   {% include post-tags.html %}

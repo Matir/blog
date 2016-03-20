@@ -21,9 +21,11 @@ permalink: /tags/
   {% for tag_word in tag_words %}
     <div class="archive-group">
       <h3 id="{{ tag_word | slugify}}" name="{{ tag_word | slugify }}" class="tag-title">{{ tag_word }}</h3>
+      <ul>
       {% for post in site.tags[tag_word] %}
-        <h5><a href="{{ post.url }}">{{ post.title }}</a></h5>
+        <li>{{ post.date | date_to_string }}: <a href="{{ post.url }}">{{ post.title }}</a></li>
       {% endfor %}
+      </ul>
     </div>
   {% endfor %}
 </div>
