@@ -2,7 +2,7 @@
 layout: post
 title: "Dangers of decorator-based registries in Python"
 date: 2014-10-26 18:51:13 +0000
-permalink: /blog/dangers-of-decorator-based-registries-in-python/
+permalink: /2014/10/26/dangers-of-decorator-based-registries-in-python/
 categories: Computer,Security
 tags: Flask,Software Engineering,Security
 ---

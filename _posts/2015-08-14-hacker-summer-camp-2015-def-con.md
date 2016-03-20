@@ -2,7 +2,7 @@
 layout: post
 title: "Hacker Summer Camp 2015: DEF CON"
 date: 2015-08-14 03:11:12 +0000
-permalink: /blog/hacker-summer-camp-2015-def-con/
+permalink: /2015/08/14/hacker-summer-camp-2015-def-con/
 category: Security
 tags: DEF CON,CTF,Security
 ---

@@ -2,7 +2,7 @@
 layout: post
 title: "A Brief History of the Internet (Security-Wise)"
 date: 2014-04-16 04:55:14 +0000
-permalink: /blog/a-brief-history-of-the-internet-security-wise/
+permalink: /2014/04/16/a-brief-history-of-the-internet-security-wise/
 categories: Computer,Security
 tags: InfoSec,Security,Hacking
 ---

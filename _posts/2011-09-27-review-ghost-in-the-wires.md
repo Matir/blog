@@ -2,7 +2,7 @@
 layout: post
 title: "Review: Ghost in the Wires"
 date: 2011-09-27 19:49:16 +0000
-permalink: /blog/review-ghost-in-the-wires/
+permalink: /2011/09/27/review-ghost-in-the-wires/
 category: Computer
 tags: Kevin Mitnick,Book Reviews,Hacking,Social Engineering
 ---

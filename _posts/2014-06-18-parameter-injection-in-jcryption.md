@@ -2,7 +2,7 @@
 layout: post
 title: "Parameter Injection in jCryption"
 date: 2014-06-18 01:00:00 +0000
-permalink: /blog/parameter-injection-in-jcryption/
+permalink: /2014/06/18/parameter-injection-in-jcryption/
 category: Security
 tags: Vulnerability Research,Security,Cryptography
 ---

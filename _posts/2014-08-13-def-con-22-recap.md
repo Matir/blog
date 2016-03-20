@@ -2,7 +2,7 @@
 layout: post
 title: "DEF CON 22 Recap"
 date: 2014-08-13 05:45:33 +0000
-permalink: /blog/def-con-22-recap/
+permalink: /2014/08/13/def-con-22-recap/
 category: Security
 tags: DEF CON,BSides,Black Hat,Security
 ---

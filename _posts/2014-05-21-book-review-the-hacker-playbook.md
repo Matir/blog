@@ -2,7 +2,7 @@
 layout: post
 title: "Book Review: The Hacker Playbook..."
 date: 2014-05-21 01:10:54 +0000
-permalink: /blog/book-review-the-hacker-playbook/
+permalink: /2014/05/21/book-review-the-hacker-playbook/
 category: Security
 tags: Security,Book Reviews,Hacking
 ---

@@ -2,7 +2,7 @@
 layout: post
 title: "Playing with the Patriot Gauntlet Node (Part 2)"
 date: 2015-06-20 22:13:50 +0000
-permalink: /blog/playing-with-the-patriot-gauntlet-node-part-2/
+permalink: /2015/06/20/playing-with-the-patriot-gauntlet-node-part-2/
 category: Security
 tags: Security,Patriot Gauntlet Node,Embedded Systems
 ---

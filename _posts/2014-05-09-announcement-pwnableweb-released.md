@@ -2,7 +2,7 @@
 layout: post
 title: "Announcement: PwnableWeb Released"
 date: 2014-05-09 00:11:58 +0000
-permalink: /blog/announcement-pwnableweb-released/
+permalink: /2014/05/09/announcement-pwnableweb-released/
 category: Security
 tags: PwnableWeb,CTF,Security
 ---

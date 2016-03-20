@@ -2,7 +2,7 @@
 layout: post
 title: "Wordpress and APC 3.1.3p1"
 date: 2011-01-14 02:53:14 +0000
-permalink: /blog/wordpress-and-apc-313p1/
+permalink: /2011/01/14/wordpress-and-apc-313p1/
 category: Computer
 ---
 <p>In order to improve performance on my blog (it is on a light-weight Linode after all), I use APC as both an opcode cache and an object cache.  On Ubuntu Server 10.04, you get APC 3.1.3p1 if you install the php-apc package.  Unfortunately, this version of APC has an <a href="http://pecl.php.net/bugs/bug.php?id=16814">issue</a> with the same script execution inserting 2 values for the same key, which is apparently something several of Wordpress's configuration pages does.  If you run into this issue, you'll see lots of messages like:</p>

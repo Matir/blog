@@ -2,7 +2,7 @@
 layout: post
 title: "Weekly Reading List for 1/18/14"
 date: 2014-01-18 05:00:00 +0000
-permalink: /blog/weekly-reading-list-for-11714/
+permalink: /2014/01/18/weekly-reading-list-for-11714/
 category: Security
 tags: reverse engineering,Security,CTF,SDR,Hacking
 ---

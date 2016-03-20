@@ -2,7 +2,7 @@
 layout: post
 title: "LD_PRELOAD for Binary Analysis"
 date: 2014-01-13 02:18:16 +0000
-permalink: /blog/ld_preload-for-binary-analysis/
+permalink: /2014/01/13/ld_preload-for-binary-analysis/
 category: Security
 tags: CTF,Security,reverse engineering,InfoSec,Hacking
 ---

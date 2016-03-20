@@ -2,7 +2,7 @@
 layout: post
 title: "Minimal x86-64 shellcode for /bin/sh?"
 date: 2014-06-05 01:54:22 +0000
-permalink: /blog/minimal-x86-64-shellcode-for-binsh/
+permalink: /2014/06/05/minimal-x86-64-shellcode-for-binsh/
 category: Security
 tags: Exploitation,Security
 ---

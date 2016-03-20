@@ -2,7 +2,7 @@
 layout: post
 title: "Weekly Reading List for 5/23/14"
 date: 2014-05-23 07:00:00 +0000
-permalink: /blog/weekly-reading-list-for-52314/
+permalink: /2014/05/23/weekly-reading-list-for-52314/
 category: Security
 tags: Reading List,Security,CTF,reverse engineering,Red Team,Pentesting
 ---

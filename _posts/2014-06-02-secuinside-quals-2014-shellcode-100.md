@@ -2,7 +2,7 @@
 layout: post
 title: "Secuinside Quals 2014: Shellcode 100"
 date: 2014-06-02 04:57:01 +0000
-permalink: /blog/secuinside-quals-2014-shellcode-100/
+permalink: /2014/06/02/secuinside-quals-2014-shellcode-100/
 category: Security
 tags: CTF,Secuinside,Security
 ---

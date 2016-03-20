@@ -2,7 +2,7 @@
 layout: post
 title: "PlaidCTF 2014: mtpox"
 date: 2014-04-14 05:13:12 +0000
-permalink: /blog/plaidctf-mtpox/
+permalink: /2014/04/14/plaidctf-mtpox/
 category: Security
 tags: PlaidCTF,Security,CTF,Cryptography
 ---

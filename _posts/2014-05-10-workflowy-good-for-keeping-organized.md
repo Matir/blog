@@ -2,7 +2,7 @@
 layout: post
 title: "Workflowy: Good for Keeping Organized?"
 date: 2014-05-10 02:53:35 +0000
-permalink: /blog/workflowy-good-for-keeping-organized/
+permalink: /2014/05/10/workflowy-good-for-keeping-organized/
 category: Life
 tags: Organization,Life
 ---

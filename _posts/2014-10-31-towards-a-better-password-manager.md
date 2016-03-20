@@ -2,7 +2,7 @@
 layout: post
 title: "Towards a Better Password Manager"
 date: 2014-10-31 01:16:10 +0000
-permalink: /blog/towards-a-better-password-manager/
+permalink: /2014/10/31/towards-a-better-password-manager/
 category: Security
 tags: Security,Passwords
 ---

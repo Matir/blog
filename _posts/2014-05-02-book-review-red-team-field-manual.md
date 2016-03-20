@@ -2,7 +2,7 @@
 layout: post
 title: "Book Review: Red Team Field Manual"
 date: 2014-05-02 15:24:27 +0000
-permalink: /blog/book-review-red-team-field-manual/
+permalink: /2014/05/02/book-review-red-team-field-manual/
 categories: Computer,Security
 tags: Red Team,Security,Pentesting
 ---
