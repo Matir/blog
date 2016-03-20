@@ -4,7 +4,10 @@ title: "Offensive Security Certified Professional"
 date: 2015-12-29 05:32:33 +0000
 permalink: /2015/12/29/offensive-security-certified-professional/
 category: Security
-tags: OSCP,Security,Pentesting
+tags:
+  - OSCP
+  - Security
+  - Pentesting
 ---
 It's been a little bit since I last updated, and it's been a busy time.  I did want to take a quick moment to update and note that I accomplished something I'm pretty proud of.  As of Christmas Eve, I'm now an Offensive Security Certified Professional.
 

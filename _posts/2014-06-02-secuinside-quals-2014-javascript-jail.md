@@ -4,7 +4,11 @@ title: "Secuinside Quals 2014: Javascript Jail (Misc 200)"
 date: 2014-06-02 03:43:33 +0000
 permalink: /2014/06/02/secuinside-quals-2014-javascript-jail/
 category: Security
-tags: CTF,Security,Secuinside,Javascript
+tags:
+  - CTF
+  - Security
+  - Secuinside
+  - Javascript
 ---
 The challenge was pretty straightforward: connect to a service that's running a Javascript REPL, and extract the flag.  You were provided a check function that was created by the checker function given below:
 

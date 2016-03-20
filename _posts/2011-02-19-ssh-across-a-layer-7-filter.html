@@ -4,7 +4,10 @@ title: "SSH across a Layer 7 Filter"
 date: 2011-02-19 03:14:50 +0000
 permalink: /2011/02/19/ssh-across-a-layer-7-filter/
 category: Security
-tags: Security,Linux,SSH
+tags:
+  - Security
+  - Linux
+  - SSH
 ---
 <p>Every once in a while, I find myself in a situation behind some sort of device that filters a lot of traffic.  Most often, it's on my laptop at some facility (e.g., coffee shop) that only allows HTTP/HTTPS out.  For a while, I just listened for SSH traffic on port 443 (HTTPS) to connect through port-based firewalls.  However, a few times now I've seen a connection reset immediately after the SSH handshake started (during the protocol&amp;cipher negotation).  Looking at them through WireShark made it obvious it wasn't a server or client problem, but some intermediate device sending a RST.</p>
 <p>At first, I just throught I would use <a href="http://dag.wieers.com/howto/ssh-http-tunneling/">Dag Wieers's method</a> for tunneling SSH over HTTPS with Apache/mod_proxy.  Unfortunately, <a href="https://issues.apache.org/bugzilla/show_bug.cgi?id=29744">Apache bug 29744</a> causes CONNECT over HTTPS to fail.  I also didn't really want to add another application to my system just to do that via proxytunnel.</p>

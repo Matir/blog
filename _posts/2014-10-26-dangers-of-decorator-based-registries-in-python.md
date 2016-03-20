@@ -4,7 +4,10 @@ title: "Dangers of decorator-based registries in Python"
 date: 2014-10-26 18:51:13 +0000
 permalink: /2014/10/26/dangers-of-decorator-based-registries-in-python/
 categories: Computer,Security
-tags: Flask,Software Engineering,Security
+tags:
+  - Flask
+  - Software Engineering
+  - Security
 ---
 So [Flask](http://flask.pocoo.org/) has a really convenient mechanism for registering handlers, actions to be run before/after requests, etc.  Using decorators, Flask registers these functions to be called, as in:
 

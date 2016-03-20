@@ -4,7 +4,10 @@ title: "Hacker Summer Camp 2015: BSides LV & Pros vs Joes CTF"
 date: 2015-08-12 00:13:58 +0000
 permalink: /2015/08/12/hacker-summer-camp-2015-bsides-lv-pros-vs-joes-ctf/
 category: Security
-tags: CTF,BSides,Security
+tags:
+  - CTF
+  - BSides
+  - Security
 ---
 I've just returned from Las Vegas for the annual "hacker summer camp", and am
 going to be putting up a series of blog posts covering the week.  Tuesday and

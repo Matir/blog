@@ -4,7 +4,9 @@ title: "What the LastPass CLI tells us about LastPass Design"
 date: 2015-09-16 05:58:19 +0000
 permalink: /2015/09/16/what-the-lastpass-cli-tells-us-about-lastpass-design/
 category: Security
-tags: Security,Passwords
+tags:
+  - Security
+  - Passwords
 ---
 [LastPass](https://lastpass.com/) is a password manager that claims not to be
 able to access your data.

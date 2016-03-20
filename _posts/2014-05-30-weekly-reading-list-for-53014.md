@@ -4,7 +4,9 @@ title: "Weekly Reading List for 5/30/14"
 date: 2014-05-30 07:00:00 +0000
 permalink: /2014/05/30/weekly-reading-list-for-53014/
 category: Security
-tags: Security,Reading List
+tags:
+  - Security
+  - Reading List
 ---
 It's been a busy week, so I'm just going to drop some info about Radare2.
 

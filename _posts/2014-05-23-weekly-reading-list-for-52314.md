@@ -4,7 +4,13 @@ title: "Weekly Reading List for 5/23/14"
 date: 2014-05-23 07:00:00 +0000
 permalink: /2014/05/23/weekly-reading-list-for-52314/
 category: Security
-tags: Reading List,Security,CTF,reverse engineering,Red Team,Pentesting
+tags:
+  - Reading List
+  - Security
+  - CTF
+  - reverse engineering
+  - Red Team
+  - Pentesting
 ---
 ###Radare2 Book
 Maijin on GitHub is in the process of putting together an [online book for Radare2](https://maijin.github.io/radare2book).  I've been looking for a good resource for using Radare2, and this is a great start.

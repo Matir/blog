@@ -4,7 +4,9 @@ title: "Integer Overflow Vulnerabilities"
 date: 2014-02-27 04:01:07 +0000
 permalink: /2014/02/27/integer-overflow-vulnerabilities/
 category: Security
-tags: Security,Exploitation
+tags:
+  - Security
+  - Exploitation
 ---
 What's wrong with this code (other than the fact the messages are discarded)?
 

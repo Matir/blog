@@ -4,7 +4,11 @@ title: "DEF CON 22 Recap"
 date: 2014-08-13 05:45:33 +0000
 permalink: /2014/08/13/def-con-22-recap/
 category: Security
-tags: DEF CON,BSides,Black Hat,Security
+tags:
+  - DEF CON
+  - BSides
+  - Black Hat
+  - Security
 ---
 ![Conference Badges][1]
 

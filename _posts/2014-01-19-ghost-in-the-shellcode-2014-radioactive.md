@@ -4,7 +4,12 @@ title: "Ghost in the Shellcode 2014: Radioactive"
 date: 2014-01-19 20:21:46 +0000
 permalink: /2014/01/19/ghost-in-the-shellcode-2014-radioactive/
 category: Security
-tags: Security,Ghost in the Shellcode,Shadow Cats,CTF,Cryptography
+tags:
+  - Security
+  - Ghost in the Shellcode
+  - Shadow Cats
+  - CTF
+  - Cryptography
 ---
 Radioactive was a crypto challenge that executed arbitrary python code, if you could apply a correct cryptographic tag.  Source was provided, and the handler is below:
 

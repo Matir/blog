@@ -3,7 +3,9 @@ layout: post
 title: "Weekly Reading List for 8/2/14"
 date: 2014-08-03 02:02:20 +0000
 permalink: /2014/08/03/weekly-reading-list-for-8214/
-tags: Security,DEF CON
+tags:
+  - Security
+  - DEF CON
 ---
 This has been missing for a few weeks, but it's back!
 

@@ -4,7 +4,10 @@ title: "Automatically Creating Archives from Git Tags"
 date: 2011-07-16 13:33:05 +0000
 permalink: /2011/07/16/automatically-creating-archives-from-git-tags/
 category: Linux
-tags: git,gitolite,scripts
+tags:
+  - git
+  - gitolite
+  - scripts
 ---
 <p>At work, we've been moving all of our development processes to git.  As part of that, I've encouraged that alphas, betas, and releases be tagged in git -- it's important to know which versions are in use where.  Additionally, my director wanted archives (zips/tars) of each of these versions to make it easier to install the releases, particularly for the members of our department who are not git-friendly.  I realized that with git hooks and our use of gitolite, we could produce automated archives when tags with the words alpha/beta/release are pushed to the gitolite server.  The script below is placed in the $GL_PACKAGE_HOOKS/common directory.  It uses the name of the repository to decide if it should be archived (matches $ALLOW_ARCHIVE) and where the archive should be put (within $ARCHIVE_DIR).
 </p>

@@ -3,7 +3,10 @@ layout: post
 title: BSides Seattle
 date: 2016-02-20
 category: Security
-tags: BSides Seattle, BSides, Security
+tags:
+  - BSides Seattle
+  - BSides
+  - Security
 ---
 
 These are just (essentially) my raw notes dumped from the talks I attended at

@@ -4,7 +4,9 @@ title: "The Machine Inside the Machine"
 date: 2014-05-13 04:24:00 +0000
 permalink: /2014/05/13/the-machine-inside-the-machine/
 category: Security
-tags: Security,system administration
+tags:
+  - Security
+  - system administration
 ---
 Imagine this scenario:
 > One of your employees visits a site offering a program to download videos from a popular video site.  Because they'd like to throw some videos on their phone, they download and install it, but it comes with a hitchhiker: a RAT, or remote access trojan.  So Trudy, an attacker, has a foothold, but the user isn't an administrator, so she starts looking at the network for a place to pivot.  Scanning a private subnet, she finds a number of consecutive IP addresses all offering webservers, FTP servers, and even telnet!  Connecting to one, the attacker suddenly realizes she has just found her golden ticket...

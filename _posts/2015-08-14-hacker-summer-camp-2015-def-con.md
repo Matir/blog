@@ -4,7 +4,10 @@ title: "Hacker Summer Camp 2015: DEF CON"
 date: 2015-08-14 03:11:12 +0000
 permalink: /2015/08/14/hacker-summer-camp-2015-def-con/
 category: Security
-tags: DEF CON,CTF,Security
+tags:
+  - DEF CON
+  - CTF
+  - Security
 ---
 So, following up on my post on BSides LV 2015, I thought I'd give a summary of DEF CON 23.  I can't cover everything I did (after all, what happens in Vegas, stays in Vegas... mostly) but I'm going to cover the biggest highlights as I saw them.
 

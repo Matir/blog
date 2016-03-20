@@ -4,7 +4,9 @@ title: "Getting Started in CTFs"
 date: 2014-09-14 20:07:10 +0000
 permalink: /2014/09/14/getting-started-in-ctfs/
 category: Security
-tags: Security,CTF
+tags:
+  - Security
+  - CTF
 ---
 My last post was about getting started in a career in information security.  This post is about the sport end of information security: Capture the Flag (CTFs).
 

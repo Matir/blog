@@ -4,7 +4,10 @@ title: "Secuinside Quals 2014: Simple Login"
 date: 2014-06-04 02:08:25 +0000
 permalink: /2014/06/04/secuinside-quals-2014-simple-login/
 category: Security
-tags: CTF,Secuinside,Security
+tags:
+  - CTF
+  - Secuinside
+  - Security
 ---
 In this challenge, we received the source for a site with a pretty basic login functionality.  Aside from some boring forms, javascript, and css, we have this PHP library for handling the session management:
 
