@@ -34,4 +34,4 @@ Let's use MySQL's information_schema virtual database to do some information gat
 
 Let's find out what ID contains. <code>1=1 UNION SELECT group_concat(id) from plaidcoin_wallets</code> shows just one wallet, with the name <code>pctf{phpPhPphpPPPphpcoin}</code>.  Turn in the flag, and we're up 150 points!
 
-*Big thanks to Ron at [skullsecurity.org](skullsecurity.org) for the great write-up and tool for hash length extension attacks.  **Update**: Apparently Ron has written this one up as well, see [here](https://blog.skullsecurity.org/2014/plaidctf-web-150-mtpox-hash-extension-attack) for his writeup.*
+*Big thanks to Ron at [skullsecurity.org](http://skullsecurity.org) for the great write-up and tool for hash length extension attacks.  **Update**: Apparently Ron has written this one up as well, see [here](https://blog.skullsecurity.org/2014/plaidctf-web-150-mtpox-hash-extension-attack) for his writeup.*
