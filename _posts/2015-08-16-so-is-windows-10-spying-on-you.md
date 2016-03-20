@@ -139,4 +139,4 @@ reproduce it.  I encourage others to try it as well -- if enough of us do it, it
 should be possible to either confirm or strongly refute the original claims.
 
 
-  [1]: /media/uploads/blog/windows10traffic.png
+  [1]: /img/blog/windows10traffic.png

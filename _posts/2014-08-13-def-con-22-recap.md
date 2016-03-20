@@ -38,5 +38,5 @@ Of course, work events aren't so bad when they come with this view.  We took som
 If you haven't heard, this was the final year at the Rio.  It's time to pack our bags and head across the freeway to Paris.  And Bally's.  That's right, it's going to take 2 hotels to contain all the hackers. Apparently we'll have room blocks at several more of the area hotels.  Makes sense given this year's reported 16,000 attendance.
 
 
-  [1]: /media/uploads/blog/badges.jpg
-  [2]: /media/uploads/blog/high_roller.jpg
+  [1]: /img/blog/badges.jpg
+  [2]: /img/blog/high_roller.jpg

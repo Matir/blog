@@ -105,5 +105,5 @@ Connect your Android device to your WiFi lab, `ssh wifitap` from your Kali insta
 
 Good luck with your Android auditing!
 
-  [1]: /media/uploads/blog/wifitap.png
-  [2]: /media/uploads/blog/burp_setup.png
+  [1]: /img/blog/wifitap.png
+  [2]: /img/blog/burp_setup.png
