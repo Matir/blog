@@ -2,7 +2,7 @@
 layout: post
 title: "On the TrueCrypt Saga"
 date: 2014-05-30 00:52:47 +0000
-permalink: /blog/on-the-truecrypt-saga/
+permalink: /2014/05/30/on-the-truecrypt-saga/
 categories: Freedom,Security
 tags: Cryptography,Security
 ---

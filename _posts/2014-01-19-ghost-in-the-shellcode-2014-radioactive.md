@@ -2,7 +2,7 @@
 layout: post
 title: "Ghost in the Shellcode 2014: Radioactive"
 date: 2014-01-19 20:21:46 +0000
-permalink: /blog/ghost-in-the-shellcode-2014-radioactive/
+permalink: /2014/01/19/ghost-in-the-shellcode-2014-radioactive/
 category: Security
 tags: Security,Ghost in the Shellcode,Shadow Cats,CTF,Cryptography
 ---

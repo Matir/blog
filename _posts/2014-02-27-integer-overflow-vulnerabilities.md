@@ -2,7 +2,7 @@
 layout: post
 title: "Integer Overflow Vulnerabilities"
 date: 2014-02-27 04:01:07 +0000
-permalink: /blog/integer-overflow-vulnerabilities/
+permalink: /2014/02/27/integer-overflow-vulnerabilities/
 category: Security
 tags: Security,Exploitation
 ---

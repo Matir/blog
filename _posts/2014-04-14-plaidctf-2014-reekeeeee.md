@@ -2,7 +2,7 @@
 layout: post
 title: "PlaidCTF 2014: ReeKeeeee"
 date: 2014-04-14 06:46:01 +0000
-permalink: /blog/plaidctf-2014-reekeeeee/
+permalink: /2014/04/14/plaidctf-2014-reekeeeee/
 category: Security
 tags: CTF,PlaidCTF,Security
 ---

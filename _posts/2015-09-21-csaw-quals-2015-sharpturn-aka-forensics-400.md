@@ -2,7 +2,7 @@
 layout: post
 title: "CSAW Quals 2015: Sharpturn (aka Forensics 400)"
 date: 2015-09-21 21:33:58 +0000
-permalink: /blog/csaw-quals-2015-sharpturn-aka-forensics-400/
+permalink: /2015/09/21/csaw-quals-2015-sharpturn-aka-forensics-400/
 category: Security
 tags: CTF,Security,CSAW
 ---

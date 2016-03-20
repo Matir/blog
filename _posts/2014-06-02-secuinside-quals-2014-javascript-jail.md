@@ -2,7 +2,7 @@
 layout: post
 title: "Secuinside Quals 2014: Javascript Jail (Misc 200)"
 date: 2014-06-02 03:43:33 +0000
-permalink: /blog/secuinside-quals-2014-javascript-jail/
+permalink: /2014/06/02/secuinside-quals-2014-javascript-jail/
 category: Security
 tags: CTF,Security,Secuinside,Javascript
 ---

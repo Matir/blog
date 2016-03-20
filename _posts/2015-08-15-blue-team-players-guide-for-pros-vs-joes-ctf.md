@@ -2,7 +2,7 @@
 layout: post
 title: "Blue Team Player's Guide for Pros vs Joes CTF"
 date: 2015-08-15 19:15:36 +0000
-permalink: /blog/blue-team-players-guide-for-pros-vs-joes-ctf/
+permalink: /2015/08/15/blue-team-players-guide-for-pros-vs-joes-ctf/
 category: Security
 tags: CTF,BSides
 ---

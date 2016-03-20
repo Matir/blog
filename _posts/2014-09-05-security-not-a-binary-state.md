@@ -2,7 +2,7 @@
 layout: post
 title: "Security: Not a Binary State"
 date: 2014-09-05 00:03:24 +0000
-permalink: /blog/security-not-a-binary-state/
+permalink: /2014/09/05/security-not-a-binary-state/
 category: Security
 tags: Security
 ---

@@ -2,7 +2,7 @@
 layout: post
 title: "Passing Android Traffic through Burp"
 date: 2014-07-13 20:57:18 +0000
-permalink: /blog/passing-android-traffic-through-burp/
+permalink: /2014/07/13/passing-android-traffic-through-burp/
 category: Security
 tags: Android,Security,Red Team,Burp Suite,Proxy,HTTPS,Hacking
 ---

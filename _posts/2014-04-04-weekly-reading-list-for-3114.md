@@ -2,7 +2,7 @@
 layout: post
 title: "Weekly Reading List for 4/4/14"
 date: 2014-04-04 07:00:00 +0000
-permalink: /blog/weekly-reading-list-for-3114/
+permalink: /2014/04/04/weekly-reading-list-for-3114/
 category: Security
 tags: Security,CTF,PlaidCTF
 ---

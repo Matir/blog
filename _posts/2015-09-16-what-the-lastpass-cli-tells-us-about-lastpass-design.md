@@ -2,7 +2,7 @@
 layout: post
 title: "What the LastPass CLI tells us about LastPass Design"
 date: 2015-09-16 05:58:19 +0000
-permalink: /blog/what-the-lastpass-cli-tells-us-about-lastpass-design/
+permalink: /2015/09/16/what-the-lastpass-cli-tells-us-about-lastpass-design/
 category: Security
 tags: Security,Passwords
 ---

@@ -2,7 +2,7 @@
 layout: post
 title: "Ghost in the Shellcode 2014: Lugkist"
 date: 2014-01-19 19:43:56 +0000
-permalink: /blog/ghost-in-the-shellcode-2014-lugkist/
+permalink: /2014/01/19/ghost-in-the-shellcode-2014-lugkist/
 category: Security
 tags: CTF,Ghost in the Shellcode,Shadow Cats,Security
 ---

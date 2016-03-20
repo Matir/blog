@@ -2,7 +2,7 @@
 layout: post
 title: "Ghost in the Shellcode 2014"
 date: 2014-01-21 04:57:33 +0000
-permalink: /blog/ghost-in-the-shellcode-2014/
+permalink: /2014/01/21/ghost-in-the-shellcode-2014/
 category: Security
 tags: CTF,Security,Shadow Cats,Ghost in the Shellcode
 ---

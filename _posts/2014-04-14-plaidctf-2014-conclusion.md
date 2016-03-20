@@ -2,7 +2,7 @@
 layout: post
 title: "PlaidCTF 2014: Conclusion"
 date: 2014-04-14 17:30:42 +0000
-permalink: /blog/plaidctf-2014-conclusion/
+permalink: /2014/04/14/plaidctf-2014-conclusion/
 category: Security
 tags: CTF,Security,PlaidCTF
 ---

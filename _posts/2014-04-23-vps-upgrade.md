@@ -2,7 +2,7 @@
 layout: post
 title: "VPS Upgrade"
 date: 2014-04-23 14:14:25 +0000
-permalink: /blog/vps-upgrade/
+permalink: /2014/04/23/vps-upgrade/
 category: Linux
 tags: Linode,VPS
 ---

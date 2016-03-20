@@ -2,7 +2,7 @@
 layout: post
 title: "Announcing NetStatUI: A PyGTK interface for network statistics"
 date: 2011-01-22 18:06:48 +0000
-permalink: /blog/announcing-netstatui-a-pygtk-interface-for-network-statistics/
+permalink: /2011/01/22/announcing-netstatui-a-pygtk-interface-for-network-statistics/
 category: Linux
 tags: Linux,Ubuntu,Open Source,NetStatUI
 ---

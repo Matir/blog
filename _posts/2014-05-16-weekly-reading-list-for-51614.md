@@ -2,7 +2,7 @@
 layout: post
 title: "Weekly Reading List for 5/16/14"
 date: 2014-05-16 07:00:00 +0000
-permalink: /blog/weekly-reading-list-for-51614/
+permalink: /2014/05/16/weekly-reading-list-for-51614/
 category: Security
 ---
 ###How Target Blew It

@@ -2,7 +2,7 @@
 layout: post
 title: "Deploying Puppet"
 date: 2011-10-13 00:30:46 +0000
-permalink: /blog/deploying-puppet/
+permalink: /2011/10/13/deploying-puppet/
 category: Linux
 tags: puppet,system administration,Linux
 ---

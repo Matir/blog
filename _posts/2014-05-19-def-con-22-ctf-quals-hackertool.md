@@ -2,7 +2,7 @@
 layout: post
 title: "DEF CON 22 CTF Quals: Hackertool"
 date: 2014-05-19 03:32:11 +0000
-permalink: /blog/def-con-22-ctf-quals-hackertool/
+permalink: /2014/05/19/def-con-22-ctf-quals-hackertool/
 category: Security
 tags: Security,CTF,DEF CON CTF,Cryptography
 ---

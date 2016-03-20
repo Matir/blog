@@ -2,7 +2,7 @@
 layout: post
 title: "Offensive Security Certified Professional"
 date: 2015-12-29 05:32:33 +0000
-permalink: /blog/offensive-security-certified-professional/
+permalink: /2015/12/29/offensive-security-certified-professional/
 category: Security
 tags: OSCP,Security,Pentesting
 ---

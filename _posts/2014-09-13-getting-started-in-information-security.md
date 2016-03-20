@@ -2,7 +2,7 @@
 layout: post
 title: "Getting Started in Information Security"
 date: 2014-09-13 19:30:22 +0000
-permalink: /blog/getting-started-in-information-security/
+permalink: /2014/09/13/getting-started-in-information-security/
 category: Security
 tags: Security,career,Reading List
 ---

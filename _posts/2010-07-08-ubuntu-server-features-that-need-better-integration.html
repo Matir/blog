@@ -2,7 +2,7 @@
 layout: post
 title: "Ubuntu Server Features that need better integration"
 date: 2010-07-08 02:24:01 +0000
-permalink: /blog/ubuntu-server-features-that-need-better-integration/
+permalink: /2010/07/08/ubuntu-server-features-that-need-better-integration/
 category: Misc
 ---
 <p>There are two substantial features present in Ubuntu Server (and desktop, though less often used) that are significant, but under-utilized.  The first of these is the AppArmor framework.  For example, on my LAMP server, only dhclient3, mysqld, and tcpdump have apparmor profiles.  OpenSSH and Apache are obvious candidates for AppArmor, as they are commonly exposed to public networks, and compromise of them could have a significant impact on a server.  <strong>Edit:</strong> I missed some profiles here, but there is still no comprehensive profile for Apache or OpenSSH.  Installing apparmor-profiles does improve things somewhat, but there is still much to be done.</p>

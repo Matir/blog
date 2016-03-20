@@ -2,7 +2,7 @@
 layout: post
 title: "DEF CON 22 CTF Quals: 3dttt"
 date: 2014-05-21 14:07:02 +0000
-permalink: /blog/def-con-22-ctf-quals-3dttt/
+permalink: /2014/05/21/def-con-22-ctf-quals-3dttt/
 category: Security
 tags: CTF,DEF CON CTF,Security
 ---

@@ -2,7 +2,7 @@
 layout: post
 title: "Boston Key Party: Mind Your Ps and Qs"
 date: 2014-03-10 21:29:13 +0000
-permalink: /blog/boston-key-party-mind-your-ps-and-qs/
+permalink: /2014/03/10/boston-key-party-mind-your-ps-and-qs/
 category: Security
 tags: CTF,Boston Key Party,Security
 ---

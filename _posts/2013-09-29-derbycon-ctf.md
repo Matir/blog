@@ -2,7 +2,7 @@
 layout: post
 title: "DerbyCon CTF"
 date: 2013-09-29 22:38:19 +0000
-permalink: /blog/derbycon-ctf/
+permalink: /2013/09/29/derbycon-ctf/
 category: Security
 tags: CTF,Security
 ---

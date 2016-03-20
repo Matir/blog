@@ -2,7 +2,7 @@
 layout: post
 title: "Ghost in the Shellcode 2014: Pillowtalk"
 date: 2014-01-19 19:11:27 +0000
-permalink: /blog/ghost-in-the-shellcode-2014-pillowtalk/
+permalink: /2014/01/19/ghost-in-the-shellcode-2014-pillowtalk/
 category: Security
 tags: CTF,Ghost in the Shellcode,Security,Shadow Cats
 ---

@@ -2,7 +2,7 @@
 layout: post
 title: "The Machine Inside the Machine"
 date: 2014-05-13 04:24:00 +0000
-permalink: /blog/the-machine-inside-the-machine/
+permalink: /2014/05/13/the-machine-inside-the-machine/
 category: Security
 tags: Security,system administration
 ---

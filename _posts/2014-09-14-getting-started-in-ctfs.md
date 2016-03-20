@@ -2,7 +2,7 @@
 layout: post
 title: "Getting Started in CTFs"
 date: 2014-09-14 20:07:10 +0000
-permalink: /blog/getting-started-in-ctfs/
+permalink: /2014/09/14/getting-started-in-ctfs/
 category: Security
 tags: Security,CTF
 ---

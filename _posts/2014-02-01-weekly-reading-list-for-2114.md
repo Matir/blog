@@ -2,7 +2,7 @@
 layout: post
 title: "Weekly Reading List for 2/1/14"
 date: 2014-02-01 08:00:00 +0000
-permalink: /blog/weekly-reading-list-for-2114/
+permalink: /2014/02/01/weekly-reading-list-for-2114/
 categories: Computer,Security
 tags: Security,Cryptography
 ---

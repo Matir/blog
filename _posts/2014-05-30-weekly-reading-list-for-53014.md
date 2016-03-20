@@ -2,7 +2,7 @@
 layout: post
 title: "Weekly Reading List for 5/30/14"
 date: 2014-05-30 07:00:00 +0000
-permalink: /blog/weekly-reading-list-for-53014/
+permalink: /2014/05/30/weekly-reading-list-for-53014/
 category: Security
 tags: Security,Reading List
 ---
