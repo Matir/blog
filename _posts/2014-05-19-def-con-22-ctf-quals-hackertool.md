@@ -4,7 +4,11 @@ title: "DEF CON 22 CTF Quals: Hackertool"
 date: 2014-05-19 03:32:11 +0000
 permalink: /2014/05/19/def-con-22-ctf-quals-hackertool/
 category: Security
-tags: Security,CTF,DEF CON CTF,Cryptography
+tags:
+  - Security
+  - CTF
+  - DEF CON CTF
+  - Cryptography
 ---
 Hackertool was one of the <code>Baby's First</code> challenges in DEF CON CTF Quals this year, and provided you with a .torrent file, and asked you to download the file and MD5 it.  Seems easy enough, so I knew there must be more to it.  The torrent file itself was a whopping 4 MB in size, very large for a torrent file.  Looking at it, we see it contains just one file, named <code>every_ip_address.txt</code>, and the file is ~61GB in size.  Hrrm, there must be an easier way than torrenting 61GB, especially at <1k/s.
 

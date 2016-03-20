@@ -4,7 +4,9 @@ title: "Weekly Reading List for 2/1/14"
 date: 2014-02-01 08:00:00 +0000
 permalink: /2014/02/01/weekly-reading-list-for-2114/
 categories: Computer,Security
-tags: Security,Cryptography
+tags:
+  - Security
+  - Cryptography
 ---
 #### Previews for BSides SF 2014  
 A couple of new articles have been posted with previews of this year's BSides San Francisco.  Akamai has a [preview of several talks](https://blogs.akamai.com/2014/01/a-preview-of-bsidessf.html) and Tripwire previews a [day in the life of an information security researcher](http://www.tripwire.com/state-of-security/vulnerability-management/bsidessf-preview-day-life-security-researcher/).

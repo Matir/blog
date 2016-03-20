@@ -4,7 +4,9 @@ title: "Weekly Reading List for 2/15/14"
 date: 2014-02-15 18:20:25 +0000
 permalink: /2014/02/15/weekly-reading-list-for-21514/
 categories: Computer,Security
-tags: Social Engineering,Security
+tags:
+  - Social Engineering
+  - Security
 ---
 I've been thinking a lot about social engineering lately, so I'm going to highlight some of my favorite social engineering resources.
 

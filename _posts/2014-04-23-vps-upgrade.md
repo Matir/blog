@@ -4,7 +4,9 @@ title: "VPS Upgrade"
 date: 2014-04-23 14:14:25 +0000
 permalink: /2014/04/23/vps-upgrade/
 category: Linux
-tags: Linode,VPS
+tags:
+  - Linode
+  - VPS
 ---
 As [I've mentioned before](https://systemoverlord.com/blog/2011/05/18/linode-rocks/),
 my blog is hosted on a VPS at

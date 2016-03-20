@@ -4,7 +4,9 @@ title: "Blue Team Player's Guide for Pros vs Joes CTF"
 date: 2015-08-15 19:15:36 +0000
 permalink: /2015/08/15/blue-team-players-guide-for-pros-vs-joes-ctf/
 category: Security
-tags: CTF,BSides
+tags:
+  - CTF
+  - BSides
 ---
 I've played in Dichotomy's [Pros v Joes](http://www.prosversusjoes.net/) CTF for
 the past 3 years -- which, I'm told, makes me the only player to have done so.

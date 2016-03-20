@@ -4,7 +4,9 @@ title: "So, is Windows 10 Spying On You?"
 date: 2015-08-16 21:00:02 +0000
 permalink: /2015/08/16/so-is-windows-10-spying-on-you/
 category: Security
-tags: Security,Windows
+tags:
+  - Security
+  - Windows
 ---
 "Extraordinary claims require extraordinary evidence."
 

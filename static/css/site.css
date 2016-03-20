@@ -266,6 +266,20 @@ a.sidebar-nav-item:focus {
 .theme-charcoal .related-posts li a:hover {
   color: #36454f;
 }
+.theme-charcoal .content .post-date a,
+.theme-charcoal .content .post-tags a {
+  color: #9a9a9a;
+}
+
+/*
+ * Tags on posts
+ */
+div.post-tags {
+  margin-top: -1rem;
+  margin-bottom: 1rem;
+  font-size: 0.8rem;
+  color: #9a9a9a;
+}
 
 
 /* 

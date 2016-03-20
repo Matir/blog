@@ -4,7 +4,9 @@ title: "DerbyCon CTF"
 date: 2013-09-29 22:38:19 +0000
 permalink: /2013/09/29/derbycon-ctf/
 category: Security
-tags: CTF,Security
+tags:
+  - CTF
+  - Security
 ---
 While at Derbycon last weekend, I played in the Derbycon Capture the Flag (CTF).  I played with some people from the DefCon Group back in Atlanta (DC404) -- and we had a great team and that lead to a 5th place finish out of more than 80 teams with points on the board.  Big shout out to Michael (@decreasedsales), Aaron (@aaronmelton), Dan (@alltrueic), and all the others who helped out.
 

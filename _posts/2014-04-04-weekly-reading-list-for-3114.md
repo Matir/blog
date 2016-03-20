@@ -4,7 +4,10 @@ title: "Weekly Reading List for 4/4/14"
 date: 2014-04-04 07:00:00 +0000
 permalink: /2014/04/04/weekly-reading-list-for-3114/
 category: Security
-tags: Security,CTF,PlaidCTF
+tags:
+  - Security
+  - CTF
+  - PlaidCTF
 ---
 It's been a while where I've been too busy even for any good reading, but we're back to the reading lists!
 

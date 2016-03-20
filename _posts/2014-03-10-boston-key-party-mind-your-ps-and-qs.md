@@ -4,7 +4,10 @@ title: "Boston Key Party: Mind Your Ps and Qs"
 date: 2014-03-10 21:29:13 +0000
 permalink: /2014/03/10/boston-key-party-mind-your-ps-and-qs/
 category: Security
-tags: CTF,Boston Key Party,Security
+tags:
+  - CTF
+  - Boston Key Party
+  - Security
 ---
 About a week old, but I thought I'd put together a writeup for mind your Ps and Qs because I thought it was an interesting challenge.
 

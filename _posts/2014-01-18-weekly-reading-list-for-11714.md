@@ -4,7 +4,12 @@ title: "Weekly Reading List for 1/18/14"
 date: 2014-01-18 05:00:00 +0000
 permalink: /2014/01/18/weekly-reading-list-for-11714/
 category: Security
-tags: reverse engineering,Security,CTF,SDR,Hacking
+tags:
+  - reverse engineering
+  - Security
+  - CTF
+  - SDR
+  - Hacking
 ---
 I've decided to start posting a weekly reading list of interesting security-related articles I've come across in the past week.  They're not guaranteed to be new, but should at least still be relevant.
 

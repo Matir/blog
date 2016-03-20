@@ -4,7 +4,9 @@ title: "Weekly Reading List for 1/25/14"
 date: 2014-01-25 08:00:00 +0000
 permalink: /2014/01/25/weekly-reading-list-for-12514/
 category: Security
-tags: CTF,Security
+tags:
+  - CTF
+  - Security
 ---
 This week, we're focusing on binary exploitation and reversing.  (Thanks to Ghost in the Shellcode for making me feel stupid with all their binary pwning challenges!)
 

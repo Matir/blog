@@ -4,7 +4,10 @@ title: "Announcement: PwnableWeb Released"
 date: 2014-05-09 00:11:58 +0000
 permalink: /2014/05/09/announcement-pwnableweb-released/
 category: Security
-tags: PwnableWeb,CTF,Security
+tags:
+  - PwnableWeb
+  - CTF
+  - Security
 ---
 In addition to my primary interest in the technical aspects of information security, I'm also a big fan of wargames & CTFs as educational tools, so a while back, I decided I wanted to build a web-based wargame and CTF scoreboard system.  Today I am releasing the results of that, dubbed **PwnableWeb**, under the Apache 2.0 License.  It includes web-based wargame-style challenges and an accompanying scoreboard.
 

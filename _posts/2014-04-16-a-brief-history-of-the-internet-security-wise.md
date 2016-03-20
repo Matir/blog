@@ -4,7 +4,10 @@ title: "A Brief History of the Internet (Security-Wise)"
 date: 2014-04-16 04:55:14 +0000
 permalink: /2014/04/16/a-brief-history-of-the-internet-security-wise/
 categories: Computer,Security
-tags: InfoSec,Security,Hacking
+tags:
+  - InfoSec
+  - Security
+  - Hacking
 ---
 I originally posted this to the [DC404 Mailing List](http://dc404.org/), but got some positive feedback, so I thought I'd post it here as well.  The broad strokes should be correct, but there might be some inaccuracies here &mdash; if you're aware of one, please let me know and I'll correct it.
 

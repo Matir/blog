@@ -4,7 +4,11 @@ title: "Ghost in the Shellcode 2014: Pillowtalk"
 date: 2014-01-19 19:11:27 +0000
 permalink: /2014/01/19/ghost-in-the-shellcode-2014-pillowtalk/
 category: Security
-tags: CTF,Ghost in the Shellcode,Security,Shadow Cats
+tags:
+  - CTF
+  - Ghost in the Shellcode
+  - Security
+  - Shadow Cats
 ---
 Pillowtalk was a 200 point crypto challenge.  Provided was a stripped 64-bit binary along with a pcap file.  I started off by exercising the behavior of the binary, looking at system calls/library calls to see what it was doing.
 

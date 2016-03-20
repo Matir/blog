@@ -4,7 +4,10 @@ title: "DEF CON 22 CTF Quals: 3dttt"
 date: 2014-05-21 14:07:02 +0000
 permalink: /2014/05/21/def-con-22-ctf-quals-3dttt/
 category: Security
-tags: CTF,DEF CON CTF,Security
+tags:
+  - CTF
+  - DEF CON CTF
+  - Security
 ---
 Unlike most of the challenges in DC22 quals, this one required no binary exploitation, no reversing, just writing a little code.  You needed to play 3-D Tic Tac Toe, and you needed to play fast.  Unfortunately, I didn't record the sessions, so I don't have the example output.
 

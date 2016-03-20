@@ -1,0 +1,15 @@
+---
+layout: page
+permalink: /category/:title/
+---
+
+{% assign cat = page.title %}
+<div class="category-archive">
+  <ul>
+  {% for post in site.categories[cat] %}
+  <li>
+    {{ post.date | date_to_string }}:
+    <a href="{{ post.url }}">{{ post.title }}</a>
+  </li>
+  {% endfor %}
+</div>

@@ -4,7 +4,10 @@ title: "PlaidCTF 2014: Conclusion"
 date: 2014-04-14 17:30:42 +0000
 permalink: /2014/04/14/plaidctf-2014-conclusion/
 category: Security
-tags: CTF,Security,PlaidCTF
+tags:
+  - CTF
+  - Security
+  - PlaidCTF
 ---
 The 2014 edition of PlaidCTF was excellent, but I wish we'd been able to make it through more challenges.  We cleared about 7 challenges, but really only two of them felt worth writing up.  The others have been well documented elsewhere, no sense in rewriting the same thing.
 

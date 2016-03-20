@@ -4,7 +4,11 @@ title: "Ghost in the Shellcode 2014: Lugkist"
 date: 2014-01-19 19:43:56 +0000
 permalink: /2014/01/19/ghost-in-the-shellcode-2014-lugkist/
 category: Security
-tags: CTF,Ghost in the Shellcode,Shadow Cats,Security
+tags:
+  - CTF
+  - Ghost in the Shellcode
+  - Shadow Cats
+  - Security
 ---
 Lugkist was an interesting "trivia" challenge.  We were told "it's not crypto", but it sure looked like a crypto challenge.  We had a file like:
 

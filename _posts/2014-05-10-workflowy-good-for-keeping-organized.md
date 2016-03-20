@@ -4,7 +4,9 @@ title: "Workflowy: Good for Keeping Organized?"
 date: 2014-05-10 02:53:35 +0000
 permalink: /2014/05/10/workflowy-good-for-keeping-organized/
 category: Life
-tags: Organization,Life
+tags:
+  - Organization
+  - Life
 ---
 I've been using [Workflowy](https://workflowy.com/invite/1656a746.lnx) for a while as an organizational tool.  It self describes as thus:
 > WorkFlowy is an organizational tool that makes life easier. It can help you organize personal to-dos, collaborate on large team projects, take notes, write research papers, keep a journal, plan a wedding, and much more.

@@ -4,7 +4,10 @@ title: "Secuinside Quals 2014: Shellcode 100"
 date: 2014-06-02 04:57:01 +0000
 permalink: /2014/06/02/secuinside-quals-2014-shellcode-100/
 category: Security
-tags: CTF,Secuinside,Security
+tags:
+  - CTF
+  - Secuinside
+  - Security
 ---
 This is a level that, at first, seemed like it would be extremely simple, but then turned out to be far more complicated than expected.  We were provided a zip file containing a python script and an elf binary.
 
