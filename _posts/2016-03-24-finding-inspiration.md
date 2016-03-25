@@ -1,11 +1,10 @@
 ---
 layout: post
 title: "Finding My Inspiration"
-date: 2016-03-08
+date: 2016-03-24
 category: Personal
 categories: Personal, Security
 tags: Career, Security
-published: false
 ---
 
 I've been having a lot of trouble lately, feeling like I'm not doing the things
@@ -28,3 +27,5 @@ that it will help me find my mojo and enthusiasm for what I do again.
 * [An Introduction to radare2 – sushant94](http://sushant94.me/2015/05/31/Introduction_to_radare2/)
 * [XSS via PNG Content Types](https://fin1te.net/articles/xss-on-facebook-via-png-content-types/)
 * [Encoding Web Shells in PNG IDAT chunks](https://www.idontplaydarts.com/2012/06/encoding-web-shells-in-png-idat-chunks/)
+* [Exfiltration at Lightspeed - Faster Blind SQL Injection](https://drive.google.com/file/d/0B0tBYiOD2uG7MkpxaFRWTkhOTTA/view)
+* [Uber Bug Bounty: Turning Self-XSS into Good-XSS – fin1te](https://fin1te.net/articles/uber-turning-self-xss-into-good-xss/)
