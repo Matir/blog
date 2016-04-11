@@ -12,9 +12,9 @@ tags:
 There's fortunately been a lot of media coverage of a typically ham-fisted
 attempt to legislate technology:
 
-* [The Senate’s Draft Encryption Bill Is ‘Ludicrous, Dangerous, Technically Illiterate’ | WIRED](http://www.wired.com/2016/04/senates-draft-encryption-bill-privacy-nightmare/)
+* [The Senate’s Draft Encryption Bill Is ‘Ludicrous, Dangerous, Technically Illiterate’ &#124; WIRED](http://www.wired.com/2016/04/senates-draft-encryption-bill-privacy-nightmare/)
 * [Leak of Senate Encryption Bill Prompts Swift Backlash - Fortune](http://fortune.com/2016/04/09/senate-encryption-leak-backlash/)
-* [Leak of Senate encryption bill prompts swift backlash | Reuters](http://www.reuters.com/article/us-apple-encryption-legislation-idUSKCN0X52CG)
+* [Leak of Senate encryption bill prompts swift backlash &#124; Reuters](http://www.reuters.com/article/us-apple-encryption-legislation-idUSKCN0X52CG)
 * [Senate’s Attempt at Encryption Bill Would Destroy the Very Idea of Cybersecurity - Hit & Run : Reason.com](https://reason.com/blog/2016/04/08/senates-attempt-at-encryption-bill-would)
 * [www.usatoday.com/story/news/politics/2016/04/08/proposed-senate-bill-would-require-tech-companies-break-encryption/82798862/](http://www.usatoday.com/story/news/politics/2016/04/08/proposed-senate-bill-would-require-tech-companies-break-encryption/82798862/)
 
