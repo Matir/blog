@@ -10,7 +10,7 @@ tags:
 ---
 
 So about two years ago, I put together the [shortest x86-64 shellcode for
-`execve("/bin/sh",...);`] that I could.  At the time, it was 25 bytes, which I
+`execve("/bin/sh",...);`](/2014/06/05/minimal-x86-64-shellcode-for-binsh/) that I could.  At the time, it was 25 bytes, which I
 thought was pretty damn good.  However, I'm a perfectionist and so I spent some
 time before work this morning playing shellcode golf.  The rules of my shellcode
 golf are pretty simple:
