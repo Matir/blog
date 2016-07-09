@@ -2,6 +2,7 @@
 layout: post
 title: "Hacker Summer Camp Planning Guide, Part II"
 category: Security
+date: 2016-07-08
 ---
 
 In February, I wrote a [guide to planning travel for BSides, Black Hat, and DEF
