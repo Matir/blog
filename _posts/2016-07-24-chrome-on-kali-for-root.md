@@ -5,6 +5,7 @@ category: Computers
 tags:
   - Security
   - Kali Linux
+date: 2016-07-24
 ---
 
 For many of the tools on [Kali Linux](https://www.kali.org), it's easiest to run
