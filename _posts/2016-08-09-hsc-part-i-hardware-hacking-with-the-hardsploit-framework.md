@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "HSC Part I: Hardware Hacking with the Hardsploit Framework"
+title: "HSC Part 1: Hardware Hacking with the Hardsploit Framework"
 category: Blog
 date: 2016-08-09
 ---
@@ -23,6 +23,8 @@ corruption-esque issues).  HH with Hardsploit, on the other hand, mostly focused
 on microcontroller-based embedded devices.  This was much more a class of
 dumping flash to locate stored secrets, understanding the hardware of the
 device, and working from there.
+
+![Hardsploit board connected to target](/img/blog/hsc2016/hardsploit.jpg)
 
 I'm not going to list every thing taught in the class (I don't think the authors
 would like that much) but I'll cover my highlights:
