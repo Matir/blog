@@ -24,6 +24,8 @@ one of the players on my team was outstanding and worked their ass off for this
 CTF, and it paid off, as The SYNdicate was declared the victors of the 2016
 BSides LV Pros versus Joes.
 
+![Scorched Earth](/img/blog/hsc2016/scorched_earth.png)
+
 ### What worked well ###
 
 Our team put in *incredible* amounts of effort into preparation.  We built
