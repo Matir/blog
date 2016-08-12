@@ -422,3 +422,14 @@ div.post-tags {
   font-size: 80%;
   color: #777;
 }
+
+/** Panels */
+div.panel {
+  border: 1px solid black;
+  padding-left: .4rem;
+  margin-bottom: 1rem;
+}
+
+div.panel ol {
+  margin-bottom: 0;
+}
