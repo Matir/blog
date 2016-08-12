@@ -426,10 +426,20 @@ div.post-tags {
 /** Panels */
 div.panel {
   border: 1px solid black;
-  padding-left: .4rem;
+  padding-left: 0.4rem;
   margin-bottom: 1rem;
 }
 
 div.panel ol {
   margin-bottom: 0;
+}
+
+/** No wrap */
+.nobr {
+  white-space: nowrap;
+}
+
+/** Related posts */
+ul.related-posts h4 {
+  margin-top: 0.5rem;
 }

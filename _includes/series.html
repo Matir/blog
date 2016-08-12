@@ -1,6 +1,7 @@
 {% if page.series %}
   <div class="panel series">
-    <div class="panel-heading">{{page.series}}</div>
+    <div class="panel-heading">Series: <strong
+         class='nobr'>{{page.series}}</strong></div>
     <div class="panel-body">
       <ol>
         {% for post in site.posts reversed %}
