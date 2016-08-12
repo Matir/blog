@@ -1,0 +1,19 @@
+{% assign related_count = 0 %}
+{% for post in site.related_posts %}
+		{% if post.url == page.url %}{% continue %}{% endif %}
+		{% for this_tag in page.tags %}
+			{% if post.tags contains this_tag %}
+				{% if related_count == 0 %}
+					<div class="related">
+						<h2>Related Posts</h2>
+						<ul class="related-posts">
+				{% endif %}
+				{% assign related_count = related_count | plus: 1 %}
+				<li><h4><a href="{{ post.url }}">{{ post.title }}
+					<small class='nobr'>{{ post.date | date_to_string }}</small></a></h4></li>
+				{% break %}
+			{% endif %}
+		{% endfor %}
+		{% if related_count >= 3 %}{% break %}{% endif %}
+{% endfor %}
+{% if related_count > 0 %}</ul></div>{% endif %}
