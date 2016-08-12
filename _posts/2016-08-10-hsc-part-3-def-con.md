@@ -1,8 +1,11 @@
 ---
 layout: post
 title: "HSC Part 3: DEF CON"
-category: Blog
+category: Security
 date: 2016-08-10
+series: "Hacker Summer Camp 2016"
+tags:
+  - Hacker Summer Camp
 ---
 
 This is the 3rd, and final, post in my Hacker Summer Camp 2016 series.

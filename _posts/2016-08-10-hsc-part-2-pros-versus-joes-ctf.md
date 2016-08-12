@@ -1,12 +1,14 @@
 ---
 layout: post
 title: "HSC Part 2: Pros versus Joes CTF"
-category: Blog
+category: Security
 date: 2016-08-10
 tags:
   - CTF
   - BSidesLV
   - BSides
+  - Hacker Summer Camp
+series: "Hacker Summer Camp 2016"
 ---
 
 Continuing my [Hacker Summer Camp Series](/2016/08/09/hsc-part-i-hardware-hacking-with-the-hardsploit-framework),

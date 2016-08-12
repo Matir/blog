@@ -1,8 +1,12 @@
 ---
 layout: post
 title: "HSC Part 1: Hardware Hacking with the Hardsploit Framework"
-category: Blog
+category: Security
 date: 2016-08-09
+tags:
+  - Hacker Summer Camp
+  - Black Hat
+series: "Hacker Summer Camp 2016"
 ---
 
 Just returned from Hacker Summer Camp (Black Hat, BSides LV, DEF CON) and I'm
