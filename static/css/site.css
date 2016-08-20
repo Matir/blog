@@ -251,20 +251,12 @@ a.sidebar-nav-item:focus {
 }
 
 /* Custom theme */
-.theme-navy .sidebar {
-  background-color: #013246;
-}
-.theme-navy .content a,
-.theme-navy .related-posts li a:hover {
-  color: #013246;
-}
-
 .theme-charcoal .sidebar {
   background-color: #36454f;
 }
 .theme-charcoal .content a,
 .theme-charcoal .related-posts li a:hover {
-  color: #36454f;
+  color: #6a9fb5;
 }
 .theme-charcoal .content .post-date a,
 .theme-charcoal .content .post-tags a {
@@ -442,4 +434,13 @@ div.panel ol {
 /** Related posts */
 ul.related-posts h4 {
   margin-top: 0.5rem;
+}
+
+/** Floating images */
+img.left {
+  float: left;
+}
+
+img.right {
+  float: right;
 }
