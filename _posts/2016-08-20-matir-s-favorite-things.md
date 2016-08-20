@@ -7,6 +7,7 @@ tags:
   - Hardware
   - Tools
 kramdown: true
+date: 2016-08-20
 ---
 
 One of my friends was recently asking me about some of the tools I use,
