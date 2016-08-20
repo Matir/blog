@@ -439,6 +439,7 @@ ul.related-posts h4 {
 /** Floating images */
 img.left {
   float: left;
+  padding-right: 0.4rem;
 }
 
 img.right {
