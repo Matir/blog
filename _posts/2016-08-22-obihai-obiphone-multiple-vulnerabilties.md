@@ -2,7 +2,7 @@
 layout: post
 title: "ObiHai ObiPhone: Multiple Vulnerabilties"
 category: Security
-date: 2016-08-18
+date: 2016-08-22
 tags:
     - Advisories
     - ObiHai
@@ -10,8 +10,8 @@ tags:
 ---
 
 **Note that this a duplicate of the
-advisory sent to the full-disclosure
-mailing list. (Awaiting moderation.)**
+[advisory sent to the full-disclosure](http://seclists.org/fulldisclosure/2016/Aug/111)
+mailing list.**
 
 ## Introduction
 
