@@ -5,7 +5,7 @@ category: Security
 date: 2016-12-31
 tags:
   - Security
-  - 2016
+  - "2016"
 ---
 Well, 2016 is just about at an end, and what a year it has been.  I'm not going
 to delve into politics, though that will arguably be how the history books will
