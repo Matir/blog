@@ -445,3 +445,8 @@ img.left {
 img.right {
   float: right;
 }
+
+/** Margin beneath UL TOC */
+#markdown-toc ul {
+  margin-bottom: 0;
+}
