@@ -5,7 +5,7 @@ date: 2015-12-28
 ---
 GoBuster is a directory-enumeration tool written in Go and targeting CLI usage.
 
-###Features###
+### Features ###
 
 * Highly portable -- requires no runtime once compiled.
 * No GUI required.
@@ -14,16 +14,16 @@ GoBuster is a directory-enumeration tool written in Go and targeting CLI usage.
 * Capable of parsing returned HTML for additional directories to parse.
 * Highly scalable -- Go's parallel model allows for many workers at once.
 
-###Contributing###
+### Contributing ###
 
 Please see the CONTRIBUTING file in this directory.
 
-###Copyright###
+### Copyright ###
 
 Copyright 2015 Google Inc.
 
 GoBuster is not an official Google product (experimental or otherwise), it is just code that happens to be owned by Google.
 
-###Contact###
+### Contact ###
 
 For questions about GoBuster, contact David Tomaschik <davidtomaschik@google.com>
