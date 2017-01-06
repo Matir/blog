@@ -8,6 +8,7 @@ tags:
   - CTF
   - Wargames
   - SANS
+excerpt: This is my second time playing the SANS holiday hack challenge.  It was a lot of fun, and probably took me about 8-10 hours over a period of 2-3 days, not including this writeup.
 ---
 
 * Table of Contents
