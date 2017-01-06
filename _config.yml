@@ -4,6 +4,12 @@ kramdown:
   syntax_highlighter: rouge
   input:          "GFM"
   hard_wrap:      false
+  syntax_highlighter_opts:
+    span:
+      line_numbers: false
+    block:
+      line_numbers: true
+      start_line: 1
 
 # Permalinks
 permalink:        ":year/:month/:day/:title.html"

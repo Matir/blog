@@ -450,3 +450,27 @@ img.right {
 #markdown-toc ul {
   margin-bottom: 0;
 }
+
+/** Code highlight boxes */
+pre.highlight {
+  overflow-x: auto;
+  white-space: pre;
+}
+
+.highlight table {
+  table-layout: fixed;
+}
+
+.highlight td pre {
+  padding: 0;
+  white-space: pre;
+}
+
+.highlight td.gutter {
+  width: 2rem;
+  vertical-align: top;
+}
+
+.highlight td.code {
+  overflow-x: auto;
+}
