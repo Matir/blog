@@ -17,4 +17,4 @@ device cannot be updated.
 This is a talk I gave at BSidesSF 2017.
 
 * [Slides](/static/attachments/bsidessf_2017_assessing_embedded_devices.pdf)
-* Video
+* [Video](https://www.youtube.com/watch?v=wDRZVvn_NF0)
