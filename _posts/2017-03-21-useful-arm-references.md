@@ -25,3 +25,4 @@ understand the ARM architecture and ARM assembly.
 * [Syscall.tbl for ARM](https://github.com/torvalds/linux/blob/57fd0b77d659d5733434d3ce37cf606273abb1e8/arch/arm/tools/syscall.tbl)
   (Use with the w3challs.com version to see arguments used.)
 * [Calling Conventions](http://wiki.osdev.org/Calling_Conventions)
+* [GDB with User-Mode QEMU](https://yurovsky.github.io/2016/12/14/qemu-user-mode/)
