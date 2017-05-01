@@ -4,8 +4,9 @@ title: "Security Issues in Alerton Webtalk (Auth Bypass, RCE)"
 category: Security
 date: 2017-04-27
 tags:
-  - disclosure
-  - security
+  - Disclosure
+  - Security
+  - Advisories
 ---
 
 Introduction
