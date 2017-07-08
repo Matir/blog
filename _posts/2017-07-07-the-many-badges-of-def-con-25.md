@@ -63,7 +63,7 @@ love and the money just helps the creator not go broke with their labors.)
 * **Link**: [https://shiftj.is/post/puffy/](https://shiftj.is/post/puffy/)
 * **Features**: Linux SoC, WiFi
 * **Availability**: Limited
-* **Price**: $30-60
+* **Price**: $40
 
 ### The Ides of DEF CON ###
 
