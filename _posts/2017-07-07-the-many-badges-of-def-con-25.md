@@ -86,6 +86,18 @@ love and the money just helps the creator not go broke with their labors.)
 * **Availability**: Unknown
 * **Price**: Unknown
 
+### DEF CON Furs ###
+* **Link**: [https://twitter.com/DCFurs/status/883161195036921856](https://twitter.com/DCFurs/status/883161195036921856)
+* **Features**: Unknown
+* **Availability**: Pre-order sold out
+* **Price**: Unknown
+
+### DEF CON Darknet ###
+* **Link**: [https://dcdark.net](https://dcdark.net)
+* **Features**: Unknown
+* **Availability**: At-con
+* **Price**: Unknown
+
 ## Private Projects/Little Detail ##
 
 * @noidd "just for fun":
