@@ -12,14 +12,16 @@ tags:
 If you follow DEF CON news at all, you'll know that there's
 [been some kind of issue with the
 badges](https://www.defcon.org/html/defcon-25/dc-25-news.html#dc25badgeannounce).
-Now, obviously there will still be badges for DEF CON, but when the community
-heard this, they responded by upping their game.
+But don't worry, DEF CON will have badges, but so will the community!
 
 What do I mean by this?  Well, badge hacking has long been a DEF CON tradition,
 but in the past few years, we've seen more and more unofficial badges appearing
 at DEF CON.  This year seems to be a massive upswing, and while I'm sure some of
-that was in progress before the badge announcement, I believe at least some of
-it is the community response to the DEF CON badge issue.
+that was in progress before the badge announcement, <strike>I believe at least some of
+it is the community response to the DEF CON badge issue</strike>.  (Edit:
+All of the listed badges were apparently in the works before the DEF CON
+announcement.  Thanks to [@wbm312](https://twitter.com/wbm312) for setting me
+straight.)
 
 I've tried to collect information about all the unofficial badges I can find,
 but I'd imagine there are many more that I haven't heard about, or whose creator
@@ -27,7 +29,8 @@ just isn't talking about it.  I know for a fact at least one such private badge
 exists!
 
 Know of another badge?  Ping me on [Twitter (@Matir)](https://twitter.com/matir)
-and I'll update.
+and I'll update.  Sorry I have so many unknowns, but lots of the badges are
+keeping quiet!
 
 ## Available for Sale ##
 
@@ -77,7 +80,7 @@ love and the money just helps the creator not go broke with their labors.)
 * **Link**: [https://queercon.org/badge/qc14-badge/](https://queercon.org/badge/qc14-badge/)
 * **Features**: Unknown?
 * **Availability**: Waitlist
-* **Price**: Unknown
+* **Price**: Unknown (Donation Reward)
 
 ### Beyond Binaries Badge ###
 
@@ -87,15 +90,37 @@ love and the money just helps the creator not go broke with their labors.)
 * **Price**: Unknown
 
 ### DEF CON Furs ###
+
 * **Link**: [https://twitter.com/DCFurs/status/883161195036921856](https://twitter.com/DCFurs/status/883161195036921856)
 * **Features**: Unknown
 * **Availability**: Pre-order sold out
 * **Price**: Unknown
 
 ### DEF CON Darknet ###
+
 * **Link**: [https://dcdark.net](https://dcdark.net)
 * **Features**: Unknown
 * **Availability**: At-con
+* **Price**: Unknown
+
+### DC 801 ###
+
+* **Link**: [https://www.dc801.org/party2017/](https://www.dc801.org/party2017/)
+* **Features**: Access to DC801 Party, Unknown
+* **Availability**: Sold out
+* **Price**: Unknown
+
+### Cryptovillage ###
+
+* **Link**: [https://twitter.com/CryptoVillage/status/872129337100652548](https://twitter.com/CryptoVillage/status/872129337100652548)
+* **Features**: Unknown
+* **Availability**: Crypto & Privacy Village
+* **Price**: Unknown
+
+### Hacker Warehouse ###
+* **Link**: [http://hackerwarehouse.com/product/hacker-warehouse-electronic-badge/](http://hackerwarehouse.com/product/hacker-warehouse-electronic-badge/)
+* **Features**: Blinkenlights, Unknown
+* **Availability**: Pre-order sold out, maybe some at con?
 * **Price**: Unknown
 
 ## Private Projects/Little Detail ##
@@ -103,4 +128,5 @@ love and the money just helps the creator not go broke with their labors.)
 * @noidd "just for fun":
   [https://twitter.com/noidd/status/882822129758162946](https://twitter.com/noidd/status/882822129758162946)
 * @sec_kc badge: [https://twitter.com/carlfugate/status/874780885295517696](https://twitter.com/carlfugate/status/874780885295517696)
+* @Borgel has something in the works: [https://twitter.com/Borgel/status/877909584400089089](https://twitter.com/Borgel/status/877909584400089089)
 * &#9608;&#9608;&#9608;&#9608;&#9608;&#9608;&#9608;&#9608;&#9608;&#9608;&#9608;&#9608;&#9608;&#9608;&#9608;&#9608;&#9608;&#9608;&#9608;&#9608;&#9608;&#9608;&#9608;&#9608;&#9608;&#9608;&#9608;&#9608;&#9608;&#9608;&#9608;&#9608;&#9608;&#9608;&#9608;
