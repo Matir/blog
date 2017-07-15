@@ -48,7 +48,7 @@ We'll add `pam_xauth` to forward it, and configure root to pass credentials to
 the `chrome` user.
 
 ```
-sed -i 's/@include common-session/session optional pam_xauth.so\n\0' \
+sed -i 's/@include common-session/session optional pam_xauth.so\n\0/' \
   /etc/pam.d/su
 mkdir -p /root/.xauth
 echo chrome > /root/.xauth/export
