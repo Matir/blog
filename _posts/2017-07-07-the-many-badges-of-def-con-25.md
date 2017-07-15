@@ -118,15 +118,27 @@ love and the money just helps the creator not go broke with their labors.)
 * **Price**: Unknown
 
 ### Hacker Warehouse ###
+
 * **Link**: [http://hackerwarehouse.com/product/hacker-warehouse-electronic-badge/](http://hackerwarehouse.com/product/hacker-warehouse-electronic-badge/)
 * **Features**: Blinkenlights, Unknown
 * **Availability**: Pre-order sold out, maybe some at con?
 * **Price**: Unknown
 
+### NulliBadge ###
+
+* **Link**: [http://nu.llify.com](http://nu.llify.com)
+* **Features**: LEDs, IR Tag, Open Source
+* **Availability**: Onsite, limited pre-reg
+* **Price**: $60
+
 ## Private Projects/Little Detail ##
 
-* @noidd "just for fun":
-  [https://twitter.com/noidd/status/882822129758162946](https://twitter.com/noidd/status/882822129758162946)
+### @noidd ###
+* **Link**: [https://twitter.com/noidd/status/882822129758162946](https://twitter.com/noidd/status/882822129758162946)
+* **Motive**: "just for fun"
+* **Features**: WiFi, LoRa, QWERTY Keyboard, 2 OLED Displays, 9 CPUs!
+* **Availability**: Private
+
 * @sec_kc badge: [https://twitter.com/carlfugate/status/874780885295517696](https://twitter.com/carlfugate/status/874780885295517696)
 * @Borgel has something in the works: [https://twitter.com/Borgel/status/877909584400089089](https://twitter.com/Borgel/status/877909584400089089)
 * &#9608;&#9608;&#9608;&#9608;&#9608;&#9608;&#9608;&#9608;&#9608;&#9608;&#9608;&#9608;&#9608;&#9608;&#9608;&#9608;&#9608;&#9608;&#9608;&#9608;&#9608;&#9608;&#9608;&#9608;&#9608;&#9608;&#9608;&#9608;&#9608;&#9608;&#9608;&#9608;&#9608;&#9608;&#9608;
