@@ -51,6 +51,8 @@ services) for all 3 other teams (which was a repeat of my same scorched earth
 tactic from last year).  A note to future captains: DNS is important, perhaps
 you'd like to patch that machine.
 
+![Scorched Earth](/img/blog/hsc2017/scorched_earth.png)
+
 I'll leave any major announcements about the game to Dichotomy, but I do want to
 mention that I envision more collaboration between the Pros & Staff over the
 next year.  Pros vs Joes is a learning CTF first, and this will allow us to
