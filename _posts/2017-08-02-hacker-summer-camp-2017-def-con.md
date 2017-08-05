@@ -38,3 +38,37 @@ is a reflection of where we'll see the future growth in security -- the IoT
 isn't a passing fad, and we'll have millions of low-cost devices deployed and
 not properly managed.  There's no time like the present to get security to the
 front and center of the IoT device design process.
+
+In previous years, I'd always played in the Capture the Packet contest.  This
+year I opted out, despite having a bye in the first round, because there was so
+much going on and because it had consumed too much of my time at DEF CON 24.  I
+don't regret this decision, but it is something I missed slightly.  In fact, it
+ended up that I never even set foot in the packet capture village!  (I guess
+that's what happens to villages at the end of halls?)
+
+The "linecon" joke was never more accurate than this year -- there was a line
+for everything!  Not only did every talk have lines, but there were lines to get
+into the Biohacking Village, the Swag line was long (where was Hacker Stickers
+with our official unofficial swag?), even the line for Mohawkcon was ridiculous!
+(Maybe next year I just need to get a mohawk before I go there -- it's not like
+I don't donate to the EFF anyway.)  I'm sure this is a combination of many
+factors, including the growth of the community, the new venue, and the fact that
+it wouldn't be DEF CON without linecon.
+
+The DEF CON artwork is not something I normally write about, largely because I'm
+no artist and I barely have an eye for, well, anything, but I really thought the
+art was excellent this year.  I so desperately wanted to rip one of the posters
+off the wall next to the escalators!  (I have hopes one of them might appear in
+a charity auction at some point, but I didn't see it at con.)
+
+Caesar's as a venue was okay -- there was noticably more space, but figuring out
+how to get between some of the areas was not crystal clear.  A lot of that was
+on me -- I should've done more recon of the con area.  (Look for a "lessons
+learned" post coming soon.)  My hotel room was awesome though, and in the tower
+right above the con space, so I had that going for me.  Fingers crossed to get
+in the same tower next year.
+
+Mad props to DT and all the DEF CON Goons and organizers who work so hard to put
+the event together.  No matter how much chaos there may be, I've had a great
+time every year, and I wouldn't miss it for the world.  That's just a part of
+the World's Biggest Hacker Convention.
