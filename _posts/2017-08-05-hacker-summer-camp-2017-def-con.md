@@ -6,6 +6,7 @@ date: 2017-08-05
 tags:
   - Security
   - Hacker Summer Camp
+  - DEF CON
 ---
 
 DEF CON, of course, is the main event of Hacker Summer Camp for me.  It's the
@@ -67,6 +68,14 @@ on me -- I should've done more recon of the con area.  (Look for a "lessons
 learned" post coming soon.)  My hotel room was awesome though, and in the tower
 right above the con space, so I had that going for me.  Fingers crossed to get
 in the same tower next year.
+
+![Dual Core](/img/blog/hsc2017/dual_core.jpg)
+
+Dual Core had an outstanding show on the Friday Night lineup.  I don't care what
+DEF CON calls the headliner, Dual Core is always the headliner for my music
+tastes.  I've seen him perform live at least once at every DEF CON and at dozens
+of other events (Southeast Linux Fest, DerbyCon, etc.), and I just don't think
+it would be a full con without seeing him.
 
 Mad props to DT and all the DEF CON Goons and organizers who work so hard to put
 the event together.  No matter how much chaos there may be, I've had a great
