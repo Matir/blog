@@ -2,7 +2,7 @@
 layout: post
 title: "Hacker Summer Camp 2017: DEF CON"
 category: Security
-date: 2017-08-02
+date: 2017-08-05
 tags:
   - Security
   - Hacker Summer Camp
