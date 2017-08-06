@@ -3,6 +3,7 @@ layout: post
 title: "Hacker Summer Camp 2017: Pros vs Joes CTF"
 category: Security
 date: 2017-07-31
+series: Hacker Summer Camp 2017
 tags:
   - Security
   - Hacker Summer Camp

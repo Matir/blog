@@ -3,6 +3,7 @@ layout: post
 title: "Hacker Summer Camp 2017: XXV Badge"
 category: Electronics
 date: 2017-07-31
+series: Hacker Summer Camp 2017
 tags:
   - Security
   - Electronics
