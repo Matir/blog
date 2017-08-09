@@ -39,7 +39,8 @@ it again without the blinding light.
 
 ![Finished Badge](/img/blog/hsc2017/finished_badge.jpg)
 
-Way better, don't you think?  This is the "XXV Badge" -- 48 APA102C LEDs controlled by a Atmel SAMD21 ARM
+Way better, don't you think?  This is the "XXV Badge" -- 48 APA102C LEDs
+controlled by a Atmel SAMD21 ARM Cortex M0
 MCU clocked at 48 MHz.  The SAMD21 runs at 3.3v, the LEDs at 5V, so I have a
 boost converter driving the LEDs based on a TPS61232.  A 74AHCT125 quad buffer
 provides level conversion (though not really designed to, it works quite well)
@@ -51,5 +52,14 @@ it worked out quite well for the parties and I got a number of compliments and
 interest in the badge, so I'm pretty happy with the outcome for my first badge
 design (and first PCB!)  I can't wait to start thinking about next year!
 
+The boost converter design & layout are approximately based on the reference
+design from TI, but I had to make a few adaptations due to part size and layout
+constraints.  Fortunately, it ended up working out pretty well, and with fresh
+batteries, the output is well-regulated.  However, running all of the LEDs at
+full brightness draws more current than 3xAAAs can support, causing the input
+voltage to the boost converter to drop and resulting either in an immense amount
+of ripple, or so much dropout that the SAMD21 CPU resets.
+
 Kicad design files and firmware source code [are on
-GitHub](https://github.com/Matir/DC25Badge)!
+GitHub](https://github.com/Matir/DC25Badge)!  My production boards were produced
+by [Hackvana](http://www.hackvana.com/).
