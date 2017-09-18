@@ -2,7 +2,7 @@
 layout: post
 title: "Getting Started in Offensive Security"
 category: Security
-date: 2017-09-19
+date: 2017-09-18
 tags:
   - Education
   - Getting Started
