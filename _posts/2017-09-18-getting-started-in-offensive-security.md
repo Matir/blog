@@ -211,9 +211,11 @@ community.
 * Reddit
   * [/r/netsec](https://www.reddit.com/r/netsec)
   * [/r/ReverseEngineering](https://www.reddit.com/r/ReverseEngineering/)
+* YouTube/Streaming
+  * [LiveOverflow](https://www.youtube.com/channel/UClcE-kVhqyiHCcjYwcpfj9w)
+  * [LiveOverflow list of Streamers](https://liveoverflow.com/share/ctf-lightning-fsec.pdf)
 * [OWASP Testing Guide](https://www.owasp.org/index.php/OWASP_Testing_Guide_v4_Table_of_Contents)
-* [LiveOverflow on YouTube](https://www.youtube.com/channel/UClcE-kVhqyiHCcjYwcpfj9w)
-* [PoC||GTFO](https://www.alchemistowl.org/pocorgtfo/)
+* [PoC&#124;&#124;GTFO](https://www.alchemistowl.org/pocorgtfo/)
 * [/r/netsec Getting Started Wiki](https://www.reddit.com/r/netsec/wiki/start)
 * [Corelan Articles](https://www.corelan.be/index.php/articles/)
 
