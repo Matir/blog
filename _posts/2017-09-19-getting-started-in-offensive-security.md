@@ -2,7 +2,7 @@
 layout: post
 title: "Getting Started in Offensive Security"
 category: Security
-date: 2017-09-17
+date: 2017-09-19
 tags:
   - Education
   - Getting Started
@@ -22,7 +22,12 @@ policy or requirements.**
 I'm not going to pretend that this article is unique or has magic bullets to get
 you into the offensive security space.  I also won't pretend to speak for others
 in that space or in other areas of information security.  It's a big field, and
-it turns out that a lot of us have opinions about it.
+it turns out that a lot of us have opinions about it.  Mubix maintains a
+[list of posts like this](https://gist.github.com/mubix/5737a066c8845d25721ec4bf3139fd31)
+so you can see everyone's opinions.  I highly recommend the post ["So You Want
+to Work in Security"](https://medium.freecodecamp.org/so-you-want-to-work-in-security-bc6c10157d23)
+by Parisa Tabriz for a view that's not specific to offensive security.  (Though
+there's a lot of cross-over.)
 
 My personal area of interest -- some would even say expertise -- is offensive
 application security, which includes activities like black box application
@@ -90,6 +95,7 @@ of:
 For non-web networked applications:
 
 - A basic understanding of TCP/IP (or UDP/IP, if applicable)
+- The OSI Model
 - Basic computer architecture (stack, heap, etc.)
 - Language used for implementation
 
@@ -116,7 +122,10 @@ fundamentals that will help you get started:
 
 You don't have to have a full CS degree (but it certainly wouldn't hurt), but if
 you don't understand how developers do their work, you'll have a much harder
-time looking for and exploiting vulnerabilities.
+time looking for and exploiting vulnerabilities.  Many of the best penetration
+testers and security researchers have had experience as network administrators,
+systems administrators, or developers -- this experience is incredibly useful in
+understanding the underlying systems.
 
 ## The CIA Triad ##
 
@@ -197,19 +206,60 @@ There are some suggested resources for getting started in Offensive Security.
 I'll try to maintain them if I receive suggestions from other members of the
 community.
 
-### Web Resources ###
+### Web Resources (Reading/Watching) ###
 
 * Reddit
   * [/r/netsec](https://www.reddit.com/r/netsec)
   * [/r/ReverseEngineering](https://www.reddit.com/r/ReverseEngineering/)
 * [OWASP Testing Guide](https://www.owasp.org/index.php/OWASP_Testing_Guide_v4_Table_of_Contents)
 * [LiveOverflow on YouTube](https://www.youtube.com/channel/UClcE-kVhqyiHCcjYwcpfj9w)
+* [PoC||GTFO](https://www.alchemistowl.org/pocorgtfo/)
+* [/r/netsec Getting Started Wiki](https://www.reddit.com/r/netsec/wiki/start)
+* [Corelan Articles](https://www.corelan.be/index.php/articles/)
 
 ### Books ###
+
+* Security (How-To/Technical)
+  * [Hacking Exposed](http://amzn.to/2yjPx91)
+  * [Web Application Hacker's Handbook](http://amzn.to/2fuBVA2)
+  * [The Art of Software Security Assessment](http://amzn.to/2wpN6oc)
+  * [Metasploit: The Penetration Tester's Guide](http://amzn.to/2xKhCJE)
+  * [The Basics of Hacking and Penetration Testing](http://amzn.to/2xKuy2j)
+  * [Social Engineering: The Art of Human Hacking](http://amzn.to/2xKiD4y)
+  * [The IDA Pro Book](http://amzn.to/2xfICiH)
+  * [The Shellcoder's Handbook](http://amzn.to/2xfnxF9)
+  * [Professional Penetration Testing](http://amzn.to/2y8TCMc)
+* Reading (aka, Story Time -- these are more readable but still relevant)
+  * [Dissecting the Hack: The F0rb1dd3n Network](http://amzn.to/2xKCal7)
+  * [Dissecting the Hack: The V3rb0t3n Network](http://amzn.to/2xfmHZ1)
+  * [A Bug Hunter's Diary](http://amzn.to/2xfkrRm)
+* Reference (Have on Hand)
+  * [Red Team Field Manual](http://amzn.to/2ff5uJ9)
+  * [Metasploit: The Penetration Tester's Guide](http://amzn.to/2xKhCJE)
 
 ### Courses ###
 
 * [Penetration Testing with Kali Linux](https://www.kali.org/penetration-testing-with-kali-linux/)
 * SANS
-    * [SEC560: Network Penetration Testing and Ethical Hacking](https://www.sans.org/course/network-penetration-testing-ethical-hacking)
-    * [SEC542: Web App Penetration Testing and Ethical Hacking](https://www.sans.org/course/web-app-penetration-testing-ethical-hacking)
+  * [SEC560: Network Penetration Testing and Ethical Hacking](https://www.sans.org/course/network-penetration-testing-ethical-hacking)
+  * [SEC542: Web App Penetration Testing and Ethical Hacking](https://www.sans.org/course/web-app-penetration-testing-ethical-hacking)
+* [Modern Binary Exploitation](https://github.com/RPISEC/MBE)
+
+### Lab Resources ###
+
+I'll have a follow-up about building a lab soon, but there's some things worth
+looking at here:
+
+* [Pentester Lab](https://pentesterlab.com/)
+* [Vulnhub: Vulnerable VM Images](https://www.vulnhub.com/)
+* [Practice CTF List](http://captf.com/practice-ctf/)
+
+## Conclusion ##
+
+This isn't an especially easy field to get started in, but it's the challenge
+that keeps most of us into it.  I know I need to constantly be pushing the edge
+of my capabilities and of technology for it to stay satisfying.  Good luck, and
+maybe you'll soon be the author of one of the great resources in our community.
+
+If you have other tips/resources that you think should have been included here,
+drop me a line or reach me on [Twitter](https://twitter.com/matir).
