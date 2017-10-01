@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "The Many Badges of DEF CON 25"
-category: Miscellaneous
+category: Misc
 date: 2017-07-07
 tags:
   - DEF CON

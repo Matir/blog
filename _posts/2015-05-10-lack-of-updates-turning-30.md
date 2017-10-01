@@ -3,7 +3,7 @@ layout: post
 title: "Lack of Updates, Turning 30"
 date: 2015-05-10 04:21:38 +0000
 permalink: /2015/05/10/lack-of-updates-turning-30/
-category: Life
+category: Personal
 ---
 I've been disappointed with myself for a while for not updating more often.  It's been months!  I'd been pushing myself to update regularly, but I also only want to update with genuine content.  Social networks are places where I can just place random thoughts, this is a place for meaningful content that will (hopefully) be useful to others.  (Though the jury's still out on that one.)
 

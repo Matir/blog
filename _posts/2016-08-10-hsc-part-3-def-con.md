@@ -9,7 +9,7 @@ tags:
 ---
 
 This is the 3rd, and final, post in my Hacker Summer Camp 2016 series.
-[Part 1](2016/08/09/hsc-part-i-hardware-hacking-with-the-hardsploit-framework.html)
+[Part 1](/2016/08/09/hsc-part-i-hardware-hacking-with-the-hardsploit-framework.html)
 covered my class at Black Hat, and [Part 2](/2016/08/10/hsc-part-2-pros-versus-joes-ctf.html)
 the 2016 BSidesLV Pros versus Joes CTF.  Now it's time to talk about the
 capstone of the week: DEF CON.

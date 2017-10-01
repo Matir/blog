@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "Chrome on Kali for root"
-category: Computers
+category: Computer
 tags:
   - Security
   - Kali Linux
