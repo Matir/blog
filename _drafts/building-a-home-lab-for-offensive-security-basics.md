@@ -128,4 +128,35 @@ it will just take some extra configuration.
 
 ### Hardware Option B: Decent Laptop ###
 
+So, "decent" is subjective, but there are a few guidelines here:
+
+- You need support for hardware virtualization.  (Intel VT)  Consequently, some
+  Celeron-, Atom- and Pentium-branded processors won't make the cut, as well as
+  some of the AMD A-series.  Any Core i3, i5, or i7 should do the trick.
+- Memory is critical.  VMs love memory.  Count on *at least* 2GB for a Windows
+  Client, 4GB for a Windows Server, and 1GB for a minimal Linux install, but
+  more is always better.  I look for at least 16GB of RAM in a laptop if I'm
+  going to be running a lot of VMs.
+- The hard drive requirements aren't massive, but you'll want more than
+  something like a 128GB SSD.  I use a [1TB Samsung 850 EVO](http://amzn.to/2lbSSEw),
+  but that might be a bit overkill for most users.
+
+There are obviously a lot of laptops that meet the minimums you'd want, so the
+rest is about making sure you're comfortable using it.  A good screen and a good
+keyboard are key in that.  These days, you really souldn't settle for 720p
+screens (1368x768), so 1920x1080 (1080p) is about your starting point there.
+
+**Pros:**
+
+* Cheapest, if you already have one usuable
+* Portable
+
+**Cons:**
+
+* Can be quite expensive
+* Least flexible option
+* Might not support enough VMs for some configurations
+
 ### Hardware Option C: Dedicated Hardware ###
+
+This is the most serious, but 
