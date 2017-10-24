@@ -113,6 +113,10 @@ good.  Even those that offer Windows might not offer Windows client systems, but
 that's not terrible -- you can often treat a Windows Server as a client anyway,
 it will just take some extra configuration.
 
+For a lot of my testing, I use [DigitalOcean](https://m.do.co/c/b2cffefc9c81),
+but they're a Linux-only environment, so better for Application testing than for
+full environment simulation.
+
 **Pros:**
 
 * Easy to spin up
@@ -126,7 +130,7 @@ it will just take some extra configuration.
 * More difficult to manage
 * Strange configurations are harder to build
 
-### Hardware Option B: Decent Laptop ###
+### Hardware Option B: Decent Laptop/Desktop ###
 
 So, "decent" is subjective, but there are a few guidelines here:
 
@@ -143,13 +147,13 @@ So, "decent" is subjective, but there are a few guidelines here:
 
 There are obviously a lot of laptops that meet the minimums you'd want, so the
 rest is about making sure you're comfortable using it.  A good screen and a good
-keyboard are key in that.  These days, you really souldn't settle for 720p
+keyboard are key in that.  These days, you really shouldn't settle for 720p
 screens (1368x768), so 1920x1080 (1080p) is about your starting point there.
 
 **Pros:**
 
 * Cheapest, if you already have one usuable
-* Portable
+* Portable (laptop)
 
 **Cons:**
 
@@ -159,4 +163,37 @@ screens (1368x768), so 1920x1080 (1080p) is about your starting point there.
 
 ### Hardware Option C: Dedicated Hardware ###
 
-This is the most serious, but 
+This is the most serious, but also the most flexible option.  Having a lab on
+dedicated hardware will cost, but it allows you to build out whatever you want.
+
+There's a few approaches here.  Simplest is basically a standard desktop build,
+but instead of running a full desktop OS on it, you can run ESXi, Xen, Proxmox,
+or another Hypervisor build.  More complex, you can have a
+[NAS](http://amzn.to/2yLfH6P) and use something like an [Intel
+NUC](http://amzn.to/2gGtCFf) or other small form factor
+[PC](http://amzn.to/2yJwlSO) to provide your compute power.  Of course, you can
+really go to an extreme: check out
+[/r/homelab](https://www.reddit.com/r/homelab) to see what some people have done
+(though not necessarily for a security-focused homelab).
+
+My main lab setup is a desktop build with:
+
+- [AMD FX-8300](http://amzn.to/2yKZ2jD) CPU
+- [Asus M5A78L-M](http://amzn.to/2yK2RnH) Motherboard
+- 16 GB DDR3
+- 2x [HGST Deskstar NAS 4TB](http://amzn.to/2yJxtFL) Drives
+
+This all connects to a [ZyXEL GS1900-16](http://amzn.to/2yMhqHD) managed switch
+so I can have separate VLANs for lab and regular network access.  Possibly
+overkill, but it works well for me and was a great opportunity to learn about
+VLANs, trunking, 802.1q, etc.
+
+**Pros:**
+
+* Most Flexible
+* Most Powerful
+
+**Cons:**
+
+* Potentially very expensive
+* Can consume lots of power/space
