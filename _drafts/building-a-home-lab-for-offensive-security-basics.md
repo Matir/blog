@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "Building a Home Lab for Offensive Security"
+title: "Building a Home Lab for Offensive Security & Security Research"
 category: Security
 tags:
   - Home Lab
@@ -171,10 +171,70 @@ but instead of running a full desktop OS on it, you can run ESXi, Xen, Proxmox,
 or another Hypervisor build.  More complex, you can have a
 [NAS](http://amzn.to/2yLfH6P) and use something like an [Intel
 NUC](http://amzn.to/2gGtCFf) or other small form factor
-[PC](http://amzn.to/2yJwlSO) to provide your compute power.  Of course, you can
-really go to an extreme: check out
+[PC](http://amzn.to/2yJwlSO) to provide your compute power.
+
+Most people will opt for either a desktop or the small form factor options, but
+others can spare the space (and cost) of a small home rack with a larger NAS and
+a few rack-mounted servers.  Of course, you can really go to an extreme: check out
 [/r/homelab](https://www.reddit.com/r/homelab) to see what some people have done
 (though not necessarily for a security-focused homelab).
+
+**Pros:**
+
+* Most Flexible
+* Most Powerful
+
+**Cons:**
+
+* Potentially very expensive
+* Can consume lots of power/space
+
+## Software
+
+I'll be describing a generic software setup, but you might need to adjust based
+on how you've setup the hardware/hosting for your lab environment.
+
+### Networking
+
+I suggest placing your machines on an isolated network.  There's several
+different ways you can do this:
+
+- Private networking provided by your cloud provider (obviously only for a lab
+  in the cloud)
+- A virtual network in your virtualization software
+- A separate physical network switch (only usuable if your hardware is dedicated
+  to your lab)
+- A VLAN on a managed network switch
+
+Whichever way you choose will keep your "normal" traffic apart from your lab
+traffic, and prevent you from causing trouble for anyone else who might use your
+network (spouses, roommates, significant others, guests, etc.).
+
+I like to put a router between the two networks to give internet access to your
+lab (obviously be careful that anything malicious stays within the lab) and to
+provide remote access (via OpenVPN).  I currently use pfSense to provide this,
+which you can run on bare metal, or run as a Virtual Machine.
+
+### Operating Systems
+
+My lab setup has varied over time, but I'd say the "common ground" of a lab is
+something that replicates your typical enterprise environment.  At a minimum,
+this will include:
+
+- Windows Servers (typically a Domain Controller)
+- Linux Servers (typically Application Servers)
+
+### Applications
+
+### Security Software
+
+## My Personal Setup
+
+My personal setup is not necessarily the right way to do things (in fact, I have
+a *lot* I'd like to change) but I include it as an example for others of how a
+lab setup can be used in practice.
+
+### Hardware
 
 My main lab setup is a desktop build with:
 
@@ -188,12 +248,14 @@ so I can have separate VLANs for lab and regular network access.  Possibly
 overkill, but it works well for me and was a great opportunity to learn about
 VLANs, trunking, 802.1q, etc.
 
-**Pros:**
+I've also added a couple of Raspberry Pis and some other hardware over time for
+specific cases.  I keep a previous-generation cell phone for research in the lab
+as well.  (Because I'd rather not install sketchy apps on my regular phone.)
 
-* Most Flexible
-* Most Powerful
+None of this is particularly high end hardware, and it's only a few hundred
+dollars worth of hardware.  I've also accumulated it over several years, so this
+is an example of how you can start simple and grow from there.  For example, I
+used to use old 500GB-1TB hard drives, and the network switch is also a
+relatively recent addition.
 
-**Cons:**
-
-* Potentially very expensive
-* Can consume lots of power/space
+### OS/Software
