@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "Building a Home Lab for Offensive Security: Basics"
+title: "Building a Home Lab for Offensive Security"
 category: Security
 tags:
   - Home Lab
@@ -30,11 +30,44 @@ As usual, I encourage others to share their thoughts with me via
 
 ## Use Cases ##
 
+There's a few different things you might want to do with your lab.  I'll list
+some of the more common things I do with my lab setups below, because how you
+use it will influence how you set it up.
+
 ### Full Environment Simulation ###
+
+This is probably the most complex option, but also one of the most useful,
+especially if you're just getting into penetration testing.  In this case, you
+want to build out a full replica of a target environment, but entirely owned and
+controlled by you (so it's legal to play around in).
+
+If you're looking to practice for a particular engagement/environment, you'll
+want to reproduce your target environment as closely as possible.  If you want a
+general lab to practice pentesting, you can simulate a fairly typical corporate
+environment.
 
 ### Application Security Research ###
 
+When doing application security research, your goals are quite a bit different
+from pentesting.  In application security, you generally want to be able to
+instrument the application as much as you can.  Most critically, you want to be
+able to intercept all of the network traffic to/from the application, attach a
+debugger to the application, and otherwise control the environment.  Ideally,
+you also want to keep the miscellaneous noise to a minimum, so using a system
+with nothing else going on can be helpful.
+
+Depending on the application, you might want a web proxy like Burp Suite, or
+a packet capture tool like Wireshark.  In either case, you can either run your
+proxy locally or use a router to direct traffic through.
+
+For mobile application testing, you can use an emulator, or you might want a
+cheap access point on your lab network to which you can connect a real device.
+
 ### Tool Testing ###
+
+Tool testing will have all kinds of different requirements depending on what
+tool you want to test.  It's hard to give more advice than to think about the
+environment the tool is designed to test/exploit/assess.
 
 ## Hardware ##
 
