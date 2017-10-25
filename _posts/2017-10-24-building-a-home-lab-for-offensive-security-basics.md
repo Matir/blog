@@ -8,6 +8,7 @@ tags:
   - Security
   - Education
   - Training
+date: 2017-10-24
 ---
 
 When I wrote my ["getting started" post](/2017/09/18/getting-started-in-offensive-security.html)
