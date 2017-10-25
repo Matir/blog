@@ -25,7 +25,7 @@ they're very different.)
 As usual, I encourage others to share their thoughts with me via
 [Twitter](https://twitter.com/Matir) or email.
 
-* Table of Contents
+- Table of Contents
 {:toc}
 
 ## Use Cases ##
@@ -119,16 +119,16 @@ full environment simulation.
 
 **Pros:**
 
-* Easy to spin up
-* Takes no space
-* No large initial investment (cost)
+- Easy to spin up
+- Takes no space
+- No large initial investment (cost)
 
 **Cons:**
 
-* Ongoing cost
-* Might be limited by ToS
-* More difficult to manage
-* Strange configurations are harder to build
+- Ongoing cost
+- Might be limited by ToS
+- More difficult to manage
+- Strange configurations are harder to build
 
 ### Hardware Option B: Decent Laptop/Desktop ###
 
@@ -152,14 +152,14 @@ screens (1368x768), so 1920x1080 (1080p) is about your starting point there.
 
 **Pros:**
 
-* Cheapest, if you already have one usuable
-* Portable (laptop)
+- Cheapest, if you already have one usuable
+- Portable (laptop)
 
 **Cons:**
 
-* Can be quite expensive
-* Least flexible option
-* Might not support enough VMs for some configurations
+- Can be quite expensive
+- Least flexible option
+- Might not support enough VMs for some configurations
 
 ### Hardware Option C: Dedicated Hardware ###
 
@@ -181,13 +181,13 @@ a few rack-mounted servers.  Of course, you can really go to an extreme: check o
 
 **Pros:**
 
-* Most Flexible
-* Most Powerful
+- Most Flexible
+- Most Powerful
 
 **Cons:**
 
-* Potentially very expensive
-* Can consume lots of power/space
+- Potentially very expensive
+- Can consume lots of power/space
 
 ## Software
 
@@ -218,15 +218,75 @@ which you can run on bare metal, or run as a Virtual Machine.
 ### Operating Systems
 
 My lab setup has varied over time, but I'd say the "common ground" of a lab is
-something that replicates your typical enterprise environment.  At a minimum,
+something that replicates your typical enterprise environment.  Typically,
 this will include:
 
 - Windows Servers (typically a Domain Controller)
 - Linux Servers (typically Application Servers)
+- Windows Clients (various versions)
+
+Optionally you may want to consider:
+
+- Linux Desktops
+- OS X
+- Mobile devices (iOS, Android)
+
+Obviously, Linux can be had for free, but for Windows, an MSDN subscription can
+go a long way, or you can use some versions for a 30 day testing period.  (Make
+sure you follow the license terms!)
 
 ### Applications
 
+What applications you run will largely depend on what you want to
+try/practice/test, but there's a few things that are pretty universal.  I
+strongly recommend running a Windows domain with domain-joined clients, as most
+enterprise environments will fit that model.
+
+You'll also need the applications that are necessary to make a network run --
+DNS and DHCP.  Don't just forward these upstream, but really set them up to
+model a typical enterprise.  DNS will be an interesting exercise to have working
+properly in your test lab.
+
+Beyond that, you might want to consider:
+
+- SMB File Share (Windows and/or Linux)
+- Web Applications
+  - Wordpress/Blogging Software
+  - Shopping Carts
+  - Help Desk Ticketing
+- Remote Desktop/VNC
+- Database Servers (try running on a different host than the webapps)
+
+If you want to do typical penetration testing, try installing some applications
+that are not the current version.  Don't look too carefully at the list of
+changes/existing vulnerabilities to leave yourself some challenge.
+
+### Pre-made VMs
+
+There's a few well-known pre-made VMs with vulnerable applications, such as:
+
+- [Metasploitable 2](https://www.vulnhub.com/entry/metasploitable-2,29/)
+- [Metasploitable 3](https://github.com/rapid7/metasploitable3)
+- [Damn Vulnerable Linux](https://sourceforge.net/projects/virtualhacking/files/os/dvl/)
+- [Exploit Exercises](https://exploit-exercises.com/download/)
+
+You can also consider including some pre-made vulnerable VMs from sources like
+[VulnHub](https://www.vulnhub.com/) or build random ones with
+[SecGen](https://github.com/cliffe/SecGen).
+
 ### Security Software
+
+Depending on the testing you want to do, you may want to set up some defensive
+security software.  For example, setting up [Snort](https://www.snort.org) or
+[Bro](https://www.bro.org/) will help you see how defenders see your attacks and
+discover which are noisy and which are quiet.  Adding
+[Splunk](https://www.splunk.com/) will help you aggregate logs, and is another
+way to understand how defenders work.
+
+You can also add some AV solutions to see whether (or not) your attacks or
+payloads are protected against by various tools.  Unfortunately, I don't think
+there are any free binary whitelisting solutions for Windows, so you won't be
+able to try out bypasses on that.
 
 ## My Personal Setup
 
@@ -259,3 +319,9 @@ used to use old 500GB-1TB hard drives, and the network switch is also a
 relatively recent addition.
 
 ### OS/Software
+
+## Other Resources
+
+- Vulnhub has [an article on building a lab](https://www.vulnhub.com/lab/) as well.
+- Rapid7's [Setting Up A Penetration Testing Lab](https://kb.help.rapid7.com/docs/setting-up-a-penetration-testing-lab)
+- Aman Hardikar's [Practice Mindmap](http://amanhardikar.com/mindmaps/Practice.html)
