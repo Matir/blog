@@ -345,6 +345,11 @@ known to run well in this environment).
 - Vulnhub has [an article on building a lab](https://www.vulnhub.com/lab/) as well.
 - Rapid7's [Setting Up A Penetration Testing Lab](https://kb.help.rapid7.com/docs/setting-up-a-penetration-testing-lab)
 - Aman Hardikar's [Practice Mindmap](http://amanhardikar.com/mindmaps/Practice.html)
+- [Network Security Test Lab: A Step-by-Step Guide](http://amzn.to/2lfBqyT)
+- [Professional Penetration Testing, Second Edition: Creating and Learning in a
+  Hacking Lab](http://amzn.to/2yH19pH)
+- [RTFM: Red Team Field Manual](http://amzn.to/2zASEsR)
+- [BTFM: Blue Team Field Manual](http://amzn.to/2yKDty8)
 
 ## Conclusion
 
