@@ -135,7 +135,7 @@ full environment simulation.
 So, "decent" is subjective, but there are a few guidelines here:
 
 - You need support for hardware virtualization.  (Intel VT)  Consequently, some
-  Celeron-, Atom- and Pentium-branded processors won't make the cut, as well as
+  Celeron-, Atom-, and Pentium-branded processors won't make the cut, as well as
   some of the AMD A-series.  Any Core i3, i5, or i7 should do the trick.
 - Memory is critical.  VMs love memory.  Count on *at least* 2GB for a Windows
   Client, 4GB for a Windows Server, and 1GB for a minimal Linux install, but
@@ -308,6 +308,11 @@ so I can have separate VLANs for lab and regular network access.  Possibly
 overkill, but it works well for me and was a great opportunity to learn about
 VLANs, trunking, 802.1q, etc.
 
+I have a dedicated lab SSID on my WiFi access point (easily done if you're
+running something like OpenWRT) on a vlan that comes back into my lab
+environment, so I can attach wireless devices (IoT, mobile, etc.) and segregate
+their traffic.
+
 I've also added a couple of Raspberry Pis and some other hardware over time for
 specific cases.  I keep a previous-generation cell phone for research in the lab
 as well.  (Because I'd rather not install sketchy apps on my regular phone.)
@@ -320,8 +325,32 @@ relatively recent addition.
 
 ### OS/Software
 
+My host OS is Debian stable, using KVM for virtualization, and with software
+bridges trunked out to the GS1900 switch.  I also have some internal-ony bridges
+for other activities.
+
+I have a virtual pfSense install as a router/firewall between the lab and the
+rest of my network.  It provides OpenWRT when I need to be "on" the network, but
+most of the time, I just route my traffic through.  Currently, the pfSense
+system hosts the DHCP and DNS servers, but I've thought about switching to the
+domain controllers (like you really should, at least for DNS).
+
+I do have a Domain Controller on Server 2016, and a couple of Windows Clients.
+MSDN licenses are a great option for this.  Most of my applications are on some
+variant of Linux, often an older version of Ubuntu (because the application is
+known to run well in this environment).
+
 ## Other Resources
 
 - Vulnhub has [an article on building a lab](https://www.vulnhub.com/lab/) as well.
 - Rapid7's [Setting Up A Penetration Testing Lab](https://kb.help.rapid7.com/docs/setting-up-a-penetration-testing-lab)
 - Aman Hardikar's [Practice Mindmap](http://amanhardikar.com/mindmaps/Practice.html)
+
+## Conclusion
+
+I hope this has been useful to those of you looking for a home lab to sharpen
+your security skills.  I wanted to do more of a "recipe", but given how much
+variation there is in possible setups, presenting all the options seemed to make
+more sense.  Let me know on [Twitter](https://twitter.com/Matir) if you're
+interested in a recipe for a particular setup.  Good luck, have fun, and stay
+legal!
