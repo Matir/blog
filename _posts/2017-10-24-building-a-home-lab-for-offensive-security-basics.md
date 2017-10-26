@@ -262,19 +262,6 @@ If you want to do typical penetration testing, try installing some applications
 that are not the current version.  Don't look too carefully at the list of
 changes/existing vulnerabilities to leave yourself some challenge.
 
-### Pre-made VMs
-
-There's a few well-known pre-made VMs with vulnerable applications, such as:
-
-- [Metasploitable 2](https://www.vulnhub.com/entry/metasploitable-2,29/)
-- [Metasploitable 3](https://github.com/rapid7/metasploitable3)
-- [Damn Vulnerable Linux](https://sourceforge.net/projects/virtualhacking/files/os/dvl/)
-- [Exploit Exercises](https://exploit-exercises.com/download/)
-
-You can also consider including some pre-made vulnerable VMs from sources like
-[VulnHub](https://www.vulnhub.com/) or build random ones with
-[SecGen](https://github.com/cliffe/SecGen).
-
 ### Security Software
 
 Depending on the testing you want to do, you may want to set up some defensive
@@ -288,6 +275,27 @@ You can also add some AV solutions to see whether (or not) your attacks or
 payloads are protected against by various tools.  Unfortunately, I don't think
 there are any free binary whitelisting solutions for Windows, so you won't be
 able to try out bypasses on that.
+
+### Pre-made VMs (Targets)
+
+There's a few well-known pre-made VMs with vulnerable applications, such as:
+
+- [Metasploitable 2](https://www.vulnhub.com/entry/metasploitable-2,29/)
+- [Metasploitable 3](https://github.com/rapid7/metasploitable3)
+- [Damn Vulnerable Linux](https://sourceforge.net/projects/virtualhacking/files/os/dvl/)
+- [Exploit Exercises](https://exploit-exercises.com/download/)
+
+You can also consider including some pre-made vulnerable VMs from sources like
+[VulnHub](https://www.vulnhub.com/) or build random ones with
+[SecGen](https://github.com/cliffe/SecGen).
+
+### Pre-made VMs (Tools)
+
+There's a couple of good options (and this is not an exhaustive list) for
+pre-made tool VMs.  Obviously you have [Kali Linux](https://kali.org) for
+offensive tools and penetration testing, but you can also use [Security
+Onion](https://securityonion.net/) for the defensive side -- intrusion detection
+and network security monitoring.
 
 ## My Personal Setup
 
@@ -351,6 +359,9 @@ known to run well in this environment).
   Hacking Lab](http://amzn.to/2yH19pH)
 - [RTFM: Red Team Field Manual](http://amzn.to/2zASEsR)
 - [BTFM: Blue Team Field Manual](http://amzn.to/2yKDty8)
+- Jeff McJunkin from Counter Hack has done [a webcast on the
+  topic](https://youtu.be/uzqwoufhwyk).
+  ([Slides](https://docs.google.com/presentation/d/1V-mWiyaJ3I6HhXRxH1M5ityWYRqb5PoNHwvWSZaOr_E/edit?usp=sharing))
 
 ## Conclusion
 
