@@ -102,7 +102,7 @@ we're going to write it.
 A common technique for this is to overwrite a pointer in the Global Offset Table
 (GOT).  If you're not familiar with the GOT, I've previously written about
 [using the GOT and PLT for
-exploitation](https://systemoverlord.com/2017/03/19/got-and-plt-for-pwning.html).
+exploitation](/2017/03/19/got-and-plt-for-pwning.html).
 Since there is no RELRO (Read-Only Relocations) on this binary, we can apply
 this technique here in a straightforward fashion.  We can overwrite any function
 that will be called after the `free` occurs.  For this binary, we can use any of

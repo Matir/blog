@@ -19,4 +19,4 @@ Maijin on GitHub is in the process of putting together an [online book for Radar
 Dennis Yurichev has a [free eBook on Reverse Engineering](http://yurichev.com/RE-book.html).  I haven't gotten through it yet, but it looks interesting, and you can't beat the price.
 
 ###Hacker Playbook
-Finally, I finished up [The Hacker Playbook: Practical Guide To Penetration Testing](http://www.amazon.com/gp/product/1494932636/ref=as_li_tl?ie=UTF8&camp=1789&creative=390957&creativeASIN=1494932636&linkCode=as2&tag=systemovecom-20) this week.  You can find [my full review here](https://systemoverlord.com/blog/2014/05/21/book-review-the-hacker-playbook/).
+Finally, I finished up [The Hacker Playbook: Practical Guide To Penetration Testing](http://www.amazon.com/gp/product/1494932636/ref=as_li_tl?ie=UTF8&camp=1789&creative=390957&creativeASIN=1494932636&linkCode=as2&tag=systemovecom-20) this week.  You can find [my full review here](/blog/2014/05/21/book-review-the-hacker-playbook/).

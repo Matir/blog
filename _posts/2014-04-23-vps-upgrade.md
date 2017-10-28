@@ -8,7 +8,7 @@ tags:
   - Linode
   - VPS
 ---
-As [I've mentioned before](https://systemoverlord.com/blog/2011/05/18/linode-rocks/),
+As [I've mentioned before](/blog/2011/05/18/linode-rocks/),
 my blog is hosted on a VPS at
 [Linode](http://www.linode.com/?r=680a893e24df3597d32f58cd41930e969027dc06).
 Just under 3 years ago, I moved to my current VPS in their Newark DC to take
