@@ -1,6 +1,6 @@
 ---
 layout: page
-title: About David
+title: "About David"
 weight: 100
 ---
 David is a security engineer at Google, working on information
