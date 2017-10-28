@@ -41,5 +41,5 @@ github:
   url:            https://github.com/Matir/
 
 # Gems
-gems:
+plugins:
   - jekyll-paginate
