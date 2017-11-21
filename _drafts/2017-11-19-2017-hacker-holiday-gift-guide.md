@@ -119,6 +119,22 @@ Amazon](http://amzn.to/2B4thBA)
 
 ## For Hardware Hackers & Electronics Makers
 
+### Brymen BM235 Multimeter (EEVBlog Model)
+
+[![BM235](//ws-na.amazon-adsystem.com/widgets/q?_encoding=UTF8&ASIN=B01JZ1ADCO&Format=_SL160_&ID=AsinImage&MarketPlace=US&ServiceVersion=20070822&WS=1&tag=systemovecom-20){:.left}](http://amzn.to/2jFuOcN)
+
+When doing any electronics work, whether it's making, debugging, reverse
+engineering, or any other form of hacking, being able to take voltage, current,
+resistance and other readings is critical.  The typical tool of choice for this
+is the handheld multimeter, and the [Brymen BM235](http://amzn.to/2jFuOcN) is my
+favorite multimeter.  While there are surely better multimeters out there (the
+[Fluke 87V](http://amzn.to/2B46vtj) is probably the best known multimeter for
+electronics work), this Brymen offers most of the features at a significantly
+lower price.  Most hobbyists and hardware hackers don't need the resolution of
+the 87V or similar multimeters, but the Brymen still offers good functionality,
+and most importantly, is a quality multimeter with proper safety features.
+[$125 at Amazon](http://amzn.to/2jFuOcN)
+
 ### Dremel Cordless Rotary Tool
 
 [![Dremel 8220](//ws-na.amazon-adsystem.com/widgets/q?_encoding=UTF8&ASIN=B008DRY5AI&Format=_SL160_&ID=AsinImage&MarketPlace=US&ServiceVersion=20070822&WS=1&tag=systemovecom-20){:.left}](http://amzn.to/2z0fvhK)
@@ -165,6 +181,52 @@ areas of security.  It's an excellent introduction, and contains lots of
 still-relevant material, even if it doesn't include bypasses for all the latest
 mitigations.  [$39.55 at Amazon](http://amzn.to/2B3By8J)
 
+### DT2000 Hardware Encrypted Flash Drive
+
+[![DT2000](//ws-na.amazon-adsystem.com/widgets/q?_encoding=UTF8&ASIN=B01AKAE6E0&Format=_SL160_&ID=AsinImage&MarketPlace=US&ServiceVersion=20070822&WS=1&tag=systemovecom-20){:.left}](http://amzn.to/2jJfBrp)
+
+The [DT2000](http://amzn.to/2jJfBrp) is a flash drive from Kingston that
+features a keypad to allow the entry of a PIN allowing access to the
+hardware-encrypted contents.  Contents are encrypted by 256 bit AES, and I have
+it on good word that this device has fairly properly implemented their
+encryption.  They're obviously significantly more expensive than stock flash
+drives, but the encryption and the case make them a great place to protect
+important documents and files including backups of password managers (you do use
+a password manager, don't you?), financial records, medical records, GPG keys,
+and other sensitive data.  I use an older USB 2.0 encrypted flash drive, and
+have been looking a lot at an upgrade, and the DT2000 would be at the top of my
+list.  [$124.88 at Amazon](http://amzn.to/2jJfBrp)
+
+### Offensive Security Training
+
+There are few things I'm prouder of than holding both the
+[OSCP](https://www.offensive-security.com/information-security-certifications/oscp-offensive-security-certified-professional/)
+and
+[OSCE](https://www.offensive-security.com/information-security-certifications/osce-offensive-security-certified-expert/)
+certifications.  They teach hands-on practical Offensive Security (hence the
+name) and do an incredible job of it, especially for those who learn best by
+doing.  With fully immersive labs and exams that require *doing* instead of
+answering some multiple choice questions, these really push security
+professionals to the next level.  If you know someone who can *"Try Harder"*,
+this is a great gift to get for them.
+
+### Raspberry Pi 3
+
+[![Raspberry Pi 3](//ws-na.amazon-adsystem.com/widgets/q?_encoding=UTF8&ASIN=B01C6Q2GSY&Format=_SL160_&ID=AsinImage&MarketPlace=US&ServiceVersion=20070822&WS=1&tag=systemovecom-20){:.right}](http://amzn.to/2zV8Et9)
+
+Ever since the Raspberry Pi first hit the market, it's been a popular option
+with Hackers and Makers.  This [starter kit](http://amzn.to/2zV8Et9) gives
+everything you need to get started with the Raspberry Pi 3, which is the latest
+iteration of the full-sized Raspberry Pi.  The 3 includes integrated WiFi and
+Bluetooth, so no more need for a dongle for that.  One of the nicest features
+with the Raspberry Pi is how trivially you can switch your operating system:
+just swap to another MicroSD card.  You can have one card with Raspbian, another
+with Kali, etc.  Likewise, if you manage to terribly misconfigure your system,
+you can either move the MicroSD to another computer to fix it or just reflash it
+to a stock system.  Though the Raspberry Pi 3 alone is
+[$35](http://amzn.to/2j9OJNn), the kit with a case, power supply, heatsinks,
+MicroSD card, etc., is [$69.99 at Amazon](http://amzn.to/2zV8Et9).
+
 ## Geek & Hacker Apparel
 
 Despite the Security Weekly suggestion to [Hack
@@ -176,3 +238,23 @@ offices do require clothing:
 * [Hacker Stickers](https://www.hackerstickers.com/)
 
 ## Young Hackers & Makers
+
+You'll have to make your own decisions about the age appropriateness of each of
+the options here for the young hackers & makers in your life.  I'm clearly not
+an expert in that area, but decided I'd share my thoughts anyway.  (Plus, many
+of these items are fun for older hackers exploring new areas too!)
+
+### Circuit Playground Express
+
+[![Circuit Playground Express](//ws-na.amazon-adsystem.com/widgets/q?_encoding=UTF8&ASIN=B0764NQ1WW&Format=_SL160_&ID=AsinImage&MarketPlace=US&ServiceVersion=20070822&WS=1&tag=systemovecom-20){:.right}](http://amzn.to/2zTHX8o)
+
+For the first foray into embedded systems and microcontrollers, I recommend the
+[Circuit Playground Express](http://amzn.to/2zTHX8o) from Adafruit.  It allows
+programming the device in MicroPython and loading your code is as simple as
+plugging in and seeing it appear as a USB mass storage device.  Save your
+micropython program to the device, hit reset, and see it run.  It contains 10
+Neopixel-style RGB LEDs, a thermometer, light sensor, accelerometer, sound
+sensor, speaker, buttons, switches, and more!  It does require a bit of
+understanding of electronics, but it's a great start into programming for the
+physical world.  [$32.99 on Amazon](http://amzn.to/2zTHX8o) or [$24.95 direct
+from Adafruit](https://www.adafruit.com/product/3333)
