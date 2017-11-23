@@ -2,7 +2,7 @@
 layout: post
 title: "2017 Hacker Holiday Gift Guide"
 category: Misc
-date: 2017-11-19
+date: 2017-11-22
 tags:
   - Security
   - Hacking
@@ -117,6 +117,20 @@ understanding the enemy leads to be better defenses, and how playing the enemy
 leads to finding previously unknown weaknesses in defenses.  [$20.32 at
 Amazon](http://amzn.to/2B4thBA)
 
+### Unauthorised Access: Physical Penetration Testing for IT Security Teams
+
+[![Unauthorised Access](//ws-na.amazon-adsystem.com/widgets/q?_encoding=UTF8&ASIN=0470747617&Format=_SL160_&ID=AsinImage&MarketPlace=US&ServiceVersion=20070822&WS=1&tag=systemovecom-20){:.left}](http://amzn.to/2hJnlFA)
+
+Red Teaming takes on many forms, and understanding physical security is
+important for any penetration tester or red teamer, even if he or she does not
+actually execute physical attacks.  Knowing about the possibilities in the
+physical space helps to understand risks and compensating controls.
+[Unauthorised Access: Physical Penetration Testing for IT Security
+Teams](http://amzn.to/2hJnlFA) by Will Allsopp describes the basics of
+penetration testing physical access controls (mostly buildings and datacenters)
+and will help you to look at these controls in an entirely new light.  [$25.43
+at Amazon](http://amzn.to/2hJnlFA)
+
 ## For Hardware Hackers & Electronics Makers
 
 ### Brymen BM235 Multimeter (EEVBlog Model)
@@ -159,6 +173,19 @@ dumping flash, using JTAG to examine the running state of a CPU, or even just
 basic UART interfacing.  Like so many of these multi-interface systems, it uses
 an FTDI FT-2232H chip, but this one has neatly designed interface connections
 and a great support wiki.  [$39.99 at Amazon](http://amzn.to/2yZoyQ7)
+
+### Ubertooth One
+
+[![Ubertooth One](//ws-na.amazon-adsystem.com/widgets/q?_encoding=UTF8&ASIN=B007R9UPHA&Format=_SL160_&ID=AsinImage&MarketPlace=US&ServiceVersion=20070822&WS=1&tag=systemovecom-20){:.left}](http://amzn.to/2hLzmKs)
+
+Given the proliferation of Bluetooth devices, the [Ubertooth
+One](http://amzn.to/2hLzmKs) is an essential device for assessing modern
+Internet of Things devices.  The Ubertooth is essentially a Software Defined
+Radio (SDR) for bluetooth, allowing the security professional to examine,
+capture, modify, and replay bluetooth frames.  Find out what your gadgets are
+sending to each other or look for bugs in the firmware itself.
+[$127.95 at Amazon](http://amzn.to/2hLzmKs)
+
 
 ### Adafruit & Sparkfun Gift Certificates
 
@@ -258,3 +285,19 @@ sensor, speaker, buttons, switches, and more!  It does require a bit of
 understanding of electronics, but it's a great start into programming for the
 physical world.  [$32.99 on Amazon](http://amzn.to/2zTHX8o) or [$24.95 direct
 from Adafruit](https://www.adafruit.com/product/3333)
+
+### Lego Mindstorms EV3
+
+[![Lego Mindstorms EV3](//ws-na.amazon-adsystem.com/widgets/q?_encoding=UTF8&ASIN=B00CWER3XY&Format=_SL160_&ID=AsinImage&MarketPlace=US&ServiceVersion=20070822&WS=1&tag=systemovecom-20){:.left}](http://amzn.to/2BfAAWQ)
+
+The [LEGO Mindstorms EV3](http://amzn.to/2BfAAWQ) is the robots kit I wish I had
+when I was a kid.  While I did eventually get an original Mindstorms kit, the
+modern LEGO Robotics kit has far more features and has three kinds of sensors
+and two kinds of motors.  Instructions for building multiple robots are
+included.  If you (or your young hacker) gets bored of the built-in firmware and
+programming interface, it turns out the EV3 programmable brick is actually a
+fully-featured Debian Linux computer, for which a [community has sprung up and
+built a replacement firmware](http://www.ev3dev.org/) allowing so much more.
+Imagine a swarm of EV3-powered robots.  The kit is pricey, but it's good for
+most ages and might inspire the next generation of robotics engineers.  [$349.95
+at Amazon](http://amzn.to/2BfAAWQ)
