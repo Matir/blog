@@ -467,7 +467,8 @@ pre.highlight {
   white-space: pre;
 }
 
-.highlight td.gutter {
+.highlight td.gutter,
+.highlight td.rouge-gutter {
   width: 2rem;
   vertical-align: top;
 }
@@ -475,6 +476,8 @@ pre.highlight {
 .highlight td.code {
   overflow-x: auto;
 }
+
+
 
 /** Format post paragraphs */
 .post p {
