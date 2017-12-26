@@ -88,3 +88,56 @@ exploring the filesystem, however, he found many more interesting options.  He
 quickly located an SSH private key and several text files containing AWS API
 keys.  It only took a little bit of investigation to realize that one of the AWS
 API keys was a root API key for the company's production environment.
+
+Using the API key, he logged in to the AWS account and quickly identified the
+virtual machines running the company's database servers containing user
+credentials and information.  He connected with the API keys he had and started
+dumping the usernames and password hashes.  Given that the hashes were unsalted
+SHA-1, he figured it shouldn't take long for his password cracking rig to work
+through them.
+
+A day later, he was posting an offering for the plaintext credential database
+for just a fraction of a bitcoin per customer.  Satisfied, he started hunting
+for the next vulnerable enterprise.
+
+* * *
+
+While the preceeding story was fiction, it's an all too-common reality.  Many
+modern enterprises have put considerable effort into hardening their datacenter
+(be it virtualized or physical) but very little effort into hardening
+workstations.  I often work with companies that seem to believe placing their
+applications into the cloud is a security panacea.  While the cloud offers
+numerous security benefits -- major cloud providers have invested heavily into
+security, monitor their networks 24/7, and a cloud service is clearly heavily
+segregated from the corporate network -- it does not solve all security
+problems.
+
+An attacker who is able to compromise a workstation is able to do anything that
+a legitimate user of that workstation would be able to do.  In the example
+above, the AWS keys stored on a workstation proved critical to gaining access to
+a treasure trove of user information, but even a lower level of access can be
+useful to an attacker and dangerous to your company.
+
+The [2017 Verizon DBIR](http://www.verizonenterprise.com/verizon-insights-lab/dbir/2017/)
+provides data to support this.  66% of malware began with malicious email
+attachments (client-based), 81% of breaches involved stolen credentials
+(pivoting), and 43% of attacks involved social engineering (tactics against
+legitimate users).
+
+Imagine the you have customer service representatives who log in to an
+application hosted in the cloud to process refunds or perform other services.
+An attacker with access to a customer service workstation might be able to grab
+their username and password (or saved cookies from the browser) and then use it
+to buy expensive items and refund them to themselves.  (Or change delivery
+addresses, issue store credits, or other costly expenditures.)
+
+In a hospital, compromising a workstation used by doctors and nurses would lead,
+at a minimum, to a major HIPAA breach.  In the worst case, it could be used to
+modify patient records or order medications what could be dangerous or fatal to
+a patient.  Each environment needs to consider the risks posed by the access
+granted from their workstations and clients.
+
+Attackers will take the easiest route to the data they seek.  If you've spent
+some effort on hardening your servers (or applications in the cloud), that may
+well be through the workstation or client.  Consider all entry points in your
+security strategy.
