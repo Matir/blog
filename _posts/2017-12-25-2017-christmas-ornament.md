@@ -2,7 +2,7 @@
 layout: post
 title: "2017 Christmas Ornament"
 category: Electronics
-date: 2017-12-25
+date: 2017-12-25 00:00:00
 tags:
   - Making
   - Electronics
