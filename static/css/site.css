@@ -482,3 +482,11 @@ pre.highlight {
 .post p {
   text-align: justify;
 }
+
+/** Affiliate link notice */
+p.affiliate-notice {
+  text-align: right;
+  font-size: 80%;
+  border: 1px dashed #ddd;
+  color: #666;
+}
