@@ -7,8 +7,10 @@ tags:
   - Cloud
 excerpt:
   Despite the move of resources to the cloud, security of your clients and
-  endpoints remains important.
-date:
+  endpoints remains important.  Some believe that only servers need to be
+  secured, but it's important to remember that the clients with access to
+  servers are equally vulnerable to compromise and use to gain access.
+date: 2017-12-27
 ---
 
 **As usual, this post does not necessarily represent the views of my employer
@@ -25,7 +27,18 @@ Meanwhile, in a dark room somewhere, a few lines appear on the screen of a
 laptop:
 
 ```
-TODO: Metasploit shot
+[*] Sending stage (205891 bytes) to 10.66.60.101
+[*] Meterpreter session 1 opened (10.66.60.100:4444 -> 10.66.60.101:49159) at 2017-12-27 16:29:13 -0800
+msf exploit(multi/handler) > sessions 1
+[*] Starting interaction with 1...
+meterpreter > sysinfo
+Computer        : INHUMAN-WIN7
+OS              : Windows 7 (Build 7601, Service Pack 1).
+Architecture    : x64
+System Language : en_US
+Domain          : ENTERPRISE
+Logged On Users : 2
+Meterpreter     : x64/windows
 ```
 
 Finally, the hacker had a foothold.  He started exploring the machine remotely.
