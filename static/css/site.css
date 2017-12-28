@@ -274,7 +274,7 @@ div.post-tags {
 }
 
 
-/* 
+/*
  * Social Icon Font
  * https://github.com/tombryan/social-icon-font
  */
@@ -456,10 +456,11 @@ img.right {
 pre.highlight {
   overflow-x: auto;
   white-space: pre;
+  padding: 0;
 }
 
 .highlight table {
-  table-layout: fixed;
+  margin-bottom: 0;
 }
 
 .highlight td pre {
@@ -476,8 +477,6 @@ pre.highlight {
 .highlight td.code {
   overflow-x: auto;
 }
-
-
 
 /** Format post paragraphs */
 .post p {
