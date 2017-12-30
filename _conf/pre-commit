@@ -1,0 +1,17 @@
+#!/bin/bash
+
+function gps_test {
+  git diff --name-only --cached | while read file ; do
+    RV=0
+    LL=$(exiftool -gpslatitude -gpslongitude ${file} 2>/dev/null)
+    if [ -n "${LL}" ] ; then
+      echo ${file} contains GPS information. >&2
+      RV=1
+    fi
+  done
+  return ${RV}
+}
+
+gps_test || exit 1
+
+exit 0
