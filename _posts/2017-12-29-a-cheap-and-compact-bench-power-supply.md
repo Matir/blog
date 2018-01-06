@@ -44,15 +44,15 @@ as describe what I'd like to do in the future.
 
 ![power supply](/img/blog/powersupply/outside.jpg)
 
-This particular unit consists of a [DPS3005](http://amzn.to/2BWpENT) that I got
+This particular unit consists of a [DPS3005](http://amzn.to/2lZ07wQ) that I got
 for about $25 from [AliExpress](https://www.aliexpress.com/item/RD-DPS3005-Constant-Voltage-current-Step-down-Programmable-Power-Supply-module-buck-Voltage-converter-color-LCD/32684316119.html).
-(The DPS5005 is now available on [Amazon with Prime](http://amzn.to/2DzT5WD).
+(The DPS5005 is now available on [Amazon with Prime](http://amzn.to/2lZ9ah7).
 Had that been the case at the time I built this, I likely would have gone with
 that option.)
 
-I placed the power supply in [a plastic enclosure](http://amzn.to/2BZaLul) and
-added [a barrel jack](http://amzn.to/2CaP5PS) for input power, and added
-[5-way binding posts](http://amzn.to/2CqmeEe) for the output.  This allows me to
+I placed the power supply in [a plastic enclosure](http://amzn.to/2CLi3W2) and
+added [a barrel jack](http://amzn.to/2Ed0Xxl) for input power, and added
+[5-way binding posts](http://amzn.to/2CJ4WVh) for the output.  This allows me to
 connect banana plugs, breadboard leads, or spade lugs to the power supply.
 
 ![power supply inside](/img/blog/powersupply/inside.jpg)
