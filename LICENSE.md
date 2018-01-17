@@ -1,7 +1,7 @@
 ### Theme Released under MIT License
 
 The following license applies to the theme of the blog (Hyde, part of the Poole
-project).  Content is Copyright (c) 2016 David Tomaschik.
+project).  Content is Copyright (c) 2017 David Tomaschik.
 
 > Copyright (c) 2013 Mark Otto.
 > 

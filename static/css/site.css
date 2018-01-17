@@ -274,7 +274,7 @@ div.post-tags {
 }
 
 
-/* 
+/*
  * Social Icon Font
  * https://github.com/tombryan/social-icon-font
  */
@@ -456,10 +456,11 @@ img.right {
 pre.highlight {
   overflow-x: auto;
   white-space: pre;
+  padding: 0;
 }
 
 .highlight table {
-  table-layout: fixed;
+  margin-bottom: 0;
 }
 
 .highlight td pre {
@@ -467,7 +468,8 @@ pre.highlight {
   white-space: pre;
 }
 
-.highlight td.gutter {
+.highlight td.gutter,
+.highlight td.rouge-gutter {
   width: 2rem;
   vertical-align: top;
 }
@@ -479,4 +481,12 @@ pre.highlight {
 /** Format post paragraphs */
 .post p {
   text-align: justify;
+}
+
+/** Affiliate link notice */
+p.affiliate-notice {
+  text-align: right;
+  font-size: 80%;
+  border: 1px dashed #ddd;
+  color: #666;
 }
