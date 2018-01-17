@@ -66,11 +66,34 @@ Unfortunately, my Android reverse engineering skills are about as sharp as an
 economy class airplane knife, so I had to turn to my friend
 [@itsc0rg1](https://medium.com/@itsc0rg1), who is, quite fortunately, well
 versed in Android.  She pointed me at a couple of decompilers and I got into it
-and discovered this code:
+and discovered this (somewhat modified) code:
 
-...
+		private static void initializeSslConfig(com.tplinkra.iot.config.SSLConfig cfg) {
+				if (cfg != null) {
+						if (!com.tplinkra.common.utils.Utils.getDefault(cfg.getTrustAllCertificates(), 1)) {
+								...
+						} else {
+								com.tplinkra.network.transport.http.TrustAllCertificates.enable();
+						}
+				}
+		}
 
-It turns out that the default for ... is a null value because it is not
+		...
+
+    public static boolean getDefault(Boolean val, boolean default) {
+        if (val != null) {
+            default = val.booleanValue();
+        }
+        return default;
+    }
+
+		...
+
+		public static void enable() {
+				javax.net.ssl.HttpsURLConnection.setDefaultHostnameVerifier(new com.tplinkra.network.transport.http.TrustAllCertificates());
+		}
+
+It turns out that the default for `cfg.getTrustAllCertificates()` is a null value because it is not
 explicitly configured.  The preference system being used by their application
 attempts to return the contents of a Boolean, and when that Boolean is null,
 defaults to true, which results in trusting all SSL certificates!
