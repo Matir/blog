@@ -5,7 +5,18 @@ category: Security
 tags:
   - Personal
   - Security
+date: 2018-01-26
+excerpt:
+  I've unfortunately had the experience of dealing with a number of
+  psychological issues (either personally or through personal connections)
+  during my tenure in the security fold.  I hope to shed some light on them and
+  encourage others to take them seriously.
 ---
+
+I've unfortunately had the experience of dealing with a number of
+psychological issues (either personally or through personal connections)
+during my tenure in the security fold.  I hope to shed some light on them and
+encourage others to take them seriously.
 
 If you are hoping this post will be some grand reveal of security engineers
 going psychotic and stabbing users who enter passwords into phishing pages with
