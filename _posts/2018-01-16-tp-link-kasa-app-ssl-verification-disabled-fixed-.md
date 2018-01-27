@@ -13,6 +13,7 @@ excerpt:
   company's line of smart plugs, light bulbs, and home hub, and affected all
   phases of the use of the app, including user registration, authentication, and
   device control.
+date: 2018-01-16
 ---
 
 The TP-Link Kasa app is the Android app that TP-Link distributes to control
@@ -68,30 +69,32 @@ economy class airplane knife, so I had to turn to my friend
 versed in Android.  She pointed me at a couple of decompilers and I got into it
 and discovered this (somewhat modified) code:
 
-		private static void initializeSslConfig(com.tplinkra.iot.config.SSLConfig cfg) {
-				if (cfg != null) {
-						if (!com.tplinkra.common.utils.Utils.getDefault(cfg.getTrustAllCertificates(), 1)) {
-								...
-						} else {
-								com.tplinkra.network.transport.http.TrustAllCertificates.enable();
-						}
-				}
-		}
-
-		...
-
-    public static boolean getDefault(Boolean val, boolean default) {
-        if (val != null) {
-            default = val.booleanValue();
+~~~java
+private static void initializeSslConfig(com.tplinkra.iot.config.SSLConfig cfg) {
+    if (cfg != null) {
+        if (!com.tplinkra.common.utils.Utils.getDefault(cfg.getTrustAllCertificates(), 1)) {
+        ...
+        } else {
+        com.tplinkra.network.transport.http.TrustAllCertificates.enable();
         }
-        return default;
     }
+}
 
-		...
+...
 
-		public static void enable() {
-				javax.net.ssl.HttpsURLConnection.setDefaultHostnameVerifier(new com.tplinkra.network.transport.http.TrustAllCertificates());
-		}
+public static boolean getDefault(Boolean val, boolean default) {
+    if (val != null) {
+        default = val.booleanValue();
+    }
+    return default;
+}
+
+...
+
+public static void enable() {
+    javax.net.ssl.HttpsURLConnection.setDefaultHostnameVerifier(new com.tplinkra.network.transport.http.TrustAllCertificates());
+}
+~~~
 
 It turns out that the default for `cfg.getTrustAllCertificates()` is a null value because it is not
 explicitly configured.  The preference system being used by their application
