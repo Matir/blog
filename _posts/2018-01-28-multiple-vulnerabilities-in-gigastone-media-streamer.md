@@ -13,6 +13,7 @@ excerpt:
     look at for security vulnerabilities.  When it arrived, I didn't get around to
     it for quite a while, and then when I finally did, I was terribly disappointed
     in it as a security research target -- it was just too easy.
+date: 2018-01-28
 ---
 
 * TOC
@@ -146,3 +147,6 @@ set
 
 - Discovered in ~May 2017
 - Reported Jan 28 2018
+- Response from Gigastone on Jan 28 2018:
+
+> Media Streamer Plus provides convenient functions for portable use. It is not to replace or to be comparable to normal networking devices. However, we do not recommend users to change internal setup to avoid unrecoverable errors.
