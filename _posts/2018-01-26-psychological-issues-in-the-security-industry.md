@@ -150,8 +150,8 @@ couple of months to see if I can get myself back to a sane and productive state.
 
 * [Friend and coworker @itsc0rg1 on impostor syndrome](https://medium.com/@itsc0rg1/dealing-with-imposter-syndrome-a5e044d31b68)
 * [Processing my Struggle with Depression and Impostor Syndrome](https://blog.techinclusion.co/processing-my-struggle-with-depression-and-imposter-syndrome-in-silicon-valley-93a6ea4cb7db)
-* [Nerd Life
-  Balance](https://blog.newrelic.com/2013/11/06/nerd-life-balance-part-1-performance-tuning-life-maximize-awesome/)
+* [Nerd Life Balance](https://blog.newrelic.com/2013/11/06/nerd-life-balance-part-1-performance-tuning-life-maximize-awesome/)
+* [I'm a phony. Are you?](https://www.hanselman.com/blog/ImAPhonyAreYou.aspx)
 
 ## Conclusion
 
