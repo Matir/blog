@@ -436,6 +436,10 @@ ul.related-posts h4 {
   margin-top: 0.5rem;
 }
 
+.related {
+  padding: 0;
+}
+
 /** Floating images */
 img.left {
   float: left;
@@ -481,6 +485,11 @@ pre.highlight {
 /** Format post paragraphs */
 .post p {
   text-align: justify;
+}
+
+.page,
+.post {
+  margin-bottom: 2em;
 }
 
 /** Affiliate link notice */
