@@ -122,7 +122,7 @@ on some of the most common protocols will be helpful.
 * [SMB/CIFS](https://en.wikipedia.org/wiki/Server_Message_Block)
 * [TLS](https://en.wikipedia.org/wiki/Transport_Layer_Security)
 
-## Operating Systems ##
+## Operating Systems & Applications ##
 
 Knowing how operating systems function at a basic level will be very useful.
 This includes the differences between operating systems, how processes work, how
@@ -131,7 +131,39 @@ authorization on each operating system.
 
 ### Linux ###
 
+Understanding the different types of authentication and authorization mechanisms
+on Linux systems is critical, as well as operating system interfaces and common
+services.
+
+* The root user
+* setuid Binaries
+* POSIX Users & Groups
+* SELinux & AppArmor
+* File locations (`/etc/passwd`, `/etc/shadow`, etc.)
+
 ### Windows ###
+
+Windows has very different behavior from Linux and POSIX systems in many
+regards.  Most PWK students are probably familiar with Windows on the Desktop,
+but a multi-user environment or Windows domain may be unfamiliar, unless the
+student has prior experience in the help desk, system administration, or similar
+roles.
+
+* Users and Groups
+* Filesystem Permissions
+* Windows Services
+* Domain Authentication
+* SMB/CIFS Resources
+
+### Applications ###
+
+Some of this is OS-independent, or may differ from OS to OS, but should still be
+known.  Generally, database servers (MySQL/MSSQL/PostgreSQL) and application
+servers are a big part of the attack surface of any modern enterprise, and the
+PWK lab is no different.  For example, knowing about different webservers
+(Apache, nginx) and mechanisms for loading web applications (`mod_php`, `cgi`
+scripts, `php-fpm`, Python `WSGI`).  Not all of these are critical, but a general
+familiarity will be useful.
 
 ## Security Topics ##
 
@@ -140,10 +172,13 @@ some fundamental knowledge that a student brings to the table.  Having an
 understanding of security fundamentals will serve the student well during the
 PWK course.
 
-* The CIA Triad (Confidentiality, Integrity, and Availability)
-* Authentication vs Authorization
-* Memory Corruption Vulnerabilities
-* Web Vulnerabilities (perhaps OWASP Top 10)
+* [The CIA Triad](https://www.cylance.com/en_us/blog/all-about-the-cia-triad.html)
+  (Confidentiality, Integrity, and Availability)
+* [Authentication](https://en.wikipedia.org/wiki/Information_security#Authentication)
+  vs
+  [Authorization](https://en.wikipedia.org/wiki/Information_security#Authorization)
+* [Memory Corruption Vulnerabilities](https://en.wikipedia.org/wiki/Memory_corruption)
+* [Web Vulnerabilities](https://www.owasp.org/index.php/Category:OWASP_Top_Ten_Project) (perhaps OWASP Top 10)
 
 ## Scripting ##
 
