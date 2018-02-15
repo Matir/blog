@@ -79,6 +79,32 @@ of Debian derivative.  [Debian](https://debian.org),
 [Ubuntu](https://www.ubuntu.com/), and [Mint](https://linuxmint.com/) are all
 good options for this.
 
+The best way to get started is to just download a distribution, throw it into a
+VM, and start using it for a while.  (And if you've never run a VM, you should
+learn that too -- the custom Kali build provided is provided as a VM image.)
+Try doing some "daily driver" tasks, and get used to the interface.  Setup and
+run the SSH server, and try SSHing in.
+
+[Bandit](http://overthewire.org/wargames/bandit/) from OverTheWire is a great
+free "wargame" that teaches Linux basics as well.  It's free and a great place
+to get started.  If you can make it through that, you're well on your way to the
+basic Linux knowledge to move on with PWK.
+
+### Knowing What You Don't Know ###
+
+One of the hardest things to do in life is to know what you don't know.  Finding
+the gaps in your knowledge so you know what to research and how to fill those
+gaps can be quite challenging.  Take a look at the
+[Syllabus](https://www.offensive-security.com/documentation/penetration-testing-with-kali.pdf)
+for the PWK course.  If you find yourself even confused by the headers, you can
+research more and spend more time getting some basic familiarity with the
+concepts and terminology.
+
+Obviously, the class will teach you about a lot of the material, but if you're
+completely lost with even what the titles mean, you might have a hard time
+following along and definitely won't be spending as much time working on the
+labs as you might like.
+
 ## Networking ##
 
 ### IP & Ethernet Networking ###
@@ -135,11 +161,13 @@ Understanding the different types of authentication and authorization mechanisms
 on Linux systems is critical, as well as operating system interfaces and common
 services.
 
-* The root user
-* setuid Binaries
+* The [root user](https://en.wikipedia.org/wiki/Superuser)
+* [setuid](https://en.wikipedia.org/wiki/Setuid) Binaries
 * POSIX Users & Groups
+* POSIX Filesystem permissions
 * SELinux & AppArmor
 * File locations (`/etc/passwd`, `/etc/shadow`, etc.)
+* How Services Are Started (SysV `init`, Upstart, `systemd`)
 
 ### Windows ###
 
@@ -210,3 +238,8 @@ the industry.
   [/r/asknetsec](https://reddit.com/r/asknetsec) - All great options for
   learning about security, and lots of students going for PWK and OSCP on
   /r/netsecstudents
+* [The Linux Command Line: A Complete Introduction](http://amzn.to/2EtotLh)
+* [Penetration Testing: A Hands-On Introduction to
+  Hacking](http://amzn.to/2GhiYM5) - Good basics for penetration testing.
+* [Hacking: The Art of Exploitation](http://amzn.to/2EvTxdd) - Not necessary for
+  taking PWK/OSCP, but a good resource to expand your knowledge.
