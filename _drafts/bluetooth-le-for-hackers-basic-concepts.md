@@ -54,6 +54,11 @@ Classic and Bluetooth Low Energy (like most USB adapters starting with Bluetooth
 4.0), they'll use the same fixed address for both protocols.  (Modulo some
 details below.)
 
+BLE also uses a subset of the host-level protocols that are used by Bluetooth
+Classic, but in many cases, they have been simplified for the use of Bluetooth
+Low Energy.  This includes the Generic Access Profile and the Attribute
+Protocol.
+
 Beyond this point, I won't compare to Bluetooth Classic any further.  The
 remainder of this series is written without assuming any pre-existing knowledge
 about either flavor of Bluetooth.
@@ -198,7 +203,60 @@ advertising/broadcasting.  These addresses can be generated using an encryption
 key so that a partner device can predict the private addresses, but other
 devices cannot track the single Bluetooth beacon across operations.
 
+## Advertising (GAP) ##
+
+When advertising, devices use a protocol called Generic Access Profile.  As
+mentioned previously, all GAP advertising packets will have the access address
+of `0x8E89BED6`.  GAP defines four roles for devices operating as Low Energy
+devices[^ble3c222]:
+
+Broadcaster
+: A broadcaster is a device that is sending advertising events.
+Observer
+: An observer is a device receiving (observing) advertising events.
+Peripheral
+: A peripheral is a device that accepts connections via the connection
+establishment procedures
+Central
+: A central device establishes connections with peripherals.
+
+These roles are not mutually exclusive.  In fact, some hardware supports
+operating in multiple such roles concurrently.  Even when not operated
+concurrently, it's common for devices to transition roles.  For example, when
+you're trying to pair a smartwatch with your phone, the phone will initially act
+as an *observer*, looking for the smartwatch, which is a *broadcaster*.  Once
+you select the device to pair with on your phone, the phone's role becomes that
+of a *central device*, and when the connection request is received by the watch,
+it becomes a *peripheral* to the phone.
+
+Other devices may be capable of operating only in a single role.  Bluetooth
+Beacons (used for providing location information, or context relevant to the
+area) may only be capable of operating as a broadcaster.  (In reality, most can
+also become a peripheral in order to support configuration changes.)
+
+When advertising/broadcasting, there is no option for Bluetooth LE Security on
+the connection, because the device cannot perform key distribution.[^ble3c911]
+Consequently, any effort at security (encryption or authentication) on the
+advertising data would have to be performed at the application level.  (However,
+this is rarely, if ever, done.)
+
+## Coming up in the BLE for Hackers Series ##
+
+This will be a series of several posts that will discuss a variety of additional
+topics:
+
+* Data exchange when connected (GATT and the Attribute Protocol)
+* BLE Security Design
+* Exploring BLE Devices using stock tools
+* Exploring BLE Devices using the Ubertooth One
+* Approach to assessing BLE devices
+
 ## References ##
+
+* [Introduction to Bluetooth Low Energy](https://learn.adafruit.com/introduction-to-bluetooth-low-energy/introduction) by Adafruit
+* [Introduction to BLE](https://www.mikroe.com/blog/bluetooth-low-energy-part-1-introduction-ble) by Mikroe
+
+### Footnotes ###
 
 [^ble6a2]: Bluetooth Core Specification, Version 4.0, Volume 6, Part A,
     Section 2
@@ -214,3 +272,9 @@ devices cannot track the single Bluetooth beacon across operations.
 
 [^ble6b13]: Bluetooth Core Specification, Version 4.0, Volume 6, Part B,
     Section 1.3
+
+[^ble3c222]: Bluetooth Core Specification, Version 4.0, Volume 3, Part C,
+    Section 2.2.2
+
+[^ble3c911]: Bluetooth Core Specification, Version 4.0, Volume 3, Part C,
+    Section 9.1.1
