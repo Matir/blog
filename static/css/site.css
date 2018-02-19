@@ -482,6 +482,14 @@ pre.highlight {
   overflow-x: auto;
 }
 
+/** Inline code */
+code {
+  color: #36454f;
+  background-color: #eeeeee;
+  font-size: 90%;
+  padding: 0 0.1em;
+}
+
 /** Format post paragraphs */
 .post p {
   text-align: justify;
