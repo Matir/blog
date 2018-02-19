@@ -1,0 +1,13 @@
+packetdiag {
+  colwidth = 32
+  node_height = 80
+  scale_interval = 16
+  default_fontsize = 16
+  * PDU Type [rotate = 270, len=4]
+  * Reserved [rotate = 270, len = 2]
+  * TxAdd [rotate = 270, len = 1]
+  * RxAdd [rotate = 270, len = 1]
+  * Payload\nLength [rotate = 270, len = 6]
+  * Reserved [rotate = 270, len = 2]
+  * Payload\n(length given in header) [style=dashed, len=16]
+}
