@@ -482,6 +482,12 @@ pre.highlight {
   overflow-x: auto;
 }
 
+/** Table row colors */
+tbody tr:nth-child(odd) td,
+tbody tr:nth-child(odd) th {
+  background-color: #eeeeee;
+}
+
 /** Inline code */
 code {
   color: #36454f;
