@@ -101,6 +101,9 @@ suggest reading the current version of the Bluetooth Core Specification instead
 of this blog post.)  Mostly these deal with the spectrum segments (channels) and
 frequency hopping used within the channels specified.
 
+All multi-byte sequences in the Bluetooth LE Packet and PDU format are
+little-endian unless otherwise noted.
+
 ### Spectrum ###
 
 Bluetooth Low Energy divides the 2400-2480 MHz spectrum into 40
@@ -156,13 +159,14 @@ because all `hopIncrement` values are relatively prime to a prime number.
 All Bluetooth Low Energy packets use a single Link-Layer packet
 format[^ble6b21], consisting of four fields:
 
+![Link Level Packet Format](/img/blog/ble/linklevel.svg){:.right}
+
 1. A 1-octet preamble.
 2. A 4-octet Access Address.
 3. A variable-length protocol data unit (PDU).
 4. A 3-octet CRC calculated over the PDU.
 
-![Link Level Packet Format](/img/blog/ble/linklevel.svg)
-
+{:.clear}
 The preamble is used to synchronize the transmitter and the receiver and always
 consists of a pattern of alternating zeros and ones.
 
@@ -240,6 +244,53 @@ Consequently, any effort at security (encryption or authentication) on the
 advertising data would have to be performed at the application level.  (However,
 this is rarely, if ever, done.)
 
+### Packet Format ###
+
+All advertising PDUs are from 2-39 bytes in length (encapsulated in the
+Bluetooth Link Layer packet previously described).  The first 16 bits are a
+header that includes 4 bits for the PDU type and 6 bits for the length.  There
+are also two bits that indicate if the RX and TX addresses included in the PDU
+are public or private.  The remainder is payload that varies depending on the
+PDU type.[^ble6b23]
+
+![Advertising PDU](/img/blog/ble/adv_pdu.svg)
+
+The defined PDU types for advertising PDUs are[^ble6b23]:
+
+| ------- | ----------------- | -------------------------------------- |
+| Value   | Type              | Use                                    |
+| ------- | ----------------- | -------------------------------------- |
+| `0x00`  | `ADV_IND`         | Connectable Undirected Advertising     |
+| `0x01`  | `ADV_DIRECT_IND`  | Connectable Directed Advertising       |
+| `0x02`  | `ADV_NONCONN_IND` | Non-Connectable Undirected Advertising |
+| `0x03`  | `SCAN_REQ`        | Scan Request                           |
+| `0x04`  | `SCAN_RSP`        | Scan Response                          |
+| `0x05`  | `CONNECT_REQ`     | Connection Request                     |
+| `0x06`  | `ADV_SCAN_IND`    | Scannable Undirected Advertising       |
+| ------- | ----------------- | -------------------------------------- |
+
+All other values are currently reserved.
+
+### Advertising Packets ###
+
+### Scanning ###
+
+There are two kinds of scanning possible in Bluetooth Low Energy.  **Passive**
+scanning involves listening on channels 37, 38, and 39 for advertising packets
+broadcast by broadcasters & advertising peripherals.  Passive scanners send no
+packets and can only get the information that is shared by the
+broadcaster/peripheral in the 39 bytes available for data in the advertising
+packet.
+
+**Active** scanners, on the other hand, actively participate in the scanning
+process.  In addition to listening for advertising packets on channels 37-39,
+active scanners can interrogate the devices they find for more information.
+This is done from a central device by sending a `SCAN_REQ` packet to the
+peripheral, which will respond with a `SCAN_RSP` containing more information
+about the device or the device status.  Note that, in GAP terminology, there are
+strictly "peripheral" and "central" roles involved in this -- since they have
+gone interactive, they are no longer considered broadcaster/observer.
+
 ## Coming up in the BLE for Hackers Series ##
 
 This will be a series of several posts that will discuss a variety of additional
@@ -255,6 +306,7 @@ topics:
 
 * [Introduction to Bluetooth Low Energy](https://learn.adafruit.com/introduction-to-bluetooth-low-energy/introduction) by Adafruit
 * [Introduction to BLE](https://www.mikroe.com/blog/bluetooth-low-energy-part-1-introduction-ble) by Mikroe
+* [Understanding Bluetooth Advertising](https://j2abro.blogspot.com/2014/06/understanding-bluetooth-advertising.html)
 
 ### Footnotes ###
 
@@ -265,6 +317,9 @@ topics:
     Section 4.5.8.2
 
 [^ble6b21]: Bluetooth Core Specification, Version 4.0, Volume 6, Part B,
+    Section 2.1
+
+[^ble6b23]: Bluetooth Core Specification, Version 4.0, Volume 6, Part B,
     Section 2.1
 
 [^ble6b212]: Bluetooth Core Specification, Version 4.0, Volume 6, Part B,

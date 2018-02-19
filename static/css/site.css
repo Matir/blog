@@ -492,6 +492,10 @@ pre.highlight {
   margin-bottom: 2em;
 }
 
+.clear {
+  clear: both;
+}
+
 /** Affiliate link notice */
 p.affiliate-notice {
   text-align: right;
