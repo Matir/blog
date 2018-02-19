@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="111.71mm" height="36.18mm" version="1.1" viewBox="0 0 111.71053 36.180172" xmlns="http://www.w3.org/2000/svg" xmlns:cc="http://creativecommons.org/ns#" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#">
+<metadata>
+<rdf:RDF>
+<cc:Work rdf:about="">
+<dc:format>image/svg+xml</dc:format>
+<dc:type rdf:resource="http://purl.org/dc/dcmitype/StillImage"/>
+<dc:title/>
+</cc:Work>
+</rdf:RDF>
+</metadata>
+<g transform="translate(-38.256 -154.8)">
+<rect x="38.521" y="157.38" width="8.9974" height="33.271" fill="none" opacity=".97" stroke="#000" stroke-linejoin="round" stroke-miterlimit="3.7" stroke-width=".52863"/>
+<rect x="47.52" y="157.38" width="37.034" height="33.269" fill="none" opacity=".97" stroke="#000" stroke-linejoin="round" stroke-miterlimit="3.7" stroke-width=".52863"/>
+<text transform="rotate(-90)" x="-173.69408" y="65.114326" fill="#000000" font-family="'Andale Mono'" font-size="7.0556px" letter-spacing="0px" stroke-width=".26458px" text-align="center" text-anchor="middle" word-spacing="0px" style="font-variant-caps:normal;font-variant-ligatures:normal;font-variant-numeric:normal;line-height:6.61458302px" xml:space="preserve"><tspan x="-173.69408" y="65.114326">Access</tspan><tspan x="-173.69408" y="71.728912">Address</tspan></text>
+<rect transform="scale(1,-1)" x="84.555" y="-190.65" width="37.034" height="33.269" fill="none" opacity=".97" stroke="#000" stroke-dasharray="1.58588413, 0.52862804" stroke-linejoin="round" stroke-miterlimit="3.7" stroke-width=".52863"/>
+<text transform="rotate(-90)" x="-173.81465" y="98.840912" fill="#000000" font-family="'Andale Mono'" font-size="7.0556px" letter-spacing="0px" stroke-width=".26458px" text-align="center" text-anchor="middle" word-spacing="0px" style="font-variant-caps:normal;font-variant-ligatures:normal;font-variant-numeric:normal;line-height:6.61458302px" xml:space="preserve"><tspan x="-173.81465" y="98.840912">PDU</tspan><tspan x="-173.81465" y="105.4555">2-39</tspan><tspan x="-173.81465" y="112.07008">Octets</tspan></text>
+<rect x="121.59" y="157.35" width="28.114" height="33.27" fill="none" opacity=".97" stroke="#000" stroke-linejoin="round" stroke-miterlimit="3.7" stroke-width=".52863"/>
+<text transform="rotate(-90)" x="-173.9977" y="138.07565" fill="#000000" font-family="'Andale Mono'" font-size="7.0556px" letter-spacing="0px" stroke-width=".26458px" text-align="center" text-anchor="middle" word-spacing="0px" style="font-variant-caps:normal;font-variant-ligatures:normal;font-variant-numeric:normal;line-height:6.61458302px" xml:space="preserve"><tspan x="-173.9977" y="138.07565" stroke-width=".26458px">CRC</tspan></text>
+<rect x="38.256" y="154.8" width=".52917" height="2.6458" opacity=".97"/>
+<rect x="47.204" y="154.8" width=".52917" height="2.6458" opacity=".97"/>
+<rect x="56.787" y="154.8" width=".52917" height="2.6458" opacity=".97"/>
+<rect x="66.052" y="154.8" width=".52917" height="2.6458" opacity=".97"/>
+<rect x="75.317" y="154.8" width=".52917" height="2.6458" opacity=".97"/>
+<rect x="84.291" y="154.8" width=".52917" height="2.6458" opacity=".97"/>
+<rect x="93.847" y="154.8" width=".52917" height="2.6458" opacity=".97"/>
+<rect x="103.11" y="154.8" width=".52917" height="2.6458" opacity=".97"/>
+<rect x="112.38" y="154.8" width=".52917" height="2.6458" opacity=".97"/>
+<rect x="121.32" y="154.8" width=".52917" height="2.6458" opacity=".97"/>
+<rect x="130.91" y="154.8" width=".52917" height="2.6458" opacity=".97"/>
+<rect x="140.17" y="154.8" width=".52917" height="2.6458" opacity=".97"/>
+<rect x="149.44" y="154.8" width=".52917" height="2.6458" opacity=".97"/>
+<text transform="matrix(0 -.96379 1.0376 0 0 0)" x="-180.68159" y="43.759613" fill="#000000" font-family="'Andale Mono'" font-size="6.8001px" letter-spacing="0px" stroke-width=".96379px" text-align="center" text-anchor="middle" word-spacing="0px" style="font-variant-caps:normal;font-variant-ligatures:normal;font-variant-numeric:normal;line-height:6.37507915px" xml:space="preserve"><tspan x="-180.68159" y="43.759613" stroke-width=".96379px">Preamble</tspan></text>
+</g>
+</svg>
