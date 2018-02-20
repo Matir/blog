@@ -1,0 +1,8 @@
+packetdiag {
+  colwidth = 32
+  node_height = 80
+  scale_interval = 16
+  default_fontsize = 16
+  * Advertising\nAddress [len=6]
+  * Advertising\nData\n(0-31 octets) [len=26, style=dashed]
+}

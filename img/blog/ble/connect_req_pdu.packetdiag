@@ -1,0 +1,19 @@
+packetdiag {
+  colwidth = 34
+  node_height = 80
+  node_width = 24
+  scale_interval = 8
+  default_fontsize = 16
+  * Initiator\nAddress [len=6,colheight=2]
+  * Advertiser\nAddress [len=6,colheight=2]
+  * LLData [len=22]
+  46-49: Access\nAddress [colheight=1] # Force to position
+  * CRCInit [len=3,rotate=270]
+  * WinSize [len=1,rotate=270]
+  * Win\nOffset [len=2,rotate=270]
+  * Interval [len=2,rotate=270]
+  * Latency [len=2,rotate=270]
+  * Timeout [len=2,rotate=270]
+  * Channel\nMap [len=5,rotate=270]
+  * Hop/SCA [rotate=270]
+}

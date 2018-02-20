@@ -1,0 +1,14 @@
+packetdiag {
+  colwidth = 16
+  node_height = 80
+  scale_interval = 16
+  default_fontsize = 16
+  * AD Structure 0 [len=8]
+  * AD Structure n [len=8,style=dashed]
+  * Len [len=1,rotate=270]
+  * Type [len=1,rotate=270]
+  * Data\n(len-1) [len=6, style=dashed]
+  * Len [len=1,rotate=270,style=dashed]
+  * Type [len=1,rotate=270,style=dashed]
+  * Data\n(len-1) [len=6, style=dashed]
+}
