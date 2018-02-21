@@ -21,7 +21,7 @@ function nopublish_test {
       echo ${file} contains NOPUBLISH token. >&2
       RV=1
     fi
-  done < <(git diff --name-only --cached | grep -E -v '^(drafts|_conf)/')
+  done < <(git diff --name-only --cached | grep -E -v '^_(drafts|conf)/')
   return ${RV}
 }
 
