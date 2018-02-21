@@ -1,0 +1,10 @@
+packetdiag {
+  colwidth = 39
+  node_height = 80
+  node_width = 20
+  scale_interval = 8
+  default_fontsize = 16
+  * Header [len=2,rotate=270]
+  * Payload [len=33]
+  * MIC [len=4,style=dashed]
+}

@@ -1,0 +1,14 @@
+packetdiag {
+  colwidth = 16
+  node_height = 80
+  node_width = 40
+  scale_interval = 8
+  default_fontsize = 16
+  * LLID [len=2,rotate=270]
+  * NESN [len=1,rotate=270]
+  * SN [len=1,rotate=270]
+  * MD [len=1,rotate=270]
+  * Reserved [len=3,rotate=270]
+  * Length [len=5,rotate=270]
+  * Reserved [len=3,rotate=270]
+}

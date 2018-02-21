@@ -84,7 +84,8 @@ the end of
 
 BLE has been improved with each generation of the Bluetooth Core specification,
 with the latest release in Bluetooth 5 increasing broadcast power, speed, and
-maximum data length per packet.
+maximum data length per packet.  The Version 5 specification stretches to a
+massive 2822 pages!
 
 ## Connection States ##
 
