@@ -1,17 +1,31 @@
 #!/bin/bash
 
+set -u
+
 function gps_test {
-  git diff --name-only --cached | while read file ; do
-    RV=0
+  RV=0
+  while read file ; do
     LL=$(exiftool -gpslatitude -gpslongitude ${file} 2>/dev/null)
     if [ -n "${LL}" ] ; then
       echo ${file} contains GPS information. >&2
       RV=1
     fi
-  done
+  done < <(git diff --name-only --cached)
+  return ${RV}
+}
+
+function nopublish_test {
+  RV=0
+  while read file ; do
+    if grep -q 'NOPUBLISH' ${file} >/dev/null 2>&1 ; then
+      echo ${file} contains NOPUBLISH token. >&2
+      RV=1
+    fi
+  done < <(git diff --name-only --cached | grep -E -v '^(drafts|_conf)/')
   return ${RV}
 }
 
 gps_test || exit 1
+nopublish_test || exit 1
 
 exit 0
