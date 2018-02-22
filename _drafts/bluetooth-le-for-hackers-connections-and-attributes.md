@@ -179,13 +179,95 @@ are stored as part of the attribute value (since they are defined by the
 higher layer protocols storing data as attributes) and are not sent as part of
 the wire format of attributes sent over the air.[^ble3g25]
 
-Attributes are grouped into logical groupings, each of which is one of three
-types: a Primary Service, a Secondary Service, or a Characteristic.  The
-groupings are denoted by a range of attribute handles: a grouping begins with an
-Attribute that defines a Service or Characteristic, and all handles greater than
-the handle for that attribute are part of the grouping until the next attribute
-handle that defines a new grouping.  Groupings are non-overlapping ranges, but
-may have holes/skipped attribute handle numbers within them.
+The ordering of handles is used to arrange attributes into logical groupings.
+After a declaration attribute that defines a new grouping (either a service
+or a characteristic), all additional attributes are part of that grouping until
+the next "cornerstone" attribute defining a new service or characteristic.
+
+### Services ###
+
+Services are the highest level grouping of attributes, and are logically a
+collection of data to implement a particular behavior.  A service needs one or
+more chracteristics to implement the service and is for the device to perform a
+particular function.  All attributes are either a service definition or exist
+within a service definition.
+
+An attribute with an Attribute type of the UUID `0x2800` defines a new Primary
+Service, while `0x2801` is used for Secondary Services.  (In practice, secondary
+services are rarely used, and all devices must have at least one primary
+service.)  The value field contains another UUID, which is used to identify the
+service.[^ble3g31]  Service definitions are always read only.  Public services,
+defined by the Bluetooth SIG, have [16-bit UUIDs
+assigned](https://www.bluetooth.com/specifications/gatt/services) and have a
+particular set of characteristics required for their implementations.  Private
+services should use random UUIDs.  A service definition continues until the next
+service definition, or the end of the attributes on the device.  A device may
+have more than one service with the same UUID.
+
+Examples of some common services include:
+
+* [Battery Level](https://www.bluetooth.com/specifications/gatt/viewer?attributeXmlFile=org.bluetooth.service.battery_service.xml)
+* [Device Information](https://www.bluetooth.com/specifications/gatt/viewer?attributeXmlFile=org.bluetooth.service.device_information.xml)
+* [Human Interface Device](https://www.bluetooth.com/specifications/gatt/viewer?attributeXmlFile=org.bluetooth.service.human_interface_device.xml)
+
+### Characteristics ###
+
+Characteristics are the next level of grouping within services.  Each
+characteristic begins with an attribute of type `0x2803` and continues until the
+next characteristic declaration attribute or service declaration attribute.  The
+value of the characteristic declaration attribute is a structure containing
+properties (1 octet), the characteristic value attribute handle (2
+octets) and the UUID of the characteristic (2 or 16 octets).  A single service
+may have more than one characteristic with the same UUID.[^ble3g33]
+
+Like other UUIDs, 16 bit values are assigned by the Bluetooth SIG, which
+maintains a [list of defined
+characteristics](https://www.bluetooth.com/specifications/gatt/characteristics).
+Some common examples of characteristics include:
+
+* Alert Status
+* Appearance
+* Last Name
+* Email Address
+* Serial Number String
+* String
+* URI
+
+The characteristic properties are a bitfield that define which standard
+read/write/notify/indicate operations are supported on the characteristic.
+
+The first attribute after the characteristic declaration contains the
+characteristic value.  It has the handle that was specified in the
+characteristic value attribute handle in the declaration's value field.
+Likewise, it has the UUID specified in the characteristic declaration.  The
+value of this attribute is the value of the characteristic.[^ble3g332]
+
+Characteristics may include optional descriptor declarations that provide
+additional metadata about the particular characteristic.  These can include a
+human-readable description of the characteristic (UUID `0x2901`) or metadata,
+such as indicating that a temperature value is measured in degrees Celsius.
+
+### GATT Structure Example ###
+
+This is an exemplar structure for a hypothetical Bluetooth Low Energy device to
+explain the relationship between Attributes, Services, and Characteristics.
+
+![GATT Attribute Structure](/img/blog/ble/gatt_attributes.svg)
+
+This shows a device that implements two services, each with one characteristic.
+The structure of the device is as follows:
+
+* Primary Service (Handle `0x0001`, UUID `0x2800`, Value `0x180F`): Battery Status Service defined by Bluetooth SIG)
+  * Characteristic Declaration (Handle `0x0002`, UUID `0x2803`, Properties
+    `0xA`, Value Handle `0x0003`, Value UUID `0x2A19`)
+    * Characteristic Value (Handle `0x0003`, UUID `0x2A19`, Value `0x64`):
+      Battery Level 100%
+* Primary Service (Handle `0x0005`, UUID `0x2800`, Value
+  `7f9eb1be-51ea-4c9e-bd0e-2234b6527d00`): Custom Primary Service
+  * Characteristic Declaration (Handle `0x0006`, UUID `0x2803`, Properties
+    `0xA`, Value Handle `0x0007`, Value UUID `0x2A3D`)
+    * Characteristic Value (Handle `0x0007`, UUID `0x2A3D`): String "Hello
+      World"
 
 ## References ##
 
@@ -229,3 +311,12 @@ may have holes/skipped attribute handle numbers within them.
 
 [^ble3g25]: Bluetooth Core Specification, Version 4.0, Volume 3, Part G,
     Section 2.5: Attribute Protocol
+
+[^ble3g31]: Bluetooth Core Specification, Version 4.0, Volume 3, Part G,
+    Section 3.1: Service Definition
+
+[^ble3g33]: Bluetooth Core Specification, Version 4.0, Volume 3, Part G,
+    Section 3.3: Characteristic Definition
+
+[^ble3g332]: Bluetooth Core Specification, Version 4.0, Volume 3, Part G,
+    Section 3.3.2: Characteristic Value Declaration

@@ -1,0 +1,38 @@
+packetdiag {
+  colwidth = 20
+  node_height = 32
+  node_width = 32
+  scale_interval = 8
+  default_fontsize = 16
+  0: Handle [len=2]
+  2: UUID [len=2]
+  4: Value [len=16]
+
+  20: 0x0001 [len=2,height=2]
+  22: 0x2800 [len=2,height=2]
+  24: 0x180F [len=2,height=2]
+
+  60: 0x0002 [len=2,height=2]
+  62: 0x2803 [len=2,height=2]
+  64: 0x0A [len=1,height=2,rotate=270]
+  65: 0x0003 [len=2,height=2]
+  67: 0x2A19 [len=2,height=2]
+
+  100: 0x0003 [len=2,height=2]
+  102: 0x2A19 [len=2,height=2]
+  104: 0x64 [len=1,height=2,rotate=270]
+
+  140: 0x0005 [len=2,height=2]
+  142: 0x2800 [len=2,height=2]
+  144: 7f9eb1be-51ea-4c9e-bd0e-2234b6527d00 [len=16,height=2]
+
+  180: 0x0006 [len=2,height=2]
+  182: 0x2803 [len=2,height=2]
+  184: 0x0A [len=1,height=2,rotate=270]
+  185: 0x0007 [len=2,height=2]
+  187: 0x2A3D [len=2,height=2]
+
+  220: 0x0007 [len=2,height=2]
+  222: 0x2A3D [len=2,height=2]
+  224: '"Hello World"' [len=11,height=2]
+}
