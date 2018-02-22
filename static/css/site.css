@@ -503,3 +503,10 @@ p.affiliate-notice {
   border: 1px dashed #ddd;
   color: #666;
 }
+
+/** Footnotes */
+.footnotes li,
+.footnotes li p{
+    margin-bottom: 0;
+    font-size: 75%;
+}
