@@ -17,6 +17,14 @@ Bluetooth LE-based systems, so I'm going to try to consolidate what little there
 is and add my own notes as I go.  Feel free to reach out if you find any errors
 or have any suggestions for improvements.
 
+This will be highly information-dense, and may include information that doesn't
+seem readily useful, but I'm highlighting the information necessary for those in
+information security to understand communications between Bluetooth Low Energy
+devices, perform audits of BLE, and get started with BLE hacking.  I've omitted
+a *lot* of the details of each protocol layer, and if you really want to
+understand it all, you'll need to take a look at the Bluetooth Core
+Specification.
+
 <!--more-->
 
 Since this is a network protocol, the correct term for units of 8 bits in length
