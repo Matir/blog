@@ -163,6 +163,17 @@ handles that remain largely unchanged over time or over different units of the
 same device, as the handles are generally allocated in a deterministic manner in
 the firmware.)[^ble3g25]
 
+NOPUBLISH: protocol stack diagram
+
+GATT and the Attribute Protocol are the only mechanisms for data exchange
+between the application layers of the two devices involved.  There is no
+provision for streaming communications between Bluetooth LE devices.  All data
+is exchanged by reading/writing specific attributes (called characteristics) on
+the server (typically the BLE peripheral).  Streaming protocols can be emulated
+by using attributes as buffers to read/write via BLE.  For example, Nordic
+Semiconductors has a UART implementation that uses two attributes, each 20
+octets long, one as a read buffer, one as a write buffer.
+
 ### The Use of Attributes in GATT ###
 
 Short form GATT UUIDs (16-bit values) are assigned by the Bluetooth SIG which
@@ -268,6 +279,19 @@ The structure of the device is as follows:
     `0xA`, Value Handle `0x0007`, Value UUID `0x2A3D`)
     * Characteristic Value (Handle `0x0007`, UUID `0x2A3D`): String "Hello
       World"
+
+Note that the handle numbers are ordered, even if not sequential.  This is
+required, as the ordering of handle numbers is the way in which groupings are
+organized by service and characteristic.  Each characteristic declaration refers
+to the characteristic value by both handle and UUID.  (It's not clear to me why
+the UUIDs are repeated, but they are.)
+
+## Summary & Next Steps ##
+
+This covers the actual protocol layers necessary to understand how to play
+around with and start assessing Bluetooth LE devices.  In the next post, I'll
+look at the stock tools for interacting with Bluetooth LE and how to use them
+and make sense of the output compared to the protocol layers discussed here.
 
 ## References ##
 
