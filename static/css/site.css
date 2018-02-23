@@ -505,8 +505,10 @@ p.affiliate-notice {
 }
 
 /** Footnotes */
-.footnotes li,
-.footnotes li p{
+.footnotes li {
+    font-size: 80%;
+}
+
+.footnotes li p {
     margin-bottom: 0;
-    font-size: 75%;
 }
