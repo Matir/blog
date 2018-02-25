@@ -13,12 +13,15 @@ title: Home
     </h1>
 
     <span class="post-date">{{ post.date | date_to_string }}
-			{% if page.category %}in <a
-					href="/category/{{ page.category | slugize }}"
-					>{{ page.category }}</a>{% endif %}
+			{% if post.category %}in <a
+					href="/category/{{ post.category | slugify }}"
+					>{{ post.category }}</a>{% endif %}
     </span>
 
     {{ post.excerpt }}
+    {% if post.excerpt != post.content %}
+    <p class='right'><a href='{{ post.url }}'><strong>Read More...</strong></a></p>
+    {% endif %}
   </div>
   {% endfor %}
 </div>
