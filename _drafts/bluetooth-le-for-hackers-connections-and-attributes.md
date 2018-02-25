@@ -6,6 +6,7 @@ tags:
   - Bluetooth LE
   - Security
 series: "Bluetooth LE for Hackers"
+kramdown: true
 ---
 
 In this installment in the Bluetooth LE for Hackers series, I'll cover what
