@@ -501,6 +501,10 @@ code {
   text-align: justify;
 }
 
+.post p.right {
+  text-align: right;
+}
+
 .page,
 .post {
   margin-bottom: 2em;
