@@ -214,13 +214,85 @@ I personally like using the tiny [RT5370-based
 adapters](https://amzn.to/2Ervjw3) for assessments not requiring long range due
 to its compact size and portability.
 
-## Wired (Debug) Interfaces ##
+## Wired (Debug/Internal) Interfaces ##
+
+There are many subtle interfaces on IoT devices, intended for either debug use,
+or for various components to communicate with each other.  For example:
+
+* SPI/I2C for flash chips
+* SPI/SD for wifi chips
+* UART for serial consoles
+* UART for bluetooth/wifi controllers
+* JTAG/SWD for debugging processors
+* ICSP for In-Circuit Programming
 
 ### UART ###
 
-### JTAG/SWD ###
+[![UART Adapter](/img/blog/iot/uart.png){:.right}](https://amzn.to/2ErE3ST)
 
-### SPI/I2C ###
+Though there are many universal devices that can do other things, I run into
+UARTs so often that I like having a standalone adapter for this.  Additionally,
+having a standalone adapter allows me to maintain a UART connection at the same
+time as I'm working with JTAG/SWD or other interfaces.
+
+You can get a [standalone cable](https://amzn.to/2ErE3ST) for around $10, that
+can be used for most UART interfaces.  (On most devices I've seen, the UART
+interface is 3.3v, and these cables work well for that.)  *Most* of these cables
+have the following pinout, but *make sure you check your own*:
+
+* Red: +5V (Don't connect on most boards)
+* Black: GND
+* Green: TX from Computer, RX from Device
+* White: RX from Computer, TX from Device
+
+There are also a number of breakouts for the [FT232RL](https://amzn.to/2GJdF8W)
+or the [CH340](https://amzn.to/2HhaoOZ) chips for UART to USB.  These provide a
+row of headers to connect jumpers between your target device and the adapter.  I
+prefer the simplicity of the cables (and fewer jumper ends to come loose during
+my testing), but this is further evidence that there are a number of options to
+provide the same capabilities.
+
+### Universal Interfaces (JTAG/SWD/I2C/SPI) ###
+
+There are a number of interface boards referred to as "universal interfaces"
+that have the capability to interface with a wide variety of protocols.  These
+largely fit into two categories:
+
+* Bit-banging microcontrollers
+* Hardware interfaces (dominated by the FT\*232 series from FTDI)
+
+There are a number of options for implementing a bit-banging solution for
+speaking these protocols, ranging from software projects to run on an Arduino,
+to projects like the [Bus
+Pirate](http://dangerousprototypes.com/docs/Bus_Pirate), which uses a PIC
+microcontroller.  These generally present a serial interface (UART) to the host
+computer and applications, and use in-band signalling for configuration and
+settings.  There may be some timing issues on certain devices, as
+microcontrollers often cannot update multiple output pins in the same clock
+cycle.
+
+[![FTDI Adapter](/img/blog/iot/adafruit_ftdi.jpg){:.left}](https://amzn.to/2uSri41)
+
+Hardware interfaces expose a dedicated USB endpoint to talk to the device, and
+though this can be configured, it is done via USB endpoints and registers.
+The protocols are implemented in semi-dedicated hardware.  In my experience,
+these devices are both faster and more reliable than bit-banging
+microcontrollers, but you are limited to whatever protocols are supported by the
+particular device, or the capabilities of the software to drive them.  (For
+example, the FT\*232H series can do most protocols via bit-banging, but it
+updates an entire register at a time, and has high enough speed to run the clock
+rate of many protocols.)
+
+The FT2232H and FT232H (not to be confused with the FT232RL, which is UART
+only), in particular, has been incorporated into a number of different breakout
+boards that are excellent universal interfaces:
+
+* [Adafruit FT232 breakout](https://www.adafruit.com/product/2264)
+  (my personal favorite) ([Amazon](https://amzn.to/2uSri41))
+* [TUMPA and TUMPA Lite](http://www.tiaowiki.com/w/TIAO_USB_Multi_Protocol_Adapter_User%27s_Manual)
+  ([Amazon](https://amzn.to/2qdgkl7))
+* [FTDI C232HM Cable](https://www.digikey.com/product-detail/en/ftdi-future-technology-devices-international-ltd/C232HM-DDHSL-0/768-1106-ND/2714139)
+  (my 2nd favorite, easiest to use) ([Amazon](https://amzn.to/2IzTMS1))
 
 ## Wireless ##
 
