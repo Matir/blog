@@ -179,9 +179,40 @@ through away scrap electronics to work on.
 
 ## Network Interfaces ##
 
+Obviously, these devices have network interfaces.  After all, they are the
+"**Internet** of Things", so a network connection would seem to be a
+requirement.  Nearly universally, 802.11 connectivity is present (sometimes on
+just a base station), and ethernet (10/100 or Gigabit) interfaces are also very
+common.
+
 ### Wired Network Sniffing ###
 
+[![Ethernet Adapter](/img/blog/iot/ethernet.png){:.left}](https://amzn.to/2qaoHNk)
+
+The easiest way to sniff a wired network is often a 2nd interface on your
+computer.  I'm a huge fan of this [USB 3.0 to Dual Gigabit
+Adapter](https://amzn.to/2qaoHNk), which even has a [USB-C
+version](https://amzn.to/2uV3pc3) for those using one of the newer laptops or
+Macbooks that only support USB-C.  Either option gives you two network ports to
+work with, even on laptops without built-in wired interfaces.
+
+Beyond this, you'll need software for the sniffing.
+[Wireshark](https://www.wireshark.org/) is an obvious
+tool for raw packet capture, but you'll often also want HTTP/HTTPS sniffing, for
+which [Burp Suite](https://portswigger.net/burp) is the defacto standard, but
+[mitmproxy](https://mitmproxy.org/) is an up-and-coming contender with a lot of
+nice features.
+
 ### Wireless Network Sniffing ###
+
+Most common wireless network interfaces on laptops can perform monitor mode, but
+perhaps you'd like to connect your wireless to use the internet, as well as
+sniff on another interface.  Alfa wireless cards like the
+[AWUSO36NH](https://amzn.to/2qcMY5x) and the
+[AWUSO36ACH](https://amzn.to/2qbXJEU) have been quite popular for a while, but
+I personally like using the tiny [RT5370-based
+adapters](https://amzn.to/2Ervjw3) for assessments not requiring long range due
+to its compact size and portability.
 
 ## Wired (Debug) Interfaces ##
 
