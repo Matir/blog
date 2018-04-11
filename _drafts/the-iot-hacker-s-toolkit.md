@@ -2,7 +2,7 @@
 layout: post
 title: "The IoT Hacker's Toolkit"
 category: Security
-#date: 2018-04-16 14:10:00 -0700
+#date: 2018-04-16 12:00:00 -0700
 tags:
   - IoT
   - Security
@@ -16,14 +16,13 @@ excerpt:
   capabilities each tool brings to the table. I'll also talk about building the
   skillset and getting the hands-on experience with the tools necessary to
   perform embedded security assessments.
+attachment: iot_toolkit.pdf
 ---
 
 Today, I'm giving a talk entitled "The IoT Hacker's Toolkit" at
 [BSides San Francisco](https://bsidessf.org).  I thought I'd release a companion
 blog post to go along with the slide deck.  I'll also include a link to the
 video once it gets posted online.
-
-<!--more-->
 
 * TOC
 {:toc}
@@ -80,6 +79,35 @@ Of course, this is a "do as I say, not as I do" area.  I, in fact, have quite a
 number of devices with overlapping capabilities.  I'd love to claim this was
 just to compare devices for the benfit of those attending my presentation or
 reading this post, but honestly, I do love my technical toys.
+
+## Software ##
+
+Much of the software does not differ from that for application security or
+penetration testing.  For example, [Wireshark](https://www.wireshark.org/) is
+commonly used for network analysis (IP and Bluetooth), and [Burp
+Suite](https://portswigger.net/burp) for HTTP/HTTPS.
+
+The website [fccid.io](https://fccid.io) is very useful in reconnaissance of
+devices, providing information about the frequencies and modulations used, as
+well as often internal pictures of devices, which can also reveal information
+such as chipsets, overall architecture, etc., all without lifting a screwdriver.
+
+### Reverse Engineering ###
+
+Firmware images are often multiple files concatentated, or contain proprietary
+metadata headers.  [Binwalk](https://github.com/ReFirmLabs/binwalk) walks the
+image, looking for known file signatures, and extracts the components.  Often
+this will include entire Linux filesystems, kernel images, etc.
+
+Once you have extracted this, you might be interested in analyzing the binaries
+or other software contained inside.  Often a disassembler is useful.  My current
+favorite disassembler is [Binary Ninja](https://binary.ninja/), but there are a
+number of options:
+
+- [Binary Ninja](https://binary.ninja/)
+- [IDA](https://www.hex-rays.com/products/ida/)
+- [Radare2](https://rada.re/r/)
+- [Hopper](https://www.hopperapp.com/)
 
 ## Basic Tools ##
 
@@ -294,10 +322,114 @@ boards that are excellent universal interfaces:
 * [FTDI C232HM Cable](https://www.digikey.com/product-detail/en/ftdi-future-technology-devices-international-ltd/C232HM-DDHSL-0/768-1106-ND/2714139)
   (my 2nd favorite, easiest to use) ([Amazon](https://amzn.to/2IzTMS1))
 
+### Logic Analyzer ###
+
+[![Logic Analyzer](/img/blog/iot/saleae.png){:.right}](https://www.saleae.com/)
+
+When you have an unknown protocol, unknown pinout, or unknown protocol settings
+(baudrate, polarity, parity, etc.), a logic analyzer can dramtically help by
+allowing you a direct look at the signals being passed between chips or
+interfaces.
+
+I have a [Saleae Logic 8](https://www.saleae.com/), which is a great value logic
+analyzer.  It has a compact size and their software is really excellent and easy
+to use.  I've used it to discover the pinout for many unlabeled ports, discover
+the settings for UARTs, and just generally snoop on traffic between two chips on
+a board.
+
+Though there are cheap knock-offs available on eBay or AliExpress, I have tried
+them and they have very poor quality, and unfortunately the open-source sigrok
+software is not quite the quality of the Saleae software.  Additionally, they
+rarely have any input protection to prevent you from blowing up the device
+yourself.
+
 ## Wireless ##
+
+Obviously, the Internet of Things has quite a number of wireless devices.  Some
+of these devices use WiFI (discussed above) but many use other wireless
+protocols.  Bluetooth (particularly Bluetooth LE) is quite common, but in
+other areas, such as home automation, other protocols prevail.  Many of these
+are based on 802.15.4 (Zigbee, Z-Wave) or proprietary protocols in the 433 MHz,
+915 MHz, or 2.4 GHz ISM bands.
 
 ### Bluetooth ###
 
+[![Ubertooth One](/img/blog/iot/ubertooth.png){:.right}](https://amzn.to/2Jz8V7L)
+
+Bluetooth devices are incredibly common, and Bluetooth Low Energy (starting with
+Bluetooth 4.0) is very popular for IoT devices.  Most devices that do not stream
+audio, provide IP connectivity, or have other high-bandwidth needs seem to be
+moving to Bluetooth Low Energy, probably because of several reasons:
+
+1. Lower power consumption (battery friendly)
+2. Cheaper chipsets
+3. Less complex implementation
+
+There is essentially only one tool I can really recommend for assessing
+Bluetooth, and that is the [Ubertooth
+One](https://greatscottgadgets.com/ubertoothone/)
+([Amazon](https://amzn.to/2Jz8V7L)).  This can follow and capture Bluetooth
+communications, providing output in pcap or pcap-ng format, allowing you to
+import the communications into Wireshark for later analysis.  (You can also use
+other pcap-based tools like `scapy` for analysis of the resulting pcaps.)  The
+Ubertooth tools are available in Debian, Ubuntu, or Kali as packages, but you
+can get a more up to date version of the software [from their Github
+repository](https://github.com/greatscottgadgets/ubertooth).
+
+Adafruit also offers a [BLE Sniffer](https://www.adafruit.com/product/2269)
+which works only for Bluetooth Low Energy and utilizes a Nordic Semiconductor
+BLE chip with a special firmware for sniffing.  The software for this works well
+on Windows, but not so well on Linux where it is a python script that tends to
+be more difficult to use than the Ubertooth tools.
+
 ### Software Defined Radio ###
 
+[![BladeRF](/img/blog/iot/bladerf.png){:.left}](https://www.nuand.com/)
+
+For custom protocols, or to enable lower-level evaluation or attacks of
+radio-based systems, Software Defined Radio presents an excellent opportunity
+for direct interaction with the RF side of the IoT device.  This can range from
+only receiving (for purposes of understanding and reverse engineering the
+device) to being able to simultaneously receive and transmit (full-duplex)
+depending upon the needs of your assessment.
+
+For simply receiving, there are simple DVB-T dongles that have been repurposed
+as general-purpose SDRs, often referred to as "RTL SDRs", a name based on the
+Realtek RTL2832U chips present in the device.  These can be used because the
+chip is capable of providing the raw samples to the host operating system, and
+because of their low cost, a large [open source
+community](https://www.rtl-sdr.com/) has emerged.  Companies like NooElec are
+now even offering [custom built hardware based on these
+chips](https://amzn.to/2IKDlCE) for the SDR community.  There's also a
+[kit](https://amzn.to/2GUpXes) that expands the receive range of the RTL-SDR
+dongles.
+
+In order to transmit as well, the hardware is significantly more complex, and
+most options in this space are driven by an FPGA or other powerful processor.
+Even a few years ago, the capabilities here were very expensive with tools like
+the [USRP](https://www.ettus.com/product/category/USRP-X-Series).  However, the
+[HackRF](https://greatscottgadgets.com/hackrf/) by Great Scott Gadgets and the
+[BladeRF](https://www.nuand.com/) by Nuand have offered a great deal of
+capability for a hacker-friendly price.
+
+I personally have a BladeRF, but I honestly wish I had bought a HackRF instead.
+The HackRF has a wider usable frequency range (especially at the low end), while
+the BladeRF requires a relatively expensive upconverter to cover those bands.
+The HackRF also seems to have a much more active community and better support in
+some areas of open source software.
+
+## Other Useful Tools ##
+
+It is occasionally useful to use an oscilloscope to see RF signals or signal
+integrity, but I have almost never found this necessary.
+
+Specialized JTAG programmers for specific hardware often work better, but cost
+quite a bit more and are specialized to those specific items.
+
+For dumping Flash chips, Xeltec programmers/dumpers are considered the "top of
+the line" and do an incredible job, but are at a price point such that only labs
+doing this on a regular basis find it worthwhile.
+
 ## Slides ##
+
+{% include slides.html %}
