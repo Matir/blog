@@ -1,0 +1,8 @@
+<!-- begin _includes/slides.html -->
+<div class='slides-container'>
+    <object data='/static/attachments/{{page.attachment}}' class='slides'
+        type='application/pdf'></object>
+</div>
+PDF: <a href='/static/attachments/{{page.attachment}}'>{{include.title |
+    default: page.title}}</a>
+<!-- end _includes/slides.html -->
