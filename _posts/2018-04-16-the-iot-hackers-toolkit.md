@@ -2,7 +2,7 @@
 layout: post
 title: "The IoT Hacker's Toolkit"
 category: Security
-#date: 2018-04-16 12:00:00 -0700
+date: 2018-04-16 12:00:00 -0700
 tags:
   - IoT
   - Security
