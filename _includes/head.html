@@ -38,9 +38,10 @@
   <meta property="og:url" content="https://systemoverlord.com{{page.url}}">
   <meta property="og:site_name" content="{{ site.title }}">
   {% if page.description %}
-    <meta property="og:description" content="{{ page.description }}">
+    <meta name="description" property="og:description"
+      content="{{ page.description }}">
   {% else %}
-    <meta property="og:description"
+    <meta name="description" property="og:description"
       content="{{ page.excerpt | strip_html | truncatewords: 50 }}">
   {% endif %}
 </head>
