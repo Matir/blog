@@ -123,6 +123,7 @@ a.sidebar-nav-item:focus {
  */
 
 .content {
+  position: relative;
   padding-top:    3rem;
   padding-bottom: 3rem;
 }
@@ -516,6 +517,9 @@ p.affiliate-notice {
   font-size: 80%;
   border: 1px dashed #ddd;
   color: #666;
+  position: absolute;
+  top: 150px;
+  right: 0px;
 }
 
 /** Slides */
