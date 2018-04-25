@@ -1,0 +1,16 @@
+---
+# SCSS
+---
+
+// Charcoal theme
+$sidebar-bg-color: #36454f;
+$sidebar-sticky: true;
+$link-color: #6a9fb5;
+
+// Load the theme
+@import "hydeout";
+
+// Overrides
+span.sidebar-nav-item > a {
+  padding-left: 0.3rem;
+}

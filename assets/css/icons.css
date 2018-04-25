@@ -1,0 +1,129 @@
+/*
+ * Social Icon Font
+ * https://github.com/tombryan/social-icon-font
+ */
+
+@font-face {
+  font-family: "social-icons";
+  src: url("../fonts/social-icon-font.eot");
+  src: url("../fonts/social-icon-font.eot?#iefix") format("embedded-opentype"),
+       url("../fonts/social-icon-font.woff") format("woff"),
+       url("../fonts/social-icon-font.ttf") format("truetype"),
+       url("../fonts/social-icon-font.svg#social-icons") format("svg");
+  font-weight: normal;
+  font-style: normal;
+}
+
+.icon-aim:before,
+.icon-amazon:before,
+.icon-appstore:before,
+.icon-basecamp:before,
+.icon-behance:before,
+.icon-blogger:before,
+.icon-cargo:before,
+.icon-cloudapp:before,
+.icon-creativecommons:before,
+.icon-delicious:before,
+.icon-designmoo:before,
+.icon-digg:before,
+.icon-dribbble:before,
+.icon-dropbox:before,
+.icon-email:before,
+.icon-envato:before,
+.icon-etsy:before,
+.icon-evernote:before,
+.icon-facebook:before,
+.icon-flickr:before,
+.icon-forrst:before,
+.icon-foursquare:before,
+.icon-github:before,
+.icon-goodreads:before,
+.icon-googleplus:before,
+.icon-instagram:before,
+.icon-instapaper:before,
+.icon-linkedin:before,
+.icon-path:before,
+.icon-paypal:before,
+.icon-pinboard:before,
+.icon-pinterest:before,
+.icon-quora:before,
+.icon-readernaut:before,
+.icon-reddit:before,
+.icon-rss:before,
+.icon-skype:before,
+.icon-soundcloud:before,
+.icon-spotify:before,
+.icon-squarespace:before,
+.icon-tumblr:before,
+.icon-twitter:before,
+.icon-vimeo:before,
+.icon-vsco:before,
+.icon-wikipedia:before,
+.icon-wordpress:before,
+.icon-xbox:before,
+.icon-yahoomessenger:before,
+.icon-youtube:before,
+.icon-zerply:before,
+.icon-zootool:before {
+  font-family: "social-icons";
+  font-style: normal;
+  font-weight: normal;
+  font-variant: normal;
+  text-transform: none;
+  line-height: 1;
+  -webkit-font-smoothing: antialiased;
+  display: inline-block;
+  text-decoration: inherit;
+}
+
+.icon-aim:before { content: "\f100"; }
+.icon-amazon:before { content: "\f101"; }
+.icon-appstore:before { content: "\f102"; }
+.icon-basecamp:before { content: "\f103"; }
+.icon-behance:before { content: "\f104"; }
+.icon-blogger:before { content: "\f105"; }
+.icon-cargo:before { content: "\f106"; }
+.icon-cloudapp:before { content: "\f107"; }
+.icon-creativecommons:before { content: "\f108"; }
+.icon-delicious:before { content: "\f109"; }
+.icon-designmoo:before { content: "\f10a"; }
+.icon-digg:before { content: "\f10b"; }
+.icon-dribbble:before { content: "\f10c"; }
+.icon-dropbox:before { content: "\f10d"; }
+.icon-email:before { content: "\f10e"; }
+.icon-envato:before { content: "\f10f"; }
+.icon-etsy:before { content: "\f110"; }
+.icon-evernote:before { content: "\f111"; }
+.icon-facebook:before { content: "\f112"; }
+.icon-flickr:before { content: "\f113"; }
+.icon-forrst:before { content: "\f114"; }
+.icon-foursquare:before { content: "\f115"; }
+.icon-github:before { content: "\f116"; }
+.icon-goodreads:before { content: "\f117"; }
+.icon-googleplus:before { content: "\f118"; }
+.icon-instagram:before { content: "\f119"; }
+.icon-instapaper:before { content: "\f11a"; }
+.icon-linkedin:before { content: "\f11b"; }
+.icon-path:before { content: "\f11c"; }
+.icon-paypal:before { content: "\f11d"; }
+.icon-pinboard:before { content: "\f11e"; }
+.icon-pinterest:before { content: "\f11f"; }
+.icon-quora:before { content: "\f120"; }
+.icon-readernaut:before { content: "\f121"; }
+.icon-reddit:before { content: "\f122"; }
+.icon-rss:before { content: "\f123"; }
+.icon-skype:before { content: "\f124"; }
+.icon-soundcloud:before { content: "\f125"; }
+.icon-spotify:before { content: "\f126"; }
+.icon-squarespace:before { content: "\f127"; }
+.icon-tumblr:before { content: "\f128"; }
+.icon-twitter:before { content: "\f129"; }
+.icon-vimeo:before { content: "\f12a"; }
+.icon-vsco:before { content: "\f12b"; }
+.icon-wikipedia:before { content: "\f12c"; }
+.icon-wordpress:before { content: "\f12d"; }
+.icon-xbox:before { content: "\f12e"; }
+.icon-yahoomessenger:before { content: "\f12f"; }
+.icon-youtube:before { content: "\f130"; }
+.icon-zerply:before { content: "\f131"; }
+.icon-zootool:before { content: "\f132"; }

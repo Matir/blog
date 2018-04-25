@@ -21,6 +21,7 @@ description:      'A blog about security engineering, research, and general hack
 url:              https://systemoverlord.com
 baseurl:          /
 excerpt_separator: "<!--more-->"
+theme:            jekyll-theme-hydeout
 
 author:
   name:           'David Tomaschik'
