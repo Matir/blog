@@ -34,6 +34,9 @@ GEM
       sass (~> 3.4)
     jekyll-tagging (1.1.0)
       nuggets
+    jekyll-tagging-related_posts (1.0.0)
+      jekyll (~> 3.0)
+      jekyll-tagging (~> 1.0)
     jekyll-watch (2.0.0)
       listen (~> 3.0)
     kramdown (1.16.2)
@@ -67,6 +70,7 @@ DEPENDENCIES
   jekyll-paginate
   jekyll-redirect-from
   jekyll-tagging
+  jekyll-tagging-related_posts
   kramdown
   rouge
 
