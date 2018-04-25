@@ -1,12 +1,13 @@
 #!/bin/bash
 
 # Exit on any error
-set -e 
+set -e
 
 SRV_DIR=/srv/blog
 
 TMP_REPO=`mktemp -d`
 git clone ${GIT_DIR} ${TMP_REPO}
+bundle install --gemfile=${TMP_REPO}/Gemfile
 GIT_REV=$(git -C ${TMP_REPO} --git-dir .git rev-parse --short --verify HEAD)
 jekyll build -s ${TMP_REPO} -d ${SRV_DIR}/${GIT_REV}
 echo "Compressing html/css/js files."
