@@ -7,7 +7,7 @@
 <div class="post-tags">
   Tags: 
   {% for tag in tags %}
-    <a href="/tags/#{{ tag|slugify }}">{{ tag }}</a>{% unless forloop.last %},{% endunless %}
+    <a href="/tags/{{ tag|slugify }}.html">{{ tag }}</a>{% unless forloop.last %},{% endunless %}
   {% endfor %}
 </div>
 {% endif %}
