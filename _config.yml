@@ -43,3 +43,10 @@ github:
 # Gems
 plugins:
   - jekyll-paginate
+  # Tagging plugins increase build time
+  - jekyll/tagging
+  - jekyll-tagging-related_posts
+
+# Tagging settings
+tag_page_layout: tag_page
+tag_page_dir: tags
