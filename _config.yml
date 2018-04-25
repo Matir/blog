@@ -43,3 +43,8 @@ github:
 # Gems
 plugins:
   - jekyll-paginate
+  - jekyll/tagging
+
+# Tagging settings
+tag_page_layout: tag_page
+tag_page_dir: tags
