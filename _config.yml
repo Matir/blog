@@ -19,8 +19,9 @@ title:            'System Overlord'
 tagline:          'Security, CTFs, Hacking'
 description:      'A blog about security engineering, research, and general hacking.'
 url:              https://systemoverlord.com
-baseurl:          /
+baseurl:          
 excerpt_separator: "<!--more-->"
+theme:            jekyll-theme-hydeout
 
 author:
   name:           'David Tomaschik'
@@ -34,6 +35,7 @@ exclude:
   - LICENSE.md
   - _conf
   - _scripts
+  - .sass-cache
 
 # Custom vars
 github:

@@ -1,0 +1,55 @@
+/**
+ * Site-wide styles
+ */
+
+/** Floating and clears */
+.right {
+  float: right;
+}
+
+.left {
+  float: left;
+}
+
+img.right {
+  padding-left: 0.4rem;
+}
+
+img.left {
+  padding-right: 0.4rem;
+}
+
+.both, .clear {
+  clear: both;
+}
+
+.nobr {
+  white-space: nowrap;
+}
+
+// Adjust container
+.container > * {
+  max-width: 44rem;
+}
+
+// Avoid scrollbar on sidebar
+#sidebar {
+  overflow-y: hidden;
+}
+
+// Pad next to icons
+span.sidebar-nav-item > a {
+  padding-left: 0.3rem;
+}
+
+.copyright {
+  margin-top: 1rem;
+  font-size: 0.8rem;
+}
+
+// Table coloration
+tbody tr:nth-child(odd) {
+  td, th {
+    background-color: #eeeeee;
+  }
+}
