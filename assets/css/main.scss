@@ -6,11 +6,12 @@
 $sidebar-bg-color: #36454f;
 $sidebar-sticky: true;
 $link-color: #6a9fb5;
+$minor-color: #9a9a9a;
+$code-color: $sidebar-bg-color;
+$code-background: #eeeeee;
 
 // Load the theme
 @import "hydeout";
-
-// Overrides
-span.sidebar-nav-item > a {
-  padding-left: 0.3rem;
-}
+@import "site";
+@import "posts";
+@import "code";

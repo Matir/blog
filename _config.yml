@@ -35,6 +35,7 @@ exclude:
   - LICENSE.md
   - _conf
   - _scripts
+  - .sass-cache
 
 # Custom vars
 github:

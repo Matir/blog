@@ -1,0 +1,40 @@
+/**
+ * Site-wide styles
+ */
+
+/** Floating and clears */
+.right {
+  float: right;
+}
+
+.left {
+  float: left;
+}
+
+.both, .clear {
+  clear: both;
+}
+
+.nobr {
+  white-space: nowrap;
+}
+
+// Adjust container
+.container > * {
+  max-width: 44rem;
+}
+
+// Avoid scrollbar on sidebar
+#sidebar {
+  overflow-y: hidden;
+}
+
+// Pad next to icons
+span.sidebar-nav-item > a {
+  padding-left: 0.3rem;
+}
+
+.copyright {
+  margin-top: 1rem;
+  font-size: 0.8rem;
+}

@@ -1,0 +1,21 @@
+/** Formatting for posts */
+
+/* Tags at top */
+.post-tags {
+  color: $minor-color;
+  font-size: 0.8rem;
+  margin-bottom: 1rem;
+  a {
+    font-size: 100%;
+    margin-right: 0;
+    color: $minor-color;
+    opacity: 1;
+  }
+}
+
+.post-date {
+  color: $minor-color;
+  a {
+    color: $minor-color;
+  }
+}
