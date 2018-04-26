@@ -5,6 +5,10 @@ set -e
 
 SRV_DIR=/srv/blog
 
+export GEM_HOME=$(ruby -e 'puts Gem.user_dir')
+export GEM_PATH=$GEM_HOME
+export PATH=$GEM_HOME/bin:$PATH
+
 TMP_REPO=`mktemp -d`
 git clone ${GIT_DIR} ${TMP_REPO}
 bundle install --gemfile=${TMP_REPO}/Gemfile
