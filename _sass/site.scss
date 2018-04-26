@@ -11,6 +11,14 @@
   float: left;
 }
 
+img.right {
+  padding-left: 0.4rem;
+}
+
+img.left {
+  padding-right: 0.4rem;
+}
+
 .both, .clear {
   clear: both;
 }
@@ -37,4 +45,11 @@ span.sidebar-nav-item > a {
 .copyright {
   margin-top: 1rem;
   font-size: 0.8rem;
+}
+
+// Table coloration
+tbody tr:nth-child(odd) {
+  td, th {
+    background-color: #eeeeee;
+  }
 }

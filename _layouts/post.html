@@ -10,9 +10,13 @@ layout: default
       >{{ page.category }}</a>{% endif %}
   </span>
   {% include post-tags.html %}
-  {% include series.html %}
-  {{ content }}
+  <div class="post-body">
+    {% include series.html %}
+    <div class="post-content">
+      {{ content }}
+    </div>
+    {% include affiliate.html %}
+  </div>
 </div>
-{% include affiliate.html %}
 
 {% include related.html %}

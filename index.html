@@ -18,25 +18,30 @@ title: Home
 					>{{ post.category }}</a>{% endif %}
     </span>
 
-    {{ post.excerpt }}
+    <div class="post-excerpt">
+      {{ post.excerpt }}
+    </div>
     {% if post.excerpt != post.content %}
-    <p class='right'><a href='{{ post.url }}'><strong>Read More...</strong></a></p>
+    <p class='morelink'><a href='{{ post.url }}'><strong>Read More...</strong></a></p>
     {% endif %}
   </div>
-  {% endfor %}
+  {%- if forloop.last == false -%}
+  <hr />
+  {% endif -%}
+  {%- endfor %}
 </div>
 
 <div class="pagination">
   {% if paginator.next_page %}
-    <a class="pagination-item older" href="{{ site.baseurl }}page{{paginator.next_page}}">Older</a>
+    <a class="pagination-item older" href="{{ site.baseurl }}/page{{paginator.next_page}}">Older</a>
   {% else %}
     <span class="pagination-item older">Older</span>
   {% endif %}
   {% if paginator.previous_page %}
     {% if paginator.page == 2 %}
-      <a class="pagination-item newer" href="{{ site.baseurl }}">Newer</a>
+      <a class="pagination-item newer" href="{{ site.baseurl }}/">Newer</a>
     {% else %}
-      <a class="pagination-item newer" href="{{ site.baseurl }}page{{paginator.previous_page}}">Newer</a>
+      <a class="pagination-item newer" href="{{ site.baseurl }}/page{{paginator.previous_page}}">Newer</a>
     {% endif %}
   {% else %}
     <span class="pagination-item newer">Newer</span>

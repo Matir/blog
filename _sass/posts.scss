@@ -1,5 +1,22 @@
 /** Formatting for posts */
 
+/** General post */
+.post {
+  text-align: justify;
+  .post-title {
+    text-align: left;
+  }
+  .post-date {
+    color: $minor-color;
+    a {
+      color: $minor-color;
+    }
+  }
+  .post-body {
+    position: relative;
+  }
+}
+
 /* Tags at top */
 .post-tags {
   color: $minor-color;
@@ -13,9 +30,58 @@
   }
 }
 
-.post-date {
-  color: $minor-color;
-  a {
-    color: $minor-color;
+// Index page
+.posts {
+  .post {
+    clear: both;
   }
+  .morelink {
+    text-align: right;
+  }
+  hr {
+    width: 50%;
+    border: 0;
+    height: 0;
+    border-bottom: 1px solid $minor-color;
+    margin-right: auto;
+    margin-left: auto;
+  }
+}
+
+/** Related box */
+#related {
+  border-top: 1px solid $minor-color;
+}
+
+/** Slides */
+div.slides-container {
+  width: 100%;
+  padding-bottom: 56.25%; /* For 16:9 ratio */
+  position: relative;
+}
+
+object.slides {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  right: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+
+/** Affiliate notice */
+p.affiliate-notice {
+  text-align: right;
+  font-size: 80%;
+  border: 1px dashed #ddd;
+  color: #666;
+  position: absolute;
+  top: -2rem;
+  right: 0px;
+}
+
+/** Table of contents */
+#markdown-toc ul {
+  margin-bottom: 0;
 }

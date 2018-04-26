@@ -24,4 +24,12 @@ div.highlight {
     text-align: right;
     padding-right: .25rem;
   }
+  td.code {
+    overflow-x: auto;
+  }
+}
+
+pre.highlight {
+  overflow-x: auto;
+  white-space: pre;
 }

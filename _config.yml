@@ -19,7 +19,7 @@ title:            'System Overlord'
 tagline:          'Security, CTFs, Hacking'
 description:      'A blog about security engineering, research, and general hacking.'
 url:              https://systemoverlord.com
-baseurl:          /
+baseurl:          
 excerpt_separator: "<!--more-->"
 theme:            jekyll-theme-hydeout
 
