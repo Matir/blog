@@ -9,6 +9,9 @@ export GEM_HOME=$(ruby -e 'puts Gem.user_dir')
 export GEM_PATH=$GEM_HOME
 export PATH=$GEM_HOME/bin:$PATH
 
+# Make sure files will be readable
+umask 022
+
 if ! test -d ${GEM_PATH}/gems/bundler* ; then
   gem install bundler
 fi
