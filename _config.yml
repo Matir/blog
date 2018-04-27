@@ -48,6 +48,8 @@ plugins:
   # Tagging plugins increase build time
   - jekyll/tagging
   - jekyll-tagging-related_posts
+  - liquid_pluralize
+  - liquid_reading_time
 
 # Tagging settings
 tag_page_layout: tag_page

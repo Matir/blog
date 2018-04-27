@@ -16,6 +16,7 @@ title: Home
 			{% if post.category %}in <a
 					href="/category/{{ post.category | slugify }}"
 					>{{ post.category }}</a>{% endif %}
+        ({{ post.content | reading_time | pluralize: "minute" }})
     </span>
 
     <div class="post-excerpt">

@@ -8,6 +8,7 @@ layout: default
     {% if page.category %}in <a
       href="/category/{{ page.category | slugify }}"
       >{{ page.category }}</a>{% endif %}
+    ({{page.content | reading_time | pluralize: "minute" }})
   </span>
   {% include post-tags.html %}
   <div class="post-body">
