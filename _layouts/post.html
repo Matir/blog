@@ -2,8 +2,11 @@
 layout: default
 ---
 
-<div class="post">
+<header>
   <h1 class="post-title">{{ page.title }}</h1>
+</header>
+<div class="content">
+<div class="post-meta">
   <span class="post-date">{{ page.date | date_to_string }}
     {% if page.category %}in <a
       href="/category/{{ page.category | slugify }}"
@@ -11,13 +14,14 @@ layout: default
     ({{page.content | reading_time | pluralize: "minute" }})
   </span>
   {% include post-tags.html %}
-  <div class="post-body">
-    {% include series.html %}
-    <div class="post-content">
-      {{ content }}
-    </div>
-    {% include affiliate.html %}
+</div>
+<div class="post-body">
+  {% include series.html %}
+  <div class="post-content">
+    {{ content }}
   </div>
+  {% include affiliate.html %}
+</div>
 </div>
 
 {% include related.html %}

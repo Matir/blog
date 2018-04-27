@@ -28,8 +28,11 @@ img.left {
 }
 
 // Adjust container
-.container > * {
-  max-width: 44rem;
+@media (min-width: 60rem)
+{
+  .container > * {
+    max-width: 44rem;
+  }
 }
 
 // Avoid scrollbar on sidebar
