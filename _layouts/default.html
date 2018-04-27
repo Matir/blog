@@ -3,13 +3,13 @@
 
   {% include head.html %}
 
-  <body class="theme-charcoal">
+  <body class="{{page.layout}}{% if page.url == '/' %} home{% endif %}">
 
     {% include sidebar.html %}
 
-    <div class="content container">
+    <main class="container">
       {{ content }}
-    </div>
+    </main>
 
   </body>
   {% include analytics.html %}
