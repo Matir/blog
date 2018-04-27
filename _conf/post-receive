@@ -9,6 +9,10 @@ export GEM_HOME=$(ruby -e 'puts Gem.user_dir')
 export GEM_PATH=$GEM_HOME
 export PATH=$GEM_HOME/bin:$PATH
 
+if ! test -d ${GEM_PATH}/gems/bundler* ; then
+  gem install bundler
+fi
+
 TMP_REPO=`mktemp -d`
 git clone ${GIT_DIR} ${TMP_REPO}
 bundle install --gemfile=${TMP_REPO}/Gemfile
