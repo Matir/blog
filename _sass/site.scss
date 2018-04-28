@@ -35,6 +35,13 @@ img.left {
   }
 }
 
+@media (min-width: 49rem)
+{
+  .container {
+    padding: 3rem;
+  }
+}
+
 // Avoid scrollbar on sidebar
 #sidebar {
   overflow-y: hidden;
