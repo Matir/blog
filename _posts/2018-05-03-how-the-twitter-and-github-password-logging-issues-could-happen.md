@@ -107,4 +107,22 @@ All of this would look great (well, acceptable, this is a blog post, not a real
 service) under code review.  We log the requests in our test environment for
 debugging purposes.  It's never obvious that a login request is being logged,
 and in the environment `prod` it's not.  But maybe one day our service grows and
-we start deploying in multiple regions, and so we rename environments.
+we start deploying in multiple regions, and so we rename environments.  What was
+`prod` becomes `prod-us` and we add `prod-eu`.  All of a sudden, our code that
+has not been logging passwords starts logging passwords, and it didn't even take
+a code push, just an environment variable to change!
+
+In reality, their code is probably much more complex and even harder to see the
+pattern.  I have spent multiple *days* in a team of multiple engineers trying to
+find one singular bug.  We could produce it via black-box testing (i.e.,
+pentest) but could not find it in the source code.  It turned out to be a
+misconfigured dependency injection caused by strange inheritance rules.
+
+Yes, it's bad that GitHub and Twitter had these bugs.  I don't mean to apologize
+for them.  But they handled them responsibly, and the whole community has had a
+chance to learn a lesson.  If GitHub had not disclosed, I suspect Twitter would
+not have noticed for much longer.  Other organizations are probably also
+checking.
+
+Every organization will have security issues.  It's how you handle them that
+counts.
