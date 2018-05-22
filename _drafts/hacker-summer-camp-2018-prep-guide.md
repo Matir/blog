@@ -137,7 +137,45 @@ and while BSidesLV can be fun due to its size, DEF CON is just something that
 everyone should experience, imo. It can be huge and overwhelming but also small
 and fun.
 
+## Travel Logistics ##
+
+If you haven't already booked your hotel and airfare, there's no time like the
+present.  Rooms at Caesar's Palace have dramatically increased in price.  The
+other properties in the area still have decent availability.  If you don't want
+to pay Caesar's pricing, Flamingo is a good choice for convenience (since the
+conference is spreading over there).  Alternatively, the rooms at Paris are
+quite nice, it gets you some distance from the crowds, but is still just across
+the street.  (Though if you've never been to Vegas before, note that "across the
+street" is still likely a 15-20 minute walk from your room to the conference
+floor.)
+
+Airfare is already going up as well.  Whether or not it will keep going up is a
+mystery (I don't think anyone really understands airfare pricing, even the
+airlines) but it's probably worth booking now.  One of the nice things about Las
+Vegas is the number of direct flights to get there.
+
+I like to arrive the afternoon before the first thing I'm attending, and depart
+the morning after the last.  While that does add to the hotel stay and the
+amount of time I'm spending in Las Vegas, arriving the afternoon before allows
+me to get settled in and be ready to go in the morning, and staying until the
+morning after ensures I don't have to leave early for my flight.  Additionally,
+I've found it's a great chance to have a post-con dinner or drinks with new
+connections (or ones I don't get to see often enough).
+
 ## What to Do ##
+
+The most ubiquituous piece of advice you'll find about attending DEF CON is to
+be an active participant and not just sit there and hope to have things happen
+by osmosis.  You absolutely can go and just sit in the talks and listen.  I did
+mostly that at my first DEF CON, and it was good -- but it wasn't great.
+**Participating** makes it great.
+
+So what do I mean by participating?  It can come in many forms:
+
+- Go to villages and try hands on activities (soldering, lockpicking, etc.)
+- Meet people and find out what they're working on
+- Find a group to try one of the contests (Scavenger Hunt, Badge Challenge,
+  etc.)
 
 ### What not to do! ###
 
