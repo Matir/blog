@@ -35,10 +35,12 @@ others have been around a lot longer than myself.  These are **itsc0rg1**,
 
 ## The Events ##
 
-There are 3 main events: DEF CON, Black Hat, and BSides Las Vegas (BSides LV).
-Along with this, there are dozens of parties (corporate sponsors, DEF CON local
-groups, etc.) and a number of smaller events like QueerCon and the Diana
-Initiative.
+There are 3 main events: [DEF CON](https://www.defcon.org), [Black
+Hat](https://www.blackhat.com), and [BSides Las
+Vegas](https://www.bsideslv.org/) (BSides LV).  Along with this, there are
+dozens of parties (corporate sponsors, DEF CON local groups, etc.) and a number
+of smaller events like [QueerCon](https://www.queercon.org) and the [Diana
+Initiative](https://www.dianainitiative.org/).
 
 ### DEF CON ###
 
@@ -332,7 +334,61 @@ about hacking, but it's a good idea either way.)
 
 ### Cash ###
 
-### Personal Supplies ###
+While Black Hat is probably not a problem with only a credit card, DEF CON is
+certainly a predominantly cash economy.  DEF CON badge purchase is cash only, no
+preregistration, the official DEF CON SWAG area is cash only, and all of the
+bars at the events are cash only.  Most of the vendors will deal mostly in cash
+(some exclusively) and, of course, Las Vegas as a city still sees a ton of cash
+flowing through.  (Please remember to tip!)
+
+Put simply, you'll want to bring cash with you.  At an absolute minimum, DEF CON
+badges are $280 this year.  Things can quickly add up though if you get swag,
+buy gadgets, drink a lot, etc.  Obviously, it's better to bring too much cash
+than too little, as using the ATMs on the casino floor will, at a minimum, carry
+a hefty fee.  At worst, the ATM may be compromised or have a skimmer on it.
+(Again, this may be a case where DEF CON's bark is worst than its bite, but it's
+still a good idea to be safe.)
+
+### Food and Drink ###
+
+You'll want to eat and drink.  Drinking alcohol is optional, but pretty common
+as well.  There's a wide range of strategies on how to do this depending upon
+your budget and personal tastes/desires.  Attendees on a tight budget can bring
+a lot with them (energy bars, etc.) or get food at a local grocery store, but
+Vegas is also home to a number of high quality restaurants, including some that
+are a great value.
+
+For quick/cheap eats, there's a number of options:
+
+1. Close by, both Caesars and Bally's have food courts with a variety of typical
+   food court fare.
+2. [Shake Shack](NOPUBLISH) down at New York New York is very popular.
+3. Fremont Street, just a little off the strip, has a number of good
+   budget-friendly options.
+
+Las Vegas buffets can be a good *value*, but they are often not *cheap* -- you
+can get a lot for your money, but it's still quite a bit more than the cheaper
+venues.  On the other hand, buffets can be good for a group because of the sheer
+variety of food available.  The [buffet at Caesar's (Bacchanal)](NOPUBLISH) is very good, but
+also fairly expensive -- around $50/person for dinner!
+
+At the upper end, Vegas is home to a number of Michelin Star and celebrity chef
+restaurants.  You can find something to suit any taste.  I once had a coworker
+suggest a restaurant to me with a several-hundred dollar tasting menu.  (I'm
+sure it's great, but I doubt I have the palette to appreciate it.)
+
+While convenient, I'd skip the food lines setup in a number of the rooms at DEF
+CON and Black Hat.  These provide low-quality food at very high prices.  (Think
+vastly overpriced sandwiches and hot dogs.)
+
+Regardless of how you choose to eat, you must stay hydrated.  Las Vegas is both
+hot and dry, which makes for quick dehydration.  Even being inside you may find
+yourself less hydrated than usual due to the dry air.  Bottled water can be
+expensive, especially if you buy it from the hotel, so many choose to either
+[have some delivered](NOPUBLISH) or refill a [Camelbak](NOPUBLISH) or [Sigg-style water
+bottle](NOPUBLISH).
+
+### Other Supples ###
 
 ### Ask the Panel: What do you carry with you at the cons? ###
 
