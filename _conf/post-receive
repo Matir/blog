@@ -22,10 +22,12 @@ function install_branch {
   git clone --branch ${BRANCH} ${GIT_DIR} ${TMP_REPO}
   GIT_REV=$(git -C ${TMP_REPO} --git-dir .git rev-parse --short --verify HEAD)
 
-  CUR_REV=$(basename $(readlink ${SRV_DIR}/${BRANCH}))
-  if [ "${CUR_REV}" == "${GIT_REV}" ] ; then
-    echo "${SRV_DIR}/${BRANCH} already at ${GIT_REV}"
-    return 0
+  if [ -l ${SRV_DIR}/${BRANCH} ] ; then
+    CUR_REV=$(basename $(readlink ${SRV_DIR}/${BRANCH}))
+    if [ "${CUR_REV}" == "${GIT_REV}" ] ; then
+      echo "${SRV_DIR}/${BRANCH} already at ${GIT_REV}"
+      return 0
+    fi
   fi
 
   bundle install --gemfile=${TMP_REPO}/Gemfile
