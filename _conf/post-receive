@@ -16,20 +16,32 @@ if ! test -d ${GEM_PATH}/gems/bundler* ; then
   gem install bundler
 fi
 
-TMP_REPO=`mktemp -d`
-git clone ${GIT_DIR} ${TMP_REPO}
-bundle install --gemfile=${TMP_REPO}/Gemfile
-GIT_REV=$(git -C ${TMP_REPO} --git-dir .git rev-parse --short --verify HEAD)
-jekyll build -s ${TMP_REPO} -d ${SRV_DIR}/${GIT_REV}
-echo "Compressing html/css/js files."
-find ${SRV_DIR}/${GIT_REV} -type f -name '*.html' -o -name '*.js' -o -name '*.css' | while read file ; do
-  gzip < ${file} > ${file}.gz
-done
-echo "Linking ${SRV_DIR}/current to ${SRV_DIR}/${GIT_REV}"
-ln -snf ${SRV_DIR}/${GIT_REV} ${SRV_DIR}/current
+function install_branch {
+  BRANCH="${1}"
+  TMP_REPO=$(mktemp -d)
+  git clone --branch ${BRANCH} --depth 1 ${GIT_DIR} ${TMP_REPO}
+  GIT_REV=$(git -C ${TMP_REPO} --git-dir .git rev-parse --short --verify HEAD)
 
-# Cleanup
-rm -rf ${TMP_REPO}
-for i in $(ls ${SRV_DIR} | grep -v current | grep -v ${GIT_REV}) ; do
-  rm -rf ${SRV_DIR}/${i}
-done
+  CUR_REV=$(basename $(readlink ${SRV_DIR}/${BRANCH}))
+  if [ "${CUR_REV}" -eq "${GIT_REV}" ] ; then
+    echo "${SRV_DIR}/${BRANCH} already at ${GIT_REV}"
+    return 0
+  fi
+
+  bundle install --gemfile=${TMP_REPO}/Gemfile
+  jekyll build -s ${TMP_REPO} -d ${SRV_DIR}/${GIT_REV}
+
+  echo "Compressing html/css/js files."
+  find ${SRV_DIR}/${GIT_REV} -type f -name '*.html' -o -name '*.js' -o -name '*.css' | while read file ; do
+    gzip < ${file} > ${file}.gz
+  done
+
+  echo "Linking ${SRV_DIR}/${BRANCH} to ${SRV_DIR}/${GIT_REV}"
+  OLD_PATH=$(readlink ${SRV_DIR}/${BRANCH})
+  ln -snf ${SRV_DIR}/${GIT_REV} ${SRV_DIR}/${BRANCH}
+  echo "Cleaning up ${OLD_PATH}"
+  # rm -rf ${OLD_PATH}
+}
+
+install_branch current
+install_branch preview
