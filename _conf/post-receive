@@ -19,11 +19,11 @@ fi
 function install_branch {
   BRANCH="${1}"
   TMP_REPO=$(mktemp -d)
-  git clone --branch ${BRANCH} --depth 1 ${GIT_DIR} ${TMP_REPO}
+  git clone --branch ${BRANCH} ${GIT_DIR} ${TMP_REPO}
   GIT_REV=$(git -C ${TMP_REPO} --git-dir .git rev-parse --short --verify HEAD)
 
   CUR_REV=$(basename $(readlink ${SRV_DIR}/${BRANCH}))
-  if [ "${CUR_REV}" -eq "${GIT_REV}" ] ; then
+  if [ "${CUR_REV}" == "${GIT_REV}" ] ; then
     echo "${SRV_DIR}/${BRANCH} already at ${GIT_REV}"
     return 0
   fi
@@ -40,7 +40,7 @@ function install_branch {
   OLD_PATH=$(readlink ${SRV_DIR}/${BRANCH})
   ln -snf ${SRV_DIR}/${GIT_REV} ${SRV_DIR}/${BRANCH}
   echo "Cleaning up ${OLD_PATH}"
-  # rm -rf ${OLD_PATH}
+  rm -rf ${OLD_PATH}
 }
 
 install_branch current
