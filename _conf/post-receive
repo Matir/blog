@@ -22,7 +22,7 @@ function install_branch {
   git clone --branch ${BRANCH} ${GIT_DIR} ${TMP_REPO}
   GIT_REV=$(git -C ${TMP_REPO} --git-dir .git rev-parse --short --verify HEAD)
 
-  if [ -l ${SRV_DIR}/${BRANCH} ] ; then
+  if [ -L "${SRV_DIR}/${BRANCH}" ] ; then
     CUR_REV=$(basename $(readlink ${SRV_DIR}/${BRANCH}))
     if [ "${CUR_REV}" == "${GIT_REV}" ] ; then
       echo "${SRV_DIR}/${BRANCH} already at ${GIT_REV}"
@@ -44,7 +44,7 @@ function install_branch {
   OLD_PATH=$(readlink ${SRV_DIR}/${BRANCH})
   ln -snf ${SRV_DIR}/${GIT_REV} ${SRV_DIR}/${BRANCH}
   for f in ${SRV_DIR}/* ; do
-    if [ ! -l ${f} ] ; then continue ; fi
+    if [ ! -L "${f}" ] ; then continue ; fi
     if [ "$(readlink ${f})" == "${OLD_PATH}" ] ; then return 0 ; fi
   done
   echo "Cleaning up ${OLD_PATH}"
