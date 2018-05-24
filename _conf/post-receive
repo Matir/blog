@@ -18,6 +18,7 @@ fi
 
 function install_branch {
   BRANCH="${1}"
+  shift
   TMP_REPO=$(mktemp -d)
   git clone --branch ${BRANCH} ${GIT_DIR} ${TMP_REPO}
   GIT_REV=$(git -C ${TMP_REPO} --git-dir .git rev-parse --short --verify HEAD)
@@ -32,7 +33,7 @@ function install_branch {
 
   if [ ! -d ${SRV_DIR}/${GIT_REV} ] ; then
     bundle install --gemfile=${TMP_REPO}/Gemfile
-    jekyll build -s ${TMP_REPO} -d ${SRV_DIR}/${GIT_REV}
+    jekyll build -s ${TMP_REPO} -d ${SRV_DIR}/${GIT_REV} "$@"
 
     echo "Compressing html/css/js files."
     find ${SRV_DIR}/${GIT_REV} -type f -name '*.html' -o -name '*.js' -o -name '*.css' | while read file ; do
@@ -52,4 +53,4 @@ function install_branch {
 }
 
 install_branch current
-install_branch preview
+install_branch preview -D
