@@ -44,12 +44,13 @@ Initiative](https://www.dianainitiative.org/).
 
 ### DEF CON ###
 
-**DEF CON** is the largest and original of the 3 conferences.  Founded in 1993,
-it is one of the longest running Hacker/Computer Security conferences, drawing
-an estimated 25,000 attendees for DEF CON 25 in 2017.  It's widely speculated
-that this year's attendance will hit 30,000, so be ready to meet some new
-friends.  Introverts and those whose dislike crowds will want to make sure to be
-prepared to take breaks from the masses at DEF CON.
+[**DEF CON**](https://www.defcon.org) is the largest and original of the 3
+conferences.  Founded in 1993, it is one of the longest running Hacker/Computer
+Security conferences, drawing an estimated 25,000 attendees for DEF CON 25 in
+2017.  It's widely speculated that this year's attendance will hit 30,000, so be
+ready to meet some new friends.  Introverts and those whose dislike
+crowds will want to make sure to be prepared to take breaks from the
+masses at DEF CON.
 
 In case you missed the big announcement, DEF CON will be spread across two
 hotels this year: Caesar's Palace and the Flamingo.  I'm excited about this
@@ -199,7 +200,8 @@ manage to get to all the things I wanted to.
   - Wireless
   - IoT
   - Car Hacking
-  - ...
+  - Election Hacking
+  - + More every year (and some I'm sure I've forgotten)
 - Vendors willing to take your money
 - Contests
   - Scavenger Hunt
@@ -213,6 +215,15 @@ manage to get to all the things I wanted to.
   - Drinking (who knew?)
   - Networking
   - Parties (Official & Unofficial)
+
+I put a big emphasis on the hands on activities.  I have seen people demo new
+tools (DEF CON demo labs), taught kids how to hack (R00tz Asylum), first learned
+to pick locks (Lockpicking Village), learned about network forensics (Capture
+the Packet), seen people hack cars (Car Hacking Village) and hacked on IoT
+devices and voting machines (IoT and Election Hacking villages).  I meet up with
+people I only see once a year and share what we're both working on, meet friends
+of friends, and so much more.  Every year I spend every waking moment doing
+stuff and still wish I'd had more time at the end.
 
 ### What not to do! ###
 
@@ -286,15 +297,17 @@ When it comes to laptops, there are two questions to be answered: will you bring
 one with you at all, and if so, will you carry it with you daily?
 
 I think most will end up bringing a laptop.  Some might feel comfortable
-bringing their everyday laptop, and I've done that before (after swapping out the SSD
-for one with an alternate image to protect my data, just in case).  This year,
-however, I'll be carrying a Chromebook -- the Asus C302CA with Crouton
-installed.  If all you need is internet access, a Chromebook offers the highest
-level of security while on a hostile network.  Placing it in developer mode does
-reduce the security guarantees somewhat, but also allows you to run Crouton,
-which gives a more or less fully functional Debian Linux chroot.  You can also
-run Debian derivatives like Kali, which is what I do, since I will use the
-device for CTFs and contests.
+bringing their everyday laptop, and I've done that before (after swapping out
+the SSD for one with an alternate image to protect my data, just in case).  This
+year, however, I'll be carrying a Chromebook -- the [Asus
+C302CA](https://amzn.to/2IJs3Tq) with
+[Crouton](https://github.com/dnschneid/crouton) installed.  If all you need is
+internet access, a Chromebook offers the highest level of security while on a
+hostile network.  Placing it in developer mode does reduce the security
+guarantees somewhat, but also allows you to run Crouton, which gives a more or
+less fully functional Debian Linux chroot.  You can also run Debian derivatives
+like Kali, which is what I do, since I will use the device for CTFs and
+contests.
 
 If you're not going to participate in a contest or activity that requires the
 use of a laptop, I encourage you to leave it in your hotel room safe.  (Yes, I
@@ -307,11 +320,13 @@ Once you've decided what you'll bring, you should take some reasonable steps to
 secure your electronics.
 
 On all devices, you should setup a VPN service (either commercial or your own)
-and use it at all times.  I even use it over the cellular network because of the
-rumors of Stingrays and Rogue Cell Towers.  (Yes, if the operator of those
-devices has an 0-day for your baseband, you're still screwed.)  You should also
-ensure that all devices are using a password for login and lock after going to
-screensaver/sleep mode.
+and use it at all times.  I've used [Private Internet
+Access](https://www.privateinternetaccess.com) when travelling, but there are a
+number of providers with good reputations out there.  I even use it over the
+cellular network because of the rumors of Stingrays and Rogue Cell Towers.
+(Yes, if the operator of those devices has an 0-day for your baseband, you're
+still screwed.)  You should also ensure that all devices are using a password
+for login and lock after going to screensaver/sleep mode.
 
 If you connect to the conference WiFi, connect to the "secure" DEF CON network
 that uses 802.1x authentication.  If you've setup the proper certificate, this
@@ -362,15 +377,17 @@ For quick/cheap eats, there's a number of options:
 
 1. Close by, both Caesars and Bally's have food courts with a variety of typical
    food court fare.
-2. [Shake Shack](NOPUBLISH) down at New York New York is very popular.
+2. [Shake Shack](https://www.shakeshack.com/location/las-vegas-nv/) down the
+   strip at New York New York is very popular.
 3. Fremont Street, just a little off the strip, has a number of good
    budget-friendly options.
 
 Las Vegas buffets can be a good *value*, but they are often not *cheap* -- you
 can get a lot for your money, but it's still quite a bit more than the cheaper
 venues.  On the other hand, buffets can be good for a group because of the sheer
-variety of food available.  The [buffet at Caesar's (Bacchanal)](NOPUBLISH) is very good, but
-also fairly expensive -- around $50/person for dinner!
+variety of food available.  The [buffet at Caesar's
+(Bacchanal)](https://www.caesars.com/caesars-palace/restaurants/bacchanal-buffet#.WwXyg3XwZFQ)
+is very good, but also fairly expensive -- around $50/person for dinner!
 
 At the upper end, Vegas is home to a number of Michelin Star and celebrity chef
 restaurants.  You can find something to suit any taste.  I once had a coworker
@@ -385,12 +402,102 @@ Regardless of how you choose to eat, you must stay hydrated.  Las Vegas is both
 hot and dry, which makes for quick dehydration.  Even being inside you may find
 yourself less hydrated than usual due to the dry air.  Bottled water can be
 expensive, especially if you buy it from the hotel, so many choose to either
-[have some delivered](NOPUBLISH) or refill a [Camelbak](NOPUBLISH) or [Sigg-style water
-bottle](NOPUBLISH).
+[have some delivered](https://amzn.to/2x6697w) or refill a
+[Camelbak](https://amzn.to/2kibsrc) or [Sigg-style water
+bottle](https://amzn.to/2GK4QLh).  I've let myself get dehydrated a few times
+during Hacker Summer Camp, and it really ruins things.  Even once you start
+drinking properly, it will be a day or two before you start feeling right again.
+In a 4 day event, that's a long time to feel like crap.
 
-### Other Supples ###
+Speaking of drinking: a **lot** of drinking goes on at DEF CON, BSidesLV, and the
+associated parties.  I've found a good way to help avoid a hangover is one
+drink (cup/glass/bottle) of water to each alcoholic drink I go through.  I'm not
+sure if it slows my intake of alcohol or just keeps me more hydrated to avoid
+the hangover, but it does work.
+
+If you're drinking on a budget, try to get yourself invited to sponsored
+parties/events with open bars.  I've also heard some people carry flasks, but I
+don't know how well that works out.  The bars setup within the con space are
+going to serve mainstream drinks for hotel prices (think $6 for Bud Light and $8
+for house/well liquor).  If you're at BSidesLV or want to travel over to
+Tuscany, [Pub 365](https://www.tuscanylv.com/restaurant/pub-365/) has a great
+selection (365 beers!) and is pretty reasonably priced, with many craft beers
+for $5-6 each.  The food at Pub 365 is solid as well.
+
+My personal favorite food and drink venues in Vegas:
+
+- [Pub 365](https://www.tuscanylv.com/restaurant/pub-365/) at Tuscany for the
+  Craft Beer selection, solid food, and decent atmosphere.  Busy during
+  BSidesLV, quiet the rest of the week.
+- [Gordon Ramsay Pub &
+  Grill](https://www.caesars.com/caesars-palace/restaurants/gordon-ramsay-pub-and-grill)
+  at Caesar's Palace has good service and excellent food.  A little overpriced
+  to go with the celebrity name, but not over the top.
+- [The Buffet at
+  Wynn](http://www.wynnlasvegas.com/Dining/CasualDining/TheBuffet) for a buffet
+  and a break from the conference hotels.  On the expensive end for buffets, but
+  the food is absolutely top notch and the pastries in the dessert section are
+  the best.
+- [Shake Shack](https://www.shakeshack.com/location/las-vegas-nv/) is one of my
+  wife's favorites, and she introduced me to it last year.  Solid burger, great
+  shakes, and quick to boot.  The burger here was better than Gordon Ramsay
+  Burger at Planet Hollywood.
+- [Carnegie
+  Deli](https://www.mirage.com/en/restaurants/carnegie-delicatessen.html) at the
+  Mirage has solid deli-style food.  The sandwiches are expensive for a
+  sandwich, but big enough to split or to have for two meals.  Seriously.  (Even
+  for a big guy like me!)
+
+### Other Supplies ###
+
+Clothing should be pretty obvious, and you can count on August in Las Vegas
+being hot.  Depending on which events you are attending, the social conventions
+of dress code may vary somewhat.  For example, at both BSidesLV and DEF CON, the
+"norm" is a t-shirt and shorts or jeans.  Black Hat will be a mix of t-shirts
+and polos with jeans or khakis.  (And yes, some button-down shirts and suits
+too.)  Of the three, Black Hat probably has the most information communicated by
+what someone is wearing.  You can usually spot upper management, middle
+management, and engineers on sight.
+
+If you're planning to go to parties held at any of the Vegas clubs, you'll
+probably need to plan for their dress codes.  Most of the clubs will enforce
+their code after a certain time, and at a minimum men will want nice jeans (not
+torn/ripped and no shorts) and a collared shirt.  I won't begin to pretend to
+know enough about women's fashion to say anything there, but just understand the
+clubs will be enforcing dress codes in the evenings.
+
+On the other end of the spectrum, there are also pool parties at BSidesLV and
+Queercon.  If you want to attend these, you should probably bring a swimsuit.
+Or, you know, shorts you don't mind getting wet.
+
+You should also bring some aspirin or ibuprofen ("Advil" or "Motrin"), I don't
+suggest paracetamol ("Tylenol") because you'll probably be drinking a bit, and
+your liver won't like the combination.  (Note: I'm not a doctor and this isn't
+medical advice, but you should probably keep that in mind.)
+
+As to everyday carry, we've already covered the cell phone everyone will be
+carrying, and the water bottle everyone *should* be carrying.  I also suggest
+carrying a backup USB battery (even a small one) for your phone, your cash, and
+hotel keycard.  Some also like notebooks or other ways to take notes during
+talks or when meeting people.
 
 ### Ask the Panel: What do you carry with you at the cons? ###
+
+**Matir**: Entirely too much.  I carry a cell phone, my
+[Skeletool](https://amzn.to/2LpKlHf), cash, an [Anker
+Powercore](https://amzn.to/2kk4ouj) battery, hotel room key, a small [Moleskine
+notebook](https://amzn.to/2LoKI4U), business cards, and a [steel-barreled
+pen](https://amzn.to/2LkT8KB).  I carry it all in a Timbuk2 backpack
+specifically chosen to not be too big -- it forces me to make decisions about
+what I carry, and prevents me from just taking everything with me.  This year
+I'll be adding an [aluminum water bottle](https://amzn.to/2LsstLV) to stay hydrated.
+
+**illusorycake**: A laptop with my favorite Linux distro on it, water(s),
+relevant power cords, a notebook or two, a few pens, chapstick, ibuprofen, cash,
+ID, and all the swag I can find and fit in whatever bag I have with me. If
+you're looking for a new t-shirt wardrobe, you can easily obtain it at Hacker
+Summer Camp. One addition I'll be making to my bag this year is a portable
+soldering iron so I can solder in a peaceful place and at my own pace.
 
 ## First Timers ##
 
