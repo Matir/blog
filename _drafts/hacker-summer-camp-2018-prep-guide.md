@@ -490,7 +490,8 @@ notebook](https://amzn.to/2LoKI4U), business cards, and a [steel-barreled
 pen](https://amzn.to/2LkT8KB).  I carry it all in a Timbuk2 backpack
 specifically chosen to not be too big -- it forces me to make decisions about
 what I carry, and prevents me from just taking everything with me.  This year
-I'll be adding an [aluminum water bottle](https://amzn.to/2LsstLV) to stay hydrated.
+I'll be adding an [aluminum water bottle](https://amzn.to/2LsstLV) to stay
+hydrated.
 
 **illusorycake**: A laptop with my favorite Linux distro on it, water(s),
 relevant power cords, a notebook or two, a few pens, chapstick, ibuprofen, cash,
@@ -499,10 +500,92 @@ you're looking for a new t-shirt wardrobe, you can easily obtain it at Hacker
 Summer Camp. One addition I'll be making to my bag this year is a portable
 soldering iron so I can solder in a peaceful place and at my own pace.
 
+**fadec0d3**: Bring a (lightweight) burner laptop you’re comfortable with using.
+
+**itsC0rg1**: Deodorant, a water bottle and protein bars.
+
+**dissect0r**: Backpack with the necessities (laptop, chargers, lock picks,
+etc.), extra cash, snacks, hydration.
+
+**Anonymous**: A backpack of some sort. (I'm not picky which one.) A portable
+computer I can wipe. (Specifically a Lenovo 11e with an upgraded SSD running
+Kali Linux.) A small soldering kit.  A kit of electronics tools.  My con phone
+(not so much a burner as simply a phone, like the aforementioned laptop, that I
+can easily wipe once home).  In the hotel room, I might also have things like
+more electronics parts, etc. mainly in anticipation of a contest or badge that I
+can play around with.
+
 ## First Timers ##
 
 ### Ask the Panel: What's one thing you wish you knew before your first DEF CON?  ###
 
+**Matir**: I should have been ready to *do* more than just go to talks and
+parties.  Being ready for competitions, being ready to be more social, having a
+better plan.  If you don't know all the things that are going on, it's so easy
+to become frozen and overwhelmed by it all.
+
+**illusorycake**: I wish I had known the scope of DEF CON. There are lots of
+different things going on: talks, villages, smaller conferences/events that
+overlap DEF CON, etc. It can be overwhelming to even simply just know what is
+available for you to do. I recommend talking to folks who have been before and
+asking them questions about anything that's confusing once you have a
+schedule/agenda in front of you to reference.
+
+**fadec0d3**: Don’t worry about missing lectures, they’re recorded.  Don’t worry
+about missing lectures, they’re recorded.
+
+**itsC0rg1**: Taking breaks is important, crowds are a bit overwhelming.
+
+**dissect0r**: I tell newcomers not to be too rigid about their scheduling
+expectations, don’t expect to make it to every exciting talk you want to see.
+Sometimes the lines are staggering, and standing room only is not always a fun
+way learn new things.  I expect to catch some of those epic talks later online
+or from the recordings.  Be flexible, don’t be afraid to break from your
+expected schedule to grab a drink with some new friends, and definitely bring
+some extra cash to blow on vendor wares!
+
+**Anonymous**: That not sleeping is ok but you still need to sleep.
+
 ## Bonus Panel Question: What's your best Hacker Summer Camp memory? ##
 
+**Matir**: Dual Core performing at The Summit (an [EFF](https://www.eff.org)
+fundraiser party) at DEF CON 20.  It was an incredible show, and I really got
+into it, plus the party had great people and great drinks.  There are so many
+runners up: hanging out with one of my best friends until early in the morning,
+a 2nd place finish in Capture the Packet, and getting a bright red mohawk for
+mohawkcon.
+
+**illusorycake**: Pros vs Joes at BSides Las Vegas. If you're looking for a
+practical experience of what it's like to be a security engineer, this is the
+CTF for you.
+
+**fadec0d3**: Accidentally overloading the electronic badge which broadcast to
+the radio, and ripping apart someone’s phone in the name of science to pick up
+IR visually for the electronic badge challenge.
+
+**itsC0rg1**: A Goon handing me a bunch of free stickers when I was nearly
+collapsed from exhaustion.
+
+**dissect0r**: There are a bunch, I don’t want to limit myself to just one.
+Some of my fondest memories are: meeting heroes in the security space — this
+brings a sense of realism to meet some of these people you admire online.
+Catching up with good friends that you don’t see near often enough.  And
+learning new tricks and hacks that you didn’t know before.
+
+**Anonymous**: Hanging out late at night working on some random contest. DEF CON
+can be such a nice blend of social and hacking, which is something we don't
+always get to do if we don't have access to a hackerspace and spend most of our
+time at home working on things. I've hatched so many plans and schemes and
+learned so much just sitting in the con area chatting late at night.
+
 ## Summary ##
+
+I hope this has been at least a little bit useful to you, or at least a good
+reminder of good times at Hacker Summer Camp.  Feel free to share or hit me up
+on [Twitter](https://twitter.com/matir) if you have ideas or suggestions for
+things I should have covered.
+
+Finally, a big thanks to illusorycake, fadec0d3, itsC0rg1, dissect0r, and
+Anonymous for contributing their thoughts.  You all are great friends and
+hackers.  I owe each of you a drink (or several) at Hacker Summer Camp this
+year.
