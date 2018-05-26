@@ -42,7 +42,18 @@ dozens of parties (corporate sponsors, DEF CON local groups, etc.) and a number
 of smaller events like [QueerCon](https://www.queercon.org) and the [Diana
 Initiative](https://www.dianainitiative.org/).
 
+As in year's past, Black Hat begins the week with Trainings Saturday-Tuesday and
+Briefings on Wednesday and Thursday.  DEF CON follows up with DC 101 talks on
+Thursday, and all the events are open Friday-Sunday.  BSidesLV overlaps with
+Black Hat on Tuesday and Wednesday.  This means you can't realistically do all 3
+cons -- I've tried, it really doesn't work.  The closest might be doing BSidesLV
+on Tuesday, Black Hat Briefings Wednesday and Thursday, then DEF CON Friday
+through Sunday.  It works on paper, but unless you have way more energy than I
+do, it'll get you burned out pretty quickly.
+
 ### DEF CON ###
+
+[![DEF CON Logo](/img/blog/hsc2018/defcon_bw.jpg){:.right}](https://www.defcon.org)
 
 [**DEF CON**](https://www.defcon.org) is the largest and original of the 3
 conferences.  Founded in 1993, it is one of the longest running Hacker/Computer
@@ -58,6 +69,9 @@ change, but it does mean more time out in the Las Vegas sun.  This seems to be
 due to the continued growth of the DEF CON "Village" concept, which is very
 exciting to me -- it gives more space for the niche interests within the hacker
 subculture to come together and explore their specific topics in more depth.
+(DEF CON Villages are topic-specific areas with presentations and hands-on
+activities for a small subarea/niche of the larger hacker/security community,
+like lockpicking or IoT security.)
 
 DEF CON has earned the nickname "line con" among some attendees, as it seems
 like there's a line for everything.  Want to attend a talk?  Line up an hour
@@ -83,9 +97,9 @@ briefings are also high quality, but will also eventually end up on YouTube.  As
 a general rule, those attending either briefings or trainings are getting their
 pass paid for by their employer or self-employed and able to deduct the expense.
 
-Here you'll find far more attendees in polos or button-up shirts and khakis than in
-the black t-shirt and jeans of DEF CON.  You'll also find the occasional suit,
-which I really don't understand in the Las Vegas heat.
+Here you'll find far more attendees in polos or button-up shirts and khakis than
+in the black t-shirt and jeans of DEF CON.  You'll also find the occasional
+suit, which I really don't understand in the Las Vegas heat.
 
 Black Hat has a much larger vendor area than DEF CON, but in this case, I *do*
 mean vendors to sell you security snake oil.  Every IDS, endpoint security
@@ -141,6 +155,8 @@ everyone should experience, imo. It can be huge and overwhelming but also small
 and fun.
 
 ## Travel Logistics ##
+
+![Vegas](/img/blog/hsc2018/vegas_sign.jpg){:.center}
 
 If you haven't already booked your hotel and airfare, there's no time like the
 present.  Rooms at Caesar's Palace have dramatically increased in price.  The
@@ -278,6 +294,16 @@ everything I could possibly want to have with me.  (Ok, maybe not quite that
 bad, but I still tend to bring far more than necessary.)  Others prefer a much
 more minimalist approach.  Both probably work out well for different
 individuals.  (Or maybe I'm quite unreasonable about what I bring.)
+
+If you want to participate in some of the hands-on activities, you may either
+want or need to bring more specialized equipment.  For example, if you want to
+do hardware hacking, it might be easier to bring your own [soldering
+iron](https://amzn.to/2J4FBbB) than to try to get into the Hardware Hacking
+Village when you want.  Perhaps you'll bring your own
+[lockpicks](https://www.sparrowslockpicks.com/) for the Lockpicking Village.
+(The lockpicks in the village tend to be cheap picks that end up being badly
+abused during the con, so this can be great if you care about working with
+better tools.)
 
 ### Electronics ###
 
@@ -491,7 +517,8 @@ pen](https://amzn.to/2LkT8KB).  I carry it all in a Timbuk2 backpack
 specifically chosen to not be too big -- it forces me to make decisions about
 what I carry, and prevents me from just taking everything with me.  This year
 I'll be adding an [aluminum water bottle](https://amzn.to/2LsstLV) to stay
-hydrated.
+hydrated and a [cooling towel](https://amzn.to/2IPjmXK) to help stay cool in the
+Las Vegas sun.
 
 **illusorycake**: A laptop with my favorite Linux distro on it, water(s),
 relevant power cords, a notebook or two, a few pens, chapstick, ibuprofen, cash,
@@ -520,6 +547,11 @@ can play around with.
 If this happens to be your first Hacker Summer Camp, it's pretty easy to be
 overwhelmed by it all.  Actually, even if it's *not* your first time, it's
 pretty easy to be overwhelmed by it all.
+
+If you haven't seen it before, you might want to check out [the DEF CON
+Documentary](https://www.youtube.com/watch?v=3ctQOmjQyYg) produced by [Jason
+Scott (@textfiles)](https://www.twitter.com/textfiles).  While it's a very small
+slice of DEF CON, it's still well produced and a very interesting watch.
 
 ### 3-2-1 Rule ###
 
@@ -575,6 +607,27 @@ my first time, and it could have been so much better if I hadn't.
 I'm not saying you should make a minute-by-minute (or even hour-by-hour) plan.
 But you should have an idea of what's available to do, what your top goals are,
 and what is located where.
+
+For example, you might want to take a look at the [Caesar's property
+map](https://www.caesars.com/content/dam/clv/Property/Maps/clv-property-map-042018.pdf)
+and the [conference area floor
+plans](https://www.caesars.com/content/dam/meetings/PDFs/FloorPlans/Caesars_Palace_Las_Vegas-2014-FLOOR-PLAN.pdf)
+to get an idea of what is where and where you might be going.  You can look at
+last year's [DEF CON
+Program](https://media.defcon.org/DEF%20CON%2025/DEFCON-25-Program.pdf) to get
+an idea of how the layout might look, but DEF CON tends to reimagine how the
+space gets used year to year based on the evolution of the conference and the
+lessons learned from the previous year, so don't count on it being the same.
+
+Likewise, as the event and talk schedules get released, you might want to look
+at them and start making a list of things you "must do".  (Again, recall that
+talks will be placed online, so unless you feel like it's particularly timely
+for you, I suggest focusing on the things you can only do "in person".)  This
+can be very useful for your evening plans such as parties and musical
+performances.  You can follow
+[@defconparties](https://twitter.com/defconparties) on Twitter for all the
+Hacker Summer Camp party information.  (Don't let the name confuse you, they
+cover all the parties of the week.)
 
 ### Ask the Panel: What's one thing you wish you knew before your first DEF CON?  ###
 
