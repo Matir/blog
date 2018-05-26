@@ -517,6 +517,65 @@ can play around with.
 
 ## First Timers ##
 
+If this happens to be your first Hacker Summer Camp, it's pretty easy to be
+overwhelmed by it all.  Actually, even if it's *not* your first time, it's
+pretty easy to be overwhelmed by it all.
+
+### 3-2-1 Rule ###
+
+If you attend the DEF CON 101 session, you'll hear about the 3-2-1 rule, but I
+think it's so important, that it bears repeating here.  At an absolute minimum,
+you should get **3 hours of sleep, 2 meals, and 1 shower each day**.  This rule
+is both for your own safety and the comfort of others.  (I wonder if they should
+add a "4" for "4 liters of water".)
+
+On behalf of fellow attendees, the shower is the most important part of that
+rule.  Because of the heat and the walking, I will tend to end up taking 2
+showers every day: one in the morning to wake me up, and one just before dinner,
+because I don't want to smell at dinner.  One of my friends said she was going
+to bring travel sized deodorants for other attendees, and she wasn't kidding.
+Please don't be that person.  (In case you're unaware, "body sprays" like Axe
+are *not* a deodorant.  Then you just smell like sweat and cheap body spray.)
+
+### Manage Your Energy ###
+
+I've definitely [mentioned this
+before](/2016/02/18/hacker-summer-camp-planning-guide.html), but it bears
+repeating.  Even if you're only going to a single con of the week, it's a long
+event with long days, and it's in a hot climate.  If you try to do everything,
+you'll just end up feeling like crap or burning yourself out.  Manage your
+energy as you go, and if you need to take a break, take it!  I know FOMO (fear
+of missing out) is a thing, but if you burn yourself out too far, you'll miss
+out on a lot more than a short break.
+
+Taking a break also doesn't mean you have to completely stop doing anything con
+related.  There are some ways to recover your energy while still having a good
+time and doing things:
+
+- Grab a (new) friend and head to one of the quieter bars for a drink and to
+  catch up.
+- If you're staying onsite or at one of the other Caesar's properties with the
+  talks on TV, head to your room and watch a talk.
+- If you know someone from one of the groups that has a suite, head up there to
+  hang out.  They tend to be a *lot* quieter and more chill than the con floor.
+- If you or someone you know has brought electronic gear with them, find a quiet
+  place to work on the electronic badge (or
+  [#badgelife](https://twitter.com/hashtag/badgelife?lang=en)).
+
+You should also be prepared to walk a *lot*.  I know, a lot of us hackers are
+far more used to sitting in front of the comforting glow of a few LCDs, but even
+within the hotels, you'll be walking a lot between areas.  So wear comfortable
+shoes and be ready for the hot Vegas sun to make you sweat, a lot.
+
+### Plan Ahead ###
+
+You should do some amount of planning ahead for con.  I failed miserably at this
+my first time, and it could have been so much better if I hadn't.
+
+I'm not saying you should make a minute-by-minute (or even hour-by-hour) plan.
+But you should have an idea of what's available to do, what your top goals are,
+and what is located where.
+
 ### Ask the Panel: What's one thing you wish you knew before your first DEF CON?  ###
 
 **Matir**: I should have been ready to *do* more than just go to talks and
@@ -584,6 +643,10 @@ I hope this has been at least a little bit useful to you, or at least a good
 reminder of good times at Hacker Summer Camp.  Feel free to share or hit me up
 on [Twitter](https://twitter.com/matir) if you have ideas or suggestions for
 things I should have covered.
+
+I suggest also checking out the [Defcon for
+N00bs](https://github.com/hacking-and-coffee/defcon-for-n00bs) guide for other
+advice and another take on preparing for con.
 
 Finally, a big thanks to illusorycake, fadec0d3, itsC0rg1, dissect0r, and
 Anonymous for contributing their thoughts.  You all are great friends and
