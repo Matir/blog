@@ -14,6 +14,7 @@ excerpt:
   hackers, information security professionals and enthusiasts, and has been
   growing for 25 years.  In this post, I'll present my views on how to get the
   most out of your 2018 trip to the desert.
+date: 2018-05-26
 ---
 For those unfamiliar with the term, Hacker Summer Camp is the combination of DEF
 CON, Black Hat USA, and BSides Las Vegas that takes place in the hot Las Vegas
@@ -68,9 +69,15 @@ change, but it does mean more time out in the Las Vegas sun.  This seems to be
 due to the continued growth of the DEF CON "Village" concept, which is very
 exciting to me -- it gives more space for the niche interests within the hacker
 subculture to come together and explore their specific topics in more depth.
-(DEF CON Villages are topic-specific areas with presentations and hands-on
+
+DEF CON Villages are topic-specific areas with presentations and hands-on
 activities for a small subarea/niche of the larger hacker/security community,
-like lockpicking or IoT security.)
+like lockpicking or IoT security.  If you're into one of these areas (or want to
+explore it), the Villages are a great opportunity.  Unlike main track talks,
+Village speakers will often hang around after their talk slot to talk to
+attendees, so you might get some opportunities to dig into their knowledge.  If
+you're really into their area of research, offer to buy them a drink -- that's a
+great way to show appreciation for them sharing their knowledge!
 
 DEF CON has earned the nickname "line con" among some attendees, as it seems
 like there's a line for everything.  Want to attend a talk?  Line up an hour
@@ -173,7 +180,9 @@ for BSidesLV.)  I maintain that I like to be able to just drop off stuff I don't
 want to carry around, take a short break at times, etc.  Others feel that
 getting more distance between themselves and the conferences is superior.  At
 the end of the day, it comes down to personal preference (and potentially cost,
-depending on the hotels you're comparing).
+depending on the hotels you're comparing).  I put a [full comparison
+list](/2016/02/18/hacker-summer-camp-planning-guide.html#hotel)
+in my 2016 summer camp guide.
 
 Airfare is already going up as well.  Whether or not it will keep going up is a
 mystery (I don't think anyone really understands airfare pricing, even the
@@ -239,6 +248,14 @@ devices and voting machines (IoT and Election Hacking villages).  I meet up with
 people I only see once a year and share what we're both working on, meet friends
 of friends, and so much more.  Every year I spend every waking moment doing
 stuff and still wish I'd had more time at the end.
+
+I should mention that both DEF CON and BSidesLV have talks that **are not
+recorded**: at DEF CON, these are "SkyTalks" and BSidesLV calls them
+"Underground."  If you see something on the schedule in those areas that
+interests you, you should go, as it's likely your *only* chance to see the
+relevant talk.  Don't try to record with your phone either: I've seen people
+ejected and phones confiscated for this behavior.  These talks are off the
+record for a reason.
 
 ### What not to do! ###
 
@@ -372,6 +389,21 @@ connections.  Set a BIOS/UEFI administrator password.  When it's not in your
 posession, at least put it in your room safe.  (This is more about theft than
 about hacking, but it's a good idea either way.)
 
+#### Electronic Device Checklist ####
+
+* Backup all your data
+* Try not to carry very sensitive data
+* Fully patch your OS and applications (esp. browsers)
+* Use Full-Disk Encryption
+* Enable your firewall
+* Use a VPN
+* Don't accept updates over hostile networks
+* Don't click past SSL warnings
+* Consider a separate hard drive or separate device
+* If you leave it unattended, leave it with a *trustworthy* friend or in your
+  hotel room safe.
+* Turn off interfaces you're not using (WiFi, Bluetooth, etc.)
+
 ### Cash ###
 
 While Black Hat is probably not a problem with only a credit card, DEF CON is
@@ -388,6 +420,12 @@ than too little, as using the ATMs on the casino floor will, at a minimum, carry
 a hefty fee.  At worst, the ATM may be compromised or have a skimmer on it.
 (Again, this may be a case where DEF CON's bark is worst than its bite, but it's
 still a good idea to be safe.)
+
+Remember that Las Vegas is basically a giant service industry, and the service
+industry workers expect tips.  Anyone who comes into contact with your luggage,
+delivers something for you, brings you something, etc., is probably expecting a
+tip.  [Vegas.com offers a detailed
+guide](https://www.vegas.com/traveltips/tips-on-tipping/).
 
 ### Food and Drink ###
 
@@ -426,13 +464,17 @@ vastly overpriced sandwiches and hot dogs.)
 Regardless of how you choose to eat, you must stay hydrated.  Las Vegas is both
 hot and dry, which makes for quick dehydration.  Even being inside you may find
 yourself less hydrated than usual due to the dry air.  Bottled water can be
-expensive, especially if you buy it from the hotel, so many choose to either
+*expensive*, especially if you buy it from the hotel, so many choose to either
 [have some delivered](https://amzn.to/2x6697w) or refill a
 [Camelbak](https://amzn.to/2kibsrc) or [Sigg-style water
-bottle](https://amzn.to/2GK4QLh).  I've let myself get dehydrated a few times
-during Hacker Summer Camp, and it really ruins things.  Even once you start
-drinking properly, it will be a day or two before you start feeling right again.
-In a 4 day event, that's a long time to feel like crap.
+bottle](https://amzn.to/2GK4QLh).  You can also get bottled water at the
+drugstores and convenience stores on the strip for much less than the hotel will
+charge you.
+
+I've let myself get dehydrated a few times during Hacker Summer Camp, and it
+really ruins things.  Even once you start drinking properly, it will be a day or
+two before you start feeling right again.  In a 4 day event, that's a long time
+to feel like crap.  For the shorter cons, that's the entire con!
 
 Speaking of drinking: a **lot** of drinking goes on at DEF CON, BSidesLV, and the
 associated parties.  I've found a good way to help avoid a hangover is one
@@ -506,6 +548,17 @@ carrying a backup USB battery (even a small one) for your phone, your cash, and
 hotel keycard.  Some also like notebooks or other ways to take notes during
 talks or when meeting people.
 
+Note that, according to the every-other-year electronic badge philosophy
+announced by Dark Tangent, DEF CON 26 *should* have an electronic badge.  So if
+you're into badge hacking, you might want to bring the appropriate tools.  At a
+minimum, I'd suggest some sort of universal interface like a [Bus
+Pirate](https://amzn.to/2ILJVxk), an [FT232H breakout
+board](https://amzn.to/2JesrJ4), or the [FTDI FT232H
+cable](https://amzn.to/2GRMjg0).  The FTDI cable probably has the best form
+factor to bring with you to the con.  If you're not familiar with these tools,
+my [IoT Hacker's Toolkit talk](/2018/04/16/the-iot-hackers-toolkit.html) from
+BSidesSF has more details.
+
 ### Ask the Panel: What do you carry with you at the cons? ###
 
 **Matir**: Entirely too much.  I carry a cell phone, my
@@ -517,7 +570,9 @@ specifically chosen to not be too big -- it forces me to make decisions about
 what I carry, and prevents me from just taking everything with me.  This year
 I'll be adding an [aluminum water bottle](https://amzn.to/2LsstLV) to stay
 hydrated and a [cooling towel](https://amzn.to/2IPjmXK) to help stay cool in the
-Las Vegas sun.
+Las Vegas sun.  I bring enough cash for the whole week so I don't have to deal
+with ATM fees or the risk of skimmers.  (Las Vegas is popular for ATM skimmers,
+this isn't something unique to Hacker Summer Camp.)
 
 **illusorycake**: A laptop with my favorite Linux distro on it, water(s),
 relevant power cords, a notebook or two, a few pens, chapstick, ibuprofen, cash,
@@ -540,6 +595,23 @@ Kali Linux.) A small soldering kit.  A kit of electronics tools.  My con phone
 can easily wipe once home).  In the hotel room, I might also have things like
 more electronics parts, etc. mainly in anticipation of a contest or badge that I
 can play around with.
+
+#### Packing Checklist ####
+
+This is just to get you started, and you'll need much more, but hopefully it has
+some good reminders.
+
+* Clothes for *hot* Vegas days.
+* Clothes for parties in semi-hot Vegas nights.
+* Secured Cell Phone
+* (Optional, but common) Secured Laptop
+* Notebook/Pen
+* Business/Personal Cards (I have cards I give to people I meet in contexts not
+  related to my employer.)
+* Cash for DEF CON Ticket, Drinks, Tips, Gaming, etc.
+* Deodorant
+* (Optional, but common) Tools for Hacking
+* [RFID blocking sleeves](http://amzn.to/2u6zMCt)
 
 ## First Timers ##
 
@@ -628,6 +700,20 @@ performances.  You can follow
 Hacker Summer Camp party information.  (Don't let the name confuse you, they
 cover all the parties of the week.)
 
+### Physical Safety ###
+
+Keep on eye on what's on around you.  I personally find the cons to be far more
+safe than Vegas streets, but that's not to say there isn't someone who wants to
+take advantage of you at the cons either.  Just like you should in any busy
+public place or major city:
+
+* Keep your wallet in a front pocket
+* Don't make your electronics easy to grab
+* Don't leave your valuables unattended even for a brief minute (better to lose
+  your seat than to lose your electronics)
+* If somebody on the street gets into your personal space, odds are they're up
+  to *something*.
+
 ### Ask the Panel: What's one thing you wish you knew before your first DEF CON?  ###
 
 **Matir**: I should have been ready to *do* more than just go to talks and
@@ -694,7 +780,11 @@ learned so much just sitting in the con area chatting late at night.
 I hope this has been at least a little bit useful to you, or at least a good
 reminder of good times at Hacker Summer Camp.  Feel free to share or hit me up
 on [Twitter](https://twitter.com/matir) if you have ideas or suggestions for
-things I should have covered.
+things I should have covered.  This is the 3rd year in a row I've written such a
+guide, and you can find my [2017 guide
+here](/2017/07/18/hacker-summer-camp-2017-planning-guide.html), and my 2016
+guide in two parts [here](/2016/02/18/hacker-summer-camp-planning-guide.html)
+and [here](/2016/07/08/hacker-summer-camp-planning-guide-part-ii.html).
 
 I suggest also checking out the [Defcon for
 N00bs](https://github.com/hacking-and-coffee/defcon-for-n00bs) guide for other
@@ -704,3 +794,26 @@ Finally, a big thanks to illusorycake, fadec0d3, itsC0rg1, dissect0r, and
 Anonymous for contributing their thoughts.  You all are great friends and
 hackers.  I owe each of you a drink (or several) at Hacker Summer Camp this
 year.
+
+### FAQ ###
+
+**Are you paranoid?**
+
+Yes, I'm a professional paranoid.  Everyone in this industry is, if they've been
+around long enough.  In particular, I'm paid to simulate attackers, so I see
+everything as an opportunity to hack.
+
+**Will I get hacked at the cons?**
+
+Probably not, if you prepare well and aren't stupid about it.  But if you use
+open wifi with no protection, well, you'll probably find out just how trivial
+such attacks are.
+
+**Should I go to talks?**
+
+Some people have interpreted my view on talks as "don't go to talks, they're a
+waste of time", and that couldn't be further from the truth.  I think the talks
+are **great**, but unless it's a talk that won't be recorded, or is particularly
+relevant to you, I generally choose to do something requiring my physical
+presence at that time instead of sitting in a room listening to the talk.  (And
+spending time lining up before the talk to even get into the room.)

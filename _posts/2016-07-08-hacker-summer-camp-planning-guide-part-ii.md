@@ -50,7 +50,7 @@ at night, being with others will help ensure your safety.
 
 ### What to Bring ###
 
-#####What to Wear#####
+##### What to Wear #####
 
 Read the weather forecast, but you can pretty much count on hot & dry.  And when
 I say hot, I mean like 40&deg;C (100&deg;F +, for those of you not working in SI
@@ -61,7 +61,7 @@ thumb.  BSides is approximately the same, Black Hat tends more towards business
 casual, though you'll see plenty of t-shirts & jeans here too.  Generally, wear
 whatever your comfortable in in hot weather.
 
-#####Electronics#####
+##### Electronics #####
 
 The network at DEF CON has been called the most hostile network in the world,
 but I suspect that's a little overblown.  That being said, it's probably a good
@@ -70,7 +70,7 @@ idea to treat it as highly hostile -- better safe than sorry.
 At a minimum:
 
 * Backup your data in advance
-* Fully patch
+* Fully patched
 * Full disk encryption
 * Firewall enabled
 * Use a VPN & SSL-enabled sites
@@ -82,7 +82,7 @@ Other possible considerations:
 * Use a different hard drive
 * Use a different device
 
-#####Picking your devices#####
+##### Picking your devices #####
 
 What electronics you want to bring will depend on what you want to do.  Some
 activities will require a laptop: CTFs, Capture the Packet, Badge Hacking (most
@@ -98,7 +98,7 @@ them have your permanent contact information (as can various services) but also
 protects you against attacks on your devices.  (There have been a lot of 3g/4g
 and mobile attacks lately, so it makes sense to pay attention there.)
 
-#####Other things to Bring#####
+##### Other things to Bring #####
 
 * Cash: DEF CON tickets are cash-only, and you might want cash for cabs, drinks,
   etc.  I'd recommend against using the ATMs in the immediate vicinty of the
@@ -114,7 +114,7 @@ ideas to help in choosing what to do:
 * Be active, not passive
 * Try new things
 
-#####Talks#####
+##### Talks #####
 
 Obviously, these conferences are best known for their talks and presentations,
 but I don't actually consider those the most important reason for attending.
@@ -123,7 +123,7 @@ the talks later.  Attend talks that are of personal interest, but don't force
 yourself to sit in the audience of a talk every hour -- that's being passive,
 and you won't get as much out of things.
 
-#####Villages#####
+##### Villages #####
 
 DEF CON hosts a number of villages each year, housing various demonstrations and
 activities, including the Lockpicking Village, Wireless Village, Packet
@@ -140,7 +140,7 @@ about their niche.  Some of the things you can try doing:
 The content from the villages is often not available anywhere else, so if you
 see a topic that you're interested in, you should definitely pay them a visit.
 
-#####Parties#####
+##### Parties #####
 
 It's probably not a secret that there are parties in Las Vegas during this week.
 Many of these are great opportunities to get to know other security

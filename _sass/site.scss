@@ -27,6 +27,11 @@ img.left {
   white-space: nowrap;
 }
 
+.center {
+  margin-left: auto;
+  margin-right: auto;
+}
+
 // Adjust container
 @media (min-width: 60rem)
 {
