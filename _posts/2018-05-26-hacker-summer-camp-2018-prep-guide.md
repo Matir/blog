@@ -15,7 +15,6 @@ excerpt:
   growing for 25 years.  In this post, I'll present my views on how to get the
   most out of your 2018 trip to the desert.
 date: 2018-05-26
-date: 2018-05-26
 ---
 For those unfamiliar with the term, Hacker Summer Camp is the combination of DEF
 CON, Black Hat USA, and BSides Las Vegas that takes place in the hot Las Vegas
@@ -272,7 +271,7 @@ things you should not do:
 - Harass or assault anyone.
 
 Also, please try not to argue with the DEF CON Goons or the BSidesLV Staff.
-Most of the time, you'll like stupid, and they usually have a good reason for
+Most of the time, you'll look stupid, and they usually have a good reason for
 what they're asking you to do.  (Crowd control, fire code, etc.)
 
 ### Ask the Panel: What's your favorite thing about Hacker Summer Camp? ###
