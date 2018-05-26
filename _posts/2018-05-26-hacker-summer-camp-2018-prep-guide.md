@@ -114,20 +114,29 @@ will have free things for you.  Some of them will not.  Such is life.
 
 ### BSides Las Vegas ###
 
-BSides Las Vegas is a smaller conference (just a few hundred people) and runs
-more or less in parallel to Black Hat Briefings.  BSidesLV was the first BSides
-security conference, intended to be the "B-Side" to Black Hat.  It's a great
-option for those looking for more of a community feel or not wanting to pay for
-a Black Hat pass.
+BSides Las Vegas is a smaller conference (around 3000 people, so still a decent
+size) and runs more or less in parallel to Black Hat Briefings.  BSidesLV was
+the first BSides security conference, intended to be the "B-Side" to Black Hat.
+It's a great option for those looking for more of a community feel or not
+wanting to pay for a Black Hat pass.  It's a very "chill" environment, not
+nearly as crazy or pushy as DEF CON, and not corporate like Black Hat.
 
-BSides is small, but still has a lot of high-quality talks.  Many of them will
-also be presented at one of the other conferences, but will give you a chance to
-be up close with the speakers.
+BSides is small, but still has a lot of high-quality talks from world class
+researchers and speakers.  Many of them will also be presented at one of the
+other conferences, but will give you a chance to be up close with the speakers
+and get a chance to interact with them as well.
+
+BSidesLV also hosts epic pool parties with great music and fewer shenanigans
+than happen at some of the DEF CON parties.  Some people have compared BSidesLV
+today to DEF CON back in the Alexis Park days.
 
 BSides is also home to my favorite educational CTF: [Pros vs
 Joes](http://prosversusjoes.net/).  It's a great CTF designed to give players
 hands on experience with a variety of tools and techniques, and provide an
 opportunity to do things they might not have done before.
+
+*Edit: thanks to dc0de for pointing out that I was missing some of the best
+parts of BSidesLV.*
 
 ### Ask the Panel: DEF CON, BSides Las Vegas, Black Hat: pick one.  Why? ###
 
