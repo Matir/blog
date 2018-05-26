@@ -18,30 +18,39 @@ fi
 
 function install_branch {
   BRANCH="${1}"
+  shift
   TMP_REPO=$(mktemp -d)
   git clone --branch ${BRANCH} ${GIT_DIR} ${TMP_REPO}
   GIT_REV=$(git -C ${TMP_REPO} --git-dir .git rev-parse --short --verify HEAD)
 
-  CUR_REV=$(basename $(readlink ${SRV_DIR}/${BRANCH}))
-  if [ "${CUR_REV}" == "${GIT_REV}" ] ; then
-    echo "${SRV_DIR}/${BRANCH} already at ${GIT_REV}"
-    return 0
+  if [ -L "${SRV_DIR}/${BRANCH}" ] ; then
+    CUR_REV=$(basename $(readlink ${SRV_DIR}/${BRANCH}))
+    if [ "${CUR_REV}" == "${GIT_REV}" ] ; then
+      echo "${SRV_DIR}/${BRANCH} already at ${GIT_REV}"
+      return 0
+    fi
   fi
 
-  bundle install --gemfile=${TMP_REPO}/Gemfile
-  jekyll build -s ${TMP_REPO} -d ${SRV_DIR}/${GIT_REV}
+  if [ ! -d ${SRV_DIR}/${GIT_REV} ] ; then
+    bundle install --gemfile=${TMP_REPO}/Gemfile
+    jekyll build -s ${TMP_REPO} -d ${SRV_DIR}/${GIT_REV} "$@"
 
-  echo "Compressing html/css/js files."
-  find ${SRV_DIR}/${GIT_REV} -type f -name '*.html' -o -name '*.js' -o -name '*.css' | while read file ; do
-    gzip < ${file} > ${file}.gz
-  done
+    echo "Compressing html/css/js files."
+    find ${SRV_DIR}/${GIT_REV} -type f -name '*.html' -o -name '*.js' -o -name '*.css' | while read file ; do
+      gzip < ${file} > ${file}.gz
+    done
+  fi
 
   echo "Linking ${SRV_DIR}/${BRANCH} to ${SRV_DIR}/${GIT_REV}"
   OLD_PATH=$(readlink ${SRV_DIR}/${BRANCH})
   ln -snf ${SRV_DIR}/${GIT_REV} ${SRV_DIR}/${BRANCH}
+  for f in ${SRV_DIR}/* ; do
+    if [ ! -L "${f}" ] ; then continue ; fi
+    if [ "$(readlink ${f})" == "${OLD_PATH}" ] ; then return 0 ; fi
+  done
   echo "Cleaning up ${OLD_PATH}"
   rm -rf ${OLD_PATH}
 }
 
 install_branch current
-install_branch preview
+install_branch preview -D
