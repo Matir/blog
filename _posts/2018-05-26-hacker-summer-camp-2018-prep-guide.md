@@ -15,6 +15,7 @@ excerpt:
   growing for 25 years.  In this post, I'll present my views on how to get the
   most out of your 2018 trip to the desert.
 date: 2018-05-26
+date: 2018-05-26
 ---
 For those unfamiliar with the term, Hacker Summer Camp is the combination of DEF
 CON, Black Hat USA, and BSides Las Vegas that takes place in the hot Las Vegas
@@ -728,8 +729,7 @@ available for you to do. I recommend talking to folks who have been before and
 asking them questions about anything that's confusing once you have a
 schedule/agenda in front of you to reference.
 
-**fadec0d3**: Don’t worry about missing lectures, they’re recorded.  Don’t worry
-about missing lectures, they’re recorded.
+**fadec0d3**: Don’t worry about missing lectures, they’re recorded.
 
 **itsC0rg1**: Taking breaks is important, crowds are a bit overwhelming.
 
