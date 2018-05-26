@@ -311,6 +311,13 @@ soldering (DEF CON XX), a new attack technique, or starting a new programming
 language. In many cases it's not something I use again, but I can at least say
 I've tried it. I absolutely can't miss the Dual Core performance.
 
+**illusorycake**: I get really inspired seeing what the community is up to. I'm
+not at a place in my career yet where I can contribute much, as I'm still
+learning a lot, but seeing what other folks are working on and the passion that
+people have for this stuff is fuel to the fire of my own passion for it. As for
+a thing I must do, definitely spending a bit of time outside of the conference
+to enjoy some of the Vegas sunshine.
+
 ## What to Bring ##
 
 What you should or should not bring with you is also a surprisingly divisive
