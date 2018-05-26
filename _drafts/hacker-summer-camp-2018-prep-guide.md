@@ -53,15 +53,14 @@ do, it'll get you burned out pretty quickly.
 
 ### DEF CON ###
 
-[![DEF CON Logo](/img/blog/hsc2018/defcon_bw.jpg){:.right}](https://www.defcon.org)
+[![DEF CON Logo](/img/blog/hsc2018/defcon_bw.jpg){:.right width="50%"}](https://www.defcon.org)
 
 [**DEF CON**](https://www.defcon.org) is the largest and original of the 3
 conferences.  Founded in 1993, it is one of the longest running Hacker/Computer
-Security conferences, drawing an estimated 25,000 attendees for DEF CON 25 in
-2017.  It's widely speculated that this year's attendance will hit 30,000, so be
-ready to meet some new friends.  Introverts and those whose dislike
-crowds will want to make sure to be prepared to take breaks from the
-masses at DEF CON.
+Security conferences, drawing an estimated 25,000 attendees for DEF CON 25
+in 2017.  It's widely speculated that this year's attendance will hit 30,000, so
+be ready to meet some new friends.  Introverts and those whose dislike crowds
+will want to make sure to be prepared to take breaks from the masses at DEF CON.
 
 In case you missed the big announcement, DEF CON will be spread across two
 hotels this year: Caesar's Palace and the Flamingo.  I'm excited about this
