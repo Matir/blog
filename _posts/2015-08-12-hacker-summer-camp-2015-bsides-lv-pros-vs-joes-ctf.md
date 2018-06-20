@@ -21,10 +21,10 @@ As regular readers know, I play a little bit of CTF ([Capture the
 Flag](https://en.wikipedia.org/wiki/Capture_the_flag#Computer_security)), and
 BSides LV is home to one of the most unique CTF competitions I've ever played
 in: the ["Pros vs Joes"](http://www.prosversusjoes.net/) CTF run by dichotomy.
-This CTF pits multiple defending teams (Blue Cells), each consisting of Joes 
-+ 1 Pro Captain, against a "Red Cell" consisting of professional penetration
+This CTF pits multiple defending teams (Blue Cells), each consisting of
+Joes + 1 Pro Captain, against a "Red Cell" consisting of professional penetration
 testers.  Even though I work in security, my focus is on Application Security
-and not Network Security (which PvJ highly emphasizes) so I've never felt 
+and not Network Security (which PvJ highly emphasizes) so I've never felt
 comfortable playing as a pro.  Consequently, this was my 3rd year as a "Joe"
 in the PvJ CTF.  (Maybe one day I can make it through my [Impostor
 Syndrome](https://en.wikipedia.org/wiki/Impostor_syndrome)).
