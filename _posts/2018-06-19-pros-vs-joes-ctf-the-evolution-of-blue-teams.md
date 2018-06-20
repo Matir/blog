@@ -116,6 +116,12 @@ available.  I suggest that you use whatever operating system you are most
 comfortable with as your "bare metal" operating system, so if that's Windows,
 you'll want to run a Linux virtual machine.
 
+If you use a Macbook (which seems to be the most common choice at a lot of
+security conferences), you may want both a Windows VM and a Linux VM, as the
+Windows Server administration tools (should you choose to use them) only run on
+Windows clients.  It's also been reported that [TunnelBlick](https://tunnelblick.net/)
+is the best option for an OpenVPN Client on MacOS.
+
 As to choice of Linux distribution, if you don't have any personal preference, I
 would suggest using [Kali Linux](https://www.kali.org).  It's not that Kali has
 anything you can't get on other distributions, but it's well-known in the
@@ -181,7 +187,11 @@ things I've found that seem to make gameplay go more smoothly for the team:
   you've tested it before game day.
 * **DO** make sure you've read the rules.  **DON'T** try to cheat, Gold team
   will figure it out and make you pay.
-* **DO** make an effort to try new things.  This game is a learning experience.
+* **DO** make an effort to try new things.  This game is a learning experience,
+  and you miss 100% of the shots you don't take.
+* **DO** ask questions.  **DON'T** be afraid of looking stupid -- everyone in
+  the security industry has things to learn, and the whole point of this event
+  is that you can learn.  You might even stump the pros.
 
 ## Making the Most of It ##
 
