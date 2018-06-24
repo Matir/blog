@@ -53,4 +53,4 @@ function install_branch {
 }
 
 install_branch current
-install_branch preview -D
+install_branch preview
