@@ -3,6 +3,9 @@ layout: post
 title: "On Deep Work"
 category: Life
 date: 2018-06-24
+tags:
+  - Work
+  - Life
 ---
 
 I recently stumbled upon Azeria's blog post
