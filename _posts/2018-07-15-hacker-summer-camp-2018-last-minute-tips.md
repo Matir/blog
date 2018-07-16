@@ -55,9 +55,15 @@ out.
 
 Caesar's is home to the [Bacchanal
 Buffet](https://www.caesars.com/caesars-palace/restaurants/bacchanal-buffet),
-which has incredibly high quality options, but is a pretty expensive meal.  The
+which has incredibly high quality options (and is one of the top-rated buffets
+in Vegas), but is a pretty expensive meal.  The
 lines are likely to be very bad during DEF CON, so I suggest going to another
 hotel if you're absolutely looking for a buffet.
+
+[The Buffet](http://www.wynnlasvegas.com/Dining/CasualDining/TheBuffet) at the
+Wynn (literally, it's named "The Buffet") has one of the best dessert/pastry
+selections along with great entrees and sides.  It's also not cheap, but will
+not suffer from the peak rush at Caesars.
 
 ### Moderate Options ###
 
