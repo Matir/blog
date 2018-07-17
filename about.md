@@ -9,7 +9,7 @@ security assessments and Red Team exercises.  He holds the
 [OSCE](https://www.offensive-security.com/information-security-certifications/osce-offensive-security-certified-expert/) certifications
 and does penetration testing, application assessment, and offensive security
 exercises.  David also does
-information security research and plays the occasional CTF.
+information security research (especially into IoT Security) and plays the occasional CTF.
 
 The opinions stated here are my own, not those of my employers -- present, past,
 or future.
