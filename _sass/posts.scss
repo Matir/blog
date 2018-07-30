@@ -30,7 +30,7 @@
   }
 }
 
-// Index page
+/* Index page */
 .posts {
   .post {
     clear: both;
@@ -86,4 +86,15 @@ object.slides {
 /** Table of contents */
 #markdown-toc ul {
   margin-bottom: 0;
+}
+
+/** Series box */
+div.panel.series {
+  border: 1px dashed #333;
+  background: #eee;
+  padding: 10px;
+  margin-bottom: 1rem;
+  ol {
+    margin-bottom: 0;
+  }
 }
