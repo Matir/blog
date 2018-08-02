@@ -2,11 +2,12 @@
 layout: post
 title: "Attacker Community DEF CON 26 Badge"
 category: Electronics
-date: 2018-07-30
+date: 2018-08-02
 tags:
   - Badgelife
   - Attacker Community
   - Hacker Summer Camp
+series: Hacker Summer Camp 2018
 ---
 
 I've spent an unhealthy amount of time over the past 6 months or so
@@ -17,14 +18,16 @@ community is important when you're attacking things.)  Like [last
 year](/2017/07/31/hacker-summer-camp-2017-xxv-badge.html), all of my badges were
 designed, assembled, and programmed by me.  There are 24 badges this year, each
 featuring 8 characters of 14-segment display goodness and bluetooth
-connectivity.
+connectivity.  I may not be one of the big names in #badgelife, but if you just
+make some badges for your friends, there's a lot less pressure in case something
+comes up.
 
 <!--more-->
 
 * TOC
 {:toc}
 
-NOPUBLISH: badge image
+![Lit Badge](/img/blog/dc26badge/badge_lit.jpg){:.center}
 
 ## Concept ##
 
@@ -58,14 +61,14 @@ found the somewhat cheaper Fanstel BT832 series.  I ended up going with the
 BT832A, which is based on the nRF52810, a lower flash/lower RAM variant of the
 popular nRF52832.
 
-## Prototyping ##
+### Prototyping ###
 
 I bought a Fanstel BT832 dev board and some 14 segment displays.  I started with
 the dev board and an Adafruit 14-segment LED backpack.  This allowed me to get
 some experience with the nRF52 SDK, and make sure the general concept was sound
 without sending out for a custom PCB.
 
-NOPUBLISH: Breadboard Photo
+![Protoboard](/img/blog/dc26badge/badge_protoboard.jpg){:.center}
 
 In preparing for the first prototype, I looked for an appropriate LED driver for
 the 120 LED segments on the 8 characters (organized as the 8 common groups of 15
@@ -86,10 +89,10 @@ range of 4.5-5.5V.  My badge design was targeting a 3V supply.  I began by
 testing my protoboard prototype and seeing how low I could drive the prototype
 and still have everything working.  I was pleasantly surprised (and somewhat
 amazed) to see that the HT16K33 kept working until the voltage had dropped so
-low that the LEDs stopped lighting due to their forward voltage (~1.8V).  Still,
-I had no way to know if that was specific to this one chip or if all of the
-chips would behave similarly.  Still, since I had this working, I pressed onward
-with my design.
+low that the LEDs stopped lighting due to their forward voltage (~1.8V).
+Unfortunately, I had no way to know if that was specific to this one chip or if
+all of the chips would behave similarly.  Still, since I had this working, I
+pressed onward with my design.
 
 I designed a full-scale prototype with the NRF module, the 4 displays (2
 characters each), the HT16K33 LED driver, and a number of test points to measure
@@ -105,6 +108,22 @@ There's no way all 4 displays would physically fit on the board!  I debated
 immediately redoing the board, but decided to try to "make it work" in the
 interests of time.  I ended up attaching the displays using segments of hookup
 wires.  It wasn't the best option, but it got the job done.
+
+### Final Design ###
+
+The final electronic design ended up with:
+
+- BT832A module containing nRF52810 SoC
+- HT16K33 LED Display Driver (8x16 memory mapped)
+- 4 dual 14-segment LED displays
+- 2xAAA battery holder providing 3V nominal
+- A 5-way joystick for user control
+
+There's a handful of other passives (both bulk and bypass capacitance, an
+indicator LED for BLE status, etc.).  Internal pull-ups were adequate for the
+I2C lines to the HT16K33.  In production firmware, the reset pin is disabled to
+avoid spurious resets.  On the prototype board, there's a reset button with an
+RC circuit for debounce.
 
 ## Assembly ##
 
@@ -142,8 +161,9 @@ In the case of the nRF52 series, the SDK is necessary to talk to the
 One thing worth noting is that, due to the tight timing constraints of the BLE
 stack, the highest priority interrupts are reserved for it.  Consequently,
 depending on very tight timing can be difficult.  I discovered this during the
-first prototype and had to debug it using the Saleae logic analyzer.  (These
-logic analyzers are the Swiss Army Knife of digital domain signals.)
+first prototype and had to debug it using the [Saleae logic
+analyzer](https://www.saleae.com).  (These logic analyzers are the Swiss Army
+Knife of digital domain signals.)
 
 ![Saleae](/img/blog/dc26badge/saleae.jpg){:.center}
 
@@ -155,7 +175,7 @@ not badly enough to completely break things) but given that the firmware is
 written in low-level C, there's a fair bit of pointer weirdness going on.
 Eventually, though, I got it right.
 
-NOPUBLISH: Logic Analyzer Screenshot
+[![Saleae Screenshot](/img/blog/dc26badge/saleae_screenshot_sm.png)](/img/blog/dc26badge/saleae_screenshot.png){:.center}
 
 The minimal firmware I built was just enough to display a single message on the
 displays, and allow turning the displays on/off.  This was the proof of concept
@@ -228,7 +248,7 @@ Android application.  Hopefully it'll actually work in the field.
 
 ## Conclusion ##
 
-NOPUBLISH: Finished Photo
+![Badge Front](/img/blog/dc26badge/badge_front.jpg){:.center}
 
 This has been a fun build.  It's my first time developing for Android, first
 time developing with Bluetooth, first time with this chipset.  It's been a
