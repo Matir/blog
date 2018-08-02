@@ -13,15 +13,16 @@ I've spent an unhealthy amount of time over the past 6 months or so
 participating in the craze that is
 [#badgelife](https://twitter.com/search?q=%23badgelife).  This year, I built
 badges for my Security Research Group/CTF Team: Attacker Community.  (Because
-community is important when you're attacking things.)  Like last year, all of my
-badges were designed, assembled, and programmed by me.  There are 24 badges this
-year, each featuring 8 characters of 14-segment display goodness and bluetooth
+community is important when you're attacking things.)  Like [last
+year](/2017/07/31/hacker-summer-camp-2017-xxv-badge.html), all of my badges were
+designed, assembled, and programmed by me.  There are 24 badges this year, each
+featuring 8 characters of 14-segment display goodness and bluetooth
 connectivity.
 
 <!--more-->
 
 * TOC
-{:.toc}
+{:toc}
 
 NOPUBLISH: badge image
 
@@ -95,7 +96,7 @@ characters each), the HT16K33 LED driver, and a number of test points to measure
 voltage, current, etc.  I sent the board design off to JLCPCB.  (I'd heard good
 things, figured it was a good opportunity to try them out.)
 
-NOPUBLISH: Prototype PCB
+![Prototype PCB](/img/blog/dc26badge/prototype_pcb.jpg){:.center}
 
 About two days later, I realized I had made a terrible mistake in the design:
 while I had properly laid out the pinout of the LED displays, I had neglected to
@@ -107,7 +108,7 @@ wires.  It wasn't the best option, but it got the job done.
 
 ## Assembly ##
 
-NOPUBLISH: insert picture
+![PCB Final](/img/blog/dc26badge/pcb_final.jpg){:.center}
 
 I had the final boards produced at Elecrow (because they don't print order
 numbers on the boards and offered matte black solder mask).  After I received
@@ -144,7 +145,17 @@ depending on very tight timing can be difficult.  I discovered this during the
 first prototype and had to debug it using the Saleae logic analyzer.  (These
 logic analyzers are the Swiss Army Knife of digital domain signals.)
 
-NOPUBLISH: Saleae image
+![Saleae](/img/blog/dc26badge/saleae.jpg){:.center}
+
+In particular, the Saleae logic analyzer helped me discover that I was
+occasionally transmitting the completely wrong bytes to the HT16K33 display
+driver.  It turns out that pointer math is hard, and you should be really
+careful about that.  Amazingly, I managed not to corrupt memory (or at least,
+not badly enough to completely break things) but given that the firmware is
+written in low-level C, there's a fair bit of pointer weirdness going on.
+Eventually, though, I got it right.
+
+NOPUBLISH: Logic Analyzer Screenshot
 
 The minimal firmware I built was just enough to display a single message on the
 displays, and allow turning the displays on/off.  This was the proof of concept
@@ -194,15 +205,45 @@ harder.  But eventually I got things working.  There was a lot of back and forth
 between the Android App and the firmware in order to get the pairing working,
 the communications working the way I want to, etc.
 
-NOPUBLISH: Android Screenshot
+![Screenshot](/img/blog/dc26badge/screenshot.png){:.center}
 
 Eventually, the Android App came together and was actually my first published
 Android application.  Hopefully it'll actually work in the field.
 
 ## Lessons Learned ##
 
+1. Do not trust SDK documentation.  It will be wrong in some way.  Be prepared
+   to read the SDK source code in order to understand how the SDK really works.
+2. If you are using digital signals between chips on your PCB, get a logic
+   analyzer.  It will make your life so much easier if you can see what your
+   chips are *actually* doing.
+3. Put test points for *all* your signals on your prototype board.  Why force
+   yourself to try to clip to TSSOP leads when you could have put proper test
+   points on the board?
+4. If you estimate how long something will take, you will be wrong.  It will
+   take longer.
+5. If you want to make more than a handful of badges, don't plan on assembling
+   them by hand.  It's repetitive, and repairing your errors will burn your time
+   like no other.
+
 ## Conclusion ##
 
 NOPUBLISH: Finished Photo
 
+This has been a fun build.  It's my first time developing for Android, first
+time developing with Bluetooth, first time with this chipset.  It's been a
+blast, but it's been a *ton* of work.
+
+If you want to see all the details, I've [open sourced it
+all](https://github.com/Matir/DC26Badge).  It's all there: the firmware, the
+KiCad files, the Android App, and it's all under the MIT license.
+
 ## Other Adventures in #badgelife ##
+
+I'd be remiss if I didn't mention that this wasn't the only badge I worked on
+this year.  My company hosts an amazing invite-only lounge during DEF CON each
+year, and this year we have an electronic badge.  A team of 3 of us put this one
+together, so hats off to
+[@twitchyliquid64](https://twitter.com/twitchyliquid64) and claymore.  The
+badges interact via IR when our hosts (Googlers) and guests interact.  I'm
+really excited to see how they work out at the event.
