@@ -10,7 +10,7 @@ series: Hacker Summer Camp 2018
 attachment: unlocking_doors.pdf
 ---
 
-![IoT Hacker](/img/blog/iot_hacker.png)
+![IoT Hacker](/img/blog/iot_hacker.png){:.right}
 
 Today I'm giving a talk in the [IoT Village](https://www.iotvillage.org) at DEF
 CON 26.  Though not a "main stage" talk, this is my first opportunity to speak
@@ -54,4 +54,4 @@ different type of bug.
 
 ## Slides ##
 
-{% include "slides.html" %}
+{% include slides.html %}
