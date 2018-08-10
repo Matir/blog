@@ -6,6 +6,7 @@ date: 2018-08-10
 tags:
   - IoT
   - Security
+  - DEF CON
 series: Hacker Summer Camp 2018
 attachment: unlocking_doors.pdf
 ---
