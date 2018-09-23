@@ -54,3 +54,14 @@ plugins:
 # Tagging settings
 tag_page_layout: tag_page
 tag_page_dir: tags
+
+# Front matter defaults
+defaults:
+  -
+    scope:
+      path: ""
+      type: "posts"
+    values:
+      layout: "post"
+      rss:    true
+      hidden: false
