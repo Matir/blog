@@ -5,9 +5,10 @@ category: Security
 date: 2018-09-14
 tags:
   - Security
-  - Courses
+  - Training
   - SDR
   - HackRF
+  - Course Review
 ---
 
 Over the past two days, I had the opportunity to attend Michael Ossman's course
