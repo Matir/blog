@@ -8,6 +8,7 @@ tags:
   - Training
   - Electronics
   - Hardware Hacking
+  - Course Review
 ---
 
 I recently attended [Dr. Dmitry Nedospasov](https://toothless.co)'s 4-day
