@@ -67,7 +67,8 @@ Once they are understood, this can be converted to proper shellcode.
 
 1. First we need to allocate a socket structure in the kernel with a call to
    `socket`.  This is a wrapper for a system call (since it has effects in
-   kernel space).  On x86, this wraps a system call called `socketcall`, which
+   kernel space).  On x86, this wraps a system call called
+   [`socketcall`](http://man7.org/linux/man-pages/man2/socketcall.2.html), which
    is a single entry point for dispatching all socket-related system calls.  On
    x86-64, the different socket system calls are actually distinct system calls,
    so this will call the `socket` system call.  It needs to know the address
