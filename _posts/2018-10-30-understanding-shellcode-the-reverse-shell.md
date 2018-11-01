@@ -289,3 +289,15 @@ mov rax, 59
 ; execute the shell!
 syscall
 ```
+
+## Conclusion ##
+
+The structural simularities between either assembly implementation and the
+C source code should be fairly evident.  When I write shellcode, I usually write
+out the list of steps involved, then write a version in C, and finally translate
+to the assembly for the shellcode.  I'm a bit of a control freak, so whenever I
+need custom shellcode, I got straight to the assembly.
+
+Let [me know](https://twitter.com/matir) if there's a particular shellcode
+payload you're interested in me covering or if you have feedback on the style or
+usefulness of these posts.
