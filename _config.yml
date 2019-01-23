@@ -50,6 +50,7 @@ plugins:
   - jekyll-tagging-related_posts
   - liquid_pluralize
   - liquid_reading_time
+  - jekyll-sitemap
 
 # Tagging settings
 tag_page_layout: tag_page
