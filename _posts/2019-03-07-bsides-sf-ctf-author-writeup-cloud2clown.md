@@ -14,6 +14,8 @@ tags:
 > clowns instead of clouds. Note: there are 2 flags, they should be clearly
 > labeled.
 
+<!--more-->
+
 This was a web challenge with 2 flags hidden inside.  When you visited the
 challenge, you saw a very basic web form that prompted only for a URL.
 
