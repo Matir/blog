@@ -46,6 +46,8 @@ Passwords](https://en.wikipedia.org/wiki/Time-based_One-time_Password_algorithm)
 (TOTP).  When this was done, a QR code compatible with many authentication
 applications was displayed along with the raw Base32-encoded seed.
 
+![2FA Screen](/img/blog/bsidessf2019/flagsrv_2fa.png)
+
 ## Vulnerability/Exploitation ##
 
 If you examine the 2FA registration page, you'll note that the secrets are
