@@ -13,5 +13,5 @@ title: Tags
       {%- endif -%}
     {%- endfor -%}
   {% endcapture %}
-  {{ tag_string | split:'</li>' | sort | reverse | join:'</li>' }}
+  {{ tag_string | split:'</li>' | sort | reverse | join:'</li>' }}</li>
 </ul>
