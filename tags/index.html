@@ -1,0 +1,17 @@
+---
+layout: default
+title: Tags
+---
+<h1>Tags</h1>
+<ul>
+  {% capture tag_string %}
+    {%- for tag in site.tags -%}
+      {%- if tag[1].size > 1 -%}
+      <li data-sort='{{tag[1].size | prepend:'00000' | slice:-5, 5}}'
+          ><a href='/{{site.tag_page_dir}}/{{tag[0] | slugify}}.html'
+            >{{tag[0]}}</a> ({{tag[1].size}} Posts)</li>
+      {%- endif -%}
+    {%- endfor -%}
+  {% endcapture %}
+  {{ tag_string | split:'</li>' | sort | reverse | join:'</li>' }}
+</ul>
