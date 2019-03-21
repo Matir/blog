@@ -183,11 +183,12 @@ neatly on boards would have benefited from a helping hands or a PCB vise.  In
 hindsight, I should have just 3D printed something to support the PCB during
 soldering of the pins.
 
-We wrapped up the class with MG showing off his [O.MG
-Cable](https://mg.lol/blog/omg-cable/).  He provided a board to each student to
-solder into a USB A connector for a cable.  I opted to skip this to keep working
-on the wireless implant, but it was obvious from other students that it required
-a lot of fiddly soldering.
+We wrapped up the class with MG showing off the iterations that have gone into
+the [O.MG Cable](https://mg.lol/blog/omg-cable/).  He provided a board from an
+early version (no wifi, simply an ATTiny85) to each student to solder into a USB
+A connector for a cable.  I opted to skip this to keep working on the wireless
+implant, but it was obvious from other students that it required a lot of fiddly
+soldering.
 
 ## Conclusion ##
 
