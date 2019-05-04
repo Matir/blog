@@ -21,6 +21,45 @@ professionals and hackers each year.
 
 ## The Conferences ##
 
+In my mind, there is a spectrum of conferences in the realm of hacking and
+computer security.  They range from pure hacker conferences to security industry
+tradeshows.  I have a strong preference for the pure hacker conferences, but I
+realize that not everyone agrees with me.  It may, however, color my opinions of
+the 3 conferences in Las Vegas during Hacker Summer Camp.
+
+Hacker conferences are all about showing off cool technical tricks, and not all
+of them need to be security related -- see the beverage cooling contraption
+contest at DEF CON.  You'll find most attendees in black t-shirts and jeans or
+shorts, with the occasional [utilikilt](https://amzn.to/2H2gEfi).  (Yes, it's a
+stereotype, but that doesn't mean it's not true.)  You'll find people who are
+excited about whatever they're working on and willing to share it with you just
+because they want to share.  You'll find those where hacking is something that
+just comes naturally, and if they're lucky, they've turned it into a way to pay
+the bills too.  The vendor area, if any, is full of vendors selling esoteric
+electronics, lockpicks, and more black t-shirts.
+
+At the other end of the spectrum, you have events that are run by companies, for
+companies.  The vendor area becomes a central focus, with lots of companies
+wanting to sell you "turnkey solutions", and wanting to scan your badge to
+collect your information for later mailing.  The average dress code here is polo
+shirt and khakis, but if you're in management, the blazer may make an appearance
+as well.  The first question is "where do you work?" not "what do you do?"
+
+One (to me) key difference is in the badge.  While hacker cons have trended
+towards interesting badges (electronic, laser cut, etc.), what really sets them
+apart is whether badges carry identification.  Hacker con badges are merely
+admission to the event, and every one is identical (so don't lose it).  At
+security industry conferences, your name (and often your employer) are proudly
+displayed for everyone to see.  Anonymity is a non-goal at these events.
+
+If you plan to do more than one of the conferences, keep in mind how long you
+will be in Las Vegas as a result.  I've once done 4 days of training at Black
+Hat, followed by Black Hat briefings, followed by DEF CON.  (And a company event
+in between!)  This resulted in an 11 day stay in Las Vegas, which is *way* too
+long for my personal tolerance.  Even without the heat, the 24/7 nature of the
+Vegas strip just really pushed me mentally, so consider your personal capacity
+for such a city.
+
 ### DEF CON ###
 
 DEF CON is the conference that started it all.  Since 1993, Dark Tangent has
@@ -48,9 +87,77 @@ your soldering skills.  These are just a few of the ways you can get hands-on
 practice in specialized security or hacking domains directly from some of the
 most passionate individuals in those specializations.
 
+DEF CON is also at a reasonably accessible price -- it looks like badges will
+cost $300 this year.  For 4 days of content, it's really quite worth it.
+
 ### Black Hat ###
 
+Black Hat was the second of the conferences to be founded.  Like DEF CON, it was
+founded by the Dark Tangent, but he eventually sold it off to a commercial
+conference organizer (United Business Media) that continues to run it today.
+Black Hat is the straight edge cousin to DEF CON -- it is significantly closer
+to the "security industry" end of my conference spectrum.  While the talks
+deliver high-quality content, there are not nearly as many "side opportunities"
+as presented at DEF CON.
+
+On the other hand, Black Hat offers some of the premiere training opportunities
+each year.  There are [dozens of courses being
+offered](https://www.blackhat.com/us-19/training/schedule/), with a wide range of
+topics, from incident response to red teaming to ARM exploitation.
+
+The quality of Black Hat will set you back a bit -- briefing passes are from
+$2295 to $2895 depending on when you register, and trainings run from
+$3600 to $5600.
+
 ### BSides Las Vegas ###
+
+BSides Las Vegas, the first of the "Security BSides" conferences, is a smaller
+event that completely takes over the Tuscany Hotel & Casino for 2 days.  It's
+definitely a hacker event, but less chaotic than DEF CON.  In years past, it's
+also been the most approachable event with free tickets at the door.
+
+Unfortunately, this year the free badge train has ended.  Lines were forming
+hours in advance with many, many, people being disappointed due to not getting a
+badge after spending hours waiting.  Consequently, badges are available via
+sponsorship (individual or corporate), participation (speaking/volunteering), or
+booking a room in their room block.  Of these options, I believe only
+participation remains to get a badge if you don't have one yet.  Check out the
+[CFP](https://www.bsideslv.org/call-for-papers/) or the [call for
+volunteers](https://www.bsideslv.org/volunteer/).  (Pro tip: volunteering for a
+hacker conference also introduces you to a number of great people in the space,
+which can be an excellent networking opportunity.)
+
+The talks are high quality and many are used as a dry run for other conferences,
+or are the kind of talk that just barely didn't make it.  Sometimes they're just
+too niche.  One of my favorite features is that some speakers ("Proving
+Ground") are new speakers who have been paired with a mentor to help them
+present their original research.
+
+BSides Las Vegas is also home to the [Pros v Joes CTF](http://prosversusjoes.net/),
+a unique CTF that provides both red team and blue team experiences in a
+highly-immersive environment.  Unlike many CTFs, the 3 priorities for PvJ are:
+
+1. Education
+2. Fun
+3. Winning
+
+Competition comes in third behind learning and having a good time.  For those
+new to the industry or looking to expand their skillset, I can't recommend a
+better *free* way to build those skills.  (Full disclaimer: I'm a member of the
+PvJ staff after being a multi-year player.)
+
+If you're interested, check out the [website](http://prosversusjoes.net/), my
+[Blue Team Player's
+Guide](/2015/08/15/blue-team-players-guide-for-pros-vs-joes-ctf/), or my post on
+the [evolution of the Blue
+Teams](/2018/06/19/pros-vs-joes-ctf-the-evolution-of-blue-teams.html).  Sign up
+is open now for both Pros and Joes.
+
+## Other Events ##
+
+### QueerCon ###
+
+### Parties ###
 
 ## Where to Stay ##
 
@@ -128,3 +235,12 @@ want to consider a non-Casino venue, such as the Hilton Grand Vacations, the
 Westin Las Vegas, or Marriott's Grand Chateau.  As of writing, I could not find
 any information about a "health and welfare" check for any of them, but if
 you're concerned, I would consider calling and checking in advance.
+
+## Saving Money ##
+
+## Conclusion ##
+
+Closer to the conferences, I'll put out a preview of specific talks and events
+to look forward to, as well as newbie guides to some of the events.  I'll also
+put together a list of things I'm bringing to make the conferences more fun or
+just make my time in Vegas less painful.
