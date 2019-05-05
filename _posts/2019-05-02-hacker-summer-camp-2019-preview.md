@@ -10,9 +10,10 @@ series: Hacker Summer Camp 2019
 ---
 Every year, I try to distill some of the changes, events, and information
 surrounding the big week of computer security conferences in Las Vegas.  This
-week, including Black Hat, BSides Las Vegas, and DEF CON, is what some refer to
-as "Hacker Summer Camp" and is likely the largest gathering of computer security
-professionals and hackers each year.
+week, including [Black Hat](https://blackhat.com), [BSides Las
+Vegas](https://bsideslv.org), and [DEF CON](https://defcon.org), is what some
+refer to as "Hacker Summer Camp" and is likely the largest gathering of computer
+security professionals and hackers each year.
 
 <!--more-->
 
@@ -48,7 +49,8 @@ as well.  The first question is "where do you work?" not "what do you do?"
 One (to me) key difference is in the badge.  While hacker cons have trended
 towards interesting badges (electronic, laser cut, etc.), what really sets them
 apart is whether badges carry identification.  Hacker con badges are merely
-admission to the event, and every one is identical (so don't lose it).  At
+admission to the event, and every one is identical, so don't lose it!
+(Excluding special badges for press, speakers, "Goons", etc.)  At
 security industry conferences, your name (and often your employer) are proudly
 displayed for everyone to see.  Anonymity is a non-goal at these events.
 
@@ -372,8 +374,8 @@ to stay close by and eat at some nice restaurants, here's a few suggestions:
   area with many fast food options.
 
 Also note that while buffets sound like a good option, the on-strip buffets tend
-to be very expensive.  On other hand, you can find cheap food just off the
-strip.
+to be very expensive.  On other hand, you can find cheap, plentiful food at
+buffets just off the strip.
 
 
 ## Conclusion ##
