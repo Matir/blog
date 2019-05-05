@@ -88,7 +88,11 @@ practice in specialized security or hacking domains directly from some of the
 most passionate individuals in those specializations.
 
 DEF CON is also at a reasonably accessible price -- it looks like badges will
-cost $300 this year.  For 4 days of content, it's really quite worth it.
+cost $300 this year.  For 4 days of content, it's really quite worth it.  Note
+that badge purchases are **cash only**, so don't forget to bring at least that.
+
+If you haven't seen it, there's even a [documentary about DEF
+CON](https://www.youtube.com/watch?v=3ctQOmjQyYg).
 
 ### Black Hat ###
 
@@ -131,7 +135,9 @@ The talks are high quality and many are used as a dry run for other conferences,
 or are the kind of talk that just barely didn't make it.  Sometimes they're just
 too niche.  One of my favorite features is that some speakers ("Proving
 Ground") are new speakers who have been paired with a mentor to help them
-present their original research.
+present their original research.  This is a great opportunity to support new
+speakers, find topics that haven't been covered before, and get some face to
+face time with the speaker after the talk.
 
 BSides Las Vegas is also home to the [Pros v Joes CTF](http://prosversusjoes.net/),
 a unique CTF that provides both red team and blue team experiences in a
@@ -155,9 +161,58 @@ is open now for both Pros and Joes.
 
 ## Other Events ##
 
-### QueerCon ###
+### Queercon ###
+
+[Queercon](https://www.queercon.org/) is another event associated with DEF CON
+for the last 16 years.  Queercon started as a hacker party for the LGBTQ at DEF
+CON but has grown into much more than that, with multiple parties, talks about
+diversity and inclusion in the IT security and hacker communities, and even a
+social network of LGBTQ hackers.  This year, Queercon will be taking over the
+[Alexis Park](http://www.alexispark.com/), the original home of DEF CON.
+
+Queercon's pool party is consistently one of the best events for the LGBTQ crowd
+*and allies* and it's a great organization to support the growth of diversity in
+an otherwise fairly vanilla community.  Queercon will be providing a shuttle
+between the AP and Bally's, so you can get back and forth without a hassle.
+
+### DEF CON Shoot ###
+
+The [DEF CON Shoot](https://deviating.net/firearms/defcon_shoot/) is an
+unofficial DEF CON event for sport shooting fans associated with the
+conferences.  To quote their own website:
+
+> The DEF CON Shoot is a public event that happens just prior to the DEF CON
+> hacker conference in Las Vegas, Nevada. It is an opportunity to see and
+> possibly shoot some of the guns belonging to your friends while taking pride
+> in showing and firing your own steel, as well, in a relaxed and welcoming
+> atmosphere. Unlike many large shooting events, however, the DEF CON Shoot
+> doesn't typically take place at an established, brick-and-mortar gun range.
+> Instead, we roll our own, so-to-speak.
+> 
+> Maybe you have a favorite chef in your hometown who is adventurous and will
+> rent out abandoned space for a pop-up restaurant that only lasts one weekend
+> or maybe you've attended an off-book beer garden on the edge of a city street
+> one afternoon. The DEF CON Shoot has historically been like that. We rent
+> tables, canopies, and I bring all the necessary safety equipment and
+> amenities... and we have ourselves a pop-up gun range out on open land in the
+> Nevada desert. It's a hackers' firing line that exists for only one day every
+> year, then when the guns fall silent it vanishes again... not to be seen for
+> another 364 days.
+
+This event used to take place on Thursday, but has no moved to Wednesday to
+allow hackers taking part in the shoot to enjoy the Thursday events.  If you
+participate -- please remember, safety first and no drinking and shooting!
+Remember the 4 rules of firearms safety at all times.
 
 ### Parties ###
+
+I wouldn't be doing the week justice if I didn't mention that there are a few
+parties in Las Vegas associated with these conferences.  DEF CON has probably
+the biggest party scene, but Black Hat has its fair share as well.  DEF CON
+parties, like the conference itself, tend to be more community oriented, while
+Black Hat events have big name corporate sponsorship behind a lot of them.  Some
+of the events really go all out, taking over top-tier nightclubs or other prime
+venues.
 
 ## Where to Stay ##
 
@@ -186,7 +241,9 @@ attendees (during the conference) so you get to hang with like-minded hackers.
 * Elevators are often overcrowded.
 
 For DEF CON, there's the added con of Caesar's history of "health and welfare
-checks" (see below).
+checks" (see below).  If you decide to go this route, don't forget to check the
+official [room block](https://book.passkey.com/go/SPDEF9), but also check the
+public rates -- I've seen them cheaper than the room block!
 
 ### Staying Offsite ###
 
@@ -208,7 +265,8 @@ staying onsite, so it's very much a matter of prioritizing for you.
 Note that there were a lot of issues regarding Caesar's Entertainment Group
 employees (and potentially impostors) entering guest rooms last year.  Caesar's
 maintains that these room checks will be conducted by security and are necessary
-for guest safety.  While this is highly debateable, and many in the security
+for guest safety.  While this is highly debateable (largely security theater as
+a result of the Vegas shooter), and many in the security
 community (including myself) consider these checks an invasion of personal
 privacy, it appears they will be continuing these checks.  [DEF CON links to
 this Caesar's room check policy
@@ -238,9 +296,103 @@ you're concerned, I would consider calling and checking in advance.
 
 ## Saving Money ##
 
+If you're not lucky enough to have your employer bankrolling your Hacker Summer
+Camp trip, you probably want to save some dough.  Despite it's reputation, Vegas
+can be a relatively affordable city.  Here are some tips I've either used myself
+or picked up from friends or online.
+
+### Conference Badges ###
+
+Unfortunately, I don't have great tips for reducing the cost of conference
+badges.  If you're budget-conscious, then Black Hat is almost certainly out of
+the question.  While I'm aware of some people sharing a badge for DEF CON, I'd
+encourage you to look for savings elsewhere first, as you're missing out on a
+lot if you're only able to go for a chunk of the time.  For BSides Las Vegas,
+volunteering is *by far* the best way to save some green -- you'll get a badge
+for free for 12 hours of volunteering, and it will allow you to contribute back.
+
+### Travel ###
+
+If you're planning to fly, CheapAir.com says the best time to book is anywhere
+from 21 to 120 days in advance.  Considering that I'm writing this 98 days
+before DEF CON begins, that window is already open, so it's probably time to
+begin looking at airfare.  If you live in an area with multiple airports, such
+as LA, the SF Bay Area, New York, etc., make sure you check them all.  I like to
+use [Google Flight Search](https://flights.google.com/) to look at multiple
+dates, airports, and airlines.  (Why multiple dates when the conferences are
+fixed days?  You could stay in a $60/night room at Linq if the flight the next
+day is a $100 cheaper.)
+
+Also, if you live close enough and really want to save, consider driving,
+especially if you do it as part of a group of friends.  3 or 4 people in a car
+can be considerably cheaper than flying, and you get the road trip experience
+(which can either be a pro or a con, depending on who you road trip with).  If
+you don't know anyone locally, consider looking for a [DEF CON
+Group](https://defcongroups.org/) in your area, or checking out the [/r/defcon
+ride and room share
+thread](https://www.reddit.com/r/Defcon/comments/bhfha7/def_con_27_ride_room_share/).
+Do note that some of the hotels now charge for self-parking, so that's another
+issue to take into account.
+
+### Hotel ###
+
+Much like travel, many of the ways to save money for your hotel seem kind of
+obvious, but they're all worth checking.  If looking to stay at one of the con
+hotels, make sure you check the group rate.  ([DEF
+CON](https://book.passkey.com/go/SPDEF9), [Black
+Hat](https://book.passkey.com/go/bhusa2019), BSides LV is sold out)  Also check
+both directly with the hotel and with 3rd party booking sites like
+[Hotels.com](https://hotels.com) and others.  Don't forget to check out AirBnB
+as well.
+
+If you stay beyond walking distance from the conference, don't forget to add in
+the cost of an Uber, Lyft, or Taxi ride, or a rental car as appropriate.  If
+you're on the strip, there is a [bus
+available](https://www.rtcsnv.com/touristms/routes.html) from 7am to 2am for
+$8/day.  It is supposed to run about every 15 minutes with stops roughly every
+(long) block or so.  Keep in mind that Las Vegas blocks are very long, that the
+hotels are set back from the road in a lot of cases, and that it will be August
+in the desert -- it's going to be hot.
+
+Obviously, sharing a room helps to split costs.
+
+### Food ###
+
+Food is probably the area that gives you the best opportunities for money
+savings.  Las Vegas has a full spectrum of food options, ranging from
+Michelin-starred venues like Joel Rubochon right down to In-N-Out Burger.  Some
+con attendees even go off-strip to a grocery store and get food, but if you want
+to stay close by and eat at some nice restaurants, here's a few suggestions:
+
+* [Carnegie Deli](https://carnegiedeli.com/food-gallery/) (At the Mirage, not
+  super cheap, but the portions are huge)
+* [Shake Shack](https://www.shakeshack.com/)
+* In-N-Out Burger (Probably one of the cheapest options near the strip)
+* Planet Hollywood (one of the DEF CON hotels) has an entire indoor mall-like
+  area with many fast food options.
+
+Also note that while buffets sound like a good option, the on-strip buffets tend
+to be very expensive.  On other hand, you can find cheap food just off the
+strip.
+
+
 ## Conclusion ##
 
 Closer to the conferences, I'll put out a preview of specific talks and events
-to look forward to, as well as newbie guides to some of the events.  I'll also
-put together a list of things I'm bringing to make the conferences more fun or
-just make my time in Vegas less painful.
+to look forward to, as well as newbie guides to some of the events, personal
+safety tips, and packing information.  I'll also put together a list of things
+I'm bringing to make the conferences more fun or just make my time in Vegas less
+painful.
+
+One more thing -- my weather prediction for this year is "Hot AF."  Plan
+accordingly.
+
+### Resources ###
+
+Here are some other resources for finding out more:
+
+* [DEF CON Website](https://defcon.org)
+* [BSidesLV Website](https://bsideslv.org)
+* [Black Hat Website](https://blackhat.com)
+* [Reddit /r/defcon](https://reddit.com/r/defcon)
+* [DEF CON Forum](https://forum.defcon.org/)
