@@ -83,7 +83,8 @@ probably to grab some random attendees data -- it's just not worth it to them.
 That being said, you shouldn't make yourself a target either.  There are some
 simple steps you can (and should) take to protect yourself:
 
-- Use a VPN service for your traffic.
+- Use a VPN service for your traffic.  I like [Private Internet
+  Access](https://www.privateinternetaccess.com) for a commercial provider.
 - Don't connect to open WiFi networks.
 - Don't accept certificate errors.
 - Don't plug your phone into strange USB plugs.
