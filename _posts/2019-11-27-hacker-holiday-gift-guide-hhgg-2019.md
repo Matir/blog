@@ -11,7 +11,8 @@ I wanted to put together a few thoughts I had on gifts for my fellow hackers
 this holiday season.  I'm including a variety of different things to appeal to
 almost anyone involved in information security or hardware hacking, but I'm
 obviously a bit biased to my own areas of interest.  I've tried to roughly
-categorize things, but they tend to transcend boundaries somewhat.
+categorize things, but they tend to transcend boundaries somewhat.  Got a
+suggestion I missed?  Hit me up on [Twitter](https://twitter.com/matir).
 
 <!--more-->
 
@@ -40,11 +41,36 @@ cell phone makes it less critical, having this when onsite can be a quick win,
 and if you ever need to test or assess when in an area with no reception, it's
 even more benefit.
 
+#### Breaking and Entering ####
+
+[Breaking and Entering: The Extraordinary Story of a Hacker Called
+"Alien"](https://amzn.to/2XXCzLy) is a mostly-true story about a professional
+hacker (penetration tester), detailing her start while a student at MIT through
+her career as a penetration tester.  It details not only some of the information
+security-related hacks, but also other clever hacks and explorations in her
+life.  It's an exciting read, and I was super happy to see how detailed and
+accurate the recollection is.
+
+#### Cult of the Dead Cow ####
+
+[![Cult of the Dead Cow](//ws-na.amazon-adsystem.com/widgets/q?_encoding=UTF8&ASIN=154176238X&Format=_SL160_&ID=AsinImage&MarketPlace=US&ServiceVersion=20070822&WS=1&tag=systemovecom-20&language=en_US){:.right}](https://amzn.to/2Dwe3HD)
+
+[Cult of the Dead Cow: How the Original Hacking Supergroup Might Just Save the World](https://amzn.to/2Dwe3HD)
+is a great history of the early days of hacking and hacking groups.
+cDc is probably the single most influential hacking group, and is responsible
+for many of the tools that are used by information security professionals today.
+With significant overlap with l0pht (another influential group), the group
+helped to shape what hacking is today and has had significant influence that
+many individuals may not realize.  Those outside the hacking scene may take many
+things for granted that are influenced by cDc.  Whether you realize it or not,
+they shaped the internet of today, and this is a well-researched read into their
+history and influence.
+
 ## Electronics ##
 
 #### Encrypted Flash Drive ####
 
-[![DT2000](//ws-na.amazon-adsystem.com/widgets/q?_encoding=UTF8&ASIN=B074QLHJR4&Format=_SL160_&ID=AsinImage&MarketPlace=US&ServiceVersion=20070822&WS=1&tag=systemovecom-20&language=en_US)](https://amzn.to/34u2ufY)
+[![DT2000](//ws-na.amazon-adsystem.com/widgets/q?_encoding=UTF8&ASIN=B074QLHJR4&Format=_SL160_&ID=AsinImage&MarketPlace=US&ServiceVersion=20070822&WS=1&tag=systemovecom-20&language=en_US){:.left}](https://amzn.to/34u2ufY)
 
 This [encrypted flash drive](https://amzn.to/34u2ufY) has hardware-based
 encryption to protect the data contained on it.  Because the security is
@@ -59,7 +85,7 @@ firmware.  It's available at least up to [64GB](https://amzn.to/2QUBRgt).
 
 #### Keysy RFID Duplicator ####
 
-[![Keysy](//ws-na.amazon-adsystem.com/widgets/q?_encoding=UTF8&ASIN=B07D7K2LCB&Format=_SL160_&ID=AsinImage&MarketPlace=US&ServiceVersion=20070822&WS=1&tag=systemovecom-20&language=en_US)](https://amzn.to/33r99X1)
+[![Keysy](//ws-na.amazon-adsystem.com/widgets/q?_encoding=UTF8&ASIN=B07D7K2LCB&Format=_SL160_&ID=AsinImage&MarketPlace=US&ServiceVersion=20070822&WS=1&tag=systemovecom-20&language=en_US){:.right}](https://amzn.to/33r99X1)
 
 The [Keysy RFID duplicator](https://amzn.to/33r99X1) lets you clone various
 forms of RFID credentials either into its internal memory, or into a writable
@@ -86,11 +112,11 @@ replay).
 * Can pretend to be either a card or reader.
 * Sniff communications between other readers & cards.
 * Operate standalone
-* Multiple modes supported.
+* Multiple RFID modes supported.
 
 #### Yubikey 5 ####
 
-[![Yubikey 5](//ws-na.amazon-adsystem.com/widgets/q?_encoding=UTF8&ASIN=B07HBD71HL&Format=_SL160_&ID=AsinImage&MarketPlace=US&ServiceVersion=20070822&WS=1&tag=systemovecom-20&language=en_US)](https://amzn.to/35HusoY)
+[![Yubikey 5](//ws-na.amazon-adsystem.com/widgets/q?_encoding=UTF8&ASIN=B07HBD71HL&Format=_SL160_&ID=AsinImage&MarketPlace=US&ServiceVersion=20070822&WS=1&tag=systemovecom-20&language=en_US){:.left}](https://amzn.to/35HusoY)
 
 The [Yubikey 5](https://amzn.to/35HusoY) is a hardware security token for a
 variety of purposes.  Most obviously, it offers support for U2F/FIDO2/WebAuthn
@@ -101,6 +127,36 @@ attacked via mobile malware.
 The Yubikey 5 also supports a smartcard mode where it can store OpenPGP and/or
 SSH keys in its secure memory, protecting them against local malware attempts to
 steal the keys.
+
+#### Packet Squirrel ####
+
+[![Packet Squirrel](/img/blog/gifts2019/packet_squirrel.jpg){:.right}](https://shop.hak5.org/products/packet-squirrel)
+
+The [Hak5 Packet Squirrel](https://shop.hak5.org/products/packet-squirrel) is a
+great little Man-in-the-Middle device.  With dual ethernet interfaces, it's a
+physical MITM, so not vulnerable to the kinds of detection that work against ARP
+spoofing and other techniques.  It's a great option for a penetration test drop
+box, as well as things as simple as debugging network problems when you can't
+run a packet capture on the endpoint itself.  It's USB micro powered and
+supports pre-programmable payloads via an external switch, so you can have it
+ready to perform any of several roles, depending on the situation you find
+yourself in.  It runs a full Linux stack, so lots of capabilities available
+there.
+
+#### Shark Jack ####
+
+[![Shark Jack](/img/blog/gifts2019/sharkjack.jpg){:.left}](https://shop.hak5.org/products/shark-jack)
+
+The [Hak5 Shark Jack](https://shop.hak5.org/products/shark-jack) is a tiny
+implant with a small battery built-in.  This battery allows it to be completely
+self-contained, needing only an ethernet port to plug into.  This is perfect for
+when you find that ethernet port behind a piece of furniture and can deploy your
+implant quickly.  This isn't an implant to leave in place -- the battery only
+lasts about 10-15 minutes.  (Though I suppose you could power it via USB-C, so
+it's not impossible to run it that way.)  By default it will do a quick nmap
+scan and save it to the internal flash, but you can, of course, script it to do
+anything you want when plugged in.  Like the Packet Squirrel, theres a switch to
+choose the mode you want to run.
 
 ## Travel ##
 
@@ -154,6 +210,97 @@ There are also cheaper options like the [GL-MT300N](https://amzn.to/2rwyEcf) or
 the [GL-AR300M](https://amzn.to/2OTbTHs) if you don't need all the power of the
 Slate.
 
+#### Keyport Pivot ####
+
+[![Keyport Pivot](//ws-na.amazon-adsystem.com/widgets/q?_encoding=UTF8&ASIN=B06XC5SZKC&Format=_SL160_&ID=AsinImage&MarketPlace=US&ServiceVersion=20070822&WS=1&tag=systemovecom-20&language=en_US){:.right}](https://amzn.to/2rzzqFo)
+
+More than just travel, the [Keyport Pivot](https://amzn.to/2rzzqFo) is part of
+my every day carry.  I have a tendency to carry too much, and that includes
+keys.  My keys feel so much more compact and so much more organized when in the
+Keyport Pivot, which keeps them all together at once.  I also carry the [MOCA
+Multi-tool](https://amzn.to/2L2lnyV) in my Pivot, which is a nice multi-tool
+that meets TSA guidelines, so is great for those that travel regularly.  In
+fact, the MOCA is also available in a [standalone
+format](https://amzn.to/34wpNpz) with a handle and paracord pull.
+
 ## Tools/Maker ##
 
-## Stocking Stuffers ##
+#### Raspberry Pi 4 ####
+
+[![Raspberry Pi 4](//ws-na.amazon-adsystem.com/widgets/q?_encoding=UTF8&ASIN=B07TC2BK1X&Format=_SL160_&ID=AsinImage&MarketPlace=US&ServiceVersion=20070822&WS=1&tag=systemovecom-20&language=en_US){:.right}](https://www.amazon.com/Raspberry-Model-2019-Quad-Bluetooth/dp/B07TC2BK1X/ref=as_li_ss_il?crid=UBATM8CI8LKG&keywords=raspberry+pi+4&qid=1574968305&s=electronics&sprefix=ras,electronics,202&sr=1-4&linkCode=li2&tag=systemovecom-20&linkId=66110bc97f08113b78b1d848eff78c41&language=en_US)
+
+The [Raspberry Pi 4](https://amzn.to/2XT9X63) is the latest generation of the
+venerable Raspberry Pi single board computer.  This generation has entered the
+realm of being a full desktop for web surfing, etc., as well as an option for a
+home theater PC or emulating older console game titles.  It even has enough
+processing power to pair with the [Analog Discovery 2](https://amzn.to/2qKexaJ)
+to be a PC-based oscilloscope/logic analyzer.  They've finally upgraded to
+Gigabit ethernet, so much better on the network (though it retains built-in WiFi
+support as well).
+
+#### Circuit Playground Express ####
+
+[![Circuit Playground Express](/img/blog/gifts2019/cpe.jpg){:.right}](https://www.adafruit.com/product/3333)
+
+Adafruit's [Circuit Playground Express](https://www.adafruit.com/product/3333)
+is the ultimate introduction to embedded devices.  Programmable in either the
+popular Arduino IDE or CircuitPython, this takes the concept of an Arduino one
+step further.  Instead of having to hook up lights, buttons, or sensors, they
+are all integrated into the one board.  It includes two push buttons, an
+accelerometer, 10 RGB LEDs, temperature, light and sound sensors, and much more.
+It's powered by an ARM microcontoller at 48 MHz to allow you to make use of all
+these inputs and outputs, and can be extended via the connections around the
+outside (which are large enough to use with alligator clips).  If you or someone
+you know wants to learn embedded development without needing to do wiring or
+circuits themselves, this is a great way to get started.
+
+#### iFixit Tool Kit ####
+
+[![iFixit Toolkit](//ws-na.amazon-adsystem.com/widgets/q?_encoding=UTF8&ASIN=B01GF0KV6G&Format=_SL160_&ID=AsinImage&MarketPlace=US&ServiceVersion=20070822&WS=1&tag=systemovecom-20&language=en_US){:.left}](https://amzn.to/2qL4FNU)
+
+This [iFixit Tool Kit](https://amzn.to/2qL4FNU) is my go-to toolkit for opening
+and working with electronics.  It has all the bits I've found on devices,
+including the "security Torx" bits, precision Phillips and slotted bits, and hex
+bits.  The handle is a great size to both get a grip but also fit into tight
+spaces, and the flex shaft helps in even tighter spaces.  The plastic spudgers
+and pry tool are great for getting into devices held together with clips instead
+of (or in addition to) screws.  (Like the base plate on my Lenovo laptop, and so
+many electronic devices.)  I've used some of the cheaper clones of these kits,
+and the pieces just don't hold up as well as these do, or are made with
+materials that don't perform as well.
+
+#### Pocket Flashlight ####
+
+[![Microstream](//ws-na.amazon-adsystem.com/widgets/q?_encoding=UTF8&ASIN=B077BLB1DN&Format=_SL160_&ID=AsinImage&MarketPlace=US&ServiceVersion=20070822&WS=1&tag=systemovecom-20&language=en_US){:.right}](https://amzn.to/34EK3Wl)
+
+This [USB-rechargable pocket flashlight](https://amzn.to/34EK3Wl) is a very
+useful tool to have on hand.  Flashlights are obviously useful, but being
+rechargable is both eco-friendly and convenient, and being pocket-sized ensures
+you can always have it with you.  (Or carry it in your bag instead of your
+pocket, which is my approach so I don't lose it.)  Streamlight is a well known
+brand with strong ratings and a history of quality, so this will keep going
+reliably.
+
+#### Sugru ####
+
+[Sugru](https://amzn.to/2DoPInd) is a "Mouldable Glue", which is basically an
+adhesive putty that holds fast when it cures.  They are useful for making custom
+hooks, adding protection or strain relief to cables, waterproofing around
+openings, or repairing small breaks.  As it's silicone based, it remains
+slightly flexible and holds up well against water.  I've used it before to seal
+around cables going through openings in enclosures and to make custom cable
+organizers.
+
+#### Skeletool CX ####
+
+[![Skeletool](//ws-na.amazon-adsystem.com/widgets/q?_encoding=UTF8&ASIN=B0043NYPA6&Format=_SL160_&ID=AsinImage&MarketPlace=US&ServiceVersion=20070822&WS=1&tag=systemovecom-20&language=en_US){:.left}](https://amzn.to/2smfLZT)
+
+Like the pocket flashlight, I like to carry a multitool with me daily.  I've
+carried the [Skeletool](https://amzn.to/2smfLZT) for a few years now, including
+a replacement after I accidentally got to the TSA checkpoint with one.  (Oops.)
+This has a knife blade, pliers, and the ability to hold interchangable bits in
+the handle for a screwdriver.  I've run into many occassions where this was
+useful, ranging from quick repairs to taking something apart on a whim, to
+opening packages.  There's even a bottle opener at the base of the handle, which
+is perfect for those adult beverages.  (No corkscrew for you wine drinkers.  Try
+screwtop bottles.)
