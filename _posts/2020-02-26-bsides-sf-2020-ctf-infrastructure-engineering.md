@@ -17,6 +17,8 @@ better job than the year before, but we also try to do new things and push the
 boundaries.  I'm going to review some of the infrastructure we used, challenges
 we faced, and lessons we learned for next year.
 
+<!--more-->
+
 * Contents
 {:toc}
 
@@ -132,5 +134,16 @@ to reduce load and continue to provide responses for some requests.  A
 Redis-based cache is in the cards to improve this situation as well.
 
 ## Balancing On-Site and Remote Participants
+
+It's always a challenge to balance things between our on-site (conference)
+players and those playing remotely.  We want to be able to build non-traditional
+challenges that require being onsite, such as "Locky", our lockpicking challenge
+that prints a physical flag for players, or a challenge to unlock an onsite
+simulated smart lock.
+
+We also aren't able to provide around-the-clock support online because of the
+conference schedule, activities, and our location.  Likewise, our timing this
+year was a match to the conference schedule, which we realize is inconvenient
+for some of our remote players because of differing timezones.
 
 ## Plans for Next Year
