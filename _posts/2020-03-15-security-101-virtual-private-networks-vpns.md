@@ -16,6 +16,8 @@ Today, I want to cover Virtual Private Networks, commonly known as VPNs.  First
 I want to talk about what they are and how they work, then about commercial VPN
 providers, and finally about common misconceptions.
 
+<!--more-->
+
 ## VPN Basics ##
 
 At the most basic level, a VPN is intended to provide a service that is
@@ -24,7 +26,7 @@ between two endpoints.  The goal is to provide confidentiality and integrity for
 the traffic travelling between those endpoints, which is usually accomplished by
 cryptography (encryption).
 
-<!-- todo: general VPN image -->
+<img src="/img/vpn/vpn-overview.svg">
 
 The traffic tunneled by VPNs can operate at either Layer 2
 (sometimes referred to as "bridging") or
@@ -94,19 +96,107 @@ traffic to the VPN server via the VPN won't work.  (No VPN-ception here!)  So
 most VPN software will add a route specifically for your VPN server that goes
 via the default route outside the VPN (i.e., your local router).
 
+For example, when connected via Wireguard, I have the following routing tables:
+
 ```
 % ip route
+default dev wg0 table 51820 scope link
 default via 192.168.20.1 dev wlp3s0 proto dhcp metric 600
-10.13.37.128/26 dev wgnu proto kernel scope link src 10.13.37.148
-192.168.0.0/16 via 192.168.20.1 dev wlp3s0 proto dhcp metric 600
+10.13.37.128/26 dev wg0 proto kernel scope link src 10.13.37.148
 192.168.20.0/24 dev wlp3s0 proto kernel scope link src 192.168.20.21 metric 600
 ```
 
-## Using VPNs for "Privacy" ##
+`10.13.37.148/26` is the address and subnet for my VPN, and `192.168.20.21/24`
+is my local IP address on my local network.  The routing table provides for a
+default via `wg0`, my wireguard interface.  There's a routing rule that prevents
+wireguard traffic from itself going over that route, so it falls to the next
+route, which uses my home router (running [pfSense](https://www.pfsense.org/))
+to get to the VPN server.
+
+The VPN only provides its confidentiality and integrity for packets that travel
+via its route (and so go within the tunnel).  The routing table is responsible
+for selecting whether a packet will go via the VPN tunnel or via the normal
+(e.g., non-encrypted) network interface.
+
+Just for fun, I dropped my Wireguard VPN connection and switched to an OpenVPN
+connection to the same server.  Here's what the routing table looks like then
+(tun0 is the VPN interface):
+
+```
+% ip route
+default via 10.13.37.1 dev tun0 proto static metric 50
+default via 192.168.20.1 dev wlp3s0 proto dhcp metric 600
+10.13.37.0/26 dev tun0 proto kernel scope link src 10.13.37.2 metric 50
+10.13.37.0/24 via 10.13.37.1 dev tun0 proto static metric 50
+198.51.100.6 via 192.168.20.1 dev wlp3s0 proto static metric 600
+192.168.20.0/24 dev wlp3s0 proto kernel scope link src 192.168.20.21 metric 600
+192.168.20.1 dev wlp3s0 proto static scope link metric 600
+```
+
+This is a little bit more complicated, but you'll still note the two default
+routes.  In this case, instead of using a routing rule, OpenVPN sets the
+`metric` of the VPN route to a lower value.  You can think of a `metric` as
+being a cost to a route: if multiple routes are equally specific, then the
+lowest `metric` (cost) is the one selected by the kernel for routing the packet.
+
+Otherwise, the routing table is very similar, but you'll also notice the route
+specifically for the VPN server (`198.51.100.6`) is routed via my local gateway
+(`192.168.20.1`).  This is how OpenVPN ensures that its packets (those encrypted
+and signed by the VPN client) are not routed over the VPN itself by the kernel.
+
+## Using VPNs for "Privacy" vs "Security" ##
+
+There are many reasons for using a VPN, but for many people, they boil down to
+being described as "Privacy" or "Security".  The single most important thing to
+remember is that the VPN offers **no protection** to data in transit **between
+the VPN server and the remote server**.  Where data reaches the remote server,
+it looks exactly the same as if it had been sent directly.
+
+Some VPNs are just used to access private resources on the remote network (e.g.,
+corporate VPNs), but a lot of VPN usage these days is routing all traffic,
+including internet traffic, over the VPN connection.  I'll mostly consider those
+scenarios below.
+
+When talking about what a VPN gets you, you also need to consider your "threat
+model".  Specifically, who is your adversary and what do you want to prevent
+them from being able to do?  Some common examples of concerns people have and
+where a VPN can actually benefit you include:
+
+* (Privacy) Prevent their ISP from being able to market their browsing data
+* (Security) Prevent man-in-the-middle attacks on public/shared WiFi
+* (Privacy) Prevent tracking by "changing" your IP address
+
+Some scenarios that people want to achieve, but a VPN is ineffective for,
+include:
+
+* (Privacy) Preventing "anyone" from being able to see what sites you're
+  visiting
+* (Privacy) Prevent network-wide adversaries (e.g., governments) from tracking
+  your browsing activity
+* (Privacy) Prevent all tracking of your browsing
 
 ### Commercial VPNs ###
 
+Commercial VPN providers have the advantage of mixing all of your traffic with
+that of their other customers.  Typically, a couple of dozen or more inbound
+connections come out from the same IP address.  They also come with no
+administration overhead, and often have servers in a variety of locations, which
+can be useful if you'd like to access Geo-Restricted content.  (Please comply
+with the appropriate ToS however.)
+
+On the flip side, using a commercial VPN server has just moved the endpoint of
+your plaintext traffic to another point, so if privacy is your main concern,
+you'd better trust your VPN provider more than you trust your ISP.
+
 ### Rolling Your Own ###
+
+Rolling your own gives you the ultimate in control of your VPN server, but does
+require some technical know-how.  I really like the approach of using
+[Trail of Bits' Algo](https://github.com/trailofbits/algo) on
+[DigitalOcean](https://m.do.co/c/b2cffefc9c81) for a fast custom VPN server.
+When rolling your own, you're not competing with others for bandwidth and can
+choose a hosting provider in the location you want to get nearly any egress you
+want.
 
 ## VPN Misconceptions ##
 
