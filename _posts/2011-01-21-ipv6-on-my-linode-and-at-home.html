@@ -10,7 +10,7 @@ tags:
   - IPv6
 ---
 <p>Hurricane Electric, ARIN, and others, <a href="http://ipv6.he.net/statistics/">report</a> that we may be as close as 12 days to exhaustion of the main IPv4 pool.  Accordingly, I decided it was time to get both my VPS and my home network IPv6-ready.  It wasn't as painful as I feared, though doing it in DD-WRT is a bigger pain than it should be.  If I had an OpenWRT router, it looks like it would be easier.</p>
-<!--break--><p>
+<!--more--><p>
 As many people know, my blog is hosted by the good folks at <a href="http://www.linode.com/?r=680a893e24df3597d32f58cd41930e969027dc06">Linode</a>.  I've used about 5 VPS providers and they're by far the best. (Though not the cheapest, but it's worth it.)  As of yesterday, I activated IPv6 on my Linode using the <a href="https://secure.wikimedia.org/wikipedia/en/wiki/6to4">6to4 IPv6-in-IPv4 encapsulation technology</a>.  This takes the 32 bits of your IPv4 address, converts it to hex, and appends that to 2002 as the network portion of your IP address.  (It actually also adds another 16 bits, all 0, to get to a /64).  Accordingly, 74.207.225.127 becomes the 2002:4acf:e17f::/64 network, with my server's IP at 2002:4acf:e17f::1.  (You can also see this using dig, nslookup, or your other favorite DNS tool.)  The configuration for this is pretty simple actually.  You just need the 'ipv6' and 'sit' modules installed (or built into your kernel) and a configuration like this in your /etc/network/interfaces:</p>
 <pre>auto tun6to4
 iface tun6to4 inet6 v4tunnel
