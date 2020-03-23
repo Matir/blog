@@ -144,6 +144,9 @@ specifically for the VPN server (`198.51.100.6`) is routed via my local gateway
 (`192.168.20.1`).  This is how OpenVPN ensures that its packets (those encrypted
 and signed by the VPN client) are not routed over the VPN itself by the kernel.
 
+Note that users of Docker or virtual machines are likely to see a number of
+additional routes going over the virtual interfaces to containers/VMs.
+
 ## Using VPNs for "Privacy" vs "Security" ##
 
 There are many reasons for using a VPN, but for many people, they boil down to
@@ -188,6 +191,11 @@ On the flip side, using a commercial VPN server has just moved the endpoint of
 your plaintext traffic to another point, so if privacy is your main concern,
 you'd better trust your VPN provider more than you trust your ISP.
 
+If you're after anonymity online, it's important to consider who you're seeking
+anonymity from.  If you're only concerned about advertisers, website operators,
+etc., than a commercial VPN helps provide a pseudonymous browsing profile
+compared to coming directly from your ISP-provided connection.
+
 ### Rolling Your Own ###
 
 Rolling your own gives you the ultimate in control of your VPN server, but does
@@ -198,6 +206,117 @@ When rolling your own, you're not competing with others for bandwidth and can
 choose a hosting provider in the location you want to get nearly any egress you
 want.
 
+Alternatively, you can set up either OpenVPN or Wireguard yourself.  While
+Wireguard is considered cleaner and uses more modern cryptography, OpenVPN takes
+care of a few things (like IP address assignment) that Wireguard does not.  Both
+are well-documented at this point and have clients available for a variety of
+platforms.
+
+Note that a private VPN generally does not have the advantage of mixing your
+traffic with that of others -- you're essentially moving your traffic from one
+place to another, but it's still your traffic.
+
 ## VPN Misconceptions ##
 
+When people are new to the use of a VPN, there seems to be a lot of
+misconceptions about how they're supposed to work and their properties.
+
+### VPNs Change Your IP Address ###
+
+VPNs do not change the public IP address of your computer.  While they do
+usually assign a new private IP for the tunnel interface, this IP is one that
+will never appear on the internet, so is not of concern to most users.  What
+**it does** do is route your traffic via the tunnel so it emerges onto the
+public internet from another IP address (belonging to your VPN server).
+
 ### VPN "Leaks" ###
+
+Generally speaking, when someone refers to a VPN leak, they're referring to the
+ability of a remote server to identify the public IP to which the endpoint is
+directly attached.  For example, a server seeing the ISP-assigned IP address of
+your computer as the source of incoming packets can be seen as a "leak".
+
+These are not, generally, the fault of the VPN itself.  They are usually caused
+by the routing rules your computer is using to determine how to send packets to
+their destination.  You can test the routing rules with a command like:
+
+```
+% ip route get 8.8.8.8
+8.8.8.8 dev wg0 table 51820 src 10.13.37.148 uid 1000
+    cache
+```
+
+You can see that, in order to reach the IP `8.8.8.8` (Google's DNS server), I'm
+routing packets via the `wg0` interface -- so out via the VPN.  On the other
+hand, if I check something on my local network, you can see it will go directly:
+
+```
+% ip route get 192.168.20.1
+192.168.20.1 dev wlp3s0 src 192.168.20.21 uid 1000
+    cache
+```
+
+If you don't see the VPN interface when you run `ip route get <destination>`,
+you'll end up with traffic *not* going via the VPN, and so going directly to
+the destination server.  Using [ifconfig.co](https://ifconfig.co) to test the IP
+being seen by servers, I'll examine the two scenarios:
+
+```
+% host ifconfig.co
+ifconfig.co has address 104.28.18.94
+% ip route get 104.28.18.94
+104.28.18.94 dev wgnu table 51820 src 10.13.37.148 uid 1000
+    cache
+% curl -4 ifconfig.co
+198.51.100.6
+... shutdown VPN ...
+% ip route get 104.28.18.94
+104.28.18.94 via 192.168.20.1 dev wlp3s0 src 192.168.20.21 uid 1000
+    cache
+% curl -4 ifconfig.co
+192.0.2.44
+```
+
+Note that my real IP (`192.0.2.44`) is exposed to the `ifconfig.co` service when
+the route is not destined to go via the VPN.  If you see a route via your local
+router to an IP, then that traffic is not going over a VPN client running on
+your local host.
+
+Note that routing DNS outside the VPN (e.g., to your local DNS server) provides
+a trivial IP address leak.  By merely requesting a DNS lookup to a unique
+hostname for your connection, the server can force an "IP leak" via DNS.  There
+are other things that can potentially be seen as an "IP leak," like WebRTC.
+
+### VPN Killswitches ###
+
+A VPN "killswitch" is a common option in a 3rd party clients.  This endeavors to
+block any traffic not going through the VPN, or block all traffic when the VPN
+connection is not active.  This is **not** a core property of VPNs, but may be a
+property of a particular VPN client.  (For example, this is not built in to the
+official OpenVPN or Wireguard clients, nor the IPSec implementations for either
+Windows or Linux.)
+
+## VPN Routers ##
+
+[![](//ws-na.amazon-adsystem.com/widgets/q?_encoding=UTF8&ASIN=B07GBXMBQF&Format=_SL160_&ID=AsinImage&MarketPlace=US&ServiceVersion=20070822&WS=1&tag=systemovecom-20&language=en_US){:.right}](https://www.amazon.com/GL-iNet-GL-AR750S-Ext-pre-Installed-Cloudflare-Included/dp/B07GBXMBQF/ref=as_li_ss_il?dchild=1&keywords=ar750s&qid=1584922605&sr=8-1&linkCode=li2&tag=systemovecom-20&linkId=9a8b5318cbaf2828d144acdf67d84877&language=en_US")
+
+One approach to avoiding local VPN configuration issues is to use a separate
+router that puts all of the clients connected to it through the VPN.  This has
+several advantages, including easier implementation of a killswitch, support for
+clients that may not support VPN applications (e.g., smart devices, e-Readers,
+etc.).  If configured correctly, it can ensure no leaks (e.g., by only routing
+from its "LAN" side to the "VPN" side, and never from "LAN" to "WAN").
+
+I do this when travelling with a [gl.inet AR750-S
+"Slate"](https://amzn.to/3bfu8k3).  The stock firmware is based on OpenWRT, so
+you can choose to run a fully OpenWRT custom build (like I do) or the default
+firmware, which does support both Wireguard and OpenVPN.  (Note that, being a
+low-power MIPS CPU, throughput will not match raw throughput available from your
+computer's CPU, however it will still best the WiFi at the hotel or airport.
+
+## VPNs are not a Panacea ##
+
+Many people look for a VPN as an instant solution for privacy, security, or
+anonymity.  Unfortunately, it's not that simple.  Understanding how VPNs work,
+how IP addresses work, how routing works, and what your threat model is will
+help you make a more informed decision.
