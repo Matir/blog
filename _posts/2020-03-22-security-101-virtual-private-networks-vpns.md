@@ -2,7 +2,7 @@
 layout: post
 title: "Security 101: Virtual Private Networks (VPNs)"
 category: Security
-date: 2020-03-15
+date: 2020-03-22
 tags:
   - Security 101
 ---
@@ -296,6 +296,38 @@ property of a particular VPN client.  (For example, this is not built in to the
 official OpenVPN or Wireguard clients, nor the IPSec implementations for either
 Windows or Linux.)
 
+That being said, you could implement your own protection on this.  For example,
+you could block all traffic on your physical interface except that going between
+your computer and the VPN server.  For example, using `iptables`, and with your
+VPN server being 198.51.100.6 on UDP port 51820, a pair of rules like this one
+will block all other traffic from going out on any interface except interfaces
+beginning with `wg`:
+
+```
+iptables -P OUTPUT REJECT
+iptables -A OUTPUT -p udp --dport 51820 -d 198.51.100.6 -j ACCEPT
+iptables -A OUTPUT -o wg+ -j ACCEPT
+```
+
+### VPNs Protect Against Nation-State Adversaries ###
+
+There's a lot of discussion on VPN and privacy forums about selecting "no
+logging" VPNs or VPN providers outside the "Five Eyes" (and the expanded
+selections of allied nations).  To me, this indicates that these individuals are
+concerned about Nation-State level adversaries (i.e., NSA, GCHQ, etc.).  First
+of all, consider whether you need that level of protection -- maybe you're doing
+something you shouldn't be!  However, I can understand the desire for privacy
+and the uneasy feeling of thinking someone is reading your conversations.
+
+No single VPN will protect you against a nation-state adversary or most
+well-resourced adversaries.  Almost all VPN providers receive the encrypted
+traffic and route the plaintext traffic back out via the same interface.  In
+such a scenario, any adversary that can see all of the traffic there  can
+correlate the traffic coming into and out of the VPN provider[^murdoch].
+
+If you need effective protection against such an adversary, you're best to look
+at something like [Tor](https://www.torproject.org/).
+
 ## VPN Routers ##
 
 [![](//ws-na.amazon-adsystem.com/widgets/q?_encoding=UTF8&ASIN=B07GBXMBQF&Format=_SL160_&ID=AsinImage&MarketPlace=US&ServiceVersion=20070822&WS=1&tag=systemovecom-20&language=en_US){:.right}](https://www.amazon.com/GL-iNet-GL-AR750S-Ext-pre-Installed-Cloudflare-Included/dp/B07GBXMBQF/ref=as_li_ss_il?dchild=1&keywords=ar750s&qid=1584922605&sr=8-1&linkCode=li2&tag=systemovecom-20&linkId=9a8b5318cbaf2828d144acdf67d84877&language=en_US")
@@ -319,4 +351,11 @@ computer's CPU, however it will still best the WiFi at the hotel or airport.
 Many people look for a VPN as an instant solution for privacy, security, or
 anonymity.  Unfortunately, it's not that simple.  Understanding how VPNs work,
 how IP addresses work, how routing works, and what your threat model is will
-help you make a more informed decision.
+help you make a more informed decision.  Just asking "is this secure" or "will I
+be anonymous" is not enough without considering the lengths your adversary is
+willing to go to.
+
+Got a request for a Security 101 topic?  Hit me up on
+[Twitter](https://twitter.com/Matir).
+
+[^murdoch]: [Sampled Traffic Analysis by Internet-Exchange-Level Adversaries](https://nymity.ch/tor-dns/pdf/Murdoch2007a.pdf)
