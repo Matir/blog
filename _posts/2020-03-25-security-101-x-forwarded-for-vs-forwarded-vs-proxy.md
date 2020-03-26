@@ -136,8 +136,87 @@ same.
 
 ## Security Considerations ##
 
+If you need (or want) to make use of these headers, there are some key security
+considerations in *how* you use them to use them safely.  This is *particularly*
+of consideration if you use them for any sort of IP whitelisting or access
+control decisions.
+
+Key to the problem is recognizing that the headers represent **untrusted
+input** to your application or system.  Any of them could be forged by a client
+connecting, so you need to consider that.
+
 ### Parsing Headers ###
+
+After I spent so long telling you about the format of the headers, here's where
+I tell you to disregard it all.  Okay, really, you just need to be prepared to
+receive poorly-formatted headers.  Some variation is allowed by the
+specifications/implementations: optional spaces, varying capitalization, etc.
+Some of this will be benign but still unexpected: multiple commas, multiple
+spaces, etc.  Some of it will be erroneous: broken quoting, invalid tokens,
+hostnames instead of IPs, ports where they're not expected, and so on.
+
+None of this, however, precludes malicious input in the case of these headers.
+They may contain attempts at [SQL
+Injection](https://owasp.org/www-community/attacks/SQL_Injection),
+[Cross-Site Scripting](https://owasp.org/www-community/attacks/xss/) and other
+malicious content, so one needs to be cautious in parsing and using the input
+from these headers.
 
 ### Running a Proxy ###
 
+As a proxy, you should consider whether you expect to be receiving these headers
+in your requests.  You will only want that if you are expecting requests to be
+forwarded from another proxy, and then you should make sure the particular
+request *came from* your proxy by validating the source IP of the connection.
+As untrusted input, you **cannot** trust any headers from proxies not under your
+control.
+
+If you are **not** expecting these headers, you should drop the headers from the
+request before passing it on.  Blindly proxying them might cause downstream
+applications to trust their values when they come from your proxy, leading to
+false assertions about the source of the request.
+
+Generally, you should rewrite the appropriate headers at your proxy, including
+adding the information on the source of the request to your proxy, before
+passing them on to the next stage.  Most HTTP proxies have easy ways to manage
+this, so you don't usually need to format the header yourself.
+
 ### Running an Application ###
+
+This is where it gets particularly tricky.  If you're using IP addresses for
+anything of significance (which you probably shouldn't be, but it's likely
+there's some cases where people still are), you need to figure out whether you
+can trust these headers from incoming requests.
+
+First off, if you're not running the proxies: **just don't trust them.**  (Of
+course, I count a managed provider as run by you.)  Also,
+if you're not running the proxy, I hope we're only talking about the PROXY
+protocol and you're not exposing plaintext to untrusted 3rd parties.
+
+If you are running proxies, you need to make sure the request actually came from
+one of your proxies by checking the IP of the direct TCP connection.  This is
+the "remote address" in most web programming frameworks.  If it's not from your
+proxy, then you **can't trust the headers.**
+
+If it's your proxy and you made sure not to trust incoming headers in your proxy
+(see above), then you can trust the full header.  Otherwise, you can only trust
+the incoming hop to your proxy and anything before that is not trustworthy.
+
+### Man in the Middle Attacks ###
+
+All of this disregards MITM attacks of course.  If an attacker can inject
+traffic and spoof source IP addresses into your traffic, all bets on trusting
+headers are off.  TLS will still help with header integrity, but they can still
+spoof the source address, convincing you to trust the headers in the request.
+
+### Bug Bounty Tip ###
+
+Try inserting a few headers to see if you get different responses.  Even if you
+don't get a full authorization out of it, some applications will give you debug
+headers or other interesting behavior.  Consider some of the following:
+
+```
+X-Forwarded-For: 127.0.0.1
+X-Forwarded-For: 10.0.0.1
+Forwarded: for="_localhost"
+```
