@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "Backing up to Google Cloud Storage with Duplicity and Service Accounts"
-category: Computers
+category: Computer
 date: 2019-09-23
 tags:
   - Linux
