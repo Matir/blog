@@ -92,7 +92,7 @@ in the pool, and I'm not someone anyone wants in the pool...)
 ![Dual Core nailing it Friday night](/img/blog/hsc2016/dualcore.jpg)
 
 Just keeping track of all of the parties has become a major task, but the
-[DCP](http://defconparties.info/) guys have you covered there.  I'd love to see
+[DCP](https://defconparties.com/) guys have you covered there.  I'd love to see
 some more parties that are a little more "chill": less loud music, more just
 hanging out and having a drink with friends.  (Or maybe I was just at all the
 wrong ones this year.)

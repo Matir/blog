@@ -11,7 +11,7 @@ tags:
 ---
 ReeKeeeeee was, by far, the most visually painful challenge in the CTF, with a flashing rainbow background on every page.  Blocking scripts was clearly a win here.  Like many of the challenges this year, it turned out to require multiple exploitation steps.
 
-ReeKeeeeee was a meme-generating service that allowed you to provide a URL to an image and text to overlay on the image.  Source code was provided, and it was worth noting that it's a Django app using the <code>django.contrib.sessions.serializers.PickleSerializer</code> serializer.  As the [documentation for the serializer](https://docs.djangoproject.com/en/1.5/topics/http/sessions/) notes, **If the SECRET_KEY is not kept secret and you are using the PickleSerializer, this can lead to arbitrary remote code execution.**  So, maybe, can we get the SECRET_KEY?
+ReeKeeeeee was a meme-generating service that allowed you to provide a URL to an image and text to overlay on the image.  Source code was provided, and it was worth noting that it's a Django app using the <code>django.contrib.sessions.serializers.PickleSerializer</code> serializer.  As the [documentation for the serializer](https://docs.djangoproject.com/en/3.0/topics/http/sessions/) notes, **If the SECRET_KEY is not kept secret and you are using the PickleSerializer, this can lead to arbitrary remote code execution.**  So, maybe, can we get the SECRET_KEY?
 
 #### Getting SECRET_KEY ####
 Here's the core of the meme-creation view in views.py:

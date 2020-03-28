@@ -10,7 +10,16 @@ tags:
 ---
 "Extraordinary claims require extraordinary evidence."
 
-A few days ago, [localghost.org posted a translation](http://localghost.org/posts/a-traffic-analysis-of-windows-10) of [a Czech article](http://aeronet.cz/news/analyza-windows-10-ve-svem-principu-jde-o-pouhy-terminal-na-sber-informaci-o-uzivateli-jeho-prstech-ocich-a-hlasu/) alledging Windows 10 "phones home" in a number of ways.  I was a little surprised, and more than a little alarmed, by some of the claims.  Rather than blindly repost the claims, I decided it would be a good idea to see what I could test for myself.  Rob Seder [has done similarly](http://blog.robseder.com/2015/08/16/whats-the-real-deal-with-windows-10-and-privacy/) but I'm taking it a step further to look at the real traffic contents.
+A few days ago, [localghost.org posted a
+translation](https://web.archive.org/web/20150815004626/http://localghost.org/posts/a-traffic-analysis-of-windows-10)
+of [a Czech
+article](http://aeronet.cz/news/analyza-windows-10-ve-svem-principu-jde-o-pouhy-terminal-na-sber-informaci-o-uzivateli-jeho-prstech-ocich-a-hlasu/)
+alledging Windows 10 "phones home" in a number of ways.  I was a little
+surprised, and more than a little alarmed, by some of the claims.  Rather than
+blindly repost the claims, I decided it would be a good idea to see what I could
+test for myself.  Rob Seder [has done
+similarly](https://robsederblog.wordpress.com/2015/08/16/whats-the-real-deal-with-windows-10-and-privacy/)
+but I'm taking it a step further to look at the real traffic contents.
 
 ### Tools & Setup ###
 

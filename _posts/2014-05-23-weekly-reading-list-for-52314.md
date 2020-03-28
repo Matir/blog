@@ -13,7 +13,7 @@ tags:
   - Pentesting
 ---
 ###Radare2 Book
-Maijin on GitHub is in the process of putting together an [online book for Radare2](https://maijin.github.io/radare2book).  I've been looking for a good resource for using Radare2, and this is a great start.
+Maijin on GitHub is in the process of putting together an [online book for Radare2](https://radare.gitbooks.io/radare2book/).  I've been looking for a good resource for using Radare2, and this is a great start.
 
 ###Reverse Engineering for Beginners
 Dennis Yurichev has a [free eBook on Reverse Engineering](http://yurichev.com/RE-book.html).  I haven't gotten through it yet, but it looks interesting, and you can't beat the price.

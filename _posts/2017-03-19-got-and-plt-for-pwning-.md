@@ -296,11 +296,11 @@ sections, but we should be used to that.
 
 On the other hand, the `.got.plt` section is basically a giant array of function
 pointers!  Maybe we could overwrite one of these and control execution from
-there.  It turns out this is quite a common technique, as described in a
-[2001 paper from team teso](https://crypto.stanford.edu/cs155/papers/formatstring-1.2.pdf).  (Hey, I
-never said the technique was new.)  Essentially, any memory corruption primitive
-that will let you write to an arbitrary (attacker-controlled) address will allow
-you to overwrite a GOT entry.
+there.  It turns out this is quite a common technique, as described in a [2001
+paper from team teso](https://cs155.stanford.edu/papers/formatstring-1.2.pdf).
+(Hey, I never said the technique was new.)  Essentially, any memory corruption
+primitive that will let you write to an arbitrary (attacker-controlled) address
+will allow you to overwrite a GOT entry.
 
 ### Mitigations ###
 
@@ -337,8 +337,8 @@ RELRO protects against these attacks by preventing writing to the GOT.
 
 ### References ###
 
-- [ELF Format Reference](http://www.cs.stevens.edu/~jschauma/810/elf.html)
+- [ELF Format Reference](http://www.skyfree.org/linux/references/ELF_Format.pdf)
 - [Examining Dynamic Linking with GDB](http://www.cs.dartmouth.edu/~sergey/cs108/dyn-linking-with-gdb.txt)
 - [RELRO - A (not so well known) Memory Corruption Mitigation Technique](https://tk-blog.blogspot.com/2009/02/relro-not-so-well-known-memory.html)
-- [What is the symbol and the global offset table?](http://grantcurell.com/2015/09/21/what-is-the-symbol-table-and-what-is-the-global-offset-table/)
+- [What is the symbol and the global offset table?](https://www.codeproject.com/articles/1032231/what-is-the-symbol-table-and-what-is-the-global-of)
 - [How the ELF ruined Christmas](https://www.usenix.org/system/files/conference/usenixsecurity15/sec15-paper-di-frederico.pdf)

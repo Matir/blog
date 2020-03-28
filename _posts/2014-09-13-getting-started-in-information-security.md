@@ -15,5 +15,4 @@ I've only been an information security practitioner for about a year now, but I'
 - [Stephen, aka Average Security Guy has a good discussion, mostly focusing on certifications](http://averagesecurityguy.info/2011/09/13/security-career-question/)
 - [Chris Grayson's "So you want to be a hacker" presentation](http://www.slideshare.net/ChrisGrayson/so-you-want-to-be-a-hacker)
 - [Reddit's /r/netsec wiki maintains a good page on getting started](http://www.reddit.com/r/netsec/wiki/start)
-- [Pentestify suggests some exercises and resources for newcomers](http://blog.pentestify.com/2014/03/07/getting-started-in-security-a-message-to-a-student/)
 - [DC801's list of InfoSec Resources](https://www.dc801.org/infosec-resources/)

@@ -22,8 +22,8 @@ assessment of these switches.
 
 The version under test was indicated as: 4.6.0.  Belden Garrettcom released
 an advisory on 8 May 2017, indicating that issues were fixed in 4.7.7:
-[http://www.belden.com/docs/upload/Belden-GarrettCom-MNS-6K-10K-Security-Bulletin-BSECV-2017-8.pdf](
-http://www.belden.com/docs/upload/Belden-GarrettCom-MNS-6K-10K-Security-Bulletin-BSECV-2017-8.pdf)
+[https://www.belden.com/hubfs/support/security/bulletins/Belden-GarrettCom-MNS-6K-10K-Security-Bulletin-BSECV-2017-8.pdf?hsLang=en](
+https://www.belden.com/hubfs/support/security/bulletins/Belden-GarrettCom-MNS-6K-10K-Security-Bulletin-BSECV-2017-8.pdf?hsLang=en)
 
 This is a local copy of an [advisory posted to the Full Disclosure mailing list](
 http://seclists.org/fulldisclosure/2017/May/65).

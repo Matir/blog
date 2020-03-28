@@ -10,7 +10,9 @@ tags:
   - Patriot Gauntlet Node
 ---
 <p>I recently picked up a <a href="http://www.amazon.com/gp/product/B008KW61XK/ref=as_li_ss_tl?ie=UTF8&amp;camp=1789&amp;creative=390957&amp;creativeASIN=B008KW61XK&amp;linkCode=as2&amp;tag=systemovecom-20">Patriot Gauntlet Node</a> just to take a look at it.  Playing with the device, it seemed to be a pretty straightforward wireless SoC with a hard drive interface.  Many, if not most, of these embedded SoCs use Linux as their operating system, so I decided to go a bit further and see what was going on.</p>
-<p>I headed over to the Patriot website and downloaded the firmware for the Gauntlet Node, unzipped the file, and ran <a href="https://code.google.com/p/binwalk/">binwalk</a> against it.  (Binwalk is an awesome tool that essentially runs 'file' with a special magic file against every possible byte offset to find the parts of a firmware image.)</p>
+<p>I headed over to the Patriot website and downloaded the firmware for the
+Gauntlet Node, unzipped the file, and ran <a
+href="https://github.com/ReFirmLabs/binwalk">binwalk</a> against it.  (Binwalk is an awesome tool that essentially runs 'file' with a special magic file against every possible byte offset to find the parts of a firmware image.)</p>
 <pre>
 DECIMAL   	HEX       	DESCRIPTION
 -------------------------------------------------------------------------------------------------------

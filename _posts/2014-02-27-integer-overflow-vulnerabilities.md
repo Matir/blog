@@ -48,5 +48,4 @@ Since <code>0 &le; bytes_read &le; sizeof(buf)</code> the right side will not un
 
 ####Other Reading
 
-  - [OWASP: Integer Overflow](https://www.owasp.org/index.php/Integer_overflow)
   - [Basic Integer Overflows (Phrack)](http://www.phrack.com/issues.html?issue=60&id=10)
