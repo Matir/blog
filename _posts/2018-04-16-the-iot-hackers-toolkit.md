@@ -354,7 +354,7 @@ are based on 802.15.4 (Zigbee, Z-Wave) or proprietary protocols in the 433 MHz,
 
 ### Bluetooth ###
 
-[![Ubertooth One](/img/blog/iot/ubertooth.png){:.right}](https://amzn.to/2Jz8V7L)
+[![Ubertooth One](/img/blog/iot/ubertooth.png){:.right}](https://amzn.to/3aqKHJM)
 
 Bluetooth devices are incredibly common, and Bluetooth Low Energy (starting with
 Bluetooth 4.0) is very popular for IoT devices.  Most devices that do not stream
@@ -368,7 +368,7 @@ moving to Bluetooth Low Energy, probably because of several reasons:
 There is essentially only one tool I can really recommend for assessing
 Bluetooth, and that is the [Ubertooth
 One](https://greatscottgadgets.com/ubertoothone/)
-([Amazon](https://amzn.to/2Jz8V7L)).  This can follow and capture Bluetooth
+([Amazon](https://amzn.to/3aqKHJM)).  This can follow and capture Bluetooth
 communications, providing output in pcap or pcap-ng format, allowing you to
 import the communications into Wireshark for later analysis.  (You can also use
 other pcap-based tools like `scapy` for analysis of the resulting pcaps.)  The
