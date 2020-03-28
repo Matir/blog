@@ -44,7 +44,7 @@ as describe what I'd like to do in the future.
 
 ![power supply](/img/blog/powersupply/outside.jpg)
 
-This particular unit consists of a [DPS3005](http://amzn.to/2lZ07wQ) that I got
+This particular unit consists of a [DPS3005](https://amzn.to/33TBBm9) that I got
 for about $25 from [AliExpress](https://www.aliexpress.com/item/RD-DPS3005-Constant-Voltage-current-Step-down-Programmable-Power-Supply-module-buck-Voltage-converter-color-LCD/32684316119.html).
 (The DPS5005 is now available on [Amazon with Prime](http://amzn.to/2lZ9ah7).
 Had that been the case at the time I built this, I likely would have gone with

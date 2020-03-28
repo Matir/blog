@@ -10,7 +10,7 @@ tags:
 ---
 My last post was about getting started in a career in information security.  This post is about the sport end of information security: Capture the Flag (CTFs).
 
-I'd played around with some wargames ([Smash the Stack](http://smashthestack.org/), [Over the Wire](http://overthewire.org/wargames/), and [Hack this Site](https://www.hackthissite.org/)) before, but my first real CTF (timed, competitive, etc.) was the [CTF run by Mad Security at BSides SF 2013](/blog/2013/03/02/bsides-sf-ctf-by-mad-security-part-1/).  By some bizarre twist of fate, I ended up winning the CTF, and I was hooked.  I've probably played in about 30 CTFs since, most of them online with the team [Shadow Cats](https://ctftime.org/team/4710).  It's been a bumpy ride, but I've learned a lot about a variety of topics by doing this.
+I'd played around with some wargames ([Smash the Stack](http://smashthestack.org/), [Over the Wire](http://overthewire.org/wargames/), and [Hack this Site](https://www.hackthissite.org/)) before, but my first real CTF (timed, competitive, etc.) was the [CTF run by Mad Security at BSides SF 2013](/2013/03/02/bsides-sf-ctf-by-mad-security-part-1/).  By some bizarre twist of fate, I ended up winning the CTF, and I was hooked.  I've probably played in about 30 CTFs since, most of them online with the team [Shadow Cats](https://ctftime.org/team/4710).  It's been a bumpy ride, but I've learned a lot about a variety of topics by doing this.
 
 If you're in the security industry and you've never tried a CTF, you really should.  Personally, I love CTFs because they get me to exercise skills that I never get to use at work.  They also inspire some of my research and learning.  The only problem is making the time. :)
 

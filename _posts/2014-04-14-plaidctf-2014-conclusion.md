@@ -16,8 +16,8 @@ I liked how the challenges often required a series of exploits/techniques, this 
 Plaid's [website post-mortem](http://ppp.cylab.cmu.edu/wordpress/?p=1203) is also a good read, interesting to see the things involved in running a CTF.
 
 #### My Write-Ups ####
-* [mtpox](/blog/2014/04/14/plaidctf-mtpox/)
-* [ReeKeeeeee](/blog/2014/04/14/plaidctf-2014-reekeeeee/)
+* [mtpox](/2014/04/14/plaidctf-mtpox/)
+* [ReeKeeeeee](/2014/04/14/plaidctf-2014-reekeeeee/)
 
 #### Other Quality Writeups From Around the Web ####
 * [__nightmares_\_](http://blog.mheistermann.de/2014/04/14/plaidctf-2014-nightmares-pwnables-375-writeup/) by mheistermann
