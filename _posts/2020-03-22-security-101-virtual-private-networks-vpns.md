@@ -196,6 +196,11 @@ anonymity from.  If you're only concerned about advertisers, website operators,
 etc., than a commercial VPN helps provide a pseudonymous browsing profile
 compared to coming directly from your ISP-provided connection.
 
+I personally use [Private Internet
+Access](http://www.privateinternetaccess.com/pages/buy-vpn/systemoverlord), but
+I've also used ProtonVPN in the past.  (I found ProtonVPN had some capacity
+issues with where I wanted my traffic to exit for testing or GeoIP reasons.)
+
 ### Rolling Your Own ###
 
 Rolling your own gives you the ultimate in control of your VPN server, but does
