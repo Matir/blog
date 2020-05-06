@@ -151,7 +151,7 @@ the mobile device, such as
 [Cerberus](https://www.zdnet.com/article/android-malware-can-steal-google-authenticator-2fa-codes/),
 is now known to steal codes directly from the authenticator apps.
 
-### Mobile App Confirmation
+### Mobile App Confirmation (Out of Band Confirmation)
 
 A few services have implemented a mechanism using their mobile applications to
 validate new sign-ins.  These are tricky because you need to already be signed
@@ -191,6 +191,46 @@ uses a cryptographic signature to prove the authenticity of a device.  U2F
 specifically is just a second factor to be used with a username and password,
 but WebAuthn even allows for the token to be the only authentication mechanism.
 
+This is often implemented by a physical token, such as the [YubiKey
+5](https://amzn.to/2SK3ZD3)[^yubikey] or the Open-Source Hardware
+[Solo](https://amzn.to/2WaE8X2).  These store the secret key for the
+U2F/WebAuthn keypair in a hardware security element or a microcontroller on
+board.  In either case, remotely extracting (e.g., via malware on the device)
+the two factor key is not possible.  They also require a "user presence" test
+(e.g., tapping the device or pushing a button).
+
+It can also be implemented on a phone by storing the key in a secure element or
+using ARM TrustZone, or (for example) using the fingerprint reader in the Apple
+touchbar.  These depend on the security of the device to protect the keys
+involved.
+
+In all cases, this is not vulnerable to phishing -- the user is not inputting
+anything, and in fact, the origin of the site they're logging into is part of
+the challenge and response flow.  The flip side is that it does require support
+from the applications involved -- for example, your browser must have support
+for WebAuthn to authenticate to the site.  The browser speaks to the
+hardware/software token on your behalf, and attests to the origin being
+authenticated and a "key handle" that ensures that each site only gets back its
+own data.
+
+There's a lot more to it, but U2F/FIDO have come up with a very strong mechanism
+for two factor authentication.  Properly implemented, it's resistant to device
+cloning, phishing, and even active MITM.  (Note that an active MITM in your TLS
+session can still steal your session cookies, but still won't be able to
+impersonate you for future login attempts.)
+
+## Comparison Table
+
+
+| Mechanism | Credential Stuffing | Phishing | Cloning |
+|+++++++++++|+++++++++++++++++++++|++++++++++|+++++++++|
+| SMS Codes |
+| Out of Band |
+| TOTP App |
+| Physical Token |
+| U2F/WebAuthn |
+
+
 ## Conclusion
 
 I hope you find this overview of two factor mechanisms useful.  If you want to
@@ -205,3 +245,4 @@ vulnerability.)
 
 [^authenticator]: Google Authenticator is a Trademark of Google LLC.
 [^securid]: SecurID is a Trademark of RSA Security LLC.
+[^yubikey]: YubiKey is a Trademark of Yubico, Inc.
