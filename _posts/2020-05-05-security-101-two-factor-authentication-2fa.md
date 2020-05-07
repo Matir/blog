@@ -2,9 +2,10 @@
 layout: post
 title: "Security 101: Two Factor Authentication (2FA)"
 category: Security
-date: 2020-05-05
+date: 2020-05-07
 tags:
   - Security 101
+  - Authentication
 ---
 
 In this part of my "Security 101" series, I want to talk about different
@@ -223,18 +224,25 @@ impersonate you for future login attempts.)
 
 
 | Mechanism | Credential Stuffing | Phishing | Cloning |
-|+++++++++++|+++++++++++++++++++++|++++++++++|+++++++++|
-| SMS Codes |
-| Out of Band |
-| TOTP App |
-| Physical Token |
-| U2F/WebAuthn |
+|-----------|---------------------|----------|---------|
+| SMS Codes | ✓ | ✗ | ✗ |
+| Out of Band | ✓ | ✗[^1] | ✓ |
+| TOTP App | ✓ | ✗ | ✗ |
+| Physical Token (Code) | ✓ | ✗ | ✓[^2] |
+| U2F/WebAuthn | ✓ | ✓ | ✓ |
 
+[^1]: Some app implementations are more difficult to phish, such as instructing
+    the user to select a particular code on their screen.
+
+[^2]: Cloning resistant so long as vendor not compromised.
 
 ## Conclusion
 
-I hope you find this overview of two factor mechanisms useful.  If you want to
-dive into much more detail about authentication systems, then [NIST
+I hope you find this overview of two factor mechanisms useful.  There's much
+more to it if you're implementing an authentication scheme, but I wanted to
+provide an overview if you're choosing an existing implementation to use, or
+you're performing a penetration test or audit of an existing system.  If you
+want to dive into much more detail about authentication systems, then [NIST
 SP800-63-3](https://pages.nist.gov/800-63-3/sp800-63b.html) is worth a read,
 though I'd grab a coffee, Red Bull, or Club Mate first.  As always, please [let
 me know](https://twitter.com/matir) if you have any feedback.
