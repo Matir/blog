@@ -2,6 +2,7 @@
 layout: post
 title: "Hacker Culture Reading List"
 category: Security
+date: 2020-06-25
 tags:
   - Security
   - Security 101
@@ -73,4 +74,96 @@ over 75 cents.  This may well be one of the earliest hacking investigations to
 be documented and publicized in this way.  It's a hybrid of detective story and
 hacking story, and is just the right length to tell the story.
 
+[![Crypto: How the Code Rebels Beat the Government -- Saving Privacy in the Digital Age](//ws-na.amazon-adsystem.com/widgets/q?_encoding=UTF8&ASIN=0670859508&Format=_SL160_&ID=AsinImage&MarketPlace=US&ServiceVersion=20070822&WS=1&tag=systemovecom-20&language=en_US){:.right .amzimg}](https://www.amazon.com/Crypto-Rebels-Government-Saving-Privacy-Digital/dp/0670859508/ref=as_li_ss_il?_encoding=UTF8&qid=1593138324&sr=1-1&linkCode=li2&tag=systemovecom-20&linkId=17b0bc1a897042b135690f268496f36c&language=en_US)
+
+Steven Levy's **[Crypto: How the Code Rebels Beat the Government -- Saving
+Privacy in the Digital Age](https://amzn.to/2VgQNqn)** describes the first
+Crypto Wars, in the mid 1990s.  It discusses the issues and implications of
+access to cryptography, why the government wants to control access to
+cryptography (to control information) and how the issues played out.  This may
+be one of the most timely books in this list given the issues at play with the
+[US legislature](/2020/06/25/stop-earn-it-and-laed.html), the laws [recently
+passed in Australia](https://www.bbc.com/news/world-australia-46463029), and
+other issues at hand.  Paraphrasing George Santayana, "Those who do not remember
+their past are condemned to repeat their mistakes."
+
+[![Hackers: Heroes of the Computer Revolution](//ws-na.amazon-adsystem.com/widgets/q?_encoding=UTF8&ASIN=1449388396&Format=_SL160_&ID=AsinImage&MarketPlace=US&ServiceVersion=20070822&WS=1&tag=systemovecom-20&language=en_US){:.left .amzimg}](https://www.amazon.com/Hackers-Computer-Revolution-Steven-Levy/dp/1449388396/ref=as_li_ss_il?_encoding=UTF8&pd_rd_i=1449388396&pd_rd_r=7f4dbbdb-5ce6-4f01-8325-e93fe0524740&pd_rd_w=ZwjBb&pd_rd_wg=18gX9&pf_rd_p=327bd107-8f81-4cea-8249-0243ca14f16d&pf_rd_r=5AHZEP766N35X2NFEK6S&psc=1&refRID=5AHZEP766N35X2NFEK6S&linkCode=li2&tag=systemovecom-20&linkId=303911f9422a76a97619707433e0d634&language=en_US)
+
+Also by Steven Levy, **[Hackers: Heroes of the Computer
+Revolution](https://amzn.to/37ZKXz2)** is a great profile of the original
+hackers, even before the times of cybersecurity.  The book covers the early
+"hackers" of computers like Bill Gates, Steve Wozniak, and Richard Stallman and
+the transition from the mainframe computing world to the world of computers in
+every home.  Today we've transitioned to computers in every pocket, but the
+evolution was begun by these early computer enthusiasts.  Without their efforts
+(and their sometimes bending the rules), we wouldn't have the hacking scene we
+do today.  Steven Levy covers the history in depth and with a great amount of
+detail.
+
 ## Fiction (Culturally Influencing) ##
+
+[![Neuromancer](//ws-na.amazon-adsystem.com/widgets/q?_encoding=UTF8&ASIN=0143111604&Format=_SL160_&ID=AsinImage&MarketPlace=US&ServiceVersion=20070822&WS=1&tag=systemovecom-20&language=en_US){:.right .amzimg}](https://www.amazon.com/Neuromancer-Penguin-Galaxy-William-Gibson/dp/0143111604/ref=as_li_ss_il?_encoding=UTF8&qid=1593140348&sr=1-1-50be07be-ed51-4b0f-8f11-b1fc0824f1e6&linkCode=li2&tag=systemovecom-20&linkId=a375a9193ebb813ff076def9ff9c4aad&language=en_US)
+
+William Gibson, author of **[Neuromancer](https://amzn.to/2B1RtcE)**, the first
+book in the Sprawl trilogy,
+is the father of the term "cyberspace", giving us "cybersecurity".  I'm not sure
+whether to thank him or hate him for the term "cybersecurity", but I do know
+that this book is one of the defining books of the "cyber" culture, including
+modern hackers, cyberpunks, and a large part of the culture surrounding the
+realm of hacking.  It's likely that this book (and series) has influenced an entire
+generation of science fiction writers and the surrounding culture.  The book is
+a literary masterpiece in its own right, winning both a Philip K. Dick Award and
+a Hugo Award.  The other two books in the Sprawl trilogy are [Count
+Zero](https://amzn.to/2NuTBfl) and [Mona Lisa
+Overdrive](https://amzn.to/2Z9n0RU).  This is, without a doubt, my favorite book
+trilogy and one of my favorite books of all time.
+
+[![Snow Crash](//ws-na.amazon-adsystem.com/widgets/q?_encoding=UTF8&ASIN=0553380958&Format=_SL160_&ID=AsinImage&MarketPlace=US&ServiceVersion=20070822&WS=1&tag=systemovecom-20&language=en_US){:.left .amzimg}](https://www.amazon.com/Snow-Crash-Neal-Stephenson/dp/0553380958/ref=as_li_ss_il?dchild=1&keywords=snow+crash&qid=1593140342&s=books&sr=1-1&linkCode=li2&tag=systemovecom-20&linkId=5858bedfbc5507ea91fdde381bbf18a2&language=en_US)
+
+**[Snow Crash](https://amzn.to/2VlhEBU)** by Neal Stephenson is set in the
+Metaverse and heavily features virtual reality being used as a substitute for,
+well, reality.  In many ways, it's a 21st century take on *Neuromancer* but also
+brings into play a blend of old and new culture and truly makes you think about
+where society is headed.  This book managed to make *Time*'s list of 100 best
+English-language novels and is also one of my top 10 books.  Neal Stephenson is
+an imaginative author with an eye for the future that makes you think.  His book
+**[Cryptonomicon](https://amzn.to/3i2QiKv)** is another of my favorites.
+
+[![Digital Fortress](//ws-na.amazon-adsystem.com/widgets/q?_encoding=UTF8&ASIN=0739441671&Format=_SL160_&ID=AsinImage&MarketPlace=US&ServiceVersion=20070822&WS=1&tag=systemovecom-20&language=en_US){:.right .amzimg}](https://www.amazon.com/Digital-Fortress-Dan-Brown/dp/0739441671/ref=as_li_ss_il?_encoding=UTF8&qid=1593140214&sr=1-1&linkCode=li2&tag=systemovecom-20&linkId=2487996729427af8bbb1fce8c0635465&language=en_US)
+
+**[Digital Fortress](https://amzn.to/2CLAQ5v)** by Dan Brown (author of The
+Da Vinci Code) is an
+all-too-real
+fictional account of a secret NSA supercomputer capable of breaking any encryption
+system.  With malware introduced into the computer, the system is beginning to
+break down and they must uncover the story of what has happened and how.  With
+the author of the code infecting the machine dead, the members of the NSA
+cryptography team must work to figure out what's behind the malware and the code
+it contained.  This novel is deeply engrossing -- the first time I read it, I
+ended up missing a whole night of sleep reading it.  (I can't recommend this
+approach, especially if you have to go to work the next day.)
+
+[![Little Brother](//ws-na.amazon-adsystem.com/widgets/q?_encoding=UTF8&ASIN=0765323117&Format=_SL160_&ID=AsinImage&MarketPlace=US&ServiceVersion=20070822&WS=1&tag=systemovecom-20&language=en_US){:.left .amzimg}](https://www.amazon.com/Little-Brother-Cory-Doctorow/dp/0765323117/ref=as_li_ss_il?ie=UTF8&linkCode=li2&tag=systemovecom-20&linkId=e2682c4fecf7416b5f8de5cc41c27ca0&language=en_US)
+
+**[Little Brother](https://amzn.to/3iaqxYX)** by Cory Doctorow is a modern day
+take on Orwell's 1984, updated for the technologies and organizations of today.
+Quite frankly, it's so realistic to me that it's deeply unsettling -- in the
+uncanny valley of government surveillance.  It's a reminder that we have to be
+careful of the way we treat our privacy, our rights, and the power of our
+government.  Doctorow has a scary outlook on life, but it's an important read
+for anyone concerned about the state of our society.  Though written as a "young
+adult" novel, I found it an engaging and interesting read and thought provoking.
+In fact, I've read it at least twice, along with
+**[Homeland](https://amzn.to/2YABTNX)**.  If you're more the novella type, I can
+strongly recommend **[Overclocked](https://amzn.to/31eZllD)**, though the story
+*sysadmins* is a bit of a horror story.  (Though maybe you like that sort of
+thing!)
+
+## Guilty Pleasures ##
+
+Though I can't recommend them as "high quality literature", there are a few
+books I enjoy reading in the vein of hacking.  These include:
+
+- [Geek Mafia](https://amzn.to/2VknHGQ) by Rick Dakan
+- [Geek Mafia: Mile Zero](https://amzn.to/2NBDWe9) by Rick Dakan
+- [Zero Day: A Jeff Aiken Novel](https://amzn.to/3i2XciW) by Mark Russinovich
