@@ -2,12 +2,13 @@
 layout: post
 title: "Hacker Culture Reading List"
 category: Security
-date: 2020-06-25
+date: 2020-06-26
 tags:
   - Security
   - Security 101
   - Books
   - Hacker Culture
+date: 2020-06-26
 ---
 
 A friend recently asked me if I could recommend some reading about hacking and
