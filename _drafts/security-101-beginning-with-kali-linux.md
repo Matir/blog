@@ -161,11 +161,71 @@ filesystem.
 
 ## Customizing Kali
 
-### Installing Software (GUI)
+### Additional Software
 
-### Installing Software (CLI)
+There's some software that doesn't come in the default Kali image that you might
+or probably want.  It ships with Firefox as the default browser, but you might
+prefer [Chrome](https://www.google.com/chrome/), Chromium, or the [Brave
+Browser](https://brave.com/sys868).  On older versions of Kali, simple command
+line tools like `git` and `tmux` were not present, but they now are.  `vim` is
+available by default, so I'm set, as is nano, but if you're more of a Sublime
+Text, Atom, VSCode, or `emacs` user, you probably want to install those.
+
+If you have a license for any commercial security tools, now's the time to
+install that.  I have a Burp Professional license, so I install that first
+thing, but Burp Suite Community Edition is included if you're just getting started.
+
+> As an aside, if you're doing web application assessments, penetration testing,
+> or bug bounty hunting professionally, I can't recommend paying for a Burp Pro
+> license enough.  It's reasonably priced and the ability to save/restore
+> projects is *alone* worth the license, not to mention all the scanners and
+> other features that come with Professional.
+
+### Personal Setup
+
+Make it your own!  There's some things that you can do to get it set up for you
+and make your experience more comfortable.
+
+1. Select and customize your shell.  Kali ships with `bash` by default, but
+   `zsh` is also popular and mostly a drop-in replacement for `bash`.  Some
+   people like `fish`.  Many like to customize their prompt to display more
+   information.
+2. Set a nice wallpaper.  Yes, this is trivial, but it makes me feel better
+   about the OS being "mine".  I'm a big fan of the work being done by David
+   Hughes in his [100 Days of Hacker
+   Art](https://github.com/doulos0/100DaysHackerArt).
+3. Setup tools that require personalization, such as setting your name/email for
+   `git`, adding any custom `metasploit` resource files, configuring your editor
+   of choice, etc.
 
 ## Using Kali Professionally
+
+There are some who claim that Kali is not (or should not be) used by
+professionals in the industry.  I think this is a bit of a perception that "real
+hackers" have to do things the "hard way."  In reality, there are plenty of
+professional penetration testers who use Kali Linux on a regular basis.  There
+are, however, some things you can do to make it more useful in this context.
+
+I start by creating a virtual machine installation of Kali and customizing it to
+my needs by placing my dotfiles on the system, installing additional software
+(Chrome, my Burp Suite Pro license, VPN configurations, etc.), then taking a
+virtual machine snapshot.  Then, for each engagement I'm working on, I clone
+that snapshot and run a VM dedicated to that engagement.  This gives me a clean
+start for each engagement and prevents data related to one project from creeping
+into another project's VM.  Each time I update the base image, I take a new
+snapshot -- this way, if a software update introduces a bug or breaks a feature,
+I can trivially go back to an older (known working) version so I'm not
+interrupted in the middle of a project.
+
+Remember that, as a penetration tester, you will have access to lots of
+sensitive data about your clients/employer & their engagements.  You should
+enable full-disk encryption with a strong passphrase to protect their data,
+credentials, access, etc.  Ideally, this would be on your host OS (or Kali
+itself, if a bare metal installation).  If you can't do that for some reason, at
+least enable FDE on the Kali install in your VM.  Change the default password,
+and if you must enable SSH, then make sure you set it to allow only SSH keys.
+Protecting your client's/employer's data is a significant responsibility for
+penetration testers.
 
 ## Kali Warnings
 
