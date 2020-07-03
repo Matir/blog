@@ -19,3 +19,8 @@ or future.
 I am a participant in the Amazon Services LLC Associates Program, an affiliate
 advertising program designed to provide a means to earn fees by linking
 to Amazon.com and affiliated sites.
+
+Other affiliate links may be powered by Rakuten Advertising.
+
+When you click on an affiliate link, I may earn a small commission at no
+additional cost to you.  Pages with affiliate links are indicated on the page.

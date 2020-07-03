@@ -1,3 +1,4 @@
-{% if content contains "amzn.to" %}
-<p class='affiliate-notice'>This post contains Amazon Affiliate links.</p>
+{% if content contains "amzn.to" or content contains "linksynergy.com" %}
+<p class='affiliate-notice'>This post contains affiliate links.  If you click on
+a link, I may earn a small commission at no cost to you.</p>
 {% endif %}

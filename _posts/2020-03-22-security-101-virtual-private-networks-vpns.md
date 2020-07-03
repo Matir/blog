@@ -200,6 +200,7 @@ I personally use [Private Internet
 Access](http://www.privateinternetaccess.com/pages/buy-vpn/systemoverlord), but
 I've also used ProtonVPN in the past.  (I found ProtonVPN had some capacity
 issues with where I wanted my traffic to exit for testing or GeoIP reasons.)
+Lately I've become a fan of [ExpressVPN](https://click.linksynergy.com/fs-bin/click?id=aIjkt7dUnp0&offerid=691157.3&type=3&subid=0) as well.
 
 ### Rolling Your Own ###
 
