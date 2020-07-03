@@ -24,6 +24,9 @@ those new to the distribution get more oriented.
 
 <!--more-->
 
+## Table of Contents
+{:.no_toc}
+
 * Table of Contents
 {:toc}
 
@@ -180,6 +183,7 @@ thing, but Burp Suite Community Edition is included if you're just getting start
 > license enough.  It's reasonably priced and the ability to save/restore
 > projects is *alone* worth the license, not to mention all the scanners and
 > other features that come with Professional.
+{:.sidenote}
 
 ### Personal Setup
 
