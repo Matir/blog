@@ -7,6 +7,7 @@ tags:
   - Security 101
   - Linux
   - Kali Linux
+date: 2020-07-03
 ---
 
 I've found a lot of people who are new to security, particularly those with an
