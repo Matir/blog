@@ -11,10 +11,10 @@ tags:
 
 I've found a lot of people who are new to security, particularly those with an
 interest in penetration testing or red teaming, install [Kali
-Linux](https://kali.org) as one of their first forays into the "hacking" world.
-In general, there's absolutely nothing wrong with that.  Unfortunately, I also
-see many who end up stuck on this journey: either stuck in the
-setup/installation phase, or just not knowing what to do once they get into
+Linux](https://kali.org)&trade;[^1] as one of their first forays into the
+"hacking" world.  In general, there's absolutely nothing wrong with that.
+Unfortunately, I also see many who end up stuck on this journey: either stuck in
+the setup/installation phase, or just not knowing what to do once they get into
 Kali.
 
 This isn't going to be a tutorial about how to use the tools within Kali (though
@@ -55,6 +55,8 @@ of the more commonly used ones include:
 - John the Ripper (JtR)
 - sqlmap
 
+![Menu of Tools](/img/kali/menu.png){:.center}
+
 So, why do you need Kali Linux for these tools?  Well, the short answer is that
 **you don't**.  The longer answer is that Kali provides these tools and a wealth
 of others already configured and (more or less) ready to go out of the box, so
@@ -69,9 +71,10 @@ particularly friend to "noobs", in my experience.
 
 You can, alternatively, manually install the tools yourself, or use tools that
 will manage your tools for you, such as the [PenTesters Framework
-(PTF)](https://github.com/trustedsec/ptf).  Some people have switched to using
-Docker for a lot of their tools (I'll have a post about that coming soon as
-well) or other methods of managing their toolset.
+(PTF)](https://github.com/trustedsec/ptf) or
+[katoolin](https://github.com/LionSec/katoolin).  Some people have switched to
+using Docker for a lot of their tools (I'll have a post about that coming soon
+as well) or other methods of managing their toolset.
 
 ## Install or Live?  Virtual Machine or Bare Metal?
 
@@ -155,12 +158,45 @@ repartitioning a disk and destroying data -- including myself!
 First and foremost, Kali Linux is a *Linux* distribution.  If this is your first
 foray into Linux, you will have somewhat of a learning curve.  Sorry, it's to be
 expected when moving into something new.  If you've been a Windows user up until
-now, you will need to learn a few new things.
+now, you will need to learn a few new things.  Linux distributions are a
+collection of the kernel (Linux) and a set of applications.  Most of them are
+based on the GNU Collection of utilities, the POSIX specification, and some
+Linux Foundation standards.
 
 For example, rather than having "drive letters", all of the files on the system
 are in a hierarchy delimited by `/`.  So you'll see paths like `/etc/passwd`,
 which is a file called `passwd` in a directory called `etc` in the root of the
 filesystem.
+
+Since Kali Linux is based on Debian Linux, it shares the software package
+management tools used by Debian.  This means tools like `apt` and `apt-get` for
+installing software pre-packed for Kali.  To search for software, you can use
+`apt search <keywords>` and then to install a package, you can use
+`apt install <package names>`.  If you want a GUI for package management, you
+can open a console and then run `apt install synaptic` for the `synaptic`
+package management GUI (which is a front end to apt itself, so uses the same
+underlying data).
+
+![Synaptic Package Manager](/img/kali/synaptic.png){:.center}
+
+Some distributions are different, so if you have experience with, say, Fedora,
+not everything will translate directly -- for example, the use of `apt` instead
+of `yum` or `dnf` for package management.  Static network configuration is also
+quite different, although both of them support `systemd` based configurations.
+
+### Hacking Tools
+
+Obviously, if you're using Kali, you want to get into the hacking tools
+included.  It's a good idea to give them a try in a controlled space, like a
+[home lab](/2017/10/24/building-a-home-lab-for-offensive-security-basics.html)
+or the levels on [PentesterLab](https://pentesterlab.com/) or the [boxes on Hack
+the Box](https://www.hackthebox.eu/).
+
+Rather than trying to learn all of the tools at once, I suggest checking out a
+single area at a time.  If you're interested in Web Security, learning `Burp
+Suite` or `mitmproxy` and some of the other web tools like `sqlmap`.  If network
+pentesting is more your area, check out `metasploit`.  For network forensics,
+learning `wireshark` can be useful.
 
 ## Customizing Kali
 
@@ -173,6 +209,7 @@ Browser](https://brave.com/sys868).  On older versions of Kali, simple command
 line tools like `git` and `tmux` were not present, but they now are.  `vim` is
 available by default, so I'm set, as is nano, but if you're more of a Sublime
 Text, Atom, VSCode, or `emacs` user, you probably want to install those.
+Some people like additional utilities like the `terminator` terminal emulator.
 
 If you have a license for any commercial security tools, now's the time to
 install that.  I have a Burp Professional license, so I install that first
@@ -184,6 +221,31 @@ thing, but Burp Suite Community Edition is included if you're just getting start
 > projects is *alone* worth the license, not to mention all the scanners and
 > other features that come with Professional.
 {:.sidenote}
+
+There are also many metapackages that install additional security tooling in
+bulk.  These all begin with `kali-tools-`, such as `kali-tools-sdr` for Software
+Defined Radio tools, `kali-tools-forensics` for Forensics tooling, or
+`kali-tools-exploitation` for exploitation.  If you want to see all of the tools
+included in one of these metapackages, you can use `apt-cache depends` to get a
+list of the direct dependencies:
+
+```
+apt-cache depends kali-tools-sdr
+kali-tools-sdr
+  Depends: chirp
+  Depends: gnuradio
+  Depends: gqrx-sdr
+  Depends: gr-air-modes
+  Depends: gr-iqbal
+  Depends: gr-osmosdr
+  Depends: hackrf
+  Depends: inspectrum
+  Depends: kalibrate-rtl
+  Depends: multimon-ng
+  Depends: rtlsdr-scanner
+  Depends: uhd-host
+  Depends: uhd-images
+```
 
 ### Personal Setup
 
@@ -247,7 +309,7 @@ If you are performing an authorized penetration test or bug bounty, you may want
 to use a VPN to reroute your traffic to simulate a particular adversary, but
 anonymity is not your primary concern, since it is an *authorized* test.  If
 you're doing other shady things, you really need to learn about proper OPSEC and
-don't just pick up Kali linux and expect it to solve your problems.
+don't just pick up Kali Linux and expect it to solve your problems.
 
 ### Running as Root
 
@@ -259,3 +321,14 @@ make a mistake like `rm -rf / tmp/x` (notice the space) and blow things up when
 running as `root`.  Additionally, some types of sandboxes will not run properly
 as root (because it's too easy to escape them), so things like Chrome will not
 work properly as `root`.
+
+## Other Resources
+
+* [Kali Training](https://kali.training/) by Offensive Security
+* [Kali Linux Revealed: Mastering the Penetration Testing
+  Distribution](https://amzn.to/38x9KL1)
+* [Linux Basics for Hackers: Getting Started with Networking, Scripting, and
+  Security in Kali](https://amzn.to/3iuZmrS)
+
+
+[^1]: KALI LINUX&trade; is a trademark of Offensive Security.
