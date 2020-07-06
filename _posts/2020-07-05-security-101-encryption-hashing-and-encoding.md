@@ -4,6 +4,7 @@ title: "Security 101: Encryption, Hashing, and Encoding"
 category: Security
 tags:
   - Encryption
+date: 2020-07-05
 ---
 
 Encryption, Hashing, and Encoding are commonly confused topics by those new to
@@ -266,10 +267,80 @@ function `scrypt` only hahses at 435 *thousand* per second.  This is more than
 latter is a massive slowdown to someone hoping to crack a dump of password
 hashes from a database.
 
-## Comparison of Security Properties ##
+## Common Use Cases ##
+
+To store passwords for **user authentication**, you almost always want a memory-
+and cpu-hard algorithm.  This makes it difficult to try large quantities of
+passwords, whether in brute force or a dictionary attack.  The current state of
+the art is the `Argon2` function that was the winner of the [Password Hashing
+Competition](https://password-hashing.net/).  (Which, while styled after a NIST
+process, was *not* run by NIST but by a group of independent cryptographers.)
+If, for some reason, you cannot use that, you should consider `scrypt`,
+`bcrypt`, or at least `pbkdf2` with a very high iteration count (e.g., 100000+).
+By now, however, almost all platforms have support for Argon2 available as an
+open-source library, so you should generally use it.
+
+To **protect data from being inspected**, you want to encrypt it.  Use a
+high-level crypto library like NaCl or libsodium.  (I'll be expanding on this in
+a future post.)  You will need strong keys (ideally, randomly generated) and
+will need to keep those keys secret to avoid the underlying data from being
+exposed.  One interesting application of encryption is the ability to virtually
+delete a collection of data by destroying the key -- this is often done for
+offline/cold backups, for example.
+
+To create an **opaque identifier** for some data you want to hash it.  For
+example, it's fairly common to handle uploaded files by hashing the file and
+storing it under a filename derived from the hash of the file contents.  This
+provides a predictable filename format and length, and prevents two files from
+ending up with the same filename on the server.  (Unless they have the exact
+same contents, but then the duplication does not matter.)  This can also be used
+for sharding: because the values are uniformly distributed with a good hashing
+function, you can do things like using the first byte of the hash to identify a
+storage repository that is distributed.
+
+To allow **binary data to be treated like plain text**, you can use encoding.
+You should not use encoding for any security purpose.  (And yes, I feel this
+point deserves repeating numerous times.)
 
 ## Misconceptions ##
 
+There are big misconceptions that I see repeated, most often by people outside
+the hacking/security industry space.  A lot of these seem to be over the proper
+use of these technologies and confusion over when to select one.
+
 ### Encoding is Not Encryption ###
 
+For whatever reason, I see lots of references to "base64 encryption."  (In fact,
+there are currently 20,000 Google results for that!)  As I discussed under
+encoding, base64 (and other encodings) do not do encryption -- they offer no
+confidentiality to the underlying data, and do not protect you in any way.  Even
+though the meaning of the data may not be immediately apparent, it can still be
+recovered with little effort and with no key or password required.  As one
+article puts it, [Base64 encryption is a
+lie](https://base64.guru/blog/base64-encryption-is-a-lie).
+
+If you think you need some kind of security, some kind of encryption, something
+to be kept secret, do not look to encodings for this!  Use proper encryption
+with a well-developed algorithm and mode of operation, and preferably use a
+library or tool that completely abstracts this away from you.
+
 ### Encryption is Not Hashing ###
+
+There is somewhere upwards of a half million webpages talking about password
+encryption.  Unfortunately, the only time passwords should be encrypted is when
+they will need to be retrieved in plaintext, such as in a password manager.
+When using passwords for authentication, you should store them as a strongly
+salted hash to avoid attackers being able to retrieve them in the case of
+database access.
+
+Encryption is a two-way process, hashing is one way.  To validate that the
+server and the user have the same password, we merely apply the same
+transformation (the same hash with the same salt) to the input password and
+compare the outputs.  We do not decrypt the stored password and compare the
+plaintext.
+
+## Conclusion
+
+I hope this has been somewhat useful in dispelling some of the confusion between
+encryption, hashing, and encoding.  Please [let me
+know](https://twitter.com/Matir) if you have feedback.
