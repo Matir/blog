@@ -5,6 +5,7 @@ category: Security
 tags:
   - Web Security
   - Book Review
+date: 2020-07-10
 ---
 
 I thought about using a clickbait title like "Is this the best web security
