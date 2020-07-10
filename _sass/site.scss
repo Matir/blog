@@ -11,11 +11,13 @@
   float: left;
 }
 
-img.right {
+img.right,
+a.right img{
   padding-left: 0.4rem;
 }
 
-img.left {
+img.left,
+a.left img{
   padding-right: 0.4rem;
 }
 
