@@ -5,6 +5,8 @@ category: Security
 tags:
   - Penetration Testing
   - Red Team
+description:
+  Build a penetration testing dropbox using a Raspberry Pi
 ---
 
 [![Raspberry Pi 4](//ws-na.amazon-adsystem.com/widgets/q?_encoding=UTF8&ASIN=B07TC2BK1X&Format=_SL250_&ID=AsinImage&MarketPlace=US&ServiceVersion=20070822&WS=1&tag=systemovecom-20&language=en_US){:.left .amzimg}](https://www.amazon.com/Raspberry-Model-2019-Quad-Bluetooth/dp/B07TC2BK1X/ref=as_li_ss_il?cv_ct_cx=raspberry+pi&dchild=1&keywords=raspberry+pi&pd_rd_i=B07TC2BK1X&pd_rd_r=cf3c4a78-81c5-4c9a-921f-9c70bae2796e&pd_rd_w=XB1nE&pd_rd_wg=PG6Eq&pf_rd_p=1da5beeb-8f71-435c-b5c5-3279a6171294&pf_rd_r=6XKT1T3E2254DKNEXTAY&psc=1&qid=1594437202&sr=1-1-70f7c15d-07d8-466a-b325-4be35d7258cc&linkCode=li3&tag=systemovecom-20&linkId=cf0fb5b6f95cfb61bff474270a0b5ea1&language=en_US)
@@ -173,6 +175,35 @@ case something goes wrong.
 ### Software
 
 ### Confidentiality/Data Protection
+
+Like everything else you do as a penetration tester or red teamer, it's
+important to protect your client's data.  Whatever you choose to use for your
+control connection should be encrypted, but it's also a good idea to encrypt any
+sensitive data that's at rest on the dropbox in case someone locates it and
+takes it (and feels like examining the contents of the SD card).
+
+One obvious option is to encrypt everything, such as with full-disk encryption,
+but since you won't be able to unlock the device on boot, this isn't as easy an
+option.  There are ways to remotely unlock with an SSH server in an `initramfs`,
+but that adds complexity and risk of failures.
+
+Instead, having a dedicated data partition that's encrypted is a good tradeoff
+that will still offer protection for the data in the case the SD card is
+examined.  I like to use LUKS for this -- it's easy enough to setup and
+well-studied for the use case.  Unfortunately, Broadcom didn't license the ARM
+crypto extensions, so performance is not great, but XTS mode is a couple of
+times faster than `CBC` mode, so make sure you use that.
+
+```
+% cryptsetup benchmark
+#     Algorithm |       Key |      Encryption |      Decryption
+        aes-cbc        128b        23.8 MiB/s        77.6 MiB/s
+        aes-cbc        256b        17.2 MiB/s        58.9 MiB/s
+        aes-xts        256b        85.0 MiB/s        75.1 MiB/s
+        aes-xts        512b        65.4 MiB/s        57.4 MiB/s
+```
+
+(Benchmarks taken from a Raspberry Pi 4B with 4GB of RAM.) {:.caption}
 
 ### Network Access Control
 
