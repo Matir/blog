@@ -5,6 +5,7 @@ category: Security
 tags:
   - Penetration Testing
   - Red Team
+  - Raspberry Pi
 description:
   Build a penetration testing dropbox using a Raspberry Pi
 ---
@@ -170,9 +171,92 @@ don't want to waste time and bandwidth installing new tools once the dropbox is
 in place), having your connection(s) set up, and having contingency plans in
 case something goes wrong.
 
+One way to have a lot of tools ready to go is to use one of the ARM images for
+[Kali Linux](https://www.offensive-security.com/kali-linux-arm-images/) provided
+by Offensive Security.  They're not perfect, but they're a great jumping off
+point for your own custom image.  Alternatively, you can install the tools you
+want on a base [Raspberry Pi OS](https://www.raspberrypi.org/downloads/)
+(formerly Raspbian) image.  It really depends on what you're comfortable with.
+
+My general approach is to write the base image to the SD card and load up a
+Raspberry Pi.  I'll configure authentication (passwords and keys), install the
+software I want, and setup the connection back to my remote server.  Once I have
+things working properly, I'll make a full image backup of the SD card.  Usually
+I do something like the following to make the backup, assuming the SD card is
+`/dev/mmcblk0`:
+
+```
+dd if=/dev/mmcblk0 bs=4M | bzip2 -9 > sdcard.img.bz2
+```
+
+The compression helps because, at this point, the card will be mostly empty so
+there's no point in taking up space with all the blank blocks.
+
 ### Resiliency
 
+If you're going to rely on this dropbox as your primary way into a target
+network, you want to make sure it's as reliable and resilient as possible.
+There's some things you just won't be able to control for, like hardware
+failure, someone finding your dropbox, or the network port you're connected to
+going dark on you.  (Placing more than one device, of course, can be insurance
+against all of those.)
+
+One common complaint with Raspberry Pis in any situation has to do with
+filesystem corruption from unclean shutdown and incomplete writes to the SD
+cards.  I've done some experimentation with this and found some ways to reduce
+the risk, but nothing I've tried or read will completely eliminate it.
+
+[![MicroSD Card](//ws-na.amazon-adsystem.com/widgets/q?_encoding=UTF8&ASIN=B0887P21Z2&Format=_SL160_&ID=AsinImage&MarketPlace=US&ServiceVersion=20070822&WS=1&tag=systemovecom-20&language=en_US){:.right .amzimg}](https://www.amazon.com/Samsung-Electronics-microSDXC-Adapter-MB-ME256HA/dp/B0887P21Z2/ref=as_li_ss_il?dchild=1&keywords=samsung+evo+pro+micro+sd&qid=1594512037&sr=8-3&linkCode=li2&tag=systemovecom-20&linkId=940472fbe3ebdf26566393c7ef6a5c3b&language=en_US)
+
+One way to reduce the risk of corruption is to use a quality SD card.  While
+incomplete writes can be a problem with any card, it seems that some cards are
+more prone to data loss than others.  Maybe this has to do with erase block
+size, or with reporting writes as finished before they're done, or with
+wear-leveling strategies.  It's not clear to me what the difference is, but my
+greatest level of success has been with [Samsung Evo](https://amzn.to/2DzCBD5)
+MicroSD cards.  I've also had good luck with [PNY](https://amzn.to/2OhuEEB) SD
+cards, even though they're a somewhat lesser known brand.
+
+Another way to reduce corruption is to minimize writes to the filesystem when
+it's running.  This is another benefit of having the software pre-installed and
+configured -- you know those writes won't be what corrupts your filesystem.
+Mounting `/var/log` and `/tmp` as `tmpfs` helps a lot as well, but does limit
+what you can store there based on how much RAM the Pi you're using has.  (This
+was a significant limitation on versions before the Pi 4B.)  Alternatively, you
+can give them a separate partition, so at least if the filesystem is corrupted,
+you don't lose your root filesystem at the same time.
+
+<!--TODO: partition table-->
+
+Another area to consider for reliability is your command and control system.
+Regardless of your C2 strategy, you may want to consider implementing a backup
+communications system, such as a slow, infrequently-polling DNS based mechanism.
+This both provides an alternate in case your primary mechanism fails, and can
+use a different network interface as a backup.
+
+Yet another concern is the temporary failure of your network link.  Having some
+kind of watchdog to restart your network connection when it can't reach your
+server may prove useful.
+
 ### Software
+
+The exact software you need will depend on the type of engagement you're
+performing.  At a minimum, you'll always need your connection for control of the
+device, and you'll want some tools for network enumeration and attacks.  You
+probably also want a way to tunnel arbitrary traffic, either via SSH port
+forwards or SOCKS proxy emulation, or a full proxy on the device.  I usually
+build mine with at least the following:
+
+- SSH
+- tmux/screen
+- Wireguard
+- nmap
+- tshark/tcpdump
+- Metasploit
+- bettercap
+
+Depending on your engagement, you might want some things like pre-built payloads
+for various circumstances.
 
 ### Confidentiality/Data Protection
 
@@ -205,11 +289,102 @@ times faster than `CBC` mode, so make sure you use that.
 
 (Benchmarks taken from a Raspberry Pi 4B with 4GB of RAM.) {:.caption}
 
+<!--TODO: mount userhomedir on LUKS -->
+
+Depending on your threat model, you can either mount with a random key on each
+boot (so if the device is rebooted, all data is lost, including for you), or
+mount the encrypted partition on the first connection after each boot using a
+key stored either on your server or your client machines.
+
 ### Network Access Control
+
+If you're unlucky, you'll wind up a network port with [Network Access
+Control](https://en.wikipedia.org/wiki/Network_Access_Control).  Obviously, if
+you're doing a coordinated remote test where the dropbox is placed by the IT
+staff of the target organization, this can be dealt with administratively.
+However, if you're on a penetration test where the dropbox is opportunistic/part
+of the physical engagement, then this may be something you need to overcome.
+
+One way to address this is just to find ports that are not configured for any
+form of NAC.  While that sounds like it might be a long ask, there's usually
+plenty on the network that's not dealing with the NAC implementation.  Printers,
+cameras, "IoT" devices and more may all not be capable of interfacing with the
+NAC solution.  You can find an unused port, replace a device (with the increased
+risk of detection that brings), add your own network switch (I like these little
+[USB-powered switches](https://amzn.to/3iWQiMm)), or use a 2nd wired network
+interface on the dropbox.  (On the Pi, this will need to be connected via USB.)
+
+For MAC- or [802.1x](https://en.wikipedia.org/wiki/IEEE_802.1X)-based NAC, a
+good approach is the use of two network interfaces bridged together.  In both
+cases, the goal is to make your implant indistinguishable from the legitimate
+host on the network.  Sometimes it's enough to have to have the port activated
+by the legitimate client, but other times you'll need to clone the MAC and IP of
+the device, which requires some network tricks.
+
+<!--TODO: MAC and IP cloning-->
+
+For `802.1x`, you'll need to configure the bridge to pass the EAPOL frames as
+well.  This can be done by setting an option in a `sysfs` file for the bridge:
+
+```
+echo 8 > /sys/class/net/br*/bridge/group_fwd_mask
+```
+
+Dealing with custom or more complex NAC requirements is left as an exercise for
+the reader.
+
+### Concealment
+
+If this is an overt test, there's no need to worry about concealment.  On the
+other hand, for a covert test, there's two main classes of concealment to be
+concerned about: digital concealment (network detection), and physical
+concealment.
+
+For network concealment, a lot of the steps in the [Network Access
+Control](#network-access-control) section will help, including cloning expected
+IP and MAC addresses.  Additionally, putting minimal amounts of unexpected
+network traffic on the target network will help maintain stealth.
+
+From a physical point of view, you basically have a couple of options: hidden or
+inconspicuous.  Hidden is simple: place your dropbox behind something (e.g., a
+user's PC, a printer, etc.) or in some other concealed location.  I've
+personally discovered a Raspberry Pi above the false ceiling in a men's room,
+connected to the "Guest" wireless network.  (It wasn't actually malicious, but
+part of a pilot program, but still a strange place to find a Raspberry Pi...)
+
+[![Raspberry Pi Case](//ws-na.amazon-adsystem.com/widgets/q?_encoding=UTF8&ASIN=B07XVPH79R&Format=_SL160_&ID=AsinImage&MarketPlace=US&ServiceVersion=20070822&WS=1&tag=systemovecom-20&language=en_US){:.right .amzimg}](https://www.amazon.com/Vilros-Raspberry-Heavy-Aluminum-Cooling/dp/B07XVPH79R/ref=as_li_ss_il?dchild=1&keywords=raspberry+pi+4+case+aluminum&qid=1594530386&sr=8-9&linkCode=li2&tag=systemovecom-20&linkId=04b6450c51be142359814bbf21cbada6&language=en_US)
+
+For something that blends in, you want something nobody will think twice about.
+This depends a lot on your environment, so as per usual with offensive security,
+recon is critical and the devil's in the details, but a few thoughts:\
+
+- Make it look like an appliance
+- Make it part of the environment (look like other things present)
+- Give it a plausible reason to exist
 
 ## Other Options
 
 ### Dedicated Devices
+
+There are a few dedicated penetration testing devices out there.  If you're in
+this industry, you're no doubt familiar with Hak5's products.  I'm a big fan of
+the [Packet
+Squirrel](https://shop.hak5.org/collections/sale/products/packet-squirrel) as a
+network implant, particularly when you need to do an inline
+[MITM](https://en.wikipedia.org/wiki/Man-in-the-middle_attack), but it has
+nowhere near the ecosystem nor the processing power available in a Raspberr Pi.
+Additionally, I've never been able to get an out-of-band networking system
+working on.  (Maybe I should give it another try...)
+
+The [Ace Hackware
+Rootabaga](https://acehackware.com/products/ace-r00tabaga-multipwner?variant=19922794692)
+is another dedicated hardware implant, based on the TP-LINK MR3040, which is a
+small WiFi router using OpenWRT as the base of the firmware.  While it claims to
+be a competitor to the WiFi Pineapple, the firmware is not nearly as current.
+It definitely lacks the ecosystem available to the Raspberry Pi (either with
+Debian or Kali) and is significantly less powerful.  The one big advantage to
+the Rootabaga is it's built-in battery, though it only lasts hours, so you may
+need to plan around that.
 
 ### Alternative Single-Board Computers
 
