@@ -226,7 +226,12 @@ was a significant limitation on versions before the Pi 4B.)  Alternatively, you
 can give them a separate partition, so at least if the filesystem is corrupted,
 you don't lose your root filesystem at the same time.
 
-<!--TODO: partition table-->
+You can configure the `tmpfs` option by adding lines to `/etc/fstab` like this:
+
+```
+echo 'tmpfs /tmp tmpfs rw,nodev,noexec,nosuid,size=256M,mode=1700 0 0' >> /etc/fstab
+echo 'tmpfs /var/log tmpfs rw,nodev,noexec,nosuid,size=256M,mode=750 0 0' >> /etc/fstab
+```
 
 Another area to consider for reliability is your command and control system.
 Regardless of your C2 strategy, you may want to consider implementing a backup
@@ -296,6 +301,20 @@ boot (so if the device is rebooted, all data is lost, including for you), or
 mount the encrypted partition on the first connection after each boot using a
 key stored either on your server or your client machines.
 
+Let's say you want to encrypt all the data to be stored in `/data` with a random
+key in each boot, and you're using `/dev/mmcblk0p3` as the underlying partition
+to be used to store the data.  (This is after the `/boot` and `/` partitions on
+the SD card.)  You'll need to setup `/etc/crypttab` to enable the encryption and
+`/etc/fstab` for the filesystem mounting.
+
+```
+echo 'datacrypt /dev/mmcblk0p3 /dev/urandom cipher=aes-xts-plain64:sha256,size=256,nofail,tmp' >> /etc/crypttab
+echo '/dev/mapper/datacrypt /data ext4 defaults,noatime 0 0' >> /etc/fstab
+```
+
+
+<!--TODO: remote key setup -->
+
 ### Network Access Control
 
 If you're unlucky, you'll wind up a network port with [Network Access
@@ -356,13 +375,27 @@ part of a pilot program, but still a strange place to find a Raspberry Pi...)
 
 For something that blends in, you want something nobody will think twice about.
 This depends a lot on your environment, so as per usual with offensive security,
-recon is critical and the devil's in the details, but a few thoughts:\
+recon is critical and the devil's in the details, but a few thoughts:
 
 - Make it look like an appliance
 - Make it part of the environment (look like other things present)
 - Give it a plausible reason to exist
 
+I'm a big fan of non-descript cases like [this](https://amzn.to/2ZlUC03) and
+[this](https://amzn.to/2WakslE).  I'm also a fan of misdirection in case the
+device is seen.  For example, sticking a label on the device to identify it as
+an "Air Quality Monitor" or something equally benign.  A bold choice is to
+include an email address like `<healthandsafety@customer.com>`.  It lends an air
+of credence to it, but should someone actually take it upon themselves to check
+with that email address, their suspicions may be aroused if the email bounces.
+
 ## Other Options
+
+Obviously, a Raspberry Pi is not the only type of device that you can use as an
+offensive security dropbox.  There exist a handful of dedicated devices as well
+as a wide range of other single-board computers that can be used.  The Raspberry
+Pi, however, is relatively cheap, easy to come by, well-documented, and with a
+broad software ecosystem.
 
 ### Dedicated Devices
 
@@ -386,6 +419,61 @@ Debian or Kali) and is significantly less powerful.  The one big advantage to
 the Rootabaga is it's built-in battery, though it only lasts hours, so you may
 need to plan around that.
 
+If the battery of the Rootabaga sounds attractive, you could pair a Pi with a
+[battery bank -- the bigger, the
+better](https://click.linksynergy.com/deeplink?id=aIjkt7dUnp0&mid=43469&murl=https%3A%2F%2Fwww.anker.com%2Fproducts%2Fvariant%2Fpowercore--26800%2FA1374011).
+A 26.8Ah battery offers nearly 100Wh of energy.  Given a typical power
+consumption of a bit under 2.5W from a Pi, you can keep going for ~40 hours on
+the battery.  Alternatively, if PoE is available, you can put the official
+Raspberry Pi [PoE hat](https://amzn.to/3gT3sbK) on the dropbox and run from
+that.  Unfortunately, I'm not aware of any way to pass PoE through, so you won't
+be able to use that if you need to go inline on a device that's already
+PoE-powered.
+
 ### Alternative Single-Board Computers
 
+Since the inception of the Raspberry Pi, there has been a whole ecosystem of
+clones, with names like [BananaPi](http://www.banana-pi.org/) and
+[OrangePi](http://www.orangepi.org/), but these don't offer you much.  They have
+a smaller set of documentation, a smaller set of ready-made software and
+distributions, and the hardware capabilities are much the same as the Raspberry
+Pi.  It's actually rather amazing to me how many different variants have cropped
+up, so if one fits your needs, you may want to consider it.
+
+[![EspressoBin](//ws-na.amazon-adsystem.com/widgets/q?_encoding=UTF8&ASIN=B07KTMBCS1&Format=_SL160_&ID=AsinImage&MarketPlace=US&ServiceVersion=20070822&WS=1&tag=systemovecom-20&language=en_US){:.left .amzimg}](https://www.amazon.com/Globalscale-Technologies-Inc-ESPRESSOBIN-Enclosure/dp/B07KTMBCS1/ref=as_li_ss_il?dchild=1&keywords=espressobin&qid=1594581889&sr=8-3&linkCode=li2&tag=systemovecom-20&linkId=2b73d0fe01b1ac06a925afd0a7a4f627&language=en_US)
+
+In terms of alternatives that offer benefits, there's a couple of things I've
+looked for, mostly related to connectivity.  Most prominent is multiple ethernet
+interfaces, like you can find on the [EspressoBin](https://amzn.to/3gPfd2L) or a
+handful of the Raspberry Pi clones like the [NanoPi
+R2S](https://www.friendlyarm.com/index.php?route=product/product&product_id=282).
+There are also a number of less powerful (in terms of CPU and RAM) options
+available in the portable router space.  Obviously, running on the vendor
+firmware doesn't give you a lot of options, so I look exclusively for devices
+that are well-supported by OpenWRT.  GL.iNet specializes in this space, and I've
+used several of their [AR-750S "Slate" Portable Router](https://amzn.to/3ekfide)
+for various projects, though it's not the most inconspicuous device ever.
+
+[![Small Form Factor PC Dropbox](//ws-na.amazon-adsystem.com/widgets/q?_encoding=UTF8&ASIN=B01H2QJTM4&Format=_SL160_&ID=AsinImage&MarketPlace=US&ServiceVersion=20070822&WS=1&tag=systemovecom-20&language=en_US){:.right .amzimg}](https://www.amazon.com/Firewall-Micro-Appliance-Gigabit-Intel/dp/B01H2QJTM4/ref=as_li_ss_il?dchild=1&keywords=protectli&qid=1594584715&sr=8-2-spons&psc=1&spLa=ZW5jcnlwdGVkUXVhbGlmaWVyPUExQ1BJNkQ2RTBPMUpNJmVuY3J5cHRlZElkPUEwMTcyNTQwOVNYUTRKMVdJMzJSJmVuY3J5cHRlZEFkSWQ9QTA1MTIxMjAxU05DNDlSOVRZME1VJndpZGdldE5hbWU9c3BfYXRmJmFjdGlvbj1jbGlja1JlZGlyZWN0JmRvTm90TG9nQ2xpY2s9dHJ1ZQ==&linkCode=li2&tag=systemovecom-20&linkId=c1143e2a606c31608df4f9ff7f5459c4&language=en_US)
+
+If, on the other hand, you're looking for as much local processing power and/or
+storage as you can get, you can get a very small form factor PC like the [Intel
+NUC](https://amzn.to/3gSQPgQ), or even small PCs designed for firewall usage,
+like devices from [Protectli](https://amzn.to/2ZkOrcv).  These use x86
+processors and can have features like AES-NI, more RAM, and can use mSATA or m.2
+SSDs.  They're more conspicuous, more expensive (though given the typical cost
+of a penetration testing engagement, probably not relevant), and more
+power-hungry (almost all the other options can be powered off USB).
+
 ## Related Work
+
+I'm certainly not the first to discuss using a Raspberry Pi as a penetration
+testing dropbox, and there have been some cool projects in this space before.
+There's this great project where [a Raspberry Pi is embedded in a power
+strip](https://hackaday.com/2012/10/04/malicious-raspberry-pi-power-strip-looks-a-bit-scary/).
+Unfortunately, their original project page is no longer online.
+
+Artifice Security has an [interesting
+post](https://artificesecurity.com/blog/2019/8/6/how-to-build-your-own-penetration-testing-drop-box-using-a-raspberry-pi-4)
+that describes their approach to similar uses.  They specifically discuss the
+use of the CrazyRadio Mousejack attacks, and other techniques not covered here.
