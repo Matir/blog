@@ -138,7 +138,7 @@ My favorite approach is actually using `ssh` to establish an outbound connection
 that forwards a port back to the dropbox for its own SSH server.  I realize this
 sounds confusing, so I hope this diagram helps:
 
-<!--TODO diagram for post-->
+<!--NOPUBLISH TODO diagram for post-->
 
 Unfortunately, this may result in multiple layers of TCP, so throughput will be
 sub-optimal, but it works well, and I can run an SSH server on Port 443, which
@@ -292,9 +292,10 @@ times faster than `CBC` mode, so make sure you use that.
         aes-xts        512b        65.4 MiB/s        57.4 MiB/s
 ```
 
-(Benchmarks taken from a Raspberry Pi 4B with 4GB of RAM.) {:.caption}
+(Benchmarks taken from a Raspberry Pi 4B with 4GB of RAM.)
+{:.caption}
 
-<!--TODO: mount userhomedir on LUKS -->
+<!--NOPUBLISH TODO: mount userhomedir on LUKS -->
 
 Depending on your threat model, you can either mount with a random key on each
 boot (so if the device is rebooted, all data is lost, including for you), or
@@ -308,16 +309,74 @@ the SD card.)  You'll need to setup `/etc/crypttab` to enable the encryption and
 `/etc/fstab` for the filesystem mounting.
 
 ```
+mkdir /data
 echo 'datacrypt /dev/mmcblk0p3 /dev/urandom cipher=aes-xts-plain64:sha256,size=256,nofail,tmp' >> /etc/crypttab
 echo '/dev/mapper/datacrypt /data ext4 defaults,noatime 0 0' >> /etc/fstab
 ```
 
+To unlock `/data` using a remote key, we won't use `crypttab`, but instead
+invoke `cryptsetup` directly and then mount the encrypted partition.  First,
+there's one-time setup:
 
-<!--TODO: remote key setup -->
+```
+mkdir /data
+chmod 000 /data
+echo '/dev/mapper/datacrypt /data ext4 defaults,noatime 0 0' >> /etc/fstab
+```
+
+Then copy the following script to `/root/cryptsetup.sh`:
+
+```bash
+#!/bin/bash
+
+set -ue
+
+DEVICE=/dev/mmcblk0p3
+NAME="datacrypt"
+
+case "${1:-unlock}" in
+  create)
+    FIFOD=$(mktemp -d)
+    trap "rm -rf ${FIFOD}" SIGINT SIGTERM ERR EXIT
+    mkfifo ${FIFOD}/f1
+    mkfifo ${FIFOD}/f2
+    (
+        cryptsetup luksFormat -b 256 -c aes-xts-plain64 "${DEVICE}" ${FIFOD}/f1
+        cryptsetup luksOpen --key-file ${FIFOD}/f2 "${DEVICE}" "${NAME}"
+        mkfs.ext4 "/dev/mapper/${NAME}"
+        mount "/dev/mapper/${NAME}"
+    ) &
+    tee ${FIFOD}/f1 | tee ${FIFOD}/f2 >/dev/null
+    wait
+    echo "Successfully created."
+    ;;
+  unlock)
+    cryptsetup luksOpen --key-file - "${DEVICE}" "${NAME}"
+    mount /dev/mapper/datacrypt
+    echo "Successfully unlocked/mounted."
+    ;;
+  *)
+    echo "Unknown operation!" >/dev/stderr
+    exit 1
+    ;;
+esac
+```
+
+This script uses key data provided over standard input to either create or
+unlock the data partition.  Then you can unlock the data partition remotely by
+running the script:
+
+```bash
+dd if=/dev/urandom of=keyfile bs=64 count=1
+# Create the filesystem
+ssh root@raspberrypi /root/cryptsetup.sh create < keyfile
+# Mount the filesystem on subsequent boots
+ssh root@raspberrypi /root/cryptsetup.sh < keyfile
+```
 
 ### Network Access Control
 
-If you're unlucky, you'll wind up a network port with [Network Access
+If you're unlucky, you'll wind up on a network port with [Network Access
 Control](https://en.wikipedia.org/wiki/Network_Access_Control).  Obviously, if
 you're doing a coordinated remote test where the dropbox is placed by the IT
 staff of the target organization, this can be dealt with administratively.
@@ -340,7 +399,7 @@ host on the network.  Sometimes it's enough to have to have the port activated
 by the legitimate client, but other times you'll need to clone the MAC and IP of
 the device, which requires some network tricks.
 
-<!--TODO: MAC and IP cloning-->
+<!--NOPUBLISH TODO: MAC and IP cloning-->
 
 For `802.1x`, you'll need to configure the bridge to pass the EAPOL frames as
 well.  This can be done by setting an option in a `sysfs` file for the bridge:
