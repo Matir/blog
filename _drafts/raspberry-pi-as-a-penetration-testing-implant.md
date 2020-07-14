@@ -138,7 +138,29 @@ My favorite approach is actually using `ssh` to establish an outbound connection
 that forwards a port back to the dropbox for its own SSH server.  I realize this
 sounds confusing, so I hope this diagram helps:
 
-<!--NOPUBLISH TODO diagram for post-->
+![SSH Tunnels](/img/pi_dropbox/tunneling.png){:.center}
+
+This is done with a command similar to the following, where then connecting to
+port `2222` on the server will establish a connection to the dropbox's port `22`.
+If you have multiple dropboxes, assign each one a different port on the server,
+or use `0` for port auto assignment.  When using that, you'll likely need to use
+`netstat` to find the associated ports.
+
+```
+ssh -R 2222:localhost:22 server.example.com
+# or using automatic port assignment and going to the background
+ssh -f -N -R 0:localhost:22 server.example.com
+```
+
+If you do this on a server and then are connecting from a remote client (e.g.,
+your laptop), you can use the `ssh` `ProxyJump` feature to connect to the
+dropbox through the server.  For example, using the example port `2222`, the
+following will connect to the dropbox (note the use of `localhost` to connect to
+the forwarded port):
+
+```
+ssh -J server.example.com -p 2222 root@localhost
+```
 
 Unfortunately, this may result in multiple layers of TCP, so throughput will be
 sub-optimal, but it works well, and I can run an SSH server on Port 443, which
@@ -295,8 +317,6 @@ times faster than `CBC` mode, so make sure you use that.
 (Benchmarks taken from a Raspberry Pi 4B with 4GB of RAM.)
 {:.caption}
 
-<!--NOPUBLISH TODO: mount userhomedir on LUKS -->
-
 Depending on your threat model, you can either mount with a random key on each
 boot (so if the device is rebooted, all data is lost, including for you), or
 mount the encrypted partition on the first connection after each boot using a
@@ -399,14 +419,18 @@ host on the network.  Sometimes it's enough to have to have the port activated
 by the legitimate client, but other times you'll need to clone the MAC and IP of
 the device, which requires some network tricks.
 
-<!--NOPUBLISH TODO: MAC and IP cloning-->
-
 For `802.1x`, you'll need to configure the bridge to pass the EAPOL frames as
 well.  This can be done by setting an option in a `sysfs` file for the bridge:
 
 ```
 echo 8 > /sys/class/net/br*/bridge/group_fwd_mask
 ```
+
+You can configure a transparent firewall setup or use a tool like
+[FENRIR](https://github.com/Orange-Cyberdefense/fenrir-ocd) to inject traffic
+using spoofed MAC/IP settings.  The exact requirements depend on the `802.1x`
+setup, but in the best case, once the port is enabled by the switch, all traffic
+on it will be allowed until the next link down.
 
 Dealing with custom or more complex NAC requirements is left as an exercise for
 the reader.
