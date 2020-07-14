@@ -12,6 +12,7 @@ layout: default
       href="/category/{{ page.category | slugify }}"
       >{{ page.category }}</a>{% endif %}
     ({{page.content | reading_time | pluralize: "minute" }})
+    {% include sharing.html %}
   </span>
   {% include post-tags.html %}
 </div>
