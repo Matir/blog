@@ -8,6 +8,7 @@ tags:
   - Raspberry Pi
 description:
   Build a penetration testing dropbox using a Raspberry Pi
+date: 2020-07-14
 ---
 
 [![Raspberry Pi 4](//ws-na.amazon-adsystem.com/widgets/q?_encoding=UTF8&ASIN=B07TC2BK1X&Format=_SL250_&ID=AsinImage&MarketPlace=US&ServiceVersion=20070822&WS=1&tag=systemovecom-20&language=en_US){:.left .amzimg}](https://www.amazon.com/Raspberry-Model-2019-Quad-Bluetooth/dp/B07TC2BK1X/ref=as_li_ss_il?cv_ct_cx=raspberry+pi&dchild=1&keywords=raspberry+pi&pd_rd_i=B07TC2BK1X&pd_rd_r=cf3c4a78-81c5-4c9a-921f-9c70bae2796e&pd_rd_w=XB1nE&pd_rd_wg=PG6Eq&pf_rd_p=1da5beeb-8f71-435c-b5c5-3279a6171294&pf_rd_r=6XKT1T3E2254DKNEXTAY&psc=1&qid=1594437202&sr=1-1-70f7c15d-07d8-466a-b325-4be35d7258cc&linkCode=li3&tag=systemovecom-20&linkId=cf0fb5b6f95cfb61bff474270a0b5ea1&language=en_US)
