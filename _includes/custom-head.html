@@ -6,7 +6,11 @@
   <!-- Open Graph -->
   <meta property="og:title" content="{{ page.title }} - {{ site.title }}">
   <meta property="og:type" content="website">
-  <meta property="og:image" content="{{ site.baseurl }}/static/favicon.ico">
+  {% if page.image %}
+    <meta property="og:image" content="{{page.image | absolute_url}}">
+  {% else %}
+    <meta property="og:image" content="{{ site.url }}/static/favicon.ico">
+  {% endif %}
   <meta property="og:url" content="https://systemoverlord.com{{page.url}}">
   <meta property="og:site_name" content="{{ site.title }}">
   {% if page.description %}
@@ -15,4 +19,24 @@
   {% else %}
     <meta name="description" property="og:description"
       content="{{ page.excerpt | strip_html | truncatewords: 50 }}">
+  {% endif %}
+
+  <!-- Twitter card -->
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:site" content="@matir">
+  {% if page.title %}
+    <meta name="twitter:title" content="{{page.title}}">
+  {% else %}
+    <meta name="twitter:title" content="{{site.title}}">
+  {% endif %}
+  {% if page.description %}
+    <meta name="twitter:description" content="{{page.description}}">
+  {% else %}
+    <meta name="twitter:description"
+      content="{{ page.excerpt | strip_html | truncatewords: 50 }}">
+  {% endif %}
+  {% if page.image %}
+    <meta name="twitter:image" content="{{page.image | absolute_url}}">
+  {% else %}
+    <meta name="twitter:image" content="{{ site.url }}/static/favicon.ico">
   {% endif %}
