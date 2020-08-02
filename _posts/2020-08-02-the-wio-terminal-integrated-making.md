@@ -13,6 +13,7 @@ excerpt:
     peripherals include an accelerometer, microphone, speaker, and light sensor.
     I/O is available via a Raspberry Pi compatible 40 pin header, 2 Grove
     interfaces, and USB type C.
+date: 2020-08-02
 ---
 
 *Please note: Seeed Technology Co Ltd (aka Seeed Studio) provided the Wio
