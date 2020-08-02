@@ -49,6 +49,14 @@ When Seeed Technology offered me a Wio to take a look, I thought it would be a
 great idea.  I'm curious both what can be done as a standalone device and what
 can be done with attached hardware.
 
+![Box Contents](/img/wio/box_contents.png)
+
+Inside the box, you find the Wio Terminal itself, with a plastic peel to protect
+the screen in shipping (it was also inside a small plastic bag, removed for this
+photo), a user manual, a short USB-C cable, and a spare 5-way switch hat.  The
+manual is very brief and beyond covering where to put the power cord, I'd
+suggest to only use the online documentation instead.
+
 The [documentation on Seeed's
 Wiki](https://wiki.seeedstudio.com/Wio-Terminal-Getting-Started/) is really
 quite good.  There is some setup necessary to get ready to use the Wio Terminal
