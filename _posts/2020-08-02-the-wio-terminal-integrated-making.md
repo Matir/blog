@@ -17,7 +17,7 @@ date: 2020-08-02
 ---
 
 *Please note: Seeed Technology Co Ltd (aka Seeed Studio) provided the Wio
-Terminal for use in this review.  I have not been compensated in any other way
+Terminal for use in this post.  I have not been compensated in any other way
 for this post.  If you're not familiar with Seeed, there's an introduction to
 their offerings at the bottom.*
 
@@ -79,9 +79,10 @@ but that's very common at this price point.
 ![Broken Switch](/img/wio/broken_switch.png){:.center}
 
 Unfortunately, I had one issue where one of the buttons broke off the PCB the
-first time I pushed it.  I've reached out to Seeed to see if this is a known
-issue or a one-off, but the other buttons look well soldered and feel solid, so
-I suspect this was a one-off glitch.
+first time I pushed it.  I've reached out to Seeed to and they indicated this
+isn't an issue they've seen in their testing, so it was likely either shipping
+damage or a one-off case.  Since the other two buttons are solid, I'll chalk
+this up to bad luck.
 
 ![Internals](/img/wio/internals.png){:.center}
 
@@ -342,7 +343,7 @@ adequate space for these programs.
 
 Overall, I think the Wio Terminal is a good value at it's $30 USD price point.
 I *strongly* suggest getting the $10 battery addon (which I didn't have a chance
-to review, but looks useful), as portable projects are where I would really
+to try out, but looks useful), as portable projects are where I would really
 expect this to shine.  (Of course, you can just use a USB-C cable to a battery
 pack if you prefer, but then you won't have the sleek look of the combined
 interfaces.)
