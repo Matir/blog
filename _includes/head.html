@@ -10,7 +10,11 @@
     {% if page.title == "Home" %}
       {{ site.title }}{% if site.tagline %} &middot; {{ site.tagline }}{% endif %}
     {% else %}
-      {{ page.title }} &middot; {{ site.title }}
+      {% if page.title != "" %}
+        {{ page.title }} &middot; {{ site.title }}
+      {% else %}
+        {{ site.title }}
+      {% endif %}
     {% endif %}
   </title>
 

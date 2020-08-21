@@ -1,0 +1,5 @@
+---
+---
+{% for tag in site.tags -%}
+{{tag[1].size}} {{tag[0] | slugify}} {{tag[0]}}
+{% endfor %}
