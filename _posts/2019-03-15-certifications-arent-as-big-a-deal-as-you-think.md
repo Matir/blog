@@ -92,13 +92,12 @@ Windows.
 
 ### Security+ ###
 
-I wouldn't suggest anyone waste time with Security+.  It's a multiple choice
-exam that you can cram for from a single book.  You don't even need to use a
-computer while studying for it.  While you might be able to spit out facts and
-random information about security controls and best practices, you won't be able
-to apply that knowledge based on the exam alone.  (Also, I'm given to understand
-that some of its advice no longer actually matches accepted industry best
-practices, such as advice on choosing passwords.)
+Security+ is a common certification when you're first getting started.  It's
+useful to get past the HR drone to an interview, but I'm not convinced the
+knowledge gained during it is enough to be a practical use case.  If you want to
+get it quickly, I suggest using a service like
+[Certblaster](https://shareasale.com/r.cfm?b=1254228&u=2497236&m=63545&urllink=&afftrack=)
+with interactive practice tests.
 
 ### CISSP ###
 
