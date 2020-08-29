@@ -17,6 +17,10 @@ include any sort of CSRF token and didn't seem to use any of the headers
 since it was posting JSON, was it really vulnerable to CSRF?  **Yes, yes,
 definitely yes!**
 
+Interestingly, this is reminiscent of many of the confusions between server and
+browser that are described in Michal Zalewski's [The Tangled
+Web](https://amzn.to/2QyTUaH).
+
 The idea that the use of a particular encoding is a security boundary is, at
 worst, a completely wrong notion of security, and at best, a stopgap until W3C,
 browser vendors, or a clever attacker gets hold of your API.  Let's examine JSON
