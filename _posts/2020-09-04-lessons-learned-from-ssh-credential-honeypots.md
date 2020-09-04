@@ -189,6 +189,7 @@ Again, I'm not claiming that these countries mean anything other than location
 of the autonomous system (AS) that originates the requests.  I also did not do
 individual IP geolocation, so the results should be taken with a small grain of
 salt.
+{:.clear}
 
 So what networks are sourcing this traffic?  I have the [full AS counts and
 data](/static/attachments/gopot/asns.csv), but the top networks are:
