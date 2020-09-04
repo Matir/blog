@@ -70,3 +70,10 @@ tbody tr:nth-child(odd) {
     background-color: #eeeeee;
   }
 }
+
+// Table special formats
+table{
+  &.center, &.right, &.left {
+    width: auto;
+  }
+}
