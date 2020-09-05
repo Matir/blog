@@ -61,8 +61,9 @@ view of the world, like:
 - `caonima` -- a Mandarin profanity written in Pinyin
 - `meiyoumima` -- Mandarin for "no password"
 - `woaini` -- Mandarin for "I love you"
-- `poiuyt` -- The name for an optical illusion also known as the "devil's tuning
-  fork"
+- `poiuyt` -- <strike>The name for an optical illusion also known as the "devil's tuning
+  fork"</strike> **Edit:** multiple redditors pointed out this is the begginning
+  of the top row of the keyboard from right to left.
 
 There are also dozens and dozens of keyboard walks, like `1q2w3e`, `1qaz@WSX`,
 and `!QAZ2wsx`.  There are many more that took me much longer to realize they
