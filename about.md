@@ -2,6 +2,8 @@
 layout: page
 title: "About David"
 weight: 100
+description:
+  About David (Matir)
 ---
 David is a security engineer at Google, working on information
 security assessments and Red Team exercises.  He holds the
