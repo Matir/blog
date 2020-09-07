@@ -205,6 +205,13 @@ Likewise, you'll want to practice your soldering skills before you start work on
 your target board -- find some small soldering projects to practice on, or some
 through away scrap electronics to work on.
 
+I love the [Schmartboard Breakout
+Boards](https://www.shareasale.com/m-pr.cfm?merchantID=51797&userID=2497236&productID=554137348)
+to help solder surface mount components.  They have small grooves to help solder
+if you don't have experience with SMD components.  Just use a small tip and it's
+quite simple to solder.  I've used them with flash memory chips for firmware
+extractions and other similar use cases.
+
 ## Network Interfaces ##
 
 Obviously, these devices have network interfaces.  After all, they are the
