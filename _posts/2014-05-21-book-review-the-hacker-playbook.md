@@ -6,7 +6,7 @@ permalink: /2014/05/21/book-review-the-hacker-playbook/
 category: Security
 tags:
   - Security
-  - Book Reviews
+  - Book Review
   - Hacking
 ---
 [The Hacker Playbook: Practical Guide To Penetration Testing](http://www.amazon.com/gp/product/1494932636/ref=as_li_tl?ie=UTF8&camp=1789&creative=390957&creativeASIN=1494932636&linkCode=as2&tag=systemovecom-20) is an attempt to use a continuous series of football metaphors to describe the process of a network penetration test. Maybe the metaphors would work better for someone who actually watches sports, but I felt they were a bit strained and forced at times.  That being said, the actual content and techniques described are solid and generally useful information.  It's arranged in the stages of a good penetration test, and reads like a strong guide for those relatively new to penetration testing.  Unfortunately, it doesn't set up general guides for each area as much as describing specific "plays" for each area, so once those techniques start to fall flat, it doesn't leave you with a lot of depth.

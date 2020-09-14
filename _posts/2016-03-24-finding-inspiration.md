@@ -4,7 +4,9 @@ title: "Finding My Inspiration"
 date: 2016-03-24
 category: Personal
 categories: Personal, Security
-tags: Career, Security
+tags:
+  - Career
+  - Security
 ---
 
 I've been having a lot of trouble lately, feeling like I'm not doing the things

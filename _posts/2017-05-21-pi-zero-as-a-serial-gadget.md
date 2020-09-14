@@ -6,7 +6,7 @@ date: 2017-05-21
 tags:
   - Raspberry Pi
   - Linux
-  - Embedded
+  - Embedded Systems
 ---
 
 I just got a new Raspberry Pi Zero W (the wireless version) and didn't feel like

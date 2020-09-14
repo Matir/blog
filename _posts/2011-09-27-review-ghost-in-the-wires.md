@@ -6,7 +6,7 @@ permalink: /2011/09/27/review-ghost-in-the-wires/
 category: Computer
 tags:
   - Kevin Mitnick
-  - Book Reviews
+  - Book Review
   - Hacking
   - Social Engineering
   - BROKEN

@@ -4,7 +4,7 @@ title: "BSidesSF CTF 2018: Coder Series (Author's PoV)"
 category: Security
 date: 2018-04-21
 tags:
-  - CTFs
+  - CTF
   - Writeups
 ---
 
