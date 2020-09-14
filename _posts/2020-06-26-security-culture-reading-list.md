@@ -8,6 +8,7 @@ tags:
   - Security 101
   - Books
   - Hacker Culture
+  - Reading List
 date: 2020-06-26
 ---
 

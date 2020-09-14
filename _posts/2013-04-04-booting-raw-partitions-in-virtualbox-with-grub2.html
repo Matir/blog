@@ -5,8 +5,8 @@ date: 2013-04-04 06:44:27 +0000
 permalink: /2013/04/04/booting-raw-partitions-in-virtualbox-with-grub2/
 category: Linux
 tags:
-  - virtualbox
-  - kali linux
+  - VirtualBox
+  - Kali Linux
 ---
 <p><b>Background:</b>  I dual-boot my laptop between two different Linux distributions: one for normal/desktop use (currently Mint), and one for "security" uses: mostly CTFs or otherwise hostile networks (currently Kali Linux).  I also kept a Kali installation in a VM for use from within my desktop environment, but I was getting tired of having two Kali installations on the one laptop.  I'd discover irritation at different configurations, not easily having data between the two, etc.  Suffice it to say that fewer installations to maintain is a good thing.  So I wondered: can I boot my raw hard disk install from VirtualBox?</p>
 <p><b>Yes</b>, but it took some work to get it right.  First, I needed to get my partitions mapped into a VirtualBox disk.  Let's start by looking at my physical partitioning:</p>

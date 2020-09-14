@@ -4,9 +4,9 @@ title: "DEF CON Quals 2017: beatmeonthedl"
 category: Security
 date: 2017-04-30
 tags:
-  - ctf
+  - CTF
   - DEF CON
-  - writeup
+  - Writeup
 ---
 
 I played in the DEF CON quals CTF this weekend, and happened to find the

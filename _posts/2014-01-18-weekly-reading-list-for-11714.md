@@ -5,7 +5,7 @@ date: 2014-01-18 05:00:00 +0000
 permalink: /2014/01/18/weekly-reading-list-for-11714/
 category: Security
 tags:
-  - reverse engineering
+  - Reverse Engineering
   - Security
   - CTF
   - SDR

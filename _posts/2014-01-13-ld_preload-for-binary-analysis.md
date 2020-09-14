@@ -7,7 +7,7 @@ category: Security
 tags:
   - CTF
   - Security
-  - reverse engineering
+  - Reverse Engineering
   - InfoSec
   - Hacking
 ---

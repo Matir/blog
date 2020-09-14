@@ -6,7 +6,7 @@ permalink: /2014/09/13/getting-started-in-information-security/
 category: Security
 tags:
   - Security
-  - career
+  - Career
   - Reading List
 ---
 I've only been an information security practitioner for about a year now, but I've been doing things on my own for years before that.  However, many people are just getting into security, and I've recently stumbled on a number of resources for newcomers, so I thought I'd put together a short list.

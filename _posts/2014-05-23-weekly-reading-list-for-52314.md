@@ -8,7 +8,7 @@ tags:
   - Reading List
   - Security
   - CTF
-  - reverse engineering
+  - Reverse Engineering
   - Red Team
   - Pentesting
 ---

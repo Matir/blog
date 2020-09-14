@@ -5,7 +5,8 @@ date: 2013-01-07 07:55:14 +0000
 permalink: /2013/01/07/pagerank-status-chrome-extension-injects-ads/
 category: Security
 tags:
-  - malware
+  - Malware
   - Extensions
+  - BROKEN
 ---
 https://systemoverlord.com/sites/default/files/images/malware_screenshot.png
