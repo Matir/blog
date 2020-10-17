@@ -5,7 +5,7 @@ category: Linux
 date: 2017-04-17
 tags:
   - Linux
-  - bash
+  - Bash
 ---
 
 While my daily driver shell is [ZSH](http://www.zsh.org/), when I script, I

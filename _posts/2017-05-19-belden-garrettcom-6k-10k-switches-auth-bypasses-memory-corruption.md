@@ -7,7 +7,7 @@ tags:
   - Disclosure
   - Security
   - Advisories
-  - Embedded
+  - Embedded Systems
 ---
 
 Introduction

@@ -4,7 +4,7 @@ title: "Book Review: Red Team by Micah Zenko"
 category: Security
 tags:
   - Security
-  - Book Reviews
+  - Book Review
 date: 2018-02-10
 ---
 
