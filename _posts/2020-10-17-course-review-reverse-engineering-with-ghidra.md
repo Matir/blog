@@ -7,12 +7,10 @@ tags:
   - Reverse Engineering
   - Course Review
 excerpt:
-    Last week, I took the "[Reverse Engineering with
-    Ghidra](http://infiltratecon.com/conference/training/reverse-engineering-with-ghidra.html)"
-    taught by [Jeremy Blackthorne (0xJeremy)](https://twitter.com/0xjeremy) of the
-    [Boston Cybernetics Institute](https://www.bostoncybernetics.org/).  It was
-    a high-quality experience and well worth the time, and I can highly
-    recommend this course.  Check out the full review.
+    Last week, I took the "Reverse Engineering with Ghidra" taught by Jeremy
+    Blackthorne (0xJeremy) of the Boston Cybernetics Institute.  It was a
+    high-quality experience and well worth the time, and I can highly recommend
+    this course.  Check out the full review.
 ---
 
 If you're a prior reader of the blog, you probably know that when I have the
