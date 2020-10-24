@@ -22,7 +22,7 @@ Last week, I took the "[Reverse Engineering with
 Ghidra](http://infiltratecon.com/conference/training/reverse-engineering-with-ghidra.html)"
 taught by [Jeremy Blackthorne (0xJeremy)](https://twitter.com/0xjeremy) of the
 [Boston Cybernetics Institute](https://www.bostoncybernetics.org/).  It was
-ostensibly offered as part of the Infiltrate Conference, but 20202 being what it
+ostensibly offered as part of the Infiltrate Conference, but 2020 being what it
 is, there was no conference and it was just an online training.  Unfortunately
 for me, it was being run on East Coast time and I'm on the West Coast, so I got
 to enjoy some *early* mornings.
