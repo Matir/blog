@@ -1,0 +1,207 @@
+---
+layout: post
+title: "Hacker Holiday Gift Guide - 2020 Edition"
+category: Security
+tags:
+  - Security
+  - Holiday Gift Guide
+---
+
+Welcome to the 2020 edition of my Hacker Holiday Gift Guide!  This has been a
+trying year for all of us, but I sincerely hope you and your family are happy
+and healthy as this year comes to an end.
+
+## Table of Contents
+{:.no_toc}
+
+* TOC
+{:toc}
+
+## General Security
+
+### ProtonMail Subscription
+
+**ProtonMail** is a great encrypted mail provider for those with an interest in
+privacy or cryptography.  They offer [gift
+cards](https://shop.protonmail.com/collections/proton-gift-cards) for
+subscriptions to both ProtonMail and ProtonVPN, their VPN service.
+
+### Encrypted Flash Drive
+
+[![Datashur Pro](//ws-na.amazon-adsystem.com/widgets/q?_encoding=UTF8&ASIN=B015DB9G7S&Format=_SL160_&ID=AsinImage&MarketPlace=US&ServiceVersion=20070822&WS=1&tag=systemovecom-20&language=en_US){:.amzimg}](https://www.amazon.com/iStorage-datAshur-256-bit-encrypted-FL-DA3-256-8/dp/B015DB9G7S/ref=as_li_ss_il?crid=1ZQQWB4M83ICQ&dchild=1&keywords=encrypted+flash+drive&qid=1606367674&sprefix=encryp,aps,252&sr=8-1-spons&psc=1&spLa=ZW5jcnlwdGVkUXVhbGlmaWVyPUEzNDRWSUdXMU9QMFhVJmVuY3J5cHRlZElkPUEwOTYyNjM1M0VEOVRJWE9LQUpVQiZlbmNyeXB0ZWRBZElkPUEwNzk3NTY3M1RNTkwwTzA3MDRYSiZ3aWRnZXROYW1lPXNwX2F0ZiZhY3Rpb249Y2xpY2tSZWRpcmVjdCZkb05vdExvZ0NsaWNrPXRydWU=&linkCode=li2&tag=systemovecom-20&linkId=d932dd9f126de22604255912bb4badc8&language=en_US){:.left}
+
+I know cloud storage is all the rage, but sometimes you need a local copy.
+Sometimes, you even need that local copy to be protected -- maybe it's user
+data, maybe it's financial data, maybe it's medical data -- and hardware
+encryption allows you to go from one system to another without needing any
+special software.  Additionally, it can't be keylogged or easily compromised
+from software.  This [Datashur Pro](https://amzn.to/2J0Ge8h) is my choice of
+encrypted flash drive, but there are a number of options out there.
+
+### Cryptographic Security Key
+
+[![Yubikey 5C](//ws-na.amazon-adsystem.com/widgets/q?_encoding=UTF8&ASIN=B07HBCTYP1&Format=_SL160_&ID=AsinImage&MarketPlace=US&ServiceVersion=20070822&WS=1&tag=systemovecom-20&language=en_US){:.amzimg}](https://www.amazon.com/Yubico-YubiKey-Factor-Authentication-Security/dp/B07HBCTYP1/ref=as_li_ss_il?dchild=1&keywords=yubikey+5+nfc&qid=1606415792&sr=8-1-spons&psc=1&spLa=ZW5jcnlwdGVkUXVhbGlmaWVyPUEzVFRSRzU3WVFWMkpCJmVuY3J5cHRlZElkPUEwNzY1NTM4VTVLWU1JTkcxUFBRJmVuY3J5cHRlZEFkSWQ9QTA2NjU3ODgxTVhTUlVSUUU3R1dMJndpZGdldE5hbWU9c3BfYXRmJmFjdGlvbj1jbGlja1JlZGlyZWN0JmRvTm90TG9nQ2xpY2s9dHJ1ZQ==&linkCode=li2&tag=systemovecom-20&linkId=981a3aa10e68db7bead9fdd28d0dc001&language=en_US){:.right}
+
+These devices act as a [second factor for
+authentication](/2020/05/07/security-101-two-factor-authentication-2fa.html),
+but some of them can do so much more.  The [Yubikey 5](https://amzn.to/2V6o1IU)
+can also function as a hardware security token for encryption keys and provide
+one-time-password functionality.  Keys from [Feitian
+Technologies](https://shareasale.com/r.cfm?b=1578018&u=2497236&m=98693&urllink=&afftrack=)
+support Bluetooth Low Energy in addition to NFC and USB, allowing them to work
+with a variety of devices.  If you or your hacker are into open source, the
+[SoloKey](https://amzn.to/3fBnwzX) keys are open source hardware implementations
+of the specification.
+
+------
+
+## Penetration Testers & Red Teamers
+
+These gifts are for your pentesters, red teamers, and those learning the field.
+
+### The Pentester Blueprint
+
+[![The Pentester Blueprint](//ws-na.amazon-adsystem.com/widgets/q?_encoding=UTF8&ASIN=1119684307&Format=_SL160_&ID=AsinImage&MarketPlace=US&ServiceVersion=20070822&WS=1&tag=systemovecom-20&language=en_US){:.amzimg}](https://www.amazon.com/Pentester-BluePrint-Your-Guide-Being/dp/1119684307/ref=as_li_ss_il?dchild=1&keywords=pentester&qid=1606361585&sr=8-1&linkCode=li2&tag=systemovecom-20&linkId=b89332f6a80156c84847aa949bd6c2b1&language=en_US){:.left}
+
+[**The Pentester Blueprint**](https://amzn.to/3m32SLk) is a guide to getting
+started as a professional penetration tester.  It's not very technical, and it's
+not going to teach your recipient how to "hack", but it's great career advice
+for those getting started in penetration testing or looking to make a career
+transition.  It basically *just* came out, so it's up-to-date (which is, of
+course, a perpetual issue in technical books these days.  It's written in a very
+easy-reading style, so is great for those considering the switch to pentesting.
+
+### Online Learning Labs
+
+I can recommend several online labs, some of which offer gift cards:
+
+- [PentesterLab](https://pentesterlab.com/pro)
+- [Hack the Box](https://www.hackthebox.eu/giftcards)
+- [TryHackMe](https://tryhackme.com/subscriptions)
+
+### Penetration Testing: A Hands-On Introduction to Hacking
+
+[![Penetration Testing](//ws-na.amazon-adsystem.com/widgets/q?_encoding=UTF8&ASIN=1593275641&Format=_SL160_&ID=AsinImage&MarketPlace=US&ServiceVersion=20070822&WS=1&tag=systemovecom-20&language=en_US){:.amzimg}](https://www.amazon.com/Penetration-Testing-Hands-Introduction-Hacking/dp/1593275641/ref=as_li_ss_il?dchild=1&keywords=weidman+penetration+testing&qid=1606431108&sr=8-3&linkCode=li2&tag=systemovecom-20&linkId=813529a1359c64413eadcd91b983447e&language=en_US){:.right}
+
+Georgia Weidman's book, ["Penetration Testing: A Hands-On Introduction to
+Hacking"](https://amzn.to/2KKrxXm) is one of the best introductory guides to
+penetration testing that I have seen.  Even though it's been a few years since
+it was released, it remains high-quality content and a great introductory guide
+to the space.  Available via [Amazon](https://amzn.to/2KKrxXm) or [No Starch
+Press](https://nostarch.com/pentesting).
+
+------
+
+## Hardware Hackers
+
+### Tigard
+
+[![Tigard](/img/gifts2020/tigard.png)](https://www.crowdsupply.com/securinghw/tigard){:.left}
+
+[**Tigard**](https://www.crowdsupply.com/securinghw/tigard) is a pretty cool
+little hardware hacker's universal interface that I'm super excited about.
+Similar to my [open source project, TIMEP](/projects/timep), it's a universal
+interface for SPI, I2C, JTAG, SWD, UART, and more.  It's great for examining
+embedded devices and IoT, and is a really well-thought-out implementation of
+such a board.  It supports a variety of voltages and options and is even really
+well documented on the back of the board so you never have to figure out how to
+hook it up.  This is great both for those new to hardware hacking as well as
+those experienced looking for an addition to the toolkit.
+
+------
+
+## Young Hackers
+
+### imagiCharm
+
+[![imagiCharm](//ws-na.amazon-adsystem.com/widgets/q?_encoding=UTF8&ASIN=B089NWTY45&Format=_SL160_&ID=AsinImage&MarketPlace=US&ServiceVersion=20070822&WS=1&tag=systemovecom-20&language=en_US){:.amzimg}](https://www.amazon.com/imagiLabs-imagiCharm-Accessory-Program-Straight/dp/B089NWTY45/ref=as_li_ss_il?dchild=1&keywords=imagilabs&qid=1606371739&sr=8-1&linkCode=li2&tag=systemovecom-20&linkId=7968a93282445843c7fb6bcbd6bb1c42&language=en_US){:.right}
+
+[**imagiCharm by imagiLabs**](https://amzn.to/33jEbCX) is a small hardware
+device that allows young programmers to get their first bite into programming
+embedded devices -- or even programming in general.  While I haven't tried it
+myself, it looks like a great concept, and providing something hands-on looks
+like a clear win for encouraging students and helping them find their interest.
+
+### Mechanical Puzzles
+
+[**PuzzleMaster**](https://shareasale.com/r.cfm?b=759930&u=2497236&m=16058&urllink=&afftrack=)
+offers a bunch of really cool mechanical puzzles and games.  These include
+things like puzzle locks, twisty puzzles, and more.  When we're all stuck
+inside, why not give something hands on a try?
+
+------
+
+## Friends and Family of Hackers
+
+Bring a touch of hacking to your friends and family!
+
+### Hardware Security Keys
+
+[![Yubico Security Key](//ws-na.amazon-adsystem.com/widgets/q?_encoding=UTF8&ASIN=B07M8YBWQZ&Format=_SL160_&ID=AsinImage&MarketPlace=US&ServiceVersion=20070822&WS=1&tag=systemovecom-20&language=en_US){:.amzimg}](https://www.amazon.com/Yubico-Security-USB-Factor-Authentication/dp/B07M8YBWQZ/ref=as_li_ss_il?dchild=1&keywords=yubikey&qid=1606365699&sr=8-5&linkCode=li2&tag=systemovecom-20&linkId=4106e841daed811040c7018adeb9ed54&language=en_US){:.right}
+
+A [**Security Key**](https://amzn.to/3778QVe) is a physical 2 factor security
+token that makes web logins much more secure.  Users touch the gold disc when
+signing in to verify their signin request, so even if a password gets stolen,
+the account won't be stolen.  These tokens are supported by sites like Google,
+GitHub, Vanguard, Dropbox, GitLab, Facebook, and more.
+
+Unlike text-message based second factor, these tokens are impossible to phish,
+can't be stolen via phone number porting attacks, and don't depend on your phone
+having a charge.
+
+------
+
+## Non-Security Tech
+
+### Raspberry Pi 4
+
+[![Raspberry Pi 4](//ws-na.amazon-adsystem.com/widgets/q?_encoding=UTF8&ASIN=B07TC2BK1X&Format=_SL160_&ID=AsinImage&MarketPlace=US&ServiceVersion=20070822&WS=1&tag=systemovecom-20&language=en_US){:.amzimg}](https://www.amazon.com/Raspberry-Model-2019-Quad-Bluetooth/dp/B07TC2BK1X/ref=as_li_ss_il?cv_ct_cx=raspberry+pi+4&dchild=1&keywords=raspberry+pi+4&pd_rd_i=B07TC2BK1X&pd_rd_r=006a3f2d-1b60-401f-8b3d-bd9f0f1b597c&pd_rd_w=oyAOp&pd_rd_wg=Dx9cx&pf_rd_p=84ce0865-d9ca-42e3-87ed-168be8f93162&pf_rd_r=YKQQC3TWCS2BVAH7JT6H&psc=1&qid=1606428348&sr=1-1-88388c6d-14b8-4f70-90f6-05ac39e80cc0&linkCode=li2&tag=systemovecom-20&linkId=daeba75034fd8ce76a2b55925bd68f13&language=en_US){:.left}
+
+Okay, I probably could've put the [**Raspberry Pi 4**](https://amzn.to/33n0LuF)
+in almost any of these categories because it's such a versatile tool.  It can be
+a young hacker's first Linux computer, it can be a [penetration testing
+dropbox](/2020/07/14/raspberry-pi-as-a-penetration-testing-implant.html), it can
+be a great tool for hardware hackers, and it can be a project unto itself.  The
+user can use it to run a home media server, a network-level ad blocker, or just
+get familiar with another operating system.  While I've been a fan of the
+Raspberry Pi in various forms for years, the Pi 4 has a quad core processor and
+can come with enough memory for some powerful uses.  There's a bunch of
+configurations, like:
+
+- [A Complete Starter Kit](https://amzn.to/2JlmgEI)
+- [The Bare Board](https://amzn.to/36bTK1E)
+- [Learning Kit with Sensors, Buttons, Screen, etc.](https://amzn.to/3q4nrJP)
+- [Pi Zero Starter Kit](https://amzn.to/39fNOXj)
+
+### Keysy
+
+[![Keysy](//ws-na.amazon-adsystem.com/widgets/q?_encoding=UTF8&ASIN=B07D7K2LCB&Format=_SL160_&ID=AsinImage&MarketPlace=US&ServiceVersion=20070822&WS=1&tag=systemovecom-20&language=en_US){:.amzimg}](https://www.amazon.com/Keysy-RFID-Duplicator-keycards-keyfobs/dp/B07D7K2LCB/ref=as_li_ss_il?dchild=1&keywords=keysy&qid=1606430123&s=electronics&sr=1-1&linkCode=li2&tag=systemovecom-20&linkId=76d91e6b05d2d6631194d3e76c238be5&language=en_US){:.right}
+
+The [**Keysy**](https://amzn.to/2V4xQ9U) is a a small RFID duplicator.  While it
+can be used for physical penetration testing, it's also just super convenient if
+you have multiple RFID keyfobs you need to deal with (i.e., apartment, work,
+garage, etc.).  Note that it only handles certain types of RFID cards, but most
+of the common standards are available and workable.
+
+------
+
+## General Offers
+
+This is my attempt to collect special offers for the holiday season that are
+relevant to the hacking community.  These are all subject to change, but I
+believe them correct at the time of writing.
+
+### No Starch Press
+
+[**No Starch Press**](https://nostarch.com/) is possibly the highest quality
+tech book publisher.  Rather than focusing on quantity of books published, they
+only accept books that will be high quality.  I own at least a couple of dozen
+of their books and they have been consistently well-written and high quality
+coverage of the topics.  They are currently offering 33.7% off their entire
+catalog for Black Friday (through 11/29/20).
+
+### Hooligan Keys
+
+[**Hooligan Keys**](https://hooligankeys.com) offering 10% off from Thanksgiving
+to Christmas with offer code
+[HAPPYDAY2020](https://twitter.com/R0brBun7/status/1332083343282774016).
