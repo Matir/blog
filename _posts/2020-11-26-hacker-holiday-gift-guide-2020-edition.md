@@ -5,6 +5,7 @@ category: Security
 tags:
   - Security
   - Holiday Gift Guide
+date: 2020-11-26
 ---
 
 Welcome to the 2020 edition of my Hacker Holiday Gift Guide!  This has been a
