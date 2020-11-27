@@ -53,6 +53,19 @@ with a variety of devices.  If you or your hacker are into open source, the
 [SoloKey](https://amzn.to/3fBnwzX) keys are open source hardware implementations
 of the specification.
 
+### Linux Basics for Hackers
+
+[![Linux Basics For Hackers](//ws-na.amazon-adsystem.com/widgets/q?_encoding=UTF8&ASIN=1593278551&Format=_SL160_&ID=AsinImage&MarketPlace=US&ServiceVersion=20070822&WS=1&tag=systemovecom-20&language=en_US){:.amzimg}](https://www.amazon.com/Linux-Basics-Hackers-Networking-Scripting/dp/1593278551/ref=as_li_ss_il?dchild=1&keywords=penetration+testing&qid=1606453155&sr=8-20&linkCode=li2&tag=systemovecom-20&linkId=c19d82fdf3b5311f31fbe70b0e92d051&language=en_US){:.left}
+
+I've been using Linux for more than two decades, so I honestly initially just
+bought [**Linux Basics for Hackers**](https://amzn.to/3nVeD6Y) because of the
+awesome hacker penguin on the cover.  If you're not already familiar with Linux,
+but need it to grow your skillset, this is an *excellent* book with a focus on
+the Linux you need to know as an information security professional or hacker.
+It has a particular focus on Kali Linux, the Linux distribution popular for
+penetration testing, but the lessons are more broadly applicable across
+different security domains.
+
 ------
 
 ## Penetration Testers & Red Teamers
@@ -88,7 +101,9 @@ Hacking"](https://amzn.to/2KKrxXm) is one of the best introductory guides to
 penetration testing that I have seen.  Even though it's been a few years since
 it was released, it remains high-quality content and a great introductory guide
 to the space.  Available via [Amazon](https://amzn.to/2KKrxXm) or [No Starch
-Press](https://nostarch.com/pentesting).
+Press](https://nostarch.com/pentesting).  Georgia is a great speaker and teacher
+and well-known for her efforts to spread knowledge within the security
+community.
 
 ### WiFi Pineapple Mark VII
 
@@ -106,6 +121,19 @@ The WiFi Pineapple does have a bit of a learning curve, but it's a great option
 for those getting into the field or learning about the various types of WiFi
 audits and attacks.  The USB ports also allow expansion if you need to add a
 capability not already built-in.
+
+### PoC || GTFO
+
+[![PoC||GTFO](//ws-na.amazon-adsystem.com/widgets/q?_encoding=UTF8&ASIN=1593278802&Format=_SL160_&ID=AsinImage&MarketPlace=US&ServiceVersion=20070822&WS=1&tag=systemovecom-20&language=en_US){:.amzimg}](https://www.amazon.com/PoC-GTFO-Manul-Laphroaig/dp/1593278802/ref=as_li_ss_il?dchild=1&keywords=poc%7Cgtfo&qid=1606453674&sr=8-2&linkCode=li2&tag=systemovecom-20&linkId=948fe74ed4b20cfe1e6dee46a157b409&language=en_US){:.right}
+
+[PoC||GTFO](https://pocorgtfo.hacke.rs/) is an online journal for offensive
+security and exploitation.  No Starch Press has published a pair of [physical
+journals](https://amzn.to/3mbtgD1) in a beautiful biblical style.  The content
+is very high quality, but they're also presented in a striking style that would
+go well on the bookshelf of even the most discerning hacker.  Check out both
+[Volume I](https://amzn.to/3mbtgD1) and [Volume II](https://amzn.to/2HJFaVC),
+with [Volume III](https://amzn.to/3q2udQ9) available for pre-order to be
+delivered in January.
 
 ------
 
@@ -130,9 +158,32 @@ those experienced looking for an addition to the toolkit.
 [![Hardware Hacker](//ws-na.amazon-adsystem.com/widgets/q?_encoding=UTF8&ASIN=159327758X&Format=_SL160_&ID=AsinImage&MarketPlace=US&ServiceVersion=20070822&WS=1&tag=systemovecom-20&language=en_US){:.amzimg}](https://www.amazon.com/Hardware-Hacker-Adventures-Making-Breaking/dp/159327758X/ref=as_li_ss_il?dchild=1&keywords=hardware+hacking&qid=1606433973&sr=8-3&linkCode=li2&tag=systemovecom-20&linkId=24cad0f698dccfd6fe694292ce4cf53a&language=en_US){:.right}
 
 Andrew "Bunnie" Huang is a well-known hardware hacker with both experience in
-making and breaking hardware, and this is a great guide to his experiences in
-those fields.  It's not a super technical read, but it's an excellent and
+making and breaking hardware, and [*Hardware Hacker: Adventures in Making and
+Breaking Hardware*](https://amzn.to/3fCuq83) is a great guide to his experiences
+in those fields.  It's not a super technical read, but it's an excellent and
 interesting resource on the topics.
+
+### RTL-SDR Starter Kit
+
+[![RTL-SDR](//ws-na.amazon-adsystem.com/widgets/q?_encoding=UTF8&ASIN=B01GDN1T4S&Format=_SL160_&ID=AsinImage&MarketPlace=US&ServiceVersion=20070822&WS=1&tag=systemovecom-20&language=en_US){:.amzimg}](https://www.amazon.com/NooElec-NESDR-Smart-Bundle-R820T2-Based/dp/B01GDN1T4S/ref=as_li_ss_il?dchild=1&keywords=RTL-SDR+Blog&qid=1606446758&sr=8-20&linkCode=li2&tag=systemovecom-20&linkId=3af6fcc7d7d23da02380e18a79675277&language=en_US){:.left}
+
+Software-Defined Radio allows you to examine wireless signals between devices.
+This is useful if you want to take a look at how wireless doorbells, toys, and
+other devices work.  This [Nooelec kit](https://amzn.to/3fL6aAz) is a great
+starting SDR, as is [this kit from rtl-sdr.com](https://amzn.to/36aEmT9).
+
+### iFixit Pro Tech Toolkit
+
+[![](//ws-na.amazon-adsystem.com/widgets/q?_encoding=UTF8&ASIN=B01GF0KV6G&Format=_SL160_&ID=AsinImage&MarketPlace=US&ServiceVersion=20070822&WS=1&tag=systemovecom-20&language=en_US){:.amzimg}](https://www.amazon.com/iFixit-Pro-Tech-Toolkit-Electronics/dp/B01GF0KV6G/ref=as_li_ss_il?dchild=1&keywords=ifixit&qid=1606456805&sr=8-3&linkCode=li2&tag=systemovecom-20&linkId=c40b528490b3076903ef6268090fd53f&language=en_US){:.right}
+
+The [**iFixit Pro Tech Toolkit**](https://amzn.to/3q2wFWR) is probably the tool
+I use the most during security assessments of IoT/embedded devices.  This kit
+can get into almost anything, and the driver set in it has bits for almost
+anything.  It has torx, security torx, hex, Phillips and slotted bits, in
+addition to many more esoteric bits.  The kit also contains other opening tools
+for prying and pulling apart snap-together enclosures and devices.  I will
+admit, I don't think I've ever used the anti-static wrist strap, even if it
+would make sense to do so.
 
 ------
 
@@ -186,9 +237,21 @@ family.  It's an interesting take on things, and a really cool concept.  If
 you're a fan of independent board/card games and a fan of hacking, this would be
 a fun addition to your collection.
 
+### VPN Subscription
+
+If your friends or family use open wireless networks (I know, maybe not as much
+this year), they should consider using a VPN.  I currently use [Private Internet
+Access](https://www.privateinternetaccess.com/pages/buy-vpn/systemoverlord) when
+I need a commercial provider, but I have also used
+[Ivacy](https://www.shareasale.com/u.cfm?d=731043&m=88840&u=2497236) before, as
+well as [ProtonVPN](https://protonvpn.com/).
+
 ------
 
 ## Non-Security Tech
+
+These are tech items that are not specific to the security industry/area.  Great
+for hackers, friends of hackers, and more.
 
 ### Raspberry Pi 4
 
@@ -219,6 +282,31 @@ can be used for physical penetration testing, it's also just super convenient if
 you have multiple RFID keyfobs you need to deal with (i.e., apartment, work,
 garage, etc.).  Note that it only handles certain types of RFID cards, but most
 of the common standards are available and workable.
+
+### Home Automation Learning Kit
+
+[![](//ws-na.amazon-adsystem.com/widgets/q?_encoding=UTF8&ASIN=B08CZ778DJ&Format=_SL160_&ID=AsinImage&MarketPlace=US&ServiceVersion=20070822&WS=1&tag=systemovecom-20&language=en_US){:.amzimg}](https://www.amazon.com/KEYESTUDIO-Starter-Electronics-Automation-Education/dp/B08CZ778DJ/ref=as_li_ss_il?dchild=1&keywords=hacking+tools&qid=1606446681&sr=8-30&linkCode=li2&tag=systemovecom-20&linkId=96fdd2408ee35b6ae877480a77dcde41&language=en_US){:.left}
+
+[This](https://amzn.to/3ljEPH3) is a really cool kit for learning about home
+automation with Arduino.  It has sensors and inputs for learning about how home
+automation systems work -- controlling things with relays, measuring light,
+temperature, etc.  I love the implementation into a fake laser cut house for the
+purpose of learning -- it's really clever, and makes me think it would be great
+for anyone into tech and automation.  Teens and adults wanting to learn about
+Arduino, security practitioners who want to examine how things could go wrong
+(could augment this with consumer-grade products) and more.
+
+### Boogie Board Writing Tablet
+
+[![](//ws-na.amazon-adsystem.com/widgets/q?_encoding=UTF8&ASIN=B07D7WLDMV&Format=_SL160_&ID=AsinImage&MarketPlace=US&ServiceVersion=20070822&WS=1&tag=systemovecom-20&language=en_US){:.amzimg}](https://www.amazon.com/Boogie-Board-Blackboard-Writing-Tablet/dp/B07D7WLDMV/ref=as_li_ss_il?dchild=1&keywords=remarkable&qid=1606450476&sr=8-4&linkCode=li2&tag=systemovecom-20&linkId=bcb1a3043d71a9e53c5214b52d29b063&language=en_US){:.right}
+
+Sometimes you just want to hand write something.  While I'm also a fan of [Field
+Notes Notebooks](https://amzn.to/3l8latj) in my pocket, this [Boogie Board
+tablet](https://amzn.to/3mahgkY) strikes me as a pretty cool option.  It allows
+the user to write on its surface overlaid over anything of your choice (it's
+transparent) and then capture the written content into iOS or Android.  I love
+to hand write for brainstorming, some form of note taking, and more.  System
+diagrams are so much easier in writing than in digital format, even today.
 
 ------
 
