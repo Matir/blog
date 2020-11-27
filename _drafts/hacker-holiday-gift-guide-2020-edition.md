@@ -90,6 +90,23 @@ it was released, it remains high-quality content and a great introductory guide
 to the space.  Available via [Amazon](https://amzn.to/2KKrxXm) or [No Starch
 Press](https://nostarch.com/pentesting).
 
+### WiFi Pineapple Mark VII
+
+[![WiFi Pineapple](/img/gifts2020/pineapple_vii.png)](https://shop.hak5.org/products/wifi-pineapple){:.left}
+
+The [WiFi Pineapple](https://shop.hak5.org/products/wifi-pineapple) is probably
+the best known piece of "hacking hardware".  Now in it's seventh generation,
+it's used for conducting WiFi security audits, on-site penetration tests, or
+even as a remote implant for remote penetration tests.  I've owned several
+versions of the WiFi Pineapple and found that it only gets better with each
+generation.  Especially with dual radios, it can do things like act as a
+client on one radio while providing an access point on the other radio.
+
+The WiFi Pineapple does have a bit of a learning curve, but it's a great option
+for those getting into the field or learning about the various types of WiFi
+audits and attacks.  The USB ports also allow expansion if you need to add a
+capability not already built-in.
+
 ------
 
 ## Hardware Hackers
@@ -107,6 +124,15 @@ such a board.  It supports a variety of voltages and options and is even really
 well documented on the back of the board so you never have to figure out how to
 hook it up.  This is great both for those new to hardware hacking as well as
 those experienced looking for an addition to the toolkit.
+
+### Hardware Hacker: Adventures in Making and Breaking Hardware
+
+[![Hardware Hacker](//ws-na.amazon-adsystem.com/widgets/q?_encoding=UTF8&ASIN=159327758X&Format=_SL160_&ID=AsinImage&MarketPlace=US&ServiceVersion=20070822&WS=1&tag=systemovecom-20&language=en_US){:.amzimg}](https://www.amazon.com/Hardware-Hacker-Adventures-Making-Breaking/dp/159327758X/ref=as_li_ss_il?dchild=1&keywords=hardware+hacking&qid=1606433973&sr=8-3&linkCode=li2&tag=systemovecom-20&linkId=24cad0f698dccfd6fe694292ce4cf53a&language=en_US){:.right}
+
+Andrew "Bunnie" Huang is a well-known hardware hacker with both experience in
+making and breaking hardware, and this is a great guide to his experiences in
+those fields.  It's not a super technical read, but it's an excellent and
+interesting resource on the topics.
 
 ------
 
@@ -148,6 +174,17 @@ GitHub, Vanguard, Dropbox, GitLab, Facebook, and more.
 Unlike text-message based second factor, these tokens are impossible to phish,
 can't be stolen via phone number porting attacks, and don't depend on your phone
 having a charge.
+
+### Control-Alt-Hack
+
+[![Control-Alt-Hack](//ws-na.amazon-adsystem.com/widgets/q?_encoding=UTF8&ASIN=B008HIX5KO&Format=_SL160_&ID=AsinImage&MarketPlace=US&ServiceVersion=20070822&WS=1&tag=systemovecom-20&language=en_US){:.amzimg}](https://www.amazon.com/Control-Alt-Hack-White-Hacking-Profit-Card/dp/B008HIX5KO/ref=as_li_ss_il?ie=UTF8&linkCode=li2&tag=systemovecom-20&linkId=a98cf2916d8a602fbb73b5cf73211db8&language=en_US){:.left}
+
+[**Control-Alt-Hack**](https://amzn.to/33nlnCV) is a hacking-themed card game.
+Don't expect technical accuracy, but it's a lot of fun to play.  Featuring terms
+like "Entropy" and "Mission", it brings the theme of hacking to the whole
+family.  It's an interesting take on things, and a really cool concept.  If
+you're a fan of independent board/card games and a fan of hacking, this would be
+a fun addition to your collection.
 
 ------
 
