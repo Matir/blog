@@ -125,7 +125,7 @@ capability not already built-in.
 
 ### PoC || GTFO
 
-[![PoC||GTFO](//ws-na.amazon-adsystem.com/widgets/q?_encoding=UTF8&ASIN=1593278802&Format=_SL160_&ID=AsinImage&MarketPlace=US&ServiceVersion=20070822&WS=1&tag=systemovecom-20&language=en_US){:.amzimg}](https://www.amazon.com/PoC-GTFO-Manul-Laphroaig/dp/1593278802/ref=as_li_ss_il?dchild=1&keywords=poc%7Cgtfo&qid=1606453674&sr=8-2&linkCode=li2&tag=systemovecom-20&linkId=948fe74ed4b20cfe1e6dee46a157b409&language=en_US){:.right}
+[![PoC\|\|GTFO](//ws-na.amazon-adsystem.com/widgets/q?_encoding=UTF8&ASIN=1593278802&Format=_SL160_&ID=AsinImage&MarketPlace=US&ServiceVersion=20070822&WS=1&tag=systemovecom-20&language=en_US){:.amzimg}](https://www.amazon.com/PoC-GTFO-Manul-Laphroaig/dp/1593278802/ref=as_li_ss_il?dchild=1&keywords=poc%7Cgtfo&qid=1606453674&sr=8-2&linkCode=li2&tag=systemovecom-20&linkId=948fe74ed4b20cfe1e6dee46a157b409&language=en_US){:.right}
 
 [PoC||GTFO](https://pocorgtfo.hacke.rs/) is an online journal for offensive
 security and exploitation.  No Starch Press has published a pair of [physical
