@@ -115,7 +115,7 @@ POV-Ray 3.7 test.  Below is a chart of normalized test results, with the slowest
 device a 1.0 (always the Pi 3B+), and all others represent how many times faster
 the other systems are.
 
-![/img/macmini/chart.png](Normalized Relative Performance)
+![Normalized Relative Performance](/img/macmini/chart.png)
 
 During all of these tests, I had the Mac Mini plugged into a
 [Kill-A-Watt Meter](https://amzn.to/3dEoi03) to measure the power consumption.
