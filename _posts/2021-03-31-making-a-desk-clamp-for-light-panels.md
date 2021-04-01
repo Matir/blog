@@ -68,6 +68,8 @@ several thousand dollar camera, I'm going to mount it on proper mounts.)
 
 ![Clamp On Table](/img/3dp/clamp_ondesk.jpg)
 
+{% include github_stl.html repo='hacks' commit='master' file='3dp/clamps/desk_clamps/clamp.stl' %}
+
 * [STL File for
   Clamp](https://github.com/Matir/hacks/blob/master/3dp/clamps/desk_clamps/clamp.stl)
 * [STL File for
