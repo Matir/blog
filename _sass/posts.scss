@@ -122,3 +122,11 @@ p.caption {
   margin-top: -1rem;
   font-style: italic;
 }
+
+/** Table of data */
+table.small {
+  font-size: 75%;
+  th, td {
+    padding: 0.2rem;
+  }
+}
