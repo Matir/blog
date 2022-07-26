@@ -380,6 +380,12 @@ A reporter coming "undercover" hoping to catch individuals openly discussing
 criming in the hallways is likely to be very disappointed.  You're far more
 likely to catch people mocking the security industry itself.
 
+### I Don't Know Anyone -- How Do I Meet People?!
+
+I struggle with this myself, but the [Lonely Hackers
+Club](https://lonelyhackers.club/) has a great
+[guide](https://lonelyhackers.club/post/defconguide/).
+
 ## Closing
 
 I hope some of these tips have been helpful to at least some of you.  :)  Feel
