@@ -216,3 +216,7 @@ resources:
     link: https://nostarch.com/linuxbasicsforhackers
     amazon_link: https://amzn.to/3da5Ka0
     categories: ["General Security", "Operating Systems"]
+  - title: "Federal Plain Language Guidelines"
+    format: Website
+    link: https://www.plainlanguage.gov/guidelines/
+    categories: ["Soft Skills"]
