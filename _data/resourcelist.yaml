@@ -5,6 +5,7 @@ categories:
   - Cryptography
   - General Security
   - Operating Systems
+  - Penetration Testing
   - Reverse Engineering
   - Security Culture
   - Security Fiction
@@ -175,3 +176,43 @@ resources:
     format: Book
     link: https://amzn.to/3UaBz30
     categories: ["Security Culture"]
+  - title: "A Bug Hunter's Diary"
+    format: Book
+    link: https://nostarch.com/bughunter
+    amazon_link: https://amzn.to/3S6AVSB
+    categories: ["Binary Exploitation", "Application Security"]
+  - title: "The IDA Pro Book"
+    format: Book
+    link: https://nostarch.com/idapro2.htm
+    amazon_link: https://amzn.to/3U8QWJj
+    categories: ["Reverse Engineering"]
+  - title: "Metasploit: The Penetration Tester's Guide"
+    format: Book
+    link: https://nostarch.com/metasploit
+    amazon_link: https://amzn.to/3RYDxBV
+    categories: ["Penetration Testing"]
+  - title: "Penetration Testing: A Hands-On Introduction to Hacking"
+    format: Book
+    link: https://nostarch.com/pentesting
+    amazon_link: https://amzn.to/3LbNM3o
+    categories: ["Penetration Testing"]
+  - title: "Practical Binary Analysis"
+    format: Book
+    link: https://nostarch.com/binaryanalysis
+    amazon_link: https://amzn.to/3xlQX2Z
+    categories: ["Reverse Engineering"]
+  - title: "The Tangled Web"
+    format: Book
+    link: https://nostarch.com/tangledweb
+    amazon_link: https://amzn.to/3xlBTCe
+    categories: ["Web Security"]
+  - title: "The Ghidra Book"
+    format: Book
+    link: https://nostarch.com/GhidraBook
+    amazon_link: https://amzn.to/3BDUX1b
+    categories: ["Web Security"]
+  - title: "Linux Basics for Hackers"
+    format: Book
+    link: https://nostarch.com/linuxbasicsforhackers
+    amazon_link: https://amzn.to/3da5Ka0
+    categories: ["General Security", "Operating Systems"]
