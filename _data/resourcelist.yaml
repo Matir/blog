@@ -241,3 +241,7 @@ resources:
     format: Podcast
     categories: ["Reverse Engineering"]
     link: https://unnamedre.com/
+  - title: "Awesome Hacking!"
+    format: Website
+    categories: ["General Security"]
+    link: https://github.com/Hack-with-Github/Awesome-Hacking
