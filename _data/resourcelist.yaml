@@ -4,6 +4,7 @@ categories:
   - Binary Exploitation
   - Cryptography
   - General Security
+  - Learning Platform
   - Operating Systems
   - Penetration Testing
   - Reverse Engineering
@@ -220,3 +221,23 @@ resources:
     format: Website
     link: https://www.plainlanguage.gov/guidelines/
     categories: ["Soft Skills"]
+  - title: "AttackDefense.com"
+    format: Lab
+    categories: ["Learning Platform"]
+    link: https://attackdefense.com/
+  - title: "Hack the Box"
+    format: Lab
+    categories: ["Learning Platform"]
+    link: https://hackthebox.eu/
+  - title: "PentesterLab"
+    format: Lab
+    categories: ["Learning Platform", "Penetration Testing"]
+    link: https://pentesterlab.com/
+  - title: "TryHackMe"
+    format: Lab
+    categories: ["Learning Platform"]
+    link: https://tryhackme.com/
+  - title: "Unnamed Reverse Engineering Podcast"
+    format: Podcast
+    categories: ["Reverse Engineering"]
+    link: https://unnamedre.com/
