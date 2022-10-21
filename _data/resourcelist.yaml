@@ -245,3 +245,35 @@ resources:
     format: Website
     categories: ["General Security"]
     link: https://github.com/Hack-with-Github/Awesome-Hacking
+  - title: "Root Me"
+    format: Lab
+    categories: ["Learning Platform"]
+    link: https://www.root-me.org/?lang=en
+  - title: "Ringzer0 CTF"
+    format: Lab
+    categories: ["Learning Platform"]
+    link: https://ringzer0ctf.com/
+  - title: "Cryptopals"
+    format: Lab
+    categories: ["Learning Platform", "Cryptography"]
+    link: https://cryptopals.com/
+  - title: "pwnable.xyz"
+    format: Lab
+    categories: ["Learning Platform"]
+    link: https://pwnable.xyz/
+  - title: "pwnable.kr"
+    format: Lab
+    categories: ["Learning Platform"]
+    link: https://pwnable.kr/
+  - title: "pwnable.tw"
+    format: Lab
+    categories: ["Learning Platform"]
+    link: https://pwnable.tw/
+  - title: "websec.fr"
+    format: Lab
+    categories: ["Learning Platform", "Web Security"]
+    link: https://websec.fr/
+  - title: "Stereotyped Challenges"
+    format: Lab
+    categories: ["Learning Platform", "Web Security"]
+    link: https://chall.stypr.com/
