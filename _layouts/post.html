@@ -11,7 +11,7 @@ layout: default
     {% if page.category %}in <a
       href="/category/{{ page.category | slugify }}"
       >{{ page.category }}</a>{% endif %}
-    ({{page.content | reading_time | pluralize: "minute" }})
+    {% include readingtime.html content=page.content %}
     {% include sharing.html %}
   </span>
   {% include post-tags.html %}

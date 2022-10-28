@@ -31,6 +31,8 @@ author:
 paginate:         5
 
 exclude:
+  - Gemfile
+  - Gemfile.lock
   - README.md
   - LICENSE.md
   - _conf
@@ -45,9 +47,6 @@ github:
 # Gems
 plugins:
   - jekyll-paginate
-  # Tagging plugins increase build time
-  - liquid_pluralize
-  - liquid_reading_time
   - jekyll-sitemap
 
 # Front matter defaults

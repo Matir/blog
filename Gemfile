@@ -11,5 +11,3 @@ gem "rouge"
 gem "jekyll-sitemap"
 # Not in github pages
 gem "jekyll-theme-hydeout", "~> 3.4"
-gem "liquid_pluralize"
-gem "liquid_reading_time"
