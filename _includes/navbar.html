@@ -1,0 +1,19 @@
+<nav id="navbar-nav-links">
+  <a class="navbar-nav-item{% if page.url == "/" %} active{% endif %}" href="{{
+    site.baseurl }}/">Blog</a>
+  {%- assign pages_list = site.pages | sort:"weight","first" -%}
+  {%- for node in pages_list -%}
+  {%- if node.title != null -%}
+  {%- if node.layout == "page" %}
+  | <a class="navbar-nav-item{% if page.url == node.url %} active{% endif %}" href="{{ node.url }}">{{ node.title }}</a>
+  {% endif -%}
+  {%- endif -%}
+  {%- endfor -%}
+  <p></p>
+  <span class="navbar-nav-item"><a
+        href="https://github.com/matir"><i class="fa-brands fa-square-github"></i>github.com/matir</a></span>
+  <span class="navbar-nav-item"><a
+        href="https://twitter.com/matir"><i class="fa-brands fa-square-twitter"></i>@matir</a></span>
+  <span class="navbar-nav-item"><a
+        href="/atom.xml"><i class="fa-solid fa-square-rss"></i>Atom/RSS</a></span>
+</nav>

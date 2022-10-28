@@ -42,29 +42,12 @@ a.left img{
   margin-right: auto;
 }
 
-// Adjust container
-@media (min-width: 60rem)
-{
-  .container > * {
-    max-width: 44rem;
-  }
-}
-
-@media (min-width: 49rem)
-{
-  .container {
-    padding: 3rem;
-  }
-}
-
-// Avoid scrollbar on sidebar
-#sidebar {
-  overflow-y: hidden;
-}
-
 // Pad next to icons
-span.sidebar-nav-item > a {
-  padding-left: 0.3rem;
+span.navbar-nav-item > a {
+  padding-right: 0.3rem;
+}
+span.navbar-nav-item > a > i {
+  padding-right: 0.3rem;
 }
 
 .copyright {

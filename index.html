@@ -18,7 +18,7 @@ excerpt:
 			{% if post.category %}in <a
 					href="/category/{{ post.category | slugify }}"
 					>{{ post.category }}</a>{% endif %}
-        {% include readingtime.html content=post.content %}
+        (Reading time: {% include readingtime.html content=post.content -%})
     </span>
 
     <div class="post-excerpt">
