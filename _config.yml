@@ -21,7 +21,7 @@ description:      'A blog about security engineering, research, and general hack
 url:              https://systemoverlord.com
 baseurl:          
 excerpt_separator: "<!--more-->"
-theme:            jekyll-theme-hydeout
+remote_theme:            pages-themes/hacker@v0.2.0
 
 author:
   name:           'David Tomaschik'
@@ -47,6 +47,7 @@ github:
 # Gems
 plugins:
   - jekyll-paginate
+  - jekyll-remote-theme
   - jekyll-sitemap
 
 # Front matter defaults

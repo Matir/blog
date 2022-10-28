@@ -11,7 +11,7 @@ $code-color: $sidebar-bg-color;
 $code-background: #eeeeee;
 
 // Load the theme
-@import "hydeout";
+@import "{{site.theme}}";
 @import "site";
 @import "posts";
 @import "code";
