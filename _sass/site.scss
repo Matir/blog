@@ -77,6 +77,7 @@ div.highlight {
   position: relative;
   pre.highlight {
     overflow: initial;
+    border: none;
   }
 }
 
@@ -115,6 +116,10 @@ table.rouge-table {
     margin: 0 0.5rem;
     padding: 0;
     font-family: 'Source Code Pro', monospace;
+    background: initial;
+    &.lineno {
+      margin: 0 0.2rem;
+    }
   }
 }
 
@@ -135,5 +140,21 @@ ul.no-decoration {
   list-style: none;
   li {
     list-style-image: none;
+  }
+}
+
+/* Pagination */
+.pagination {
+  width: 50%;
+  text-align: center;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+/* Copyright stuff */
+.copyright-container {
+  background-color: #333;
+  .copyright {
+    padding: 1rem;
   }
 }
