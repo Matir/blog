@@ -43,11 +43,11 @@ a.left img{
 }
 
 // Pad next to icons
-span.navbar-nav-item > a {
+.navbar-nav-item > a {
   padding-right: 0.3rem;
-}
-span.navbar-nav-item > a > i {
-  padding-right: 0.3rem;
+  i {
+    padding-right: 0.3rem;
+  }
 }
 
 .copyright {
@@ -66,5 +66,25 @@ tbody tr:nth-child(odd) {
 table{
   &.center, &.right, &.left {
     width: auto;
+  }
+}
+
+/* Header flexbox */
+.container.flex-header {
+  display: flex;
+  align-items: flex-end;
+  #socials {
+    ul li {
+      padding-top: 0.3rem;
+    }
+  }
+  #page-title {
+    flex-grow: 3;
+  }
+}
+ul.no-decoration {
+  list-style: none;
+  li {
+    list-style-image: none;
   }
 }
