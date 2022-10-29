@@ -4,7 +4,7 @@
   {%- assign pages_list = site.pages | sort:"weight","first" -%}
   {%- for node in pages_list -%}
   {%- if node.title != null -%}
-  {%- if node.layout == "page" %}
+  {%- if node.navbar != false and node.layout == "page" or node.navbar == true %}
   | <a class="navbar-nav-item{% if page.url == node.url %} active{% endif %}" href="{{ node.url }}">{{ node.title }}</a>
   {% endif -%}
   {%- endif -%}

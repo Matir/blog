@@ -1,6 +1,7 @@
 ---
 title: Resource List
 layout: project
+navbar: true
 ---
 
 This is a list of (hopefully) useful resources, broken down by category.  Feel

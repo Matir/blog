@@ -64,3 +64,8 @@ defaults:
       layout: "post"
       rss:    true
       hidden: false
+  -
+    scope:
+      path: "projects"
+    values:
+      layout: "project"
