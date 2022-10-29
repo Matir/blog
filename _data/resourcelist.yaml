@@ -1,0 +1,279 @@
+categories:
+  - Application Security
+  - Attacker Mindset
+  - Binary Exploitation
+  - Cryptography
+  - General Security
+  - Learning Platform
+  - Operating Systems
+  - Penetration Testing
+  - Reverse Engineering
+  - Security Culture
+  - Security Fiction
+  - Security News
+  - Soft Skills
+  - Web Security
+formats:
+  - Book
+  - Movie
+  - Podcast
+  - Website
+  - Blog
+  - Course
+  - eZine
+  - YouTube
+  - Lab
+resources:
+  - title: "Breaking and Entering: The Extraordinary Story of a Hacker Called \"Alien\""
+    categories: ["Security Culture"]
+    format: Book
+    link: https://amzn.to/3qCl6XT
+    summary: >
+      Book about a hacker who goes from hijinks at MIT to running her own
+      security consulting business.
+  - title: "Cryptonomicon"
+    author: Neal Stephenson
+    categories: ["Security Fiction"]
+    format: Book
+    link: https://amzn.to/3BDgJCb
+  - title: "Snow Crash"
+    author: Neal Stephenson
+    categories: ["Security Fiction"]
+    format: Book
+    link: https://amzn.to/3QFp2ll
+  - title: "Security, Cryptography, Whatever"
+    format: Podcast
+    link: https://securitycryptographywhatever.buzzsprout.com/
+    categories: ["Security News"]
+  - title: "Neuromancer"
+    link: https://amzn.to/3dakE0a
+    format: Book
+    categories: ["Security Fiction"]
+    author: William Gibson
+  - title: "The Cuckoo's Egg: Tracking a Spy Through the Maze of Computer Espionage"
+    link: https://amzn.to/3QI3XXF
+    format: Book
+    categories: ["Security Culture"]
+    author: Clifford Stoll
+  - title: "Sandworm: A New Era of Cyberwar and the Hunt for the Kremlin's Most Dangerous Hackers"
+    link: https://amzn.to/3BgrdpH
+    format: Book
+    categories: ["Security Culture"]
+  - title: "Understanding Cryptography"
+    link: https://link.springer.com/book/10.1007/978-3-642-04101-3
+    amazon_link: https://amzn.to/3U1bAuW
+    format: Book
+    categories: ["Cryptography"]
+  - title: "Red Team: How to Succeed by Thinking Like the Enemy"
+    link: https://amzn.to/3RKARba
+    format: Book
+    categories: ["Attacker Mindset"]
+  - title: "Cryptography I"
+    link: https://crypto.stanford.edu/~dabo/courses/OnlineCrypto/
+    format: Course
+    categories: ["Cryptography"]
+  - title: "Deep Work: Rules for Focused Success in a Distracted World"
+    link: https://amzn.to/3RLQkYO
+    format: Book
+    categories: ["Soft Skills"]
+  - title: "Building Secure and Reliable Systems"
+    link: https://static.googleusercontent.com/media/sre.google/en//static/pdf/building_secure_and_reliable_systems.pdf
+    amazon_link: https://amzn.to/3xmtFdr
+    format: Book
+    categories: ["General Security"]
+  - title: "Windows Internals"
+    link: https://amzn.to/3xoNil4
+    format: Book
+    categories: ["Operating Systems"]
+  - title: "*OS Internals"
+    link: http://newosxbook.com/index.php
+    amazon_link: https://amzn.to/3BBIETg
+    format: Book
+    categories: ["Operating Systems"]
+  - title: "Hackers"
+    format: Movie
+    link: https://amzn.to/3eSAywI
+    categories: ["Security Fiction"]
+  - title: "xchg rax,rax"
+    link: https://amzn.to/3RX3JwC
+    summary: >
+      Some assembly gems and riddles for x86_64.  Not for beginners, but helps
+      drive a deeper understanding of x86_64 assembly.
+    format: Book
+    categories: ["Reverse Engineering"]
+  - title: "The Web Application Hacker's Handbook"
+    format: Book
+    categories: ["Web Security"]
+    link: https://amzn.to/3qz1DHR
+  - title: "PoC||GTFO"
+    link: https://pocorgtfo.hacke.rs/
+    amazon_link: https://amzn.to/3qzqPxJ
+    categories: ["General Security"]
+    format: eZine
+    summary: >
+      Collection of articles about a variety of security and related topics.
+      Also available in book form.
+  - title: "Security Engineering: A Guide to Building Dependable Distributed Systems"
+    link: https://amzn.to/3xmui6N
+    categories: ["General Security"]
+    format: Book
+  - title: "Adversarial Tradecraft in Cybersecurity"
+    format: Book
+    categories: ["Attacker Mindset"]
+    link: https://amzn.to/3DrHI54
+  - title: "Phrack Magazine"
+    format: eZine
+    categories: ["General Security"]
+    summary: >
+      eZine on a wide range of topics with a long, long history in the hacking
+      community.
+    link: http://phrack.org
+  - title: "I Spy"
+    link: https://foreignpolicy.com/podcasts/ispy/
+    format: Podcast
+    categories: ["Attacker Mindset"]
+  - title: "Darknet Diaries"
+    link: https://darknetdiaries.com/
+    format: Podcast
+    categories: ["Security News"]
+  - title: "The Art of Deception: Controlling the Human Element of Security"
+    link: https://amzn.to/3BbrnyR
+    categories: ["Attacker Mindset"]
+    format: Book
+  - title: "risky.biz - Risky Business Podcast"
+    format: Podcast
+    link: https://risky.biz/
+    categories: ["Security News"]
+  - title: "LiveOverflow"
+    format: YouTube
+    link: https://youtube.com/c/liveoverflow
+    categories: ["General Security"]
+  - title: "Gynvael Livestreams"
+    format: YouTube
+    link: https://www.youtube.com/c/gynvaelen
+    categories: ["General Security"]
+  - title: "IppSec HTB Walkthroughs"
+    format: YouTube
+    link: https://www.youtube.com/c/ippsec
+    categories: ["General Security"]
+  - title: "Serious Cryptography"
+    categories: ["Cryptography"]
+    format: Book
+    link: https://nostarch.com/seriouscrypto
+    amazon_link: https://www.amazon.com/Serious-Cryptography-Practical-Introduction-Encryption/dp/1593278268
+  - title: "The Art of Software Security Assessment"
+    format: Book
+    categories: ["Application Security"]
+    link: https://amzn.to/3QBE4bX
+  - title: "Tribe of Hackers: Red Team"
+    link: https://amzn.to/3QGxXD9
+    format: Book
+    categories: ["Security Culture", "Attacker Mindset"]
+  - title: "CyberWire Daily"
+    format: Podcast
+    link: https://thecyberwire.com/podcasts/daily-podcast
+    categories: ["Security News"]
+  - title: "Hackers: Heroes of the Computer Revolution"
+    format: Book
+    link: https://amzn.to/3UaBz30
+    categories: ["Security Culture"]
+  - title: "A Bug Hunter's Diary"
+    format: Book
+    link: https://nostarch.com/bughunter
+    amazon_link: https://amzn.to/3S6AVSB
+    categories: ["Binary Exploitation", "Application Security"]
+  - title: "The IDA Pro Book"
+    format: Book
+    link: https://nostarch.com/idapro2.htm
+    amazon_link: https://amzn.to/3U8QWJj
+    categories: ["Reverse Engineering"]
+  - title: "Metasploit: The Penetration Tester's Guide"
+    format: Book
+    link: https://nostarch.com/metasploit
+    amazon_link: https://amzn.to/3RYDxBV
+    categories: ["Penetration Testing"]
+  - title: "Penetration Testing: A Hands-On Introduction to Hacking"
+    format: Book
+    link: https://nostarch.com/pentesting
+    amazon_link: https://amzn.to/3LbNM3o
+    categories: ["Penetration Testing"]
+  - title: "Practical Binary Analysis"
+    format: Book
+    link: https://nostarch.com/binaryanalysis
+    amazon_link: https://amzn.to/3xlQX2Z
+    categories: ["Reverse Engineering"]
+  - title: "The Tangled Web"
+    format: Book
+    link: https://nostarch.com/tangledweb
+    amazon_link: https://amzn.to/3xlBTCe
+    categories: ["Web Security"]
+  - title: "The Ghidra Book"
+    format: Book
+    link: https://nostarch.com/GhidraBook
+    amazon_link: https://amzn.to/3BDUX1b
+    categories: ["Web Security"]
+  - title: "Linux Basics for Hackers"
+    format: Book
+    link: https://nostarch.com/linuxbasicsforhackers
+    amazon_link: https://amzn.to/3da5Ka0
+    categories: ["General Security", "Operating Systems"]
+  - title: "Federal Plain Language Guidelines"
+    format: Website
+    link: https://www.plainlanguage.gov/guidelines/
+    categories: ["Soft Skills"]
+  - title: "AttackDefense.com"
+    format: Lab
+    categories: ["Learning Platform"]
+    link: https://attackdefense.com/
+  - title: "Hack the Box"
+    format: Lab
+    categories: ["Learning Platform"]
+    link: https://hackthebox.eu/
+  - title: "PentesterLab"
+    format: Lab
+    categories: ["Learning Platform", "Penetration Testing"]
+    link: https://pentesterlab.com/
+  - title: "TryHackMe"
+    format: Lab
+    categories: ["Learning Platform"]
+    link: https://tryhackme.com/
+  - title: "Unnamed Reverse Engineering Podcast"
+    format: Podcast
+    categories: ["Reverse Engineering"]
+    link: https://unnamedre.com/
+  - title: "Awesome Hacking!"
+    format: Website
+    categories: ["General Security"]
+    link: https://github.com/Hack-with-Github/Awesome-Hacking
+  - title: "Root Me"
+    format: Lab
+    categories: ["Learning Platform"]
+    link: https://www.root-me.org/?lang=en
+  - title: "Ringzer0 CTF"
+    format: Lab
+    categories: ["Learning Platform"]
+    link: https://ringzer0ctf.com/
+  - title: "Cryptopals"
+    format: Lab
+    categories: ["Learning Platform", "Cryptography"]
+    link: https://cryptopals.com/
+  - title: "pwnable.xyz"
+    format: Lab
+    categories: ["Learning Platform"]
+    link: https://pwnable.xyz/
+  - title: "pwnable.kr"
+    format: Lab
+    categories: ["Learning Platform"]
+    link: https://pwnable.kr/
+  - title: "pwnable.tw"
+    format: Lab
+    categories: ["Learning Platform"]
+    link: https://pwnable.tw/
+  - title: "websec.fr"
+    format: Lab
+    categories: ["Learning Platform", "Web Security"]
+    link: https://websec.fr/
+  - title: "Stereotyped Challenges"
+    format: Lab
+    categories: ["Learning Platform", "Web Security"]
+    link: https://chall.stypr.com/

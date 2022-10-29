@@ -25,6 +25,14 @@ a.left img{
   clear: both;
 }
 
+.clear-left {
+  clear: left;
+}
+
+.clear-right {
+  clear: right;
+}
+
 .nobr {
   white-space: nowrap;
 }
@@ -34,29 +42,13 @@ a.left img{
   margin-right: auto;
 }
 
-// Adjust container
-@media (min-width: 60rem)
-{
-  .container > * {
-    max-width: 44rem;
-  }
-}
-
-@media (min-width: 49rem)
-{
-  .container {
-    padding: 3rem;
-  }
-}
-
-// Avoid scrollbar on sidebar
-#sidebar {
-  overflow-y: hidden;
-}
-
 // Pad next to icons
-span.sidebar-nav-item > a {
-  padding-left: 0.3rem;
+.navbar-nav-item > a {
+  padding-right: 0.3rem;
+  white-space: nowrap;
+  i {
+    padding-right: 0.3rem;
+  }
 }
 
 .copyright {
@@ -65,7 +57,7 @@ span.sidebar-nav-item > a {
 }
 
 // Table coloration
-tbody tr:nth-child(odd) {
+table:not(.rouge-table) tbody tr:nth-child(odd) {
   td, th {
     background-color: #eeeeee;
   }
@@ -75,5 +67,94 @@ tbody tr:nth-child(odd) {
 table{
   &.center, &.right, &.left {
     width: auto;
+  }
+}
+
+// Code tables
+@import url('https://fonts.googleapis.com/css2?family=Source+Code+Pro:ital,wght@0,400;0,700;1,400;1,700&display=swap');
+
+div.highlight {
+  position: relative;
+  pre.highlight {
+    overflow: initial;
+    border: none;
+  }
+}
+
+table.rouge-table {
+  margin: 0;
+  border-collapse: collapse;
+  table-layout: fixed;
+  td {
+    border: 1px solid #999;
+    margin-bottom: 1rem;
+    vertical-align: top;
+    &.rouge-gutter {
+      min-width: 3rem;
+      width: 3rem;
+      text-align: right;
+    }
+    &.rouge-code {
+      width: 100%;
+      overflow-x: auto;
+      overflow-y: clip;
+      .copy-button {
+        position: absolute;
+        top: 1rem;
+        right: 1rem;
+        width: 2rem;
+        height: 2rem;
+        opacity: 30%;
+        &:hover {
+          opacity: 90%;
+        }
+      }
+    }
+  }
+  pre {
+    border: 0;
+    margin: 0 0.5rem;
+    padding: 0;
+    font-family: 'Source Code Pro', monospace;
+    background: initial;
+    &.lineno {
+      margin: 0 0.2rem;
+    }
+  }
+}
+
+/* Header flexbox */
+.container.flex-header {
+  display: flex;
+  align-items: flex-end;
+  #socials {
+    ul li {
+      padding-top: 0.3rem;
+    }
+  }
+  #page-title {
+    flex-grow: 3;
+  }
+}
+ul.no-decoration {
+  list-style: none;
+  li {
+    list-style-image: none;
+  }
+}
+
+/* Pagination */
+.pagination {
+  width: 50%;
+  text-align: center;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+/* Copyright stuff */
+.copyright-container {
+  background-color: #333;
+  .copyright {
+    padding: 1rem;
   }
 }

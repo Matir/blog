@@ -3,26 +3,26 @@ layout: default
 ---
 
 <header>
-  <h1 class="post-title">{{ page.title }}</h1>
-</header>
-<div class="content">
-<div class="post-meta">
-  <span class="post-date">{{ page.date | date_to_string }}
+  <small class="post-date">{{ page.date | date_to_string }}
     {% if page.category %}in <a
       href="/category/{{ page.category | slugify }}"
       >{{ page.category }}</a>{% endif %}
-    ({{page.content | reading_time | pluralize: "minute" }})
+    </small>
+  <h1 class="post-title">{{ page.title }}</h1>
+  <div class="post-meta">
+    Reading time: {% include readingtime.html content=page.content %}
     {% include sharing.html %}
-  </span>
-  {% include post-tags.html %}
-</div>
-<div class="post-body">
-  {% include series.html %}
-  <div class="post-content">
-    {{ content }}
   </div>
-  {% include affiliate.html %}
-</div>
+</header>
+<div class="content">
+  <div class="post-body">
+    {% include series.html %}
+    <div class="post-content">
+      {{ content }}
+    </div>
+    {% include affiliate.html %}
+    {% include post-tags.html %}
+  </div>
 </div>
 
 {% include related.html %}

@@ -1,16 +1,47 @@
 <!DOCTYPE html>
-<html lang="en-us">
+<html lang="{{ site.lang | default: "en-US" }}">
+  <head>
+    <meta charset='utf-8'>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="{{ '/assets/css/style.css?v=' | append: site.github.build_revision | relative_url }}">
+    {% include fontawesome.html %}
+    {% include custom-head.html %}
+    {% seo %}
+  </head>
 
-  {% include head.html %}
+  <body>
 
-  <body class="{{page.layout}}{% if page.url == '/' %} home{% endif %}">
+    <header>
+      <div class="container flex-header">
+        <div id="page-title">
+          <a id="a-title" href="{{ '/' | relative_url }}">
+            <h1>{{ site.title | default: site.github.repository_name }}</h1>
+          </a>
+          <h2>{{ site.description | default: site.github.project_tagline }}</h2>
+          {% include navbar.html %}
+        </div>
+        <div id="socials">
+          {% include socials.html %}
+        </div>
+      </div>
+    </header>
 
-    {% include sidebar.html %}
+    <div class="container">
+      <section id="main_content">
+        {{ content }}
+      </section>
+    </div>
 
-    <main class="container">
-      {{ content }}
-    </main>
-
+    <footer>
+      <div class='copyright-container container'><div class='copyright'>
+          &copy; 2010-2022 David Tomaschik.  Content licensed under Creative
+        Commons <a
+                  href='https://creativecommons.org/licenses/by-nc-sa/4.0/legalcode'
+                  >Attribution-NonCommercial-ShareAlike 4.0</a> license.</div>
+      </div>
+    </footer>
   </body>
+  <script src="/assets/js/code.js" async></script>
   {% include analytics.html %}
 </html>

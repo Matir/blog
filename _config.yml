@@ -10,6 +10,8 @@ kramdown:
     block:
       line_numbers: true
       start_line: 1
+sass:
+  sass_dir: _sass
 
 # Permalinks
 permalink:        ":year/:month/:day/:title.html"
@@ -21,7 +23,7 @@ description:      'A blog about security engineering, research, and general hack
 url:              https://systemoverlord.com
 baseurl:          
 excerpt_separator: "<!--more-->"
-theme:            jekyll-theme-hydeout
+remote_theme:            pages-themes/hacker@v0.2.0
 
 author:
   name:           'David Tomaschik'
@@ -31,23 +33,25 @@ author:
 paginate:         5
 
 exclude:
+  - Gemfile
+  - Gemfile.lock
   - README.md
   - LICENSE.md
   - _conf
   - _scripts
   - .sass-cache
+  - TODO
 
 # Custom vars
 github:
+  repository_url: https://github.com/Matir/blog
   repo:           https://github.com/Matir/blog
   url:            https://github.com/Matir/
 
 # Gems
 plugins:
   - jekyll-paginate
-  # Tagging plugins increase build time
-  - liquid_pluralize
-  - liquid_reading_time
+  - jekyll-remote-theme
   - jekyll-sitemap
 
 # Front matter defaults
@@ -60,3 +64,8 @@ defaults:
       layout: "post"
       rss:    true
       hidden: false
+  -
+    scope:
+      path: "projects"
+    values:
+      layout: "project"

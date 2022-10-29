@@ -18,7 +18,10 @@ excerpt:
 			{% if post.category %}in <a
 					href="/category/{{ post.category | slugify }}"
 					>{{ post.category }}</a>{% endif %}
-        ({{ post.content | reading_time | pluralize: "minute" }})
+        {% capture rtime -%}
+          {%- include readingtime.html content=post.content -%}
+        {%- endcapture -%}
+        (Reading time: {{rtime | strip -}})
     </span>
 
     <div class="post-excerpt">
@@ -34,12 +37,13 @@ excerpt:
   {%- endfor %}
 </div>
 
+<hr />
 <div class="pagination">
   {% if paginator.next_page %}
     <a class="pagination-item older" href="{{ site.baseurl }}/page{{paginator.next_page}}">Older</a>
   {% else %}
     <span class="pagination-item older">Older</span>
-  {% endif %}
+  {% endif %} |
   {% if paginator.previous_page %}
     {% if paginator.page == 2 %}
       <a class="pagination-item newer" href="{{ site.baseurl }}/">Newer</a>
