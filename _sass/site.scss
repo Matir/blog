@@ -72,11 +72,21 @@ table{
 // Code tables
 table.rouge-table {
   margin: 0;
-  td.rouge-gutter {
-    min-width: 3rem;
+  border-collapse: collapse;
+  td {
+    border: 1px solid #999;
+    &.rouge-gutter {
+      min-width: 3rem;
+      text-align: right;
+    }
+    &.rouge-code {
+      width: 100%;
+    }
   }
-  td.rouge-code {
-    width: 100%;
+  pre {
+    border: 0;
+    margin: 0 0.5rem;
+    padding: 0;
   }
 }
 
