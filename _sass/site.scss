@@ -73,6 +73,10 @@ table{
 // Code tables
 @import url('https://fonts.googleapis.com/css2?family=Source+Code+Pro:ital,wght@0,400;0,700;1,400;1,700&display=swap');
 
+div.highlight {
+  position: relative;
+}
+
 table.rouge-table {
   margin: 0;
   border-collapse: collapse;
@@ -85,14 +89,13 @@ table.rouge-table {
     &.rouge-code {
       width: 100%;
       overflow-x: auto;
-      position: relative;
       .copy-button {
         position: absolute;
-        top: 0.25rem;
-        right: 0.25rem;
+        top: 1rem;
+        right: 1rem;
         width: 2rem;
         height: 2rem;
-        opacity: 50%;
+        opacity: 30%;
         &:hover {
           opacity: 90%;
         }
