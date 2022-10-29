@@ -9,5 +9,7 @@ gem "kramdown", ">= 2.3.0"
 gem "kramdown-parser-gfm"
 gem "rouge"
 gem "jekyll-sitemap"
+gem "jekyll-remote-theme"
+gem "github-pages"
 # Not in github pages
 gem "jekyll-theme-hydeout", "~> 3.4"
