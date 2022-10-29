@@ -56,7 +56,7 @@ a.left img{
 }
 
 // Table coloration
-tbody tr:nth-child(odd) {
+table:not(.rouge-table) tbody tr:nth-child(odd) {
   td, th {
     background-color: #eeeeee;
   }
@@ -66,6 +66,17 @@ tbody tr:nth-child(odd) {
 table{
   &.center, &.right, &.left {
     width: auto;
+  }
+}
+
+// Code tables
+table.rouge-table {
+  margin: 0;
+  td.rouge-gutter {
+    min-width: 3rem;
+  }
+  td.rouge-code {
+    width: 100%;
   }
 }
 
