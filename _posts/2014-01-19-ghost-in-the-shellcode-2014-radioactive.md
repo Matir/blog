@@ -10,6 +10,8 @@ tags:
   - Shadow Cats
   - CTF
   - Cryptography
+redirect_from:
+  - /blog/ghost-in-the-shellcode-2014-radioactive/
 ---
 Radioactive was a crypto challenge that executed arbitrary python code, if you could apply a correct cryptographic tag.  Source was provided, and the handler is below:
 

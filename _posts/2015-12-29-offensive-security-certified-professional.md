@@ -8,6 +8,8 @@ tags:
   - OSCP
   - Security
   - Pentesting
+redirect_from:
+  - /blog/offensive-security-certified-professional/
 ---
 It's been a little bit since I last updated, and it's been a busy time.  I did want to take a quick moment to update and note that I accomplished something I'm pretty proud of.  As of Christmas Eve, I'm now an Offensive Security Certified Professional.
 

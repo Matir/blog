@@ -4,6 +4,8 @@ title: "Back in action"
 date: 2010-11-18 04:48:13 +0000
 permalink: /2010/11/18/back-in-action/
 category: Misc
+redirect_from:
+  - /blog/back-in-action/
 ---
 For those who know me personally, this is probably non-news, but I thought I'd post it anyway.  I've been remiss in my updating duties for quite a while now because of three major real-life factors.
 

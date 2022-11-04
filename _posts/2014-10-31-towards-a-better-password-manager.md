@@ -7,6 +7,8 @@ category: Security
 tags:
   - Security
   - Passwords
+redirect_from:
+  - /blog/towards-a-better-password-manager/
 ---
 The consensus in the security community is that [passwords suck](http://www.wired.com/2014/08/passwords_microsoft/), but they're here to stay, at least for a while longer.  Given breaches like [Adobe](http://krebsonsecurity.com/2013/10/adobe-breach-impacted-at-least-38-million-users/), ..., it's becoming more and more evident that the biggest threat is not weak passwords, but [password reuse](https://xkcd.com/792/).  Of course, the solution to password to reuse is to use one password for every site that requires you to log in.  The problem is that your average user has [dozens of online accounts](http://www.dailymail.co.uk/sciencetech/article-2174274/No-wonder-hackers-easy-Most-26-different-online-accounts--passwords.html), and they probably can't remember those dozens of passwords.  So, we build tools to help people remember passwords, mostly password managers, but do we build them well?
 

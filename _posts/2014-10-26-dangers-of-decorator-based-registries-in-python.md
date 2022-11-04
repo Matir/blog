@@ -8,6 +8,8 @@ tags:
   - Flask
   - Software Engineering
   - Security
+redirect_from:
+  - /blog/dangers-of-decorator-based-registries-in-python/
 ---
 So [Flask](http://flask.pocoo.org/) has a really convenient mechanism for registering handlers, actions to be run before/after requests, etc.  Using decorators, Flask registers these functions to be called, as in:
 

@@ -8,6 +8,8 @@ tags:
   - CTF
   - PlaidCTF
   - Security
+redirect_from:
+  - /blog/plaidctf-2014-reekeeeee/
 ---
 ReeKeeeeee was, by far, the most visually painful challenge in the CTF, with a flashing rainbow background on every page.  Blocking scripts was clearly a win here.  Like many of the challenges this year, it turned out to require multiple exploitation steps.
 

@@ -10,6 +10,8 @@ tags:
   - CTF
   - SDR
   - Hacking
+redirect_from:
+  - /blog/weekly-reading-list-for-11714/
 ---
 I've decided to start posting a weekly reading list of interesting security-related articles I've come across in the past week.  They're not guaranteed to be new, but should at least still be relevant.
 

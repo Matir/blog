@@ -8,6 +8,8 @@ tags:
   - Vulnerability Research
   - Security
   - Cryptography
+redirect_from:
+  - /blog/parameter-injection-in-jcryption/
 ---
 jCryption is an open-source plugin for jQuery that is used for performing encryption on the client side that can be decrypted server side.  It works by retrieving an RSA key from the server, then encrypting an AES key under the RSA key, and sending both the encrypted AES key and the RSA key to the server.  This is not dissimilar to how OpenPGP encrypts data for transmission.  (Though, of course, implementation details are vastly different.)
 

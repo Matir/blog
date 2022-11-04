@@ -7,6 +7,8 @@ category: Security
 tags:
   - Security
   - Reading List
+redirect_from:
+  - /blog/weekly-reading-list-for-53014/
 ---
 It's been a busy week, so I'm just going to drop some info about Radare2.
 

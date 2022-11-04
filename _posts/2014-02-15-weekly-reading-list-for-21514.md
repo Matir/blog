@@ -7,6 +7,8 @@ categories: Computer,Security
 tags:
   - Social Engineering
   - Security
+redirect_from:
+  - /blog/weekly-reading-list-for-21514/
 ---
 I've been thinking a lot about social engineering lately, so I'm going to highlight some of my favorite social engineering resources.
 

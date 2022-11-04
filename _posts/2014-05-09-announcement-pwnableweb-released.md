@@ -8,6 +8,8 @@ tags:
   - PwnableWeb
   - CTF
   - Security
+redirect_from:
+  - /blog/announcement-pwnableweb-released/
 ---
 In addition to my primary interest in the technical aspects of information security, I'm also a big fan of wargames & CTFs as educational tools, so a while back, I decided I wanted to build a web-based wargame and CTF scoreboard system.  Today I am releasing the results of that, dubbed **PwnableWeb**, under the Apache 2.0 License.  It includes web-based wargame-style challenges and an accompanying scoreboard.
 

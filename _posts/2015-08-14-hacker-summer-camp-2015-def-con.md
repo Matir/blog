@@ -8,6 +8,8 @@ tags:
   - DEF CON
   - CTF
   - Security
+redirect_from:
+  - /blog/hacker-summer-camp-2015-def-con/
 ---
 So, following up on my post on BSides LV 2015, I thought I'd give a summary of DEF CON 23.  I can't cover everything I did (after all, what happens in Vegas, stays in Vegas... mostly) but I'm going to cover the biggest highlights as I saw them.
 

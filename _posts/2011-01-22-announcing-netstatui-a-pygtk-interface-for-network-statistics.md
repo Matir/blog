@@ -9,6 +9,8 @@ tags:
   - Ubuntu
   - Open Source
   - NetStatUI
+redirect_from:
+  - /blog/announcing-netstatui-a-pygtk-interface-for-network-statistics/
 ---
 NetStatUI is my first significant FOSS release.  It's also my first significant Python project and my first use of GTK+.  Yes, that's a lot of firsts all at once, so I apologize if I've done things sub-optimally.  I'm still learning some of the wonderful niceties of Python (a subject of a later post) and so I may have done some things "the other way." NetStatUI is a program to display statistics and information about the IP connections currently on your system. It is an attempt to provide a usable NetStat work-alike for the desktop user.  Many new users are shy of the command line, and having a graphical version may be useful.
 

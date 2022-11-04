@@ -6,6 +6,8 @@ permalink: /2014/09/05/security-not-a-binary-state/
 category: Security
 tags:
   - Security
+redirect_from:
+  - /blog/security-not-a-binary-state/
 ---
 I've been spending a fair amount of time on [Security StackExchange](https://security.stackexchange.com) lately, mostly looking for inspiration for research and blogging, but also answering a question every now and then.  One trend I've noticed is asking questions of the form "Is *security practice X* secure?"
 

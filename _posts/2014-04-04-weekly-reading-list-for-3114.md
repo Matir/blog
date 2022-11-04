@@ -8,6 +8,8 @@ tags:
   - Security
   - CTF
   - PlaidCTF
+redirect_from:
+  - /blog/weekly-reading-list-for-3114/
 ---
 It's been a while where I've been too busy even for any good reading, but we're back to the reading lists!
 

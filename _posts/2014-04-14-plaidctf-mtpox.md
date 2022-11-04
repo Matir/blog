@@ -9,6 +9,8 @@ tags:
   - Security
   - CTF
   - Cryptography
+redirect_from:
+  - /blog/plaidctf-mtpox/
 ---
 **150 Point Web Challenge**
 > The Plague has traveled back in time to create a cryptocurrency before Satoshi does in an attempt to quickly gain the resources required for his empire. As you step out of your time machine, you learn his exchange has stopped trades, due to some sort of bug. However, if you could break into the database and show a different story of where the coins went, we might be able to stop The Plague.

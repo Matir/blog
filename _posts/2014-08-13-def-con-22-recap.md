@@ -9,6 +9,8 @@ tags:
   - BSides
   - Black Hat
   - Security
+redirect_from:
+  - /blog/def-con-22-recap/
 ---
 ![Conference Badges][1]
 

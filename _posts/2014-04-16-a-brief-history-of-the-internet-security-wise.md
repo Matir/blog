@@ -8,6 +8,8 @@ tags:
   - InfoSec
   - Security
   - Hacking
+redirect_from:
+  - /blog/a-brief-history-of-the-internet-security-wise/
 ---
 I originally posted this to the [DC404 Mailing List](http://dc404.org/), but got some positive feedback, so I thought I'd post it here as well.  The broad strokes should be correct, but there might be some inaccuracies here &mdash; if you're aware of one, please let me know and I'll correct it.
 

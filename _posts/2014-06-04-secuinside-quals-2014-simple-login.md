@@ -8,6 +8,8 @@ tags:
   - CTF
   - Secuinside
   - Security
+redirect_from:
+  - /blog/secuinside-quals-2014-simple-login/
 ---
 In this challenge, we received the source for a site with a pretty basic login functionality.  Aside from some boring forms, javascript, and css, we have this PHP library for handling the session management:
 

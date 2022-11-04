@@ -9,6 +9,8 @@ tags:
   - Security
   - Shadow Cats
   - Ghost in the Shellcode
+redirect_from:
+  - /blog/ghost-in-the-shellcode-2014/
 ---
 A quick Ghost in the Shellcode 2014 summary.  Great CTF, but you better know your binary exploitation.  I'm pretty happy with the overall 27th finish Shadow Cats managed.  Here's a summary of our team writeups, the first 3 by me, the last one by Dan.
 

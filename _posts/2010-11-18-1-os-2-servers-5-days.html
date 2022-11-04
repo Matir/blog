@@ -8,6 +8,8 @@ tags:
   - Linux
   - Work
   - Ubuntu
+redirect_from:
+  - /blog/1-os-2-servers-5-days/
 ---
 <p>At work, we're switching a number of our LAMP stack applications to be hosted on <a href="http://ubuntu.com">Ubuntu Server</a>.  Because of its increased stability, we generally run the LTS editions, so we're currently on Lucid Lynx (10.04).  In this particular case, we're moving our <a href="http://drupal.org">Drupal</a> CMS hosting over from RHEL 5.4 to Ubuntu Server on two new servers to be configured for high availability.  Turns out it took 5 days to do what would normally be done in a half a day.</p>
 <!--more--><p>In this particular case, we're installing on a pair of IBM x3650 M2 servers which use the LSI MegaRaid SAS controller that IBM brands as the M1015.  Due to the driver version in the Lucid CD kernel, the installation CD does not recognize the RAID controller (and thus the drives connected to it) [<a href="https://bugs.launchpad.net/ubuntu/+source/linux/+bug/546091">Bug 546091</a>].   As a result, we had to get "creative" in order to install Ubuntu.</p>

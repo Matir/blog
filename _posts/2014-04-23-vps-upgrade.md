@@ -7,6 +7,8 @@ category: Linux
 tags:
   - Linode
   - VPS
+redirect_from:
+  - /blog/vps-upgrade/
 ---
 As [I've mentioned before](/2011/05/18/linode-rocks/),
 my blog is hosted on a VPS at

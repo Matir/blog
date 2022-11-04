@@ -7,6 +7,8 @@ category: Security
 tags:
   - Security
   - CTF
+redirect_from:
+  - /blog/getting-started-in-ctfs/
 ---
 My last post was about getting started in a career in information security.  This post is about the sport end of information security: Capture the Flag (CTFs).
 

@@ -11,6 +11,8 @@ tags:
   - Reverse Engineering
   - Red Team
   - Pentesting
+redirect_from:
+  - /blog/weekly-reading-list-for-52314/
 ---
 ###Radare2 Book
 Maijin on GitHub is in the process of putting together an [online book for Radare2](https://radare.gitbooks.io/radare2book/).  I've been looking for a good resource for using Radare2, and this is a great start.

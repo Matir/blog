@@ -7,6 +7,8 @@ category: Security
 tags:
   - Security
   - Passwords
+redirect_from:
+  - /blog/what-the-lastpass-cli-tells-us-about-lastpass-design/
 ---
 [LastPass](https://lastpass.com/) is a password manager that claims not to be
 able to access your data.

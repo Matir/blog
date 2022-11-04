@@ -7,6 +7,8 @@ category: Security
 tags:
   - CTF
   - BSides
+redirect_from:
+  - /blog/blue-team-players-guide-for-pros-vs-joes-ctf/
 ---
 I've played in Dichotomy's [Pros v Joes](http://www.prosversusjoes.net/) CTF for
 the past 3 years -- which, I'm told, makes me the only player to have done so.

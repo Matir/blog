@@ -8,6 +8,8 @@ tags:
   - CTF
   - Secuinside
   - Security
+redirect_from:
+  - /blog/secuinside-quals-2014-shellcode-100/
 ---
 This is a level that, at first, seemed like it would be extremely simple, but then turned out to be far more complicated than expected.  We were provided a zip file containing a python script and an elf binary.
 

@@ -8,6 +8,8 @@ tags:
   - CTF
   - Boston Key Party
   - Security
+redirect_from:
+  - /blog/boston-key-party-mind-your-ps-and-qs/
 ---
 About a week old, but I thought I'd put together a writeup for mind your Ps and Qs because I thought it was an interesting challenge.
 

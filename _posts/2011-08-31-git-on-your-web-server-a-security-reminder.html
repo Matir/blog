@@ -9,6 +9,8 @@ tags:
   - Git
   - Security
   - Nginx
+redirect_from:
+  - /blog/git-on-your-web-server-a-security-reminder/
 ---
 <p>
 	Earlier this month, I wrote about <a href="/2011/08/04/managing-drupal-with-git">managing a Drupal site with git</a>.  What I neglected to remember, of course, is this places a full copy of your git repository within your web server's document root.  This has the potential to expose any data in your git repository -- a malicious attacker could (depending on your configuration) clone the entire repository, thus exposing source code, configuration files, database dumps, and other sensitive data.</p>

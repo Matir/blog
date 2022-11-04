@@ -10,6 +10,8 @@ tags:
   - Reverse Engineering
   - InfoSec
   - Hacking
+redirect_from:
+  - /blog/ld_preload-for-binary-analysis/
 ---
 During the BreakIn CTF, there were a few challenges that depended on the return value of of libc functions like <code>time()</code> or <code>rand()</code>, and had differing behavior depending on those return values.  In order to more easily reverse those binaries, it can be nice to control the return values of those functions.  In other cases, you have binaries that may call functions like <code>unlink()</code>, <code>system()</code>, etc., where you prefer not to have those functions really called.  (Though you are running these untrusted binaries in a VM, right?)
 

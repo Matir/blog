@@ -6,6 +6,8 @@ permalink: /2014/02/08/weekly-reading-list-for-2814/
 categories: Computer,Security
 tags:
   - Security
+redirect_from:
+  - /blog/weekly-reading-list-for-2814/
 ---
 #### Android Pentesting Guides  
 I've been reading a lot about Android pentesting this week, so rather than summarizing each one, here's a list of useful reading for Android pentesting.

@@ -9,6 +9,8 @@ tags:
   - Security
   - Secuinside
   - Javascript
+redirect_from:
+  - /blog/secuinside-quals-2014-javascript-jail/
 ---
 The challenge was pretty straightforward: connect to a service that's running a Javascript REPL, and extract the flag.  You were provided a check function that was created by the checker function given below:
 

@@ -6,6 +6,8 @@ permalink: /2014/08/03/weekly-reading-list-for-8214/
 tags:
   - Security
   - DEF CON
+redirect_from:
+  - /blog/weekly-reading-list-for-8214/
 ---
 This has been missing for a few weeks, but it's back!
 

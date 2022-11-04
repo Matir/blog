@@ -9,6 +9,8 @@ tags:
   - Administration
   - PHP
   - APC
+redirect_from:
+  - /blog/apcstat0-and-updating-software/
 ---
 <p>When you're running APC on PHP and you have apc.stat=0, it's sometimes easy to forget that when you update software (WordPress) the <strong>code running on your server remains unchanged until you flush the APC cache.</strong> So, when you go to update WordPress to 3.0.5, you should flush your APC cache after running the update.  If you don't, you'll be very confused when WordPress repeatedly tells you to upgrade to the version you just installed!</p>
 <p>This is mostly a note to myself, but I hope it helps others as well.  And if you're wondering what apc.stat does, read on!</p>

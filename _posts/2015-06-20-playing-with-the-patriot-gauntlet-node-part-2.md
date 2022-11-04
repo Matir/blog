@@ -8,6 +8,8 @@ tags:
   - Security
   - Patriot Gauntlet Node
   - Embedded Systems
+redirect_from:
+  - /blog/playing-with-the-patriot-gauntlet-node-part-2/
 ---
 Despite the fact that it's been over 2 years since I posted [Part 1](/2013/02/05/playing-with-the-patriot-gauntlet-node-part-1/), I got bored and decided I should take another look at the [Patriot Gauntlet Node](http://www.amazon.com/gp/product/B008KW61XK/ref=as_li_tl?ie=UTF8&camp=1789&creative=390957&creativeASIN=B008KW61XK&linkCode=as2&tag=systemovecom-20&linkId=YX2FFFV7XA7LVSVW).  So I go and grab the latest firmware from Patriot's website (V21_1.2.4.6) and use the same binwalk techniques described in the first post, I extracted the latest firmware.
 

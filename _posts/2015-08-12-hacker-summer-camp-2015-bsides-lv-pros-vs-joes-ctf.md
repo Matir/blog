@@ -8,6 +8,8 @@ tags:
   - CTF
   - BSides
   - Security
+redirect_from:
+  - /blog/hacker-summer-camp-2015-bsides-lv-pros-vs-joes-ctf/
 ---
 I've just returned from Las Vegas for the annual "hacker summer camp", and am
 going to be putting up a series of blog posts covering the week.  Tuesday and

@@ -7,6 +7,8 @@ category: Security
 tags:
   - Security
   - Windows
+redirect_from:
+  - /blog/so-is-windows-10-spying-on-you/
 ---
 "Extraordinary claims require extraordinary evidence."
 

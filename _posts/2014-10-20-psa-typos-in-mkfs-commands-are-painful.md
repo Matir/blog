@@ -8,6 +8,8 @@ tags:
   - System Administration
   - Ubuntu
   - Lessons Learned
+redirect_from:
+  - /blog/psa-typos-in-mkfs-commands-are-painful/
 ---
 TL;DR: I apparently typed `mkfs.vfat /dev/sda1` at some point.  Oops.
 

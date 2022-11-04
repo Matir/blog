@@ -9,6 +9,8 @@ tags:
   - Ghost in the Shellcode
   - Security
   - Shadow Cats
+redirect_from:
+  - /blog/ghost-in-the-shellcode-2014-pillowtalk/
 ---
 Pillowtalk was a 200 point crypto challenge.  Provided was a stripped 64-bit binary along with a pcap file.  I started off by exercising the behavior of the binary, looking at system calls/library calls to see what it was doing.
 

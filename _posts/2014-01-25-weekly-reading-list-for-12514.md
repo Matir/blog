@@ -7,6 +7,8 @@ category: Security
 tags:
   - CTF
   - Security
+redirect_from:
+  - /blog/weekly-reading-list-for-12514/
 ---
 This week, we're focusing on binary exploitation and reversing.  (Thanks to Ghost in the Shellcode for making me feel stupid with all their binary pwning challenges!)
 

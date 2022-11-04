@@ -8,6 +8,8 @@ tags:
   - Red Team
   - Security
   - Pentesting
+redirect_from:
+  - /blog/book-review-red-team-field-manual/
 ---
 I recently picked up a copy of the [Red Team Field Manual](http://www.amazon.com/gp/product/1494295504/ref=as_li_tl?ie=UTF8&camp=1789&creative=390957&creativeASIN=1494295504&linkCode=as2&tag=systemovecom-20&linkId=VUHBPTAFLWN7MNBT) on Amazon after hearing good things from a few people in the industry.  It's information dense, basically a concatenation of cheat sheets for everything you'd want to do during a pentest.  I'm mostly a Linux/Unix guy, and given my role on an internal red team for a mostly Linux company, I don't do a lot of Windows.  However, I recently had an engagement where we were targeting Windows, and I wish I'd had the RTFM handy then: there are a number of great pointers for Windows that I could've leveraged to make my engagement go more smoothly.  Additionally, the book provides coverage for other platforms, like Cisco IOS, and for various scripting situations in Powershell, Python, or even [Scapy](http://www.secdev.org/projects/scapy/).
 

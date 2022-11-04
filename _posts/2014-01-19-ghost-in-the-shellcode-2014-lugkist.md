@@ -9,6 +9,8 @@ tags:
   - Ghost in the Shellcode
   - Shadow Cats
   - Security
+redirect_from:
+  - /blog/ghost-in-the-shellcode-2014-lugkist/
 ---
 Lugkist was an interesting "trivia" challenge.  We were told "it's not crypto", but it sure looked like a crypto challenge.  We had a file like:
 

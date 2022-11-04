@@ -7,6 +7,8 @@ category: Security
 tags:
   - MITM
   - SSLSniff
+redirect_from:
+  - /blog/mitm-on-kvm-guests/
 ---
 <p>I run a KVM virtualization system as part of my test lab.  I often want to redirect traffic to an intermediate application (such as sslsniff) on the host.  Supposing I have a guest on interface vnet7, bridged to br10, with the host running on 192.168.1.10 the following ebtables &amp; iptables magic gets the job done:</p>
 <div class="geshifilter">

@@ -8,6 +8,8 @@ tags:
   - CTF
   - Security
   - CSAW
+redirect_from:
+  - /blog/csaw-quals-2015-sharpturn-aka-forensics-400/
 ---
 The text was just:
 

@@ -12,6 +12,8 @@ tags:
   - Proxy
   - HTTPS
   - Hacking
+redirect_from:
+  - /blog/passing-android-traffic-through-burp/
 ---
 I wanted to take a look at all HTTP(S) traffic coming from an Android device, even if applications made direct connections without a proxy, so I set up a transparent Burp proxy.  I decided to put the Proxy on my Kali VM on my laptop, but didn't want to run an AP on there, so I needed to get the traffic to there.
 

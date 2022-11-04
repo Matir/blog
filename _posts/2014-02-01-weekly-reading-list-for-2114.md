@@ -7,6 +7,8 @@ categories: Computer,Security
 tags:
   - Security
   - Cryptography
+redirect_from:
+  - /blog/weekly-reading-list-for-2114/
 ---
 #### Previews for BSides SF 2014  
 A couple of new articles have been posted with previews of this year's BSides San Francisco.  Akamai has a [preview of several talks](https://blogs.akamai.com/2014/01/a-preview-of-bsidessf.html) and Tripwire previews a [day in the life of an information security researcher](http://www.tripwire.com/state-of-security/vulnerability-management/bsidessf-preview-day-life-security-researcher/).

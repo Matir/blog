@@ -7,6 +7,8 @@ categories: Freedom,Security
 tags:
   - Cryptography
   - Security
+redirect_from:
+  - /blog/on-the-truecrypt-saga/
 ---
 If you're anywhere near the security community, you've probably already heard about the (supposed) [end of TrueCrypt](http://truecrypt.sourceforge.net/) that inspired a [massive hunt for an explanation on Reddit](http://www.reddit.com/r/netsec/comments/26pz9b/truecrypt_development_has_ended_052814/).  I'm going to drop my thoughts here, but these are all just speculation, so take them for what they're worth (which is not much).
 

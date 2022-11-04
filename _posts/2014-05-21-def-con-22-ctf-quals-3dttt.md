@@ -8,6 +8,8 @@ tags:
   - CTF
   - DEF CON CTF
   - Security
+redirect_from:
+  - /blog/def-con-22-ctf-quals-3dttt/
 ---
 Unlike most of the challenges in DC22 quals, this one required no binary exploitation, no reversing, just writing a little code.  You needed to play 3-D Tic Tac Toe, and you needed to play fast.  Unfortunately, I didn't record the sessions, so I don't have the example output.
 

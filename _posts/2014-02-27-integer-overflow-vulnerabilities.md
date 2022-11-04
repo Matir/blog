@@ -7,6 +7,8 @@ category: Security
 tags:
   - Security
   - Exploitation
+redirect_from:
+  - /blog/integer-overflow-vulnerabilities/
 ---
 What's wrong with this code (other than the fact the messages are discarded)?
 
