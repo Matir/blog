@@ -285,3 +285,21 @@ resources:
     format: eBook
     categories: ["Reverse Engineering"]
     link: https://0xinfection.github.io/reversing/
+  - title: "Getting Started with Exploit Development"
+    format: Blog
+    categories: ["Binary Exploitation"]
+    link: https://dayzerosec.com/blog/2021/02/02/getting-started.html
+  - title: "How2Heap"
+    format: Lab
+    categories: ["Binary Exploitation"]
+    link: https://github.com/shellphish/how2heap
+    summary: >
+      Heap Exploitation lab by the Shellphish CTF team.
+  - title: "Cyberclopaedia"
+    categories: ["General Security"]
+    link: https://cr0mll.github.io/cyberclopaedia/index.html
+    format: Website
+  - title: "Frida Handbook"
+    categories: ["Reverse Engineering"]
+    link: https://learnfrida.info/
+    format: Website
