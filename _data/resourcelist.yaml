@@ -277,3 +277,11 @@ resources:
     format: Lab
     categories: ["Learning Platform", "Web Security"]
     link: https://chall.stypr.com/
+  - title: "Darth Sidious Guide"
+    format: Blog
+    categories: ["Penetration Testing"]
+    link: https://hunter2.gitbook.io/darthsidious/
+  - title: "Reverse Engineering for Everyone"
+    format: eBook
+    categories: ["Reverse Engineering"]
+    link: https://0xinfection.github.io/reversing/
