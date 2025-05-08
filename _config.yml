@@ -40,7 +40,10 @@ exclude:
   - _conf
   - _scripts
   - .sass-cache
+  - .ruby-gemset
+  - .ruby-version
   - TODO
+  - vendor
 
 # Custom vars
 github:
