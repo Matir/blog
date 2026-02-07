@@ -1,2 +1,3 @@
 [tools]
+hugo = "latest"
 ruby = "3.4"
