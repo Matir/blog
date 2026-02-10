@@ -1,0 +1,12 @@
+---
+categories:
+- Misc
+date: '2008-01-29T18:43:19Z'
+title: 'Mythbusters: Yes to Ubuntu, No to Vista'
+url: /2008/01/29/mythbusters-yes-to-ubuntu-no-to-vista/
+aliases:
+- /blog/mythbusters-yes-to-ubuntu-no-to-vista/
+---
+<p>Jamie Hyneman of Discovery Channel's Mythbusters (an awesome show) occasionally writes a bit for Popular Mechanics.  This time he's talking about Technology Headaches.  One of those headaches, as most of the IT world has seen, is Windows Vista.  His solution? Ubuntu Linux.  Pretty awesome that one of the guys that can build ANYTHING chooses Ubuntu.  Now if only we could get a Ubuntu-powered robot out of him.  :)</p>
+<p><a href="http://www.popularmechanics.com/technology/upgrade/4243994.html?page=1">http://www.popularmechanics.com/technology/upgrade/4243994.html?page=1</a></p>
+

@@ -1,0 +1,34 @@
+---
+categories:
+- Computer
+date: '2010-11-30T07:38:32Z'
+tags:
+- Computer
+- Firefox
+- Browser
+- Extensions
+title: Firefox Extensions
+url: /2010/11/30/firefox-extensions/
+aliases:
+- /blog/firefox-extensions/
+---
+<p>I currently use Firefox as my primary browser predominantly because of the number of extensions I regularly use in my work in Information Security &amp; Web Development.  I also like Chrome and am hoping to find parallel functionality in Chrome to all of my Firefox extensions to have 2 viable browsers.  My Firefox extensions are:</p>
+<ul><li>Adblock Plus</li>
+<li>Certificate Patrol</li>
+<li>Domain Details</li>
+<li>Download Statusbar [In Chrome core]</li>
+<li>Firebug</li>
+<li>Firefox Sync [In Chrome core]</li>
+<li>Greasemonkey</li>
+<li>HTTPS Everywhere</li>
+<li>Live HTTP Headers</li>
+<li>Long URL Please</li>
+<li>NoScript</li>
+<li>Page Speed</li>
+<li>Read It Later</li>
+<li>RetailMeNot</li>
+<li>View Cookies</li>
+<li>Web Developer</li>
+<li>YSlow</li>
+</ul><p>I'd appreciate insight into comparable functionality in Google Chrome.  Thanks!</p>
+

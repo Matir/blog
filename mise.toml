@@ -1,3 +1,25 @@
 [tools]
 hugo = "latest"
-ruby = "3.4"
+lychee = "latest"
+
+[tasks."hugo:completion"]
+description = "Generate Hugo shell completions"
+run = """
+mkdir -p ~/.zshrc.completions
+hugo completion zsh > ~/.zshrc.completions/_hugo
+
+mkdir -p ~/.config/fish/completions
+hugo completion fish > ~/.config/fish/completions/hugo.fish
+"""
+
+[tasks.server]
+description = "Run Hugo development server"
+run = "hugo server -D"
+
+[tasks.build]
+description = "Compile the site to a given directory"
+run = "hugo --destination {{arg(i=0, default='public')}}"
+
+[tasks."mod:update"]
+description = "Update Hugo modules"
+run = "hugo mod get -u ./... && hugo mod tidy"

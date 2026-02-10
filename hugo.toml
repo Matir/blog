@@ -1,0 +1,78 @@
+baseURL = 'https://systemoverlord.com'
+disablePathToLower = false
+uglyURLs = true
+languageCode = 'en-us'
+title = 'System Overlord'
+theme = ['github.com/Matir/hugo-theme-hello-hacker']
+
+# Core Settings from Jekyll
+enableEmoji = true
+enableRobotsTXT = true
+
+[taxonomies]
+  category = 'category'
+  tag = 'tags'
+
+[pagination]
+  pagerSize = 10
+
+[params]
+  tagline = 'Security, CTFs, Hacking'
+  description = 'A blog about security engineering, research, and general hacking.'
+  github_url = 'https://github.com/Matir/'
+  github_repo = 'https://github.com/Matir/blog'
+
+  [params.author]
+    name = 'David Tomaschik'
+    url = 'https://systemoverlord.com'
+    email = 'david@systemoverlord.com'
+
+  [params.Logo]
+    logoText = "system overlord"
+    logoCursorColor = "#0378D0"
+
+[outputs]
+  home = ["HTML", "RSS", "JSON"]
+
+[permalinks]
+  post = '/:year/:month/:day/:slug'
+
+[markup]
+  [markup.goldmark]
+    [markup.goldmark.renderer]
+      unsafe = true
+  [markup.highlight]
+    lineNos = true
+    lineNumbersInTable = false
+    style = 'monokai' # Match rouge/kramdown dark feel
+
+[menu]
+  [[menu.main]]
+    identifier = "blog"
+    name = "Blog"
+    url = "/post/"
+    weight = 5
+
+  [[menu.main]]
+    identifier = "projects"
+    name = "Projects"
+    url = "/projects/"
+    weight = 20
+
+  [[menu.main]]
+    identifier = "security-101"
+    name = "Security 101"
+    url = "/security-101.html"
+    weight = 30
+
+  [[menu.main]]
+    identifier = "resources"
+    name = "Resources"
+    url = "/projects/resourcelist.html"
+    weight = 40
+
+  [[menu.main]]
+    identifier = "about"
+    name = "About"
+    url = "/about.html"
+    weight = 100

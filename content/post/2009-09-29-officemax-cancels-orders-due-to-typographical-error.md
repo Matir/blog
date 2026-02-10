@@ -1,0 +1,13 @@
+---
+categories:
+- Misc
+date: '2009-09-29T19:02:43Z'
+title: OfficeMax Cancels Orders Due to 'Typographical Error'
+url: /2009/09/29/officemax-cancels-orders-due-to-typographical-error/
+aliases:
+- /blog/officemax-cancels-orders-due-to-typographical-error/
+---
+<p>OfficeMax had listed a mediocre 19" widescreen LCD from AOC for a "Clearance" price of $53.74.  A friend of mine ordered one yesterday, but has since received a notice that his order was being canceled as that price was an "obvious typographical error."  For one, that price is not THAT exciting for a generic 19" monitor, and secondly, they did list it as clearance.  I do not believe that a company should be able to arbitrarily cancel orders because they decide that a price THEY set is no longer the price they wish to sell them for.  Essentially, they saw a number of customers rush to buy these and decided "hey, we could have made the price point higher -- let's cancel the orders and jack up the price!"</p>
+<p>OfficeMax: congratulations.  I will never again shop at your store, regardless of price or convenience.  Staples and Office Depot will be the only suppliers of office supplies for me.  Hopefully, someone will file a class-action suit against you for this.  This is a classic bait-and-switch routine.  Cheap, unethical, business practices.</p>
+<p>Details at SlickDeals: <a href="http://forums.slickdeals.net/showthread.php?t=1579105">http://forums.slickdeals.net/showthread.php?t=1579105</a></p>
+

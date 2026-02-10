@@ -1,0 +1,24 @@
+---
+categories:
+- Personal
+date: '2010-09-12T03:56:12Z'
+title: Big Picture Problems
+url: /2010/09/12/big-picture-problems/
+aliases:
+- /blog/big-picture-problems/
+---
+<p>In no particular order, and certainly not a conclusive list, but there are some things that really bother me that I'll call Big Picture Problems:</p>
+<ul><li>Federal Defecit Spending and the growth of the national debt</li>
+<li>The continued plundering of limited resources and other environmental issues</li>
+<li>Politicians</li>
+<li>Overpopulation</li>
+<li>Nuclear proliferation</li>
+<li>The continued abatement of freedoms in the name of "security"</li>
+<li>The ever-increasing power of corporations over people</li>
+<li>Lack of universal healthcare</li>
+</ul><p>Accordingly, I'd like to say thanks to the hard-working individuals and organizations who work to improve things, including:</p>
+<ul><li>The ACLU</li>
+<li>The EFF</li>
+<li>Greenpeace</li>
+<li>Citizens Against Government Waste</li>
+</ul>

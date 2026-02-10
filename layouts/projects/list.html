@@ -1,0 +1,26 @@
+{{ define "main" }}
+<div class="content page" style="align-items: flex-start; max-width: 800px; margin: 0 auto; width: 100%; padding: 20px;">
+  <h1 class="page-title">{{ .Title }}</h1>
+  {{ .Content }}
+
+  <ul>
+  {{ range (where .Site.RegularPages "Section" "projects") }}
+    <li class='project'><a href="{{ .RelPermalink }}">{{ .Title }}</a>
+      {{ if .Date }}
+      <span class='date'>[{{ .Date.Format "2006-01-02" }}]</span>
+      {{ end }}
+    </li>
+  {{ end }}
+  </ul>
+
+  <h2>Security Advisories</h2>
+
+  <ul>
+  {{ range (where .Site.RegularPages "Params.tags" "intersect" (slice "Advisories")) }}
+      <li class='advisory'><a href="{{ .RelPermalink }}">{{ .Title }}</a>
+        <span class='date'>[{{ .Date.Format "2006-01-02" }}]</span>
+      </li>
+  {{ end }}
+  </ul>
+</div>
+{{ end }}

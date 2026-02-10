@@ -1,0 +1,12 @@
+{{ define "main" }}
+<div class="content page">
+  <h1 class="page-title">{{ .Title }}</h1>
+  {{ .Content }}
+
+  <ul>
+    {{ range (where .Site.RegularPages "Params.tags" "intersect" (slice "Security 101")) }}
+        <li><a href="{{ .RelPermalink }}">{{ .Title }}</a></li>
+    {{ end }}
+  </ul>
+</div>
+{{ end }}

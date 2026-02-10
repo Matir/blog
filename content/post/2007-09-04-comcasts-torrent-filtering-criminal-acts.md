@@ -1,0 +1,11 @@
+---
+categories:
+- Misc
+date: '2007-09-04T23:00:48Z'
+title: 'Comcast''s Torrent Filtering: Criminal Acts?'
+url: /2007/09/04/comcasts-torrent-filtering-criminal-acts/
+aliases:
+- /blog/comcasts-torrent-filtering-criminal-acts/
+---
+<p>According to <a href="http://www.cnet.com/8301-13739_1-9769645-46.html">an article on cnet.com</a>, the manner in which Comcast is filtering BitTorrent traffic may, in fact, be criminal.  Comcast is sending forged RST (reset) packets to the end-user, which may qualify as impersonating with the intent to profit.  (Criminal Impersonation in the 2nd Degree).  Whether or not this plays out in court remains to be seen.</p>
+

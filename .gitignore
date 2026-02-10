@@ -1,3 +1,26 @@
-_site/
-.jekyll-metadata
-.sass-cache/
+# Hugo default output directory
+public/
+resources/_gen/
+.hugo_build.lock
+
+# Dependency directories
+node_modules/
+package-lock.json
+yarn.lock
+
+# OS generated files
+.DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+ehthumbs.db
+Thumbs.db
+
+# Editor directories and files
+.idea/
+.vscode/
+*.swp
+*.swo
+*~
+*.log

@@ -1,0 +1,7 @@
+<iframe
+      height='{{ .Get "height" | default 420 }}'
+      width='{{ .Get "width" | default 620 }}'
+      frameborder='0'
+      src='https://render.githubusercontent.com/view/3d?url=https://raw.githubusercontent.com/{{ .Get "user" | default "matir" }}/{{ .Get "repo" }}/{{ .Get "commit" | default "main" }}/{{ .Get "file" }}'
+      sandbox='allow-scripts'
+      ></iframe>

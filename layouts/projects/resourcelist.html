@@ -1,0 +1,30 @@
+{{ define "main" }}
+<div class="content page">
+  <h1 class="page-title">{{ .Title }}</h1>
+  {{ .Content }}
+
+  <h2>Table of Contents</h2>
+  <ul>
+  {{ range .Site.Data.resourcelist.categories }}
+    <li><a href="#{{ . | urlize }}">{{ . }}</a></li>
+  {{ end }}
+  </ul>
+
+  {{ $resources := sort .Site.Data.resourcelist.resources "title" }}
+  {{ range $cat := .Site.Data.resourcelist.categories }}
+    <h2 id="{{ $cat | urlize }}"><a href="#{{ $cat | urlize }}" name="{{ $cat | urlize }}">{{ $cat }}</a></h2>
+    <ul>
+    {{ range $res := $resources }}
+      {{ if in .categories $cat }}
+        <li>
+          <a href="{{ .link }}">{{ .title }}</a>
+          {{ if .format }}({{ .format }}){{ end }}
+          {{ if .amazon_link }}&middot; (<a href="{{ .amazon_link }}">Amazon</a>){{ end }}
+          {{ if .summary }}<br>{{ .summary }}{{ end }}
+        </li>
+      {{ end }}
+    {{ end }}
+    </ul>
+  {{ end }}
+</div>
+{{ end }}

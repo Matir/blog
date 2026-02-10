@@ -1,0 +1,7 @@
+User-agent: *
+{{- if hugo.IsServer }}
+Disallow: /
+{{- else }}
+Allow: /
+Sitemap: {{ "sitemap.xml" | absURL }}
+{{- end }}

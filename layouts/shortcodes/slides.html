@@ -1,0 +1,5 @@
+<div class='slides-container'>
+    <object data='/static/attachments/{{ .Page.Params.attachment }}' class='slides'
+        type='application/pdf'></object>
+</div>
+PDF: <a href='/static/attachments/{{ .Page.Params.attachment }}'>{{ .Get "title" | default .Page.Title }}</a>

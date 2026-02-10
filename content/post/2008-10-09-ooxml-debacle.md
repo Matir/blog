@@ -1,0 +1,12 @@
+---
+categories:
+- Misc
+date: '2008-10-09T15:37:36Z'
+title: OOXML Debacle
+url: /2008/10/09/ooxml-debacle/
+aliases:
+- /blog/ooxml-debacle/
+---
+<p>There's a lot of issues going on around OOXML these days.  Specifically, there's <a href="http://www.linuxpromagazine.com/online/news/ooxml_documentation_iso_concerned">alledged copyright violations</a> by posting the OOXML specs by members of the Boycott Novell group.  I want to address a specific issue: why is something applying for ISO standardization so secret?</p>
+<p>International standards (e.g., ISO) should be open and royalty-free.  It's ridiculous if there's a "standard" that's locked in to a single vendor.  Can someone explain any sanity to this situation?</p>
+

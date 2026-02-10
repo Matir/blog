@@ -1,0 +1,13 @@
+---
+categories:
+- Misc
+date: '2007-05-18T01:32:36Z'
+title: Community Colocation Project
+url: /2007/05/18/community-colocation-project/
+aliases:
+- /blog/community-colocation-project/
+---
+<p>Several cities have a "community colocation project", such as the <a href="http://www.sfccp.net/">San Francisco Community Colocation Project</a>.  I feel that Atlanta is in a perfect place to join this movement.</p>
+<p>Community colocation projects (CCPs) are a non-profit datacenter for non-profity entities and individuals.  This would be a great opportunity for an advancement of Open source projects and for the community in Atlanta and the metro area.  Atlanta is the center of high-tech development for the Southeastern United States, and as such, should become a leader in the Open Source arena.</p>
+<p>Thoughts and comments are appreciated.</p>
+

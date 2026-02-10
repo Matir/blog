@@ -1,0 +1,50 @@
+{{ define "body" }}
+    <body class="{{ if .Site.Params.backgroundImage }} background-image" style="background-image: url('{{ .Site.Params.backgroundImage }}');" {{ else }}"{{ end }}>
+{{ end }}
+
+{{ define "main" }}
+    <div class="content-center">
+        <main>
+            <div>
+                {{ if .Site.Params.Portrait.Path }}
+                <img src="{{ .Site.Params.Portrait.Path }}" class="circle" alt="{{ .Site.Params.Portrait.Alt }}" style="max-width:{{ .Site.Params.Portrait.MaxWidth }}" />
+                {{ end }}
+
+                <h1>{{ .Site.Title }}</h1>
+
+                {{ partial "subtitle.html" . }}
+
+                <div class="latest-posts-box" style="margin-top: 2rem; border: 1px solid var(--border-color, #ccc); padding: 1.5rem; border-radius: 8px; text-align: left; max-width: 800px; margin-left: auto; margin-right: auto;">
+                    <h3 style="margin-top: 0; margin-bottom: 1rem; text-align: center;">Latest Posts</h3>
+                    <div class="posts" style="margin: 0; padding: 0; width: 100%; border: none;">
+                        <ul class="posts-list">
+                            {{ range first 10 (where .Site.RegularPages "Section" "post") }}
+                                <li class="post-item">
+                                    <a href="{{.Permalink}}" class="post-item-inner">
+                                        <span class="post-title">{{.Title}}</span>
+                                        <span class="post-day">
+                                            {{ if .Site.Params.dateformShort }}
+                                                {{ time.Format .Site.Params.dateformShort .Date }}
+                                            {{ else }}
+                                                {{ time.Format "Jan 2" .Date }}
+                                            {{ end }}
+                                        </span>
+                                    </a>
+                                </li>
+                            {{ end }}
+                        </ul>
+                    </div>
+                    <div style="text-align: center; margin-top: 1rem;">
+                        <a href="/post/">View All Posts</a>
+                    </div>
+                </div>
+
+                {{- with .Site.Params.social }}
+                    <div style="margin-top: 2rem;">
+                        {{ partial "social-icons.html" . }}
+                    </div>
+                {{- end }}
+            </div>
+        </main>
+    </div>
+{{ end }}

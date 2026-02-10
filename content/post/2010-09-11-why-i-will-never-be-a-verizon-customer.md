@@ -1,0 +1,12 @@
+---
+categories:
+- Freedom
+date: '2010-09-11T02:04:34Z'
+title: Why I will never be a Verizon Customer
+url: /2010/09/11/why-i-will-never-be-a-verizon-customer/
+aliases:
+- /blog/why-i-will-never-be-a-verizon-customer/
+---
+<p>Verizon has proven that they have no interest in serving consumers: <a href="http://www.dslreports.com/shownews/Verizon-Now-Crippling-Androids-Like-ATT-110276">http://www.dslreports.com/shownews/Verizon-Now-Crippling-Androids-Like-ATT-110276</a> Essentially, they're shipping Bing as the default search engine on Android phones (which I'm fine with) but making it impossible to change it back (which is enough to prevent me from doing business with them).  Additionally, they're forcing you into their inferior paid mapping service rather than allowing you to use Google Maps/Navigate.</p>
+<p>Thanks, Verizon -- you've simplified my choice next time I'm shopping for a cell phone provider.  You're out.</p>
+

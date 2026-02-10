@@ -1,0 +1,12 @@
+---
+categories:
+- Misc
+date: '2007-05-22T03:42:11Z'
+title: Details on Dell's Linux Rollout
+url: /2007/05/22/details-on-dells-linux-rollout/
+aliases:
+- /blog/details-on-dells-linux-rollout/
+---
+<p>I missed this the other day, but Jeremy over at LinuxQuestions has <a href="http://jeremy.linuxquestions.org/2007/05/18/dell-announces-the-models-for-ubuntu/">details on the Dell Linux rollout</a>.  Nothing too surprising, fairly basic machines with well supported hardware.  No proprietary media formats, so it seems like a fairly stock Ubuntu install.  No Linux prices yet.</p>
+<p>The top-end machine that will be in the initial offering is the XPS 410, which is $899+ with Windows on it.   On the value end is the E520, starting at $369 (Windows price). It looks like the E1505 Notebook will also be offered, which is a fairly basic laptop at $699 (Windows price again).</p>
+

@@ -1,0 +1,29 @@
+---
+categories:
+- Linux
+date: '2010-06-15T03:56:26Z'
+tags:
+- Android
+- Ubuntu
+title: Android Development on Ubuntu 10.04
+url: /2010/06/15/android-development-on-ubuntu-1004/
+aliases:
+- /blog/android-development-on-ubuntu-1004/
+---
+<blockquote><p>If you've been trying to use the Android SDK on Ubuntu 10.04, you might be getting an error like:</p>
+<p>No command line parameters provided, launching UI.<br />
+See 'android --help' for operations from the command line.<br />
+Exception in thread "main" java.lang.UnsatisfiedLinkError: no swt-gtk-3550 or swt-gtk in swt.library.path, java.library.path or the jar file<br />
+at org.eclipse.swt.internal.Library.loadLibrary(Unknown Source)<br />
+at org.eclipse.swt.internal.Library.loadLibrary(Unknown Source)<br />
+at org.eclipse.swt.internal.C.&lt;clinit&gt;(Unknown Source)<br />
+at org.eclipse.swt.internal.Converter.wcsToMbcs(Unknown Source)<br />
+at org.eclipse.swt.internal.Converter.wcsToMbcs(Unknown Source)<br />
+at org.eclipse.swt.widgets.Display.&lt;clinit&gt;(Unknown Source)<br />
+at com.android.sdkmanager.Main.showMainWindow(Main.java:265)<br />
+at com.android.sdkmanager.Main.doAction(Main.java:249)<br />
+at com.android.sdkmanager.Main.run(Main.java:94)<br />
+at com.android.sdkmanager.Main.main(Main.java:83)</p></blockquote>
+<p>If you're getting this, try installing libswt-gtk-3.5-java and then running the android SDK via: ANDROID_SWT=/usr/lib/java ./android</p>
+<p>Hope this helps somebody.</p>
+

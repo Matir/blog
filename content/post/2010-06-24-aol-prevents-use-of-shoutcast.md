@@ -1,0 +1,11 @@
+---
+categories:
+- Misc
+date: '2010-06-24T04:16:35Z'
+title: AOL prevents use of Shoutcast
+url: /2010/06/24/aol-prevents-use-of-shoutcast/
+aliases:
+- /blog/aol-prevents-use-of-shoutcast/
+---
+<p>AOL has apparently <a href="http://www.videolan.org/press/2010-1.html">served the VideoLAN developers with an injunction</a> preventing any ShoutCAST functionality from being included in VLC, or any other application that uses Open Source components or software.  I appreciate this greatly, as the next time I'm tasked with exploring streaming media solutions at work, I'll have one less contender that I will consider.  To be specific, as far as I'm concerned, ShoutCAST is not a viable solution for any form of streaming media, and must be avoided like the proprietary plague it is.</p>
+

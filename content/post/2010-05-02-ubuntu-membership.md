@@ -1,0 +1,11 @@
+---
+categories:
+- Misc
+date: '2010-05-02T02:40:19Z'
+title: Ubuntu Membership
+url: /2010/05/02/ubuntu-membership/
+aliases:
+- /blog/ubuntu-membership/
+---
+<p>For a while now, I've considered going for Ubuntu Membership, and I've decided now is the time.  I feel that my contributions to the community are significant and that Ubuntu has become a significant part of my life.  I'd like to ask anyone who feels comfortable supporting me to post on my Ubuntu wiki page at <a href="https://wiki.ubuntu.com/Matir">https://wiki.ubuntu.com/Matir</a>.  I appreciate your support in the community.</p>
+

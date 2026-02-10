@@ -1,0 +1,25 @@
+---
+categories:
+- Security
+date: '2011-08-31T22:53:21Z'
+tags:
+- Drupal
+- Git
+- Security
+- Nginx
+title: 'Git On Your Web Server: A Security Reminder'
+url: /2011/08/31/git-on-your-web-server-a-security-reminder/
+aliases:
+- /blog/git-on-your-web-server-a-security-reminder/
+---
+<p>
+	Earlier this month, I wrote about <a href="/2011/08/04/managing-drupal-with-git">managing a Drupal site with git</a>.  What I neglected to remember, of course, is this places a full copy of your git repository within your web server's document root.  This has the potential to expose any data in your git repository -- a malicious attacker could (depending on your configuration) clone the entire repository, thus exposing source code, configuration files, database dumps, and other sensitive data.</p>
+<p>
+	Adam Baldwin did an <a href="https://web.archive.org/web/20110509045146/http://www.ngenuity-is.com/blog/2011/mar/22/gotta-git-up-to-get-down/">interesting study on exposed repositories</a>, and shows that the problem is widespread, even among very large-scale websites.  He also offers points on how to protect your git repositories, but the Nginx directions didn't exactly work for me.  No matter what I tweaked, I couldn't get "deny all;" to actually deny anyone!  I ended up using "return 403;" and that worked quite well.  You could even return 404 if you wanted to hide the repository entirely.  For completeness, here's my configuration for protecting git:</p>
+<div class="geshifilter">
+<div class="text geshifilter-text" style="font-family:monospace;">
+<pre style="font-family: monospace; font-weight: normal; font-style: normal">location ~ /\.git {
+    return 403;
+}</pre></div>
+</div>
+

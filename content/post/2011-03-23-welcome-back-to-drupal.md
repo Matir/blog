@@ -1,0 +1,16 @@
+---
+categories:
+- Computer
+date: '2011-03-23T01:21:23Z'
+tags:
+- Wordpress
+- Drupal
+- Computer
+title: Welcome (back) to Drupal!
+url: /2011/03/23/welcome-back-to-drupal/
+aliases:
+- /blog/welcome-back-to-drupal/
+---
+<p>
+	Regular readers of my blog may have noticed a significant change.  As of about midnight last night, I had completed the migration of my site from Wordpress 3.1 to Drupal 7.  A few features are not yet implemented, including automatically posting my blog entries to Twitter, but the RSS feeds do work.  Additionally, some of the RSS feed URLs have changed, so please check your feed readers.</p>
+
