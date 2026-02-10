@@ -1,6 +1,6 @@
 [tools]
-hugo = "latest"
-lychee = "latest"
+hugo = "0.155.2"
+lychee = "0.18.1"
 
 [tasks."hugo:completion"]
 description = "Generate Hugo shell completions"
