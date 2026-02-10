@@ -70,9 +70,6 @@ jobs:
           restore-keys: |
             ${{ runner.os }}-hugomod-
 
-      - name: Install Dart Sass
-        run: sudo npm install -g sass
-
       - name: Build with Hugo
         id: hugobuild
         env:
