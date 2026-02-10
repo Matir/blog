@@ -58,6 +58,12 @@ jobs:
       - name: Setup Tools (mise)
         uses: jdx/mise-action@v2
 
+      - name: Verify Tools
+        run: |
+          ls -al $(which hugo) $(which sass)
+          hugo env
+          sass --version
+
       - name: Configure GitHub Pages
         id: pages
         uses: actions/configure-pages@v5
