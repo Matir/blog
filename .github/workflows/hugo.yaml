@@ -65,9 +65,10 @@ jobs:
           OS=$(echo "${{ runner.os }}" | tr '[:upper:]' '[:lower:]')
           ARCH=$(echo "${{ runner.arch }}" | tr '[:upper:]' '[:lower:]')
           echo "Downloading Dart Sass for $OS-$ARCH..."
-          gh release download --repo sass/dart-sass --pattern "*$OS-$ARCH.tar.gz" --output sass.tar.gz
-          tar -xf sass.tar.gz
-          echo "$PWD/dart-sass" >> $GITHUB_PATH
+          gh release download --repo sass/dart-sass --pattern "*$OS-$ARCH.tar.gz" --output "${RUNNER_TEMP}/sass.tar.gz"
+          mkdir -p "$HOME/.local/share"
+          tar -xf "${RUNNER_TEMP}/sass.tar.gz" -C "$HOME/.local/share"
+          echo "$HOME/.local/share/dart-sass" >> $GITHUB_PATH
 
       - name: Verify Tools
         run: |
@@ -99,7 +100,7 @@ jobs:
 
       - name: Link Checker (Lychee)
         run: |
-          lychee --offline --root-dir ./public './public/**/*.html'
+          lychee --offline --root-dir "$GITHUB_WORKSPACE/public" "$GITHUB_WORKSPACE/public/**/*.html"
 
       - name: Upload artifact
         if: github.ref == 'refs/heads/main' || github.ref == 'refs/heads/current'
