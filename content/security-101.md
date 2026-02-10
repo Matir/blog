@@ -3,6 +3,7 @@ title: Security 101
 layout: security-101
 url: /security-101.html
 uglyURLs: false
+type: page
 ---
 
 I've written some articles intended for those outside the security space or
