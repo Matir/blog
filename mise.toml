@@ -1,5 +1,4 @@
 [tools]
-"aqua:sass/dart-sass" = "1.97.3"
 hugo = "0.155.2"
 lychee = "0.18.1"
 

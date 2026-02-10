@@ -58,6 +58,17 @@ jobs:
       - name: Setup Tools (mise)
         uses: jdx/mise-action@v2
 
+      - name: Install Dart Sass
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          OS=$(echo "${{ runner.os }}" | tr '[:upper:]' '[:lower:]')
+          ARCH=$(echo "${{ runner.arch }}" | tr '[:upper:]' '[:lower:]')
+          echo "Downloading Dart Sass for $OS-$ARCH..."
+          gh release download --repo sass/dart-sass --pattern "*$OS-$ARCH.tar.gz" --output sass.tar.gz
+          tar -xf sass.tar.gz
+          echo "$PWD/dart-sass" >> $GITHUB_PATH
+
       - name: Verify Tools
         run: |
           ls -al $(which hugo) $(which sass)
